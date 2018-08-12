@@ -26,6 +26,30 @@ class UserController extends Controller
         return $all_tour_list;
     }
 
+    public function popularTour()
+    {
+        $popular_tour = view('');
+        return $popular_tour;
+    }
+
+    public function closeToSea()
+    {
+        $close_to_sea = view('');
+        return $close_to_sea;
+    }
+
+    public function hillTracking()
+    {
+        $hill_tracking = view('');
+        return $hill_tracking;
+    }
+
+    public function waterfalls()
+    {
+        $waterfalls = view('');
+        return $waterfalls;
+    }
+
     public function comingSoon()
     {
         $coming_soon = view('coming_soon');

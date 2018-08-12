@@ -22,7 +22,11 @@ Route::get('/', function () {
  */
 Route::get('/User-login', 'UserController@Userlogin');
 Route::get('/User-registration', 'UserController@UserRegistration');
-Route::get('/all_tour', 'UserController@allTour');
+Route::get('/all-tour', 'UserController@allTour');
+Route::get('/popular', 'UserController@popularTour');
+Route::get('/close-to-sea', 'UserController@closeToSea');
+Route::get('/hill-tracking', 'UserController@hillTracking');
+Route::get('/waterfalls', 'UserController@waterfalls');
 
 
 /**
