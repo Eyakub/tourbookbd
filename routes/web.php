@@ -29,3 +29,9 @@ Route::get('/all_tour', 'UserController@allTour');
  * Coming Soon
  */
 Route::get('/coming_soon', 'UserController@comingSoon');
+
+
+/**
+ * Hotels & Resorts
+ */
+Route::get('/hotels', 'HotelsController@hotels');
