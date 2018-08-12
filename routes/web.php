@@ -14,3 +14,18 @@
 Route::get('/', function () {
     return view('home');
 });
+
+
+
+/**
+ * User Panel
+ */
+Route::get('/User-login', 'UserController@Userlogin');
+Route::get('/User-registration', 'UserController@UserRegistration');
+Route::get('/all_tour', 'UserController@allTour');
+
+
+/**
+ * Coming Soon
+ */
+Route::get('/coming_soon', 'UserController@comingSoon');

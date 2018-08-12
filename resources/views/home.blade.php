@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<!--[if IE 8]><html class="ie ie8"> <![endif]-->
-<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8"> <![endif]-->
+<!--[if IE 9]>
+<html class="ie ie9"> <![endif]-->
 <html lang="en">
 
 <head>
@@ -14,7 +16,8 @@
 
     <!--JS-->
     <script type="text/javascript" src="rev-slider-files/js/extensions/revolution.extension.slideanims.min.js"></script>
-    <script type="text/javascript" src="rev-slider-files/js/extensions/revolution.extension.layeranimation.min.js"></script>
+    <script type="text/javascript"
+            src="rev-slider-files/js/extensions/revolution.extension.layeranimation.min.js"></script>
     <script type="text/javascript" src="rev-slider-files/js/extensions/revolution.extension.navigation.min.js"></script>
     <script type="text/javascript" src="rev-slider-files/js/extensions/revolution.extension.parallax.min.js"></script>
 
@@ -23,11 +26,14 @@
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" type="image/x-icon" href="img/apple-touch-icon-57x57-precomposed.png">
     <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="img/apple-touch-icon-72x72-precomposed.png">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="img/apple-touch-icon-114x114-precomposed.png">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="img/apple-touch-icon-144x144-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114"
+          href="img/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144"
+          href="img/apple-touch-icon-144x144-precomposed.png">
 
     <!-- Google web fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Gochi+Hand|Lato:300,400|Montserrat:400,400i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gochi+Hand|Lato:300,400|Montserrat:400,400i,700,700i"
+          rel="stylesheet">
 
     <!-- BASE CSS -->
     <link href="css/base.css" rel="stylesheet">
@@ -125,7 +131,8 @@
 <body>
 
 <!--[if lte IE 8]>
-<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a>.</p>
+<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a>.</p>
 <![endif]-->
 
 <div id="preloader">
@@ -170,14 +177,18 @@
                                         <span class="span-or">or</span>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="inputUsernameEmail" placeholder="Email">
+                                        <input type="text" class="form-control" id="inputUsernameEmail"
+                                               placeholder="Email">
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                                        <input type="password" class="form-control" id="inputPassword"
+                                               placeholder="Password">
                                     </div>
-                                    <a id="forgot_pw" href="#">Forgot password?</a>
-                                    <input type="submit" name="Sign_in" value="Sign in" id="Sign_in" class="button_drop">
-                                    <input type="submit" name="Sign_up" value="Sign up" id="Sign_up" class="button_drop outline">
+                                    <a id="forgot_pw">Forgot password?</a>
+                                    <input type="button" name="Sign_in" value="Sign In" id="Sign_in"
+                                           class="button_drop">
+                                    <input type="submit" name="Sign_up" value="Sign up" id="Sign_up"
+                                           class="button_drop outline">
                                 </div>
                             </div><!-- End Dropdown access -->
                         </li>
@@ -200,7 +211,7 @@
                 <a class="cmn-toggle-switch cmn-toggle-switch__htx open_close" href="javascript:void(0);"><span>Menu mobile</span></a>
                 <div class="main-menu">
                     <div id="header_menu">
-                        <img src="img/tourbookbd.png" width="160" height="34" alt="City tours" data-retina="true">
+                        <img src="img/logo_sticky.png" width="160" height="34" alt="City tours" data-retina="true">
                     </div>
                     <a href="#" class="open_close" id="close_in"><i class="icon_set_1_icon-77"></i></a>
                     <ul>
@@ -236,11 +247,11 @@
                         <li class="submenu">
                             <a href="javascript:void(0);" class="show-submenu">Tours <i class="icon-down-open-mini"></i></a>
                             <ul>
-                                <li><a href="all_tours_list.html">All tours list</a></li>
-                                <li><a href="all_tours_grid.html">Popular List</a></li>
-                                <li><a href="all_tours_map_listing.html">Close to Sea</a></li>
-                                <li><a href="single_tour.html">Hill Tracking</a></li>
-                                <li><a href="single_tour_with_gallery.html">Waterfalls</a></li>
+                                <li><a href="{{URL::to('/all_tour')}}">All tours list</a></li>
+                                <li><a href="{{URL::to('/coming_soon')}}">Popular List</a></li>
+                                <li><a href="{{URL::to('/coming_soon')}}">Close to Sea</a></li>
+                                <li><a href="{{URL::to('/coming_soon')}}">Hill Tracking</a></li>
+                                <li><a href="{{URL::to('/coming_soon')}}">Waterfalls</a></li>
                                 {{--<li><a href="javascript:void(0);">Single tour fixed sidebar</a>
                                     <ul>
                                         <li><a href="single_tour_fixed_sidebar.html">Single tour fixed sidebar</a></li>
@@ -250,8 +261,8 @@
                                         <li><a href="confirmation_fixed_sidebar.html">Confirmation Fixed Sidebar</a></li>
                                     </ul>
                                 </li>--}}
-                                <li><a href="single_tour_working_booking.php">Hide in Nature</a></li>
-                                <li><a href="single_tour_datepicker_v2.html">City Tours</a></li>
+                                <li><a href="{{URL::to('/coming_soon')}}">Hide in Nature</a></li>
+                                <li><a href="{{URL::to('/coming_soon')}}">City Tours</a></li>
                             </ul>
                         </li>
 
@@ -260,7 +271,9 @@
                         </li>
 
                         <li class="submenu">
-                            <a href="javascript:void(0);" class="show-submenu">Hotels <i class="icon-down-open-mini"></i></a><ul>
+                            <a href="javascript:void(0);" class="show-submenu">Hotels <i
+                                        class="icon-down-open-mini"></i></a>
+                            <ul>
                                 <li><a href="all_hotels_list.html">All hotels list</a></li>
                                 <li><a href="all_hotels_grid.html">Swimming Pools</a></li>
                             </ul>
@@ -275,12 +288,14 @@
                 <ul id="top_tools">
                     <li>
                         <div class="dropdown dropdown-search">
-                            <a href="#" class="search-overlay-menu-btn" data-toggle="dropdown"><i class="icon-search"></i></a>
+                            <a href="#" class="search-overlay-menu-btn" data-toggle="dropdown"><i
+                                        class="icon-search"></i></a>
                         </div>
                     </li>
                     <li>
                         <div class="dropdown dropdown-cart">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class=" icon-basket-1"></i>Cart (0) </a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class=" icon-basket-1"></i>Cart
+                                (0) </a>
                             <ul class="dropdown-menu" id="cart_items">
                                 <li>
                                     <div class="image"><img src="img/thumb_cart_1.jpg" alt="image"></div>
@@ -315,149 +330,499 @@
 </header><!-- End Header -->
 
 <main>
-    <div id="rev_slider_54_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="notgeneric1" data-source="gallery" style="margin:0px auto;background:transparent;padding:0px;margin-top:0px;margin-bottom:0px;">
+    <div id="rev_slider_54_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="notgeneric1"
+         data-source="gallery"
+         style="margin:0px auto;background:transparent;padding:0px;margin-top:0px;margin-bottom:0px;">
         <!-- START REVOLUTION SLIDER 5.4.1 fullwidth mode -->
         <div id="rev_slider_54_1" class="rev_slider fullwidthabanner" style="display:none;" data-version="5.4.1">
             <ul>
                 <!-- SLIDE  -->
-                <li data-index="rs-140" data-transition="zoomout" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="2000" data-thumb="rev-slider-files/assets/100x50_notgeneric_bg1.jpg" data-rotate="0" data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7" data-saveperformance="off" data-title="Intro" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+                <li data-index="rs-140" data-transition="zoomout" data-slotamount="default" data-hideafterloop="0"
+                    data-hideslideonmobile="off" data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut"
+                    data-masterspeed="2000" data-thumb="rev-slider-files/assets/100x50_notgeneric_bg1.jpg"
+                    data-rotate="0" data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7"
+                    data-saveperformance="off" data-title="Intro" data-param1="" data-param2="" data-param3=""
+                    data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9=""
+                    data-param10="" data-description="">
                     <!-- MAIN IMAGE -->
-                    <img src="rev-slider-files/assets/notgeneric_bg1.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                    <img src="rev-slider-files/assets/notgeneric_bg1.jpg" alt="" data-bgposition="center center"
+                         data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg"
+                         data-no-retina>
                     <!-- LAYERS -->
 
                     <!-- LAYER NR. 1 -->
-                    <div class="tp-caption NotGeneric-Title   tp-resizeme" id="slide-140-layer-1" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']" data-fontsize="['50','46','36','28']" data-lineheight="['46','46','36','28']" data-width="none" data-height="none" data-whitespace="nowrap" data-type="text" data-responsive_offset="on" data-frames='[{"delay":1000,"split":"chars","split_direction":"forward","splitdelay":0.05,"speed":2000,"frame":"0","from":"x:[105%];z:0;rX:45deg;rY:0deg;rZ:90deg;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]' data-textAlign="['left','left','left','left']" data-paddingtop="[10,10,10,10]" data-paddingright="[0,0,0,0]" data-paddingbottom="[10,10,10,10]" data-paddingleft="[0,0,0,0]" style="z-index: 5; white-space: nowrap; font-size: 50px; line-height: 46px; font-weight: 700;font-family:Montserrat;">WELCOME TO Tour Book BD </div>
+                    <div class="tp-caption NotGeneric-Title   tp-resizeme" id="slide-140-layer-1"
+                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']"
+                         data-fontsize="['50','46','36','28']" data-lineheight="['46','46','36','28']" data-width="none"
+                         data-height="none" data-whitespace="nowrap" data-type="text" data-responsive_offset="on"
+                         data-frames='[{"delay":1000,"split":"chars","split_direction":"forward","splitdelay":0.05,"speed":2000,"frame":"0","from":"x:[105%];z:0;rX:45deg;rY:0deg;rZ:90deg;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
+                         data-textAlign="['left','left','left','left']" data-paddingtop="[10,10,10,10]"
+                         data-paddingright="[0,0,0,0]" data-paddingbottom="[10,10,10,10]" data-paddingleft="[0,0,0,0]"
+                         style="z-index: 5; white-space: nowrap; font-size: 50px; line-height: 46px; font-weight: 700;font-family:Montserrat;">
+                        WELCOME TO Tour Book BD
+                    </div>
 
                     <!-- LAYER NR. 2 -->
-                    <div class="tp-caption NotGeneric-SubTitle   tp-resizeme" id="slide-140-layer-4" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['52','52','52','51']" data-fontweight="['400','500','500','500']" data-width="none" data-height="none" data-whitespace="nowrap" data-type="text" data-responsive_offset="on" data-frames='[{"delay":1500,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]' data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 6; white-space: nowrap; font-weight: 400;font-family:Montserrat;">TOURS HOTELS RESTAURANTS</div>
+                    <div class="tp-caption NotGeneric-SubTitle   tp-resizeme" id="slide-140-layer-4"
+                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['52','52','52','51']"
+                         data-fontweight="['400','500','500','500']" data-width="none" data-height="none"
+                         data-whitespace="nowrap" data-type="text" data-responsive_offset="on"
+                         data-frames='[{"delay":1500,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
+                         data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                         style="z-index: 6; white-space: nowrap; font-weight: 400;font-family:Montserrat;">TOURS HOTELS
+                        RESTAURANTS
+                    </div>
 
                     <!-- LAYER NR. 3 -->
-                    <div class="tp-caption NotGeneric-Icon   tp-resizeme" id="slide-140-layer-8" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['-68','-68','-68','-68']" data-width="none" data-height="none" data-whitespace="nowrap" data-type="text" data-responsive_offset="on" data-frames='[{"delay":2000,"speed":1500,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]' data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 7; white-space: nowrap;cursor:default;"><i class="pe-7s-compass"></i> </div>
+                    <div class="tp-caption NotGeneric-Icon   tp-resizeme" id="slide-140-layer-8"
+                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['-68','-68','-68','-68']"
+                         data-width="none" data-height="none" data-whitespace="nowrap" data-type="text"
+                         data-responsive_offset="on"
+                         data-frames='[{"delay":2000,"speed":1500,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
+                         data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                         style="z-index: 7; white-space: nowrap;cursor:default;"><i class="pe-7s-compass"></i></div>
 
                     <!-- LAYER NR. 4 -->
-                    <div class="tp-caption NotGeneric-Button rev-btn " id="slide-140-layer-7" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['124','124','124','123']" data-fontweight="['400','500','500','500']" data-width="none" data-height="none" data-whitespace="nowrap" data-type="button" data-actions='[{"event":"click","action":"jumptoslide","slide":"next","delay":""}]' data-responsive_offset="on" data-responsive="off" data-frames='[{"delay":2000,"speed":1500,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"y:[175%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"},{"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(255, 255, 255, 1);bc:rgba(255, 255, 255, 1);bw:1 1 1 1;"}]' data-textAlign="['left','left','left','left']" data-paddingtop="[10,10,10,10]" data-paddingright="[30,30,30,30]" data-paddingbottom="[10,10,10,10]" data-paddingleft="[30,30,30,30]" style="z-index: 8; white-space: nowrap; font-weight: 400;font-family:Montserrat;border-color:rgba(255,255,255,0.50);border-width:1px 1px 1px 1px;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">NEXT GOODIE </div>
+                    <div class="tp-caption NotGeneric-Button rev-btn " id="slide-140-layer-7"
+                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['124','124','124','123']"
+                         data-fontweight="['400','500','500','500']" data-width="none" data-height="none"
+                         data-whitespace="nowrap" data-type="button"
+                         data-actions='[{"event":"click","action":"jumptoslide","slide":"next","delay":""}]'
+                         data-responsive_offset="on" data-responsive="off"
+                         data-frames='[{"delay":2000,"speed":1500,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"y:[175%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"},{"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(255, 255, 255, 1);bc:rgba(255, 255, 255, 1);bw:1 1 1 1;"}]'
+                         data-textAlign="['left','left','left','left']" data-paddingtop="[10,10,10,10]"
+                         data-paddingright="[30,30,30,30]" data-paddingbottom="[10,10,10,10]"
+                         data-paddingleft="[30,30,30,30]"
+                         style="z-index: 8; white-space: nowrap; font-weight: 400;font-family:Montserrat;border-color:rgba(255,255,255,0.50);border-width:1px 1px 1px 1px;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">
+                        NEXT GOODIE
+                    </div>
 
                     <!-- LAYER NR. 5 -->
-                    <div class="tp-caption rev-scroll-btn " id="slide-140-layer-9" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['bottom','bottom','bottom','bottom']" data-voffset="['50','50','50','50']" data-width="35" data-height="55" data-whitespace="nowrap" data-visibility="['on','on','on','off']" data-type="button" data-actions='[{"event":"click","action":"scrollbelow","offset":"0px","delay":"","speed":"300","ease":"Linear.easeNone"}]' data-basealign="slide" data-responsive_offset="off" data-responsive="off" data-frames='[{"delay":2000,"speed":1500,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"y:50px;opacity:0;","ease":"nothing"}]' data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 9; min-width: 35px; max-width: 35px; max-width: 55px; max-width: 55px; white-space: nowrap; font-size: px; line-height: px; font-weight: 100; color: transparent;border-color:rgba(255, 255, 255, 0.5);border-style:solid;border-width:1px 1px 1px 1px;border-radius:23px 23px 23px 23px;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">
+                    <div class="tp-caption rev-scroll-btn " id="slide-140-layer-9"
+                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                         data-y="['bottom','bottom','bottom','bottom']" data-voffset="['50','50','50','50']"
+                         data-width="35" data-height="55" data-whitespace="nowrap"
+                         data-visibility="['on','on','on','off']" data-type="button"
+                         data-actions='[{"event":"click","action":"scrollbelow","offset":"0px","delay":"","speed":"300","ease":"Linear.easeNone"}]'
+                         data-basealign="slide" data-responsive_offset="off" data-responsive="off"
+                         data-frames='[{"delay":2000,"speed":1500,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"y:50px;opacity:0;","ease":"nothing"}]'
+                         data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                         style="z-index: 9; min-width: 35px; max-width: 35px; max-width: 55px; max-width: 55px; white-space: nowrap; font-size: px; line-height: px; font-weight: 100; color: transparent;border-color:rgba(255, 255, 255, 0.5);border-style:solid;border-width:1px 1px 1px 1px;border-radius:23px 23px 23px 23px;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">
                         <span></span>
                     </div>
                 </li>
                 <!-- SLIDE  -->
-                <li data-index="rs-141" data-transition="fadetotopfadefrombottom" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="Power3.easeInOut" data-easeout="Power3.easeInOut" data-masterspeed="1500" data-thumb="rev-slider-files/assets/100x50_notgeneric_bg5.jpg" data-rotate="0" data-saveperformance="off" data-title="Chill" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+                <li data-index="rs-141" data-transition="fadetotopfadefrombottom" data-slotamount="default"
+                    data-hideafterloop="0" data-hideslideonmobile="off" data-easein="Power3.easeInOut"
+                    data-easeout="Power3.easeInOut" data-masterspeed="1500"
+                    data-thumb="rev-slider-files/assets/100x50_notgeneric_bg5.jpg" data-rotate="0"
+                    data-saveperformance="off" data-title="Chill" data-param1="" data-param2="" data-param3=""
+                    data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9=""
+                    data-param10="" data-description="">
                     <!-- MAIN IMAGE -->
-                    <img src="rev-slider-files/assets/notgeneric_bg5.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                    <img src="rev-slider-files/assets/notgeneric_bg5.jpg" alt="" data-bgposition="center center"
+                         data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg"
+                         data-no-retina>
                     <!-- LAYERS -->
 
                     <!-- LAYER NR. 6 -->
-                    <div class="tp-caption NotGeneric-Title   tp-resizeme rs-parallaxlevel-3" id="slide-141-layer-1" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']" data-fontsize="['50','46','36','28']" data-lineheight="['46','46','36','28']" data-width="none" data-height="none" data-whitespace="nowrap" data-type="text" data-responsive_offset="on" data-frames='[{"delay":1000,"split":"chars","split_direction":"forward","splitdelay":0.05,"speed":2000,"frame":"0","from":"y:[100%];z:0;rZ:-35deg;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]' data-textAlign="['left','left','left','left']" data-paddingtop="[10,10,10,10]" data-paddingright="[0,0,0,0]" data-paddingbottom="[10,10,10,10]" data-paddingleft="[0,0,0,0]" style="z-index: 5; white-space: nowrap; font-size: 50px; line-height: 46px; font-weight: 700;font-family:Montserrat;">DISCOVER NICE PLACES </div>
+                    <div class="tp-caption NotGeneric-Title   tp-resizeme rs-parallaxlevel-3" id="slide-141-layer-1"
+                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']"
+                         data-fontsize="['50','46','36','28']" data-lineheight="['46','46','36','28']" data-width="none"
+                         data-height="none" data-whitespace="nowrap" data-type="text" data-responsive_offset="on"
+                         data-frames='[{"delay":1000,"split":"chars","split_direction":"forward","splitdelay":0.05,"speed":2000,"frame":"0","from":"y:[100%];z:0;rZ:-35deg;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
+                         data-textAlign="['left','left','left','left']" data-paddingtop="[10,10,10,10]"
+                         data-paddingright="[0,0,0,0]" data-paddingbottom="[10,10,10,10]" data-paddingleft="[0,0,0,0]"
+                         style="z-index: 5; white-space: nowrap; font-size: 50px; line-height: 46px; font-weight: 700;font-family:Montserrat;">
+                        DISCOVER NICE PLACES
+                    </div>
 
                     <!-- LAYER NR. 7 -->
-                    <div class="tp-caption NotGeneric-SubTitle   tp-resizeme rs-parallaxlevel-2" id="slide-141-layer-4" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['52','52','52','51']" data-fontweight="['400','500','500','500']" data-width="none" data-height="none" data-whitespace="nowrap" data-type="text" data-responsive_offset="on" data-frames='[{"delay":1500,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]' data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 6; white-space: nowrap; font-weight: 400;font-family:Montserrat;">TOURS HOTELS RESTAURANTS</div>
+                    <div class="tp-caption NotGeneric-SubTitle   tp-resizeme rs-parallaxlevel-2" id="slide-141-layer-4"
+                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['52','52','52','51']"
+                         data-fontweight="['400','500','500','500']" data-width="none" data-height="none"
+                         data-whitespace="nowrap" data-type="text" data-responsive_offset="on"
+                         data-frames='[{"delay":1500,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
+                         data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                         style="z-index: 6; white-space: nowrap; font-weight: 400;font-family:Montserrat;">TOURS HOTELS
+                        RESTAURANTS
+                    </div>
 
                     <!-- LAYER NR. 8 -->
-                    <div class="tp-caption NotGeneric-Icon   tp-resizeme rs-parallaxlevel-1" id="slide-141-layer-8" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['-68','-68','-68','-68']" data-width="none" data-height="none" data-whitespace="nowrap" data-type="text" data-responsive_offset="on" data-frames='[{"delay":2000,"speed":1500,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]' data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 7; white-space: nowrap;cursor:default;"><i class="pe-7s-mouse"></i> </div>
+                    <div class="tp-caption NotGeneric-Icon   tp-resizeme rs-parallaxlevel-1" id="slide-141-layer-8"
+                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['-68','-68','-68','-68']"
+                         data-width="none" data-height="none" data-whitespace="nowrap" data-type="text"
+                         data-responsive_offset="on"
+                         data-frames='[{"delay":2000,"speed":1500,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
+                         data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                         style="z-index: 7; white-space: nowrap;cursor:default;"><i class="pe-7s-mouse"></i></div>
 
                     <!-- LAYER NR. 9 -->
-                    <div class="tp-caption NotGeneric-Button rev-btn " id="slide-141-layer-7" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['124','124','124','123']" data-fontweight="['400','500','500','500']" data-width="none" data-height="none" data-whitespace="nowrap" data-type="button" data-actions='[{"event":"click","action":"jumptoslide","slide":"next","delay":""}]' data-responsive_offset="on" data-responsive="off" data-frames='[{"delay":2000,"speed":1500,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"y:[175%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"},{"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(255, 255, 255, 1);bc:rgba(255, 255, 255, 1);bw:1 1 1 1;"}]' data-textAlign="['left','left','left','left']" data-paddingtop="[10,10,10,10]" data-paddingright="[30,30,30,30]" data-paddingbottom="[10,10,10,10]" data-paddingleft="[30,30,30,30]" style="z-index: 8; white-space: nowrap; font-weight: 400;font-family:Montserrat;border-color:rgba(255,255,255,0.50);border-width:1px 1px 1px 1px;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">NEXT GOODIE </div>
+                    <div class="tp-caption NotGeneric-Button rev-btn " id="slide-141-layer-7"
+                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['124','124','124','123']"
+                         data-fontweight="['400','500','500','500']" data-width="none" data-height="none"
+                         data-whitespace="nowrap" data-type="button"
+                         data-actions='[{"event":"click","action":"jumptoslide","slide":"next","delay":""}]'
+                         data-responsive_offset="on" data-responsive="off"
+                         data-frames='[{"delay":2000,"speed":1500,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"y:[175%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"},{"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(255, 255, 255, 1);bc:rgba(255, 255, 255, 1);bw:1 1 1 1;"}]'
+                         data-textAlign="['left','left','left','left']" data-paddingtop="[10,10,10,10]"
+                         data-paddingright="[30,30,30,30]" data-paddingbottom="[10,10,10,10]"
+                         data-paddingleft="[30,30,30,30]"
+                         style="z-index: 8; white-space: nowrap; font-weight: 400;font-family:Montserrat;border-color:rgba(255,255,255,0.50);border-width:1px 1px 1px 1px;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">
+                        NEXT GOODIE
+                    </div>
 
                     <!-- LAYER NR. 10 -->
-                    <div class="tp-caption rev-scroll-btn " id="slide-141-layer-9" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['bottom','bottom','bottom','bottom']" data-voffset="['50','50','50','50']" data-width="35" data-height="55" data-whitespace="nowrap" data-visibility="['on','on','on','off']" data-type="button" data-actions='[{"event":"click","action":"scrollbelow","offset":"0px","delay":"","speed":"300","ease":"Linear.easeNone"}]' data-basealign="slide" data-responsive_offset="off" data-responsive="off" data-frames='[{"delay":2000,"speed":1500,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"y:50px;opacity:0;","ease":"nothing"}]' data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 9; min-width: 35px; max-width: 35px; max-width: 55px; max-width: 55px; white-space: nowrap; font-size: px; line-height: px; font-weight: 100; color: transparent;border-color:rgba(255, 255, 255, 0.5);border-style:solid;border-width:1px 1px 1px 1px;border-radius:23px 23px 23px 23px;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">
+                    <div class="tp-caption rev-scroll-btn " id="slide-141-layer-9"
+                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                         data-y="['bottom','bottom','bottom','bottom']" data-voffset="['50','50','50','50']"
+                         data-width="35" data-height="55" data-whitespace="nowrap"
+                         data-visibility="['on','on','on','off']" data-type="button"
+                         data-actions='[{"event":"click","action":"scrollbelow","offset":"0px","delay":"","speed":"300","ease":"Linear.easeNone"}]'
+                         data-basealign="slide" data-responsive_offset="off" data-responsive="off"
+                         data-frames='[{"delay":2000,"speed":1500,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"y:50px;opacity:0;","ease":"nothing"}]'
+                         data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                         style="z-index: 9; min-width: 35px; max-width: 35px; max-width: 55px; max-width: 55px; white-space: nowrap; font-size: px; line-height: px; font-weight: 100; color: transparent;border-color:rgba(255, 255, 255, 0.5);border-style:solid;border-width:1px 1px 1px 1px;border-radius:23px 23px 23px 23px;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">
                         <span></span>
                     </div>
 
                     <!-- LAYER NR. 11 -->
-                    <div class="tp-caption   tp-resizeme rs-parallaxlevel-8" id="slide-141-layer-10" data-x="['left','left','left','left']" data-hoffset="['680','680','680','680']" data-y="['top','top','top','top']" data-voffset="['632','632','632','632']" data-width="none" data-height="none" data-whitespace="nowrap" data-type="image" data-responsive_offset="on" data-frames='[{"delay":2000,"speed":1000,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"opacity:0;","ease":"nothing"}]' data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 10;">
-                        <div class="rs-looped rs-pendulum" data-easing="linearEaseNone" data-startdeg="-20" data-enddeg="360" data-speed="35" data-origin="50% 50%"><img src="rev-slider-files/assets/blurflake4.png" alt="" data-ww="['240px','240px','240px','240px']" data-hh="['240px','240px','240px','240px']" data-no-retina> </div>
+                    <div class="tp-caption   tp-resizeme rs-parallaxlevel-8" id="slide-141-layer-10"
+                         data-x="['left','left','left','left']" data-hoffset="['680','680','680','680']"
+                         data-y="['top','top','top','top']" data-voffset="['632','632','632','632']" data-width="none"
+                         data-height="none" data-whitespace="nowrap" data-type="image" data-responsive_offset="on"
+                         data-frames='[{"delay":2000,"speed":1000,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"opacity:0;","ease":"nothing"}]'
+                         data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                         style="z-index: 10;">
+                        <div class="rs-looped rs-pendulum" data-easing="linearEaseNone" data-startdeg="-20"
+                             data-enddeg="360" data-speed="35" data-origin="50% 50%"><img
+                                    src="rev-slider-files/assets/blurflake4.png" alt=""
+                                    data-ww="['240px','240px','240px','240px']"
+                                    data-hh="['240px','240px','240px','240px']" data-no-retina></div>
                     </div>
 
                     <!-- LAYER NR. 12 -->
-                    <div class="tp-caption   tp-resizeme rs-parallaxlevel-7" id="slide-141-layer-11" data-x="['left','left','left','left']" data-hoffset="['948','948','948','948']" data-y="['top','top','top','top']" data-voffset="['487','487','487','487']" data-width="none" data-height="none" data-whitespace="nowrap" data-type="image" data-responsive_offset="on" data-frames='[{"delay":2000,"speed":1000,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"opacity:0;","ease":"nothing"}]' data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 11;">
-                        <div class="rs-looped rs-wave" data-speed="20" data-angle="0" data-radius="50px" data-origin="50% 50%"><img src="rev-slider-files/assets/blurflake3.png" alt="" data-ww="['170px','170px','170px','170px']" data-hh="['170px','170px','170px','170px']" data-no-retina> </div>
+                    <div class="tp-caption   tp-resizeme rs-parallaxlevel-7" id="slide-141-layer-11"
+                         data-x="['left','left','left','left']" data-hoffset="['948','948','948','948']"
+                         data-y="['top','top','top','top']" data-voffset="['487','487','487','487']" data-width="none"
+                         data-height="none" data-whitespace="nowrap" data-type="image" data-responsive_offset="on"
+                         data-frames='[{"delay":2000,"speed":1000,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"opacity:0;","ease":"nothing"}]'
+                         data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                         style="z-index: 11;">
+                        <div class="rs-looped rs-wave" data-speed="20" data-angle="0" data-radius="50px"
+                             data-origin="50% 50%"><img src="rev-slider-files/assets/blurflake3.png" alt=""
+                                                        data-ww="['170px','170px','170px','170px']"
+                                                        data-hh="['170px','170px','170px','170px']" data-no-retina>
+                        </div>
                     </div>
 
                     <!-- LAYER NR. 13 -->
-                    <div class="tp-caption   tp-resizeme rs-parallaxlevel-4" id="slide-141-layer-12" data-x="['left','left','left','left']" data-hoffset="['719','719','719','719']" data-y="['top','top','top','top']" data-voffset="['200','200','200','200']" data-width="none" data-height="none" data-whitespace="nowrap" data-type="image" data-responsive_offset="on" data-frames='[{"delay":2000,"speed":1000,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"opacity:0;","ease":"nothing"}]' data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 12;">
-                        <div class="rs-looped rs-rotate" data-easing="Power2.easeInOut" data-startdeg="-20" data-enddeg="360" data-speed="20" data-origin="50% 50%"><img src="rev-slider-files/assets/blurflake2.png" alt="" data-ww="['50px','50px','50px','50px']" data-hh="['51px','51px','51px','51px']" data-no-retina> </div>
+                    <div class="tp-caption   tp-resizeme rs-parallaxlevel-4" id="slide-141-layer-12"
+                         data-x="['left','left','left','left']" data-hoffset="['719','719','719','719']"
+                         data-y="['top','top','top','top']" data-voffset="['200','200','200','200']" data-width="none"
+                         data-height="none" data-whitespace="nowrap" data-type="image" data-responsive_offset="on"
+                         data-frames='[{"delay":2000,"speed":1000,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"opacity:0;","ease":"nothing"}]'
+                         data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                         style="z-index: 12;">
+                        <div class="rs-looped rs-rotate" data-easing="Power2.easeInOut" data-startdeg="-20"
+                             data-enddeg="360" data-speed="20" data-origin="50% 50%"><img
+                                    src="rev-slider-files/assets/blurflake2.png" alt=""
+                                    data-ww="['50px','50px','50px','50px']" data-hh="['51px','51px','51px','51px']"
+                                    data-no-retina></div>
                     </div>
 
                     <!-- LAYER NR. 14 -->
-                    <div class="tp-caption   tp-resizeme rs-parallaxlevel-6" id="slide-141-layer-13" data-x="['left','left','left','left']" data-hoffset="['187','187','187','187']" data-y="['top','top','top','top']" data-voffset="['216','216','216','216']" data-width="none" data-height="none" data-whitespace="nowrap" data-type="image" data-responsive_offset="on" data-frames='[{"delay":2000,"speed":1000,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"opacity:0;","ease":"nothing"}]' data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 13;">
-                        <div class="rs-looped rs-wave" data-speed="4" data-angle="0" data-radius="10" data-origin="50% 50%"><img src="rev-slider-files/assets/blurflake1.png" alt="" data-ww="['120px','120px','120px','120px']" data-hh="['120px','120px','120px','120px']" data-no-retina> </div>
+                    <div class="tp-caption   tp-resizeme rs-parallaxlevel-6" id="slide-141-layer-13"
+                         data-x="['left','left','left','left']" data-hoffset="['187','187','187','187']"
+                         data-y="['top','top','top','top']" data-voffset="['216','216','216','216']" data-width="none"
+                         data-height="none" data-whitespace="nowrap" data-type="image" data-responsive_offset="on"
+                         data-frames='[{"delay":2000,"speed":1000,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"opacity:0;","ease":"nothing"}]'
+                         data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                         style="z-index: 13;">
+                        <div class="rs-looped rs-wave" data-speed="4" data-angle="0" data-radius="10"
+                             data-origin="50% 50%"><img src="rev-slider-files/assets/blurflake1.png" alt=""
+                                                        data-ww="['120px','120px','120px','120px']"
+                                                        data-hh="['120px','120px','120px','120px']" data-no-retina>
+                        </div>
                     </div>
                 </li>
                 <!-- SLIDE  -->
-                <li data-index="rs-142" data-transition="zoomin" data-slotamount="7" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="2000" data-thumb="rev-slider-files/assets/100x50_notgeneric_bg2.jpg" data-rotate="0" data-saveperformance="off" data-title="Enjoy Nature" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+                <li data-index="rs-142" data-transition="zoomin" data-slotamount="7" data-hideafterloop="0"
+                    data-hideslideonmobile="off" data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut"
+                    data-masterspeed="2000" data-thumb="rev-slider-files/assets/100x50_notgeneric_bg2.jpg"
+                    data-rotate="0" data-saveperformance="off" data-title="Enjoy Nature" data-param1="" data-param2=""
+                    data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8=""
+                    data-param9="" data-param10="" data-description="">
                     <!-- MAIN IMAGE -->
-                    <img src="rev-slider-files/assets/notgeneric_bg2.jpg" alt="" data-bgposition="center center" data-kenburns="on" data-duration="30000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="120" data-rotatestart="0" data-rotateend="0" data-blurstart="0" data-blurend="0" data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                    <img src="rev-slider-files/assets/notgeneric_bg2.jpg" alt="" data-bgposition="center center"
+                         data-kenburns="on" data-duration="30000" data-ease="Linear.easeNone" data-scalestart="100"
+                         data-scaleend="120" data-rotatestart="0" data-rotateend="0" data-blurstart="0" data-blurend="0"
+                         data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="10" class="rev-slidebg"
+                         data-no-retina>
                     <!-- LAYERS -->
 
                     <!-- LAYER NR. 15 -->
-                    <div class="tp-caption NotGeneric-Title   tp-resizeme" id="slide-142-layer-1" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['1','0','0','0']" data-fontsize="['50','48','36','28']" data-lineheight="['46','48','36','28']" data-width="none" data-height="none" data-whitespace="nowrap" data-type="text" data-responsive_offset="on" data-frames='[{"delay":1000,"split":"chars","split_direction":"forward","splitdelay":0.05,"speed":2000,"frame":"0","from":"y:[-100%];z:0;rZ:35deg;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]' data-textAlign="['left','left','left','left']" data-paddingtop="[10,10,10,10]" data-paddingright="[0,0,0,0]" data-paddingbottom="[10,10,10,10]" data-paddingleft="[0,0,0,0]" style="z-index: 5; white-space: nowrap; font-size: 50px; line-height: 46px; font-weight: 700;font-family:Montserrat;">GREAT ADVENTURES </div>
+                    <div class="tp-caption NotGeneric-Title   tp-resizeme" id="slide-142-layer-1"
+                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['1','0','0','0']"
+                         data-fontsize="['50','48','36','28']" data-lineheight="['46','48','36','28']" data-width="none"
+                         data-height="none" data-whitespace="nowrap" data-type="text" data-responsive_offset="on"
+                         data-frames='[{"delay":1000,"split":"chars","split_direction":"forward","splitdelay":0.05,"speed":2000,"frame":"0","from":"y:[-100%];z:0;rZ:35deg;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
+                         data-textAlign="['left','left','left','left']" data-paddingtop="[10,10,10,10]"
+                         data-paddingright="[0,0,0,0]" data-paddingbottom="[10,10,10,10]" data-paddingleft="[0,0,0,0]"
+                         style="z-index: 5; white-space: nowrap; font-size: 50px; line-height: 46px; font-weight: 700;font-family:Montserrat;">
+                        GREAT ADVENTURES
+                    </div>
 
                     <!-- LAYER NR. 16 -->
-                    <div class="tp-caption NotGeneric-SubTitle   tp-resizeme" id="slide-142-layer-4" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['52','52','52','51']" data-fontweight="['400','500','500','500']" data-width="none" data-height="none" data-whitespace="nowrap" data-type="text" data-responsive_offset="on" data-frames='[{"delay":1500,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]' data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 6; white-space: nowrap; font-weight: 400;font-family:Montserrat;">TOURS HOTELS RESTAURANTS</div>
+                    <div class="tp-caption NotGeneric-SubTitle   tp-resizeme" id="slide-142-layer-4"
+                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['52','52','52','51']"
+                         data-fontweight="['400','500','500','500']" data-width="none" data-height="none"
+                         data-whitespace="nowrap" data-type="text" data-responsive_offset="on"
+                         data-frames='[{"delay":1500,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
+                         data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                         style="z-index: 6; white-space: nowrap; font-weight: 400;font-family:Montserrat;">TOURS HOTELS
+                        RESTAURANTS
+                    </div>
 
                     <!-- LAYER NR. 17 -->
-                    <div class="tp-caption NotGeneric-Icon   tp-resizeme" id="slide-142-layer-8" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['-68','-68','-68','-68']" data-width="none" data-height="none" data-whitespace="nowrap" data-type="text" data-responsive_offset="on" data-frames='[{"delay":2000,"speed":1500,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]' data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 7; white-space: nowrap;cursor:default;"><i class="pe-7s-expand1"></i> </div>
+                    <div class="tp-caption NotGeneric-Icon   tp-resizeme" id="slide-142-layer-8"
+                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['-68','-68','-68','-68']"
+                         data-width="none" data-height="none" data-whitespace="nowrap" data-type="text"
+                         data-responsive_offset="on"
+                         data-frames='[{"delay":2000,"speed":1500,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
+                         data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                         style="z-index: 7; white-space: nowrap;cursor:default;"><i class="pe-7s-expand1"></i></div>
 
                     <!-- LAYER NR. 18 -->
-                    <div class="tp-caption NotGeneric-Button rev-btn " id="slide-142-layer-7" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['124','124','124','123']" data-fontweight="['400','500','500','500']" data-width="none" data-height="none" data-whitespace="nowrap" data-type="button" data-actions='[{"event":"click","action":"jumptoslide","slide":"next","delay":""}]' data-responsive_offset="on" data-responsive="off" data-frames='[{"delay":2000,"speed":1500,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"y:[175%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"},{"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(255, 255, 255, 1);bc:rgba(255, 255, 255, 1);bw:1 1 1 1;"}]' data-textAlign="['left','left','left','left']" data-paddingtop="[10,10,10,10]" data-paddingright="[30,30,30,30]" data-paddingbottom="[10,10,10,10]" data-paddingleft="[30,30,30,30]" style="z-index: 8; white-space: nowrap; font-weight: 400;font-family:Montserrat;border-color:rgba(255,255,255,0.50);border-width:1px 1px 1px 1px;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">NEXT GOODIE </div>
+                    <div class="tp-caption NotGeneric-Button rev-btn " id="slide-142-layer-7"
+                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['124','124','124','123']"
+                         data-fontweight="['400','500','500','500']" data-width="none" data-height="none"
+                         data-whitespace="nowrap" data-type="button"
+                         data-actions='[{"event":"click","action":"jumptoslide","slide":"next","delay":""}]'
+                         data-responsive_offset="on" data-responsive="off"
+                         data-frames='[{"delay":2000,"speed":1500,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"y:[175%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"},{"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(255, 255, 255, 1);bc:rgba(255, 255, 255, 1);bw:1 1 1 1;"}]'
+                         data-textAlign="['left','left','left','left']" data-paddingtop="[10,10,10,10]"
+                         data-paddingright="[30,30,30,30]" data-paddingbottom="[10,10,10,10]"
+                         data-paddingleft="[30,30,30,30]"
+                         style="z-index: 8; white-space: nowrap; font-weight: 400;font-family:Montserrat;border-color:rgba(255,255,255,0.50);border-width:1px 1px 1px 1px;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">
+                        NEXT GOODIE
+                    </div>
 
                     <!-- LAYER NR. 19 -->
-                    <div class="tp-caption rev-scroll-btn " id="slide-142-layer-9" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['bottom','bottom','bottom','bottom']" data-voffset="['50','50','50','50']" data-width="35" data-height="55" data-whitespace="nowrap" data-visibility="['on','on','on','off']" data-type="button" data-actions='[{"event":"click","action":"scrollbelow","offset":"0px","delay":"","speed":"300","ease":"Linear.easeNone"}]' data-basealign="slide" data-responsive_offset="off" data-responsive="off" data-frames='[{"delay":2000,"speed":1500,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"y:50px;opacity:0;","ease":"nothing"}]' data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 9; min-width: 35px; max-width: 35px; max-width: 55px; max-width: 55px; white-space: nowrap; font-size: px; line-height: px; font-weight: 100; color: transparent;border-color:rgba(255, 255, 255, 0.5);border-style:solid;border-width:1px 1px 1px 1px;border-radius:23px 23px 23px 23px;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">
+                    <div class="tp-caption rev-scroll-btn " id="slide-142-layer-9"
+                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                         data-y="['bottom','bottom','bottom','bottom']" data-voffset="['50','50','50','50']"
+                         data-width="35" data-height="55" data-whitespace="nowrap"
+                         data-visibility="['on','on','on','off']" data-type="button"
+                         data-actions='[{"event":"click","action":"scrollbelow","offset":"0px","delay":"","speed":"300","ease":"Linear.easeNone"}]'
+                         data-basealign="slide" data-responsive_offset="off" data-responsive="off"
+                         data-frames='[{"delay":2000,"speed":1500,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"y:50px;opacity:0;","ease":"nothing"}]'
+                         data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                         style="z-index: 9; min-width: 35px; max-width: 35px; max-width: 55px; max-width: 55px; white-space: nowrap; font-size: px; line-height: px; font-weight: 100; color: transparent;border-color:rgba(255, 255, 255, 0.5);border-style:solid;border-width:1px 1px 1px 1px;border-radius:23px 23px 23px 23px;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">
                         <span></span>
                     </div>
                 </li>
                 <!-- SLIDE  -->
-                <li data-index="rs-143" data-transition="zoomout" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="2000" data-thumb="rev-slider-files/assets/100x50_iceberg.jpg" data-rotate="0" data-saveperformance="off" data-title="Iceberg" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+                <li data-index="rs-143" data-transition="zoomout" data-slotamount="default" data-hideafterloop="0"
+                    data-hideslideonmobile="off" data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut"
+                    data-masterspeed="2000" data-thumb="rev-slider-files/assets/100x50_iceberg.jpg" data-rotate="0"
+                    data-saveperformance="off" data-title="Iceberg" data-param1="" data-param2="" data-param3=""
+                    data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9=""
+                    data-param10="" data-description="">
                     <!-- MAIN IMAGE -->
-                    <img src="rev-slider-files/assets/iceberg.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                    <img src="rev-slider-files/assets/iceberg.jpg" alt="" data-bgposition="center center"
+                         data-bgfit="cover" data-bgparallax="10" class="rev-slidebg" data-no-retina>
                     <!-- LAYERS -->
 
                     <!-- BACKGROUND VIDEO LAYER -->
-                    <div class="rs-background-video-layer" data-forcerewind="on" data-volume="mute" data-videowidth="100%" data-videoheight="100%" data-videomp4="rev-slider-files/assets/iceberg.mp4" data-videopreload="auto" data-videoloop="loopandnoslidestop" data-forceCover="1" data-aspectratio="16:9" data-autoplay="true" data-autoplayonlyfirsttime="false"></div>
+                    <div class="rs-background-video-layer" data-forcerewind="on" data-volume="mute"
+                         data-videowidth="100%" data-videoheight="100%"
+                         data-videomp4="rev-slider-files/assets/iceberg.mp4" data-videopreload="auto"
+                         data-videoloop="loopandnoslidestop" data-forceCover="1" data-aspectratio="16:9"
+                         data-autoplay="true" data-autoplayonlyfirsttime="false"></div>
                     <!-- LAYER NR. 20 -->
-                    <div class="tp-caption tp-shape tp-shapewrapper  " id="slide-143-layer-10" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']" data-width="full" data-height="full" data-whitespace="nowrap" data-type="shape" data-basealign="slide" data-responsive_offset="on" data-responsive="off" data-frames='[{"delay":2000,"speed":2000,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"opacity:0;","ease":"Power2.easeInOut"}]' data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 5;background-color:rgba(0, 0, 0, 0.25);"> </div>
+                    <div class="tp-caption tp-shape tp-shapewrapper  " id="slide-143-layer-10"
+                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']"
+                         data-width="full" data-height="full" data-whitespace="nowrap" data-type="shape"
+                         data-basealign="slide" data-responsive_offset="on" data-responsive="off"
+                         data-frames='[{"delay":2000,"speed":2000,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"opacity:0;","ease":"Power2.easeInOut"}]'
+                         data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                         style="z-index: 5;background-color:rgba(0, 0, 0, 0.25);"></div>
 
                     <!-- LAYER NR. 21 -->
-                    <div class="tp-caption NotGeneric-Title   tp-resizeme" id="slide-143-layer-1" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']" data-fontsize="['50','48','36','28']" data-lineheight="['48','48','36','28']" data-width="none" data-height="none" data-whitespace="nowrap" data-type="text" data-responsive_offset="on" data-frames='[{"delay":1000,"split":"chars","split_direction":"forward","splitdelay":0.05,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]' data-textAlign="['left','left','left','left']" data-paddingtop="[10,10,10,10]" data-paddingright="[0,0,0,0]" data-paddingbottom="[10,10,10,10]" data-paddingleft="[0,0,0,0]" style="z-index: 6; white-space: nowrap; font-size: 50px; line-height: 48px; font-weight: 700;font-family:Montserrat;">ADVENTURE TOURS </div>
+                    <div class="tp-caption NotGeneric-Title   tp-resizeme" id="slide-143-layer-1"
+                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']"
+                         data-fontsize="['50','48','36','28']" data-lineheight="['48','48','36','28']" data-width="none"
+                         data-height="none" data-whitespace="nowrap" data-type="text" data-responsive_offset="on"
+                         data-frames='[{"delay":1000,"split":"chars","split_direction":"forward","splitdelay":0.05,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
+                         data-textAlign="['left','left','left','left']" data-paddingtop="[10,10,10,10]"
+                         data-paddingright="[0,0,0,0]" data-paddingbottom="[10,10,10,10]" data-paddingleft="[0,0,0,0]"
+                         style="z-index: 6; white-space: nowrap; font-size: 50px; line-height: 48px; font-weight: 700;font-family:Montserrat;">
+                        ADVENTURE TOURS
+                    </div>
 
                     <!-- LAYER NR. 22 -->
-                    <div class="tp-caption NotGeneric-SubTitle   tp-resizeme" id="slide-143-layer-4" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['52','52','52','51']" data-fontweight="['400','500','500','500']" data-width="none" data-height="none" data-whitespace="nowrap" data-type="text" data-responsive_offset="on" data-frames='[{"delay":1500,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]' data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 7; white-space: nowrap; font-weight: 400;font-family:Montserrat;">TOURS HOTELS RESTAURANTS</div>
+                    <div class="tp-caption NotGeneric-SubTitle   tp-resizeme" id="slide-143-layer-4"
+                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['52','52','52','51']"
+                         data-fontweight="['400','500','500','500']" data-width="none" data-height="none"
+                         data-whitespace="nowrap" data-type="text" data-responsive_offset="on"
+                         data-frames='[{"delay":1500,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
+                         data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                         style="z-index: 7; white-space: nowrap; font-weight: 400;font-family:Montserrat;">TOURS HOTELS
+                        RESTAURANTS
+                    </div>
 
                     <!-- LAYER NR. 23 -->
-                    <div class="tp-caption NotGeneric-Icon   tp-resizeme" id="slide-143-layer-8" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['-68','-68','-68','-68']" data-width="none" data-height="none" data-whitespace="nowrap" data-type="text" data-responsive_offset="on" data-frames='[{"delay":2000,"speed":1500,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]' data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 8; white-space: nowrap;cursor:default;"><i class="pe-7s-anchor"></i> </div>
+                    <div class="tp-caption NotGeneric-Icon   tp-resizeme" id="slide-143-layer-8"
+                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['-68','-68','-68','-68']"
+                         data-width="none" data-height="none" data-whitespace="nowrap" data-type="text"
+                         data-responsive_offset="on"
+                         data-frames='[{"delay":2000,"speed":1500,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
+                         data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                         style="z-index: 8; white-space: nowrap;cursor:default;"><i class="pe-7s-anchor"></i></div>
 
                     <!-- LAYER NR. 24 -->
-                    <div class="tp-caption NotGeneric-Button rev-btn " id="slide-143-layer-7" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['124','124','124','123']" data-fontweight="['400','500','500','500']" data-width="none" data-height="none" data-whitespace="nowrap" data-type="button" data-actions='[{"event":"click","action":"jumptoslide","slide":"next","delay":""}]' data-responsive_offset="on" data-responsive="off" data-frames='[{"delay":2000,"speed":1500,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"y:[175%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"},{"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(255, 255, 255, 1);bc:rgba(255, 255, 255, 1);bw:1 1 1 1;"}]' data-textAlign="['left','left','left','left']" data-paddingtop="[10,10,10,10]" data-paddingright="[30,30,30,30]" data-paddingbottom="[10,10,10,10]" data-paddingleft="[30,30,30,30]" style="z-index: 9; white-space: nowrap; font-weight: 400;font-family:Montserrat;border-color:rgba(255,255,255,0.50);border-width:1px 1px 1px 1px;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">NEXT GOODIE </div>
+                    <div class="tp-caption NotGeneric-Button rev-btn " id="slide-143-layer-7"
+                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['124','124','124','123']"
+                         data-fontweight="['400','500','500','500']" data-width="none" data-height="none"
+                         data-whitespace="nowrap" data-type="button"
+                         data-actions='[{"event":"click","action":"jumptoslide","slide":"next","delay":""}]'
+                         data-responsive_offset="on" data-responsive="off"
+                         data-frames='[{"delay":2000,"speed":1500,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"y:[175%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"},{"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(255, 255, 255, 1);bc:rgba(255, 255, 255, 1);bw:1 1 1 1;"}]'
+                         data-textAlign="['left','left','left','left']" data-paddingtop="[10,10,10,10]"
+                         data-paddingright="[30,30,30,30]" data-paddingbottom="[10,10,10,10]"
+                         data-paddingleft="[30,30,30,30]"
+                         style="z-index: 9; white-space: nowrap; font-weight: 400;font-family:Montserrat;border-color:rgba(255,255,255,0.50);border-width:1px 1px 1px 1px;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">
+                        NEXT GOODIE
+                    </div>
 
                     <!-- LAYER NR. 25 -->
-                    <div class="tp-caption rev-scroll-btn " id="slide-143-layer-9" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['bottom','bottom','bottom','bottom']" data-voffset="['50','50','50','50']" data-width="35" data-height="55" data-whitespace="nowrap" data-visibility="['on','on','on','off']" data-type="button" data-actions='[{"event":"click","action":"scrollbelow","offset":"0px","delay":"","speed":"300","ease":"Linear.easeNone"}]' data-basealign="slide" data-responsive_offset="off" data-responsive="off" data-frames='[{"delay":2000,"speed":1500,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"y:50px;opacity:0;","ease":"nothing"}]' data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 10; min-width: 35px; max-width: 35px; max-width: 55px; max-width: 55px; white-space: nowrap; font-size: px; line-height: px; font-weight: 100; color: transparent;border-color:rgba(255, 255, 255, 0.5);border-style:solid;border-width:1px 1px 1px 1px;border-radius:23px 23px 23px 23px;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">
+                    <div class="tp-caption rev-scroll-btn " id="slide-143-layer-9"
+                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                         data-y="['bottom','bottom','bottom','bottom']" data-voffset="['50','50','50','50']"
+                         data-width="35" data-height="55" data-whitespace="nowrap"
+                         data-visibility="['on','on','on','off']" data-type="button"
+                         data-actions='[{"event":"click","action":"scrollbelow","offset":"0px","delay":"","speed":"300","ease":"Linear.easeNone"}]'
+                         data-basealign="slide" data-responsive_offset="off" data-responsive="off"
+                         data-frames='[{"delay":2000,"speed":1500,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"y:50px;opacity:0;","ease":"nothing"}]'
+                         data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                         style="z-index: 10; min-width: 35px; max-width: 35px; max-width: 55px; max-width: 55px; white-space: nowrap; font-size: px; line-height: px; font-weight: 100; color: transparent;border-color:rgba(255, 255, 255, 0.5);border-style:solid;border-width:1px 1px 1px 1px;border-radius:23px 23px 23px 23px;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">
                         <span></span>
                     </div>
                 </li>
                 <!-- SLIDE  -->
-                <li data-index="rs-144" data-transition="zoomin" data-slotamount="7" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="2000" data-thumb="rev-slider-files/assets/100x50_notgeneric_bg3.jpg" data-rotate="0" data-saveperformance="off" data-title="Hiking" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+                <li data-index="rs-144" data-transition="zoomin" data-slotamount="7" data-hideafterloop="0"
+                    data-hideslideonmobile="off" data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut"
+                    data-masterspeed="2000" data-thumb="rev-slider-files/assets/100x50_notgeneric_bg3.jpg"
+                    data-rotate="0" data-saveperformance="off" data-title="Hiking" data-param1="" data-param2=""
+                    data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8=""
+                    data-param9="" data-param10="" data-description="">
                     <!-- MAIN IMAGE -->
-                    <img src="rev-slider-files/assets/notgeneric_bg3.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                    <img src="rev-slider-files/assets/notgeneric_bg3.jpg" alt="" data-bgposition="center center"
+                         data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg"
+                         data-no-retina>
                     <!-- LAYERS -->
 
                     <!-- LAYER NR. 26 -->
-                    <div class="tp-caption NotGeneric-Title   tp-resizeme" id="slide-144-layer-1" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']" data-fontsize="['50','48','36','28']" data-lineheight="['48','48','36','28']" data-width="none" data-height="none" data-whitespace="nowrap" data-type="text" data-responsive_offset="on" data-frames='[{"delay":1000,"split":"chars","split_direction":"forward","splitdelay":0.1,"speed":2000,"frame":"0","from":"x:[-105%];z:0;rX:0deg;rY:0deg;rZ:-90deg;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]' data-textAlign="['left','left','left','left']" data-paddingtop="[10,10,10,10]" data-paddingright="[0,0,0,0]" data-paddingbottom="[10,10,10,10]" data-paddingleft="[0,0,0,0]" style="z-index: 5; white-space: nowrap; font-size: 50px; line-height: 48px; font-weight: 700;font-family:Montserrat;">WANT THIS TOO? </div>
+                    <div class="tp-caption NotGeneric-Title   tp-resizeme" id="slide-144-layer-1"
+                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']"
+                         data-fontsize="['50','48','36','28']" data-lineheight="['48','48','36','28']" data-width="none"
+                         data-height="none" data-whitespace="nowrap" data-type="text" data-responsive_offset="on"
+                         data-frames='[{"delay":1000,"split":"chars","split_direction":"forward","splitdelay":0.1,"speed":2000,"frame":"0","from":"x:[-105%];z:0;rX:0deg;rY:0deg;rZ:-90deg;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
+                         data-textAlign="['left','left','left','left']" data-paddingtop="[10,10,10,10]"
+                         data-paddingright="[0,0,0,0]" data-paddingbottom="[10,10,10,10]" data-paddingleft="[0,0,0,0]"
+                         style="z-index: 5; white-space: nowrap; font-size: 50px; line-height: 48px; font-weight: 700;font-family:Montserrat;">
+                        WANT THIS TOO?
+                    </div>
 
                     <!-- LAYER NR. 27 -->
-                    <div class="tp-caption NotGeneric-SubTitle   tp-resizeme" id="slide-144-layer-4" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['52','52','52','51']" data-fontweight="['400','500','500','500']" data-width="none" data-height="none" data-whitespace="nowrap" data-type="text" data-responsive_offset="on" data-frames='[{"delay":1500,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]' data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 6; white-space: nowrap; font-weight: 400;font-family:Montserrat;">GET CITYTOURS TODAY </div>
+                    <div class="tp-caption NotGeneric-SubTitle   tp-resizeme" id="slide-144-layer-4"
+                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['52','52','52','51']"
+                         data-fontweight="['400','500','500','500']" data-width="none" data-height="none"
+                         data-whitespace="nowrap" data-type="text" data-responsive_offset="on"
+                         data-frames='[{"delay":1500,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
+                         data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                         style="z-index: 6; white-space: nowrap; font-weight: 400;font-family:Montserrat;">GET CITYTOURS
+                        TODAY
+                    </div>
 
                     <!-- LAYER NR. 28 -->
-                    <div class="tp-caption NotGeneric-Icon   tp-resizeme" id="slide-144-layer-8" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['-68','-68','-68','-68']" data-width="none" data-height="none" data-whitespace="nowrap" data-type="text" data-responsive_offset="on" data-frames='[{"delay":2000,"speed":1500,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]' data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 7; white-space: nowrap;cursor:default;"><i class="pe-7s-diamond"></i> </div>
+                    <div class="tp-caption NotGeneric-Icon   tp-resizeme" id="slide-144-layer-8"
+                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['-68','-68','-68','-68']"
+                         data-width="none" data-height="none" data-whitespace="nowrap" data-type="text"
+                         data-responsive_offset="on"
+                         data-frames='[{"delay":2000,"speed":1500,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
+                         data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                         style="z-index: 7; white-space: nowrap;cursor:default;"><i class="pe-7s-diamond"></i></div>
 
                     <!-- LAYER NR. 29 -->
-                    <div class="tp-caption rev-scroll-btn " id="slide-144-layer-9" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['bottom','bottom','bottom','bottom']" data-voffset="['50','50','50','50']" data-width="35" data-height="55" data-whitespace="nowrap" data-visibility="['on','on','on','off']" data-type="button" data-actions='[{"event":"click","action":"scrollbelow","offset":"0px","delay":"","speed":"300","ease":"Linear.easeNone"}]' data-basealign="slide" data-responsive_offset="off" data-responsive="off" data-frames='[{"delay":2000,"speed":1500,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"y:50px;opacity:0;","ease":"nothing"}]' data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 8; min-width: 35px; max-width: 35px; max-width: 55px; max-width: 55px; white-space: nowrap; font-size: px; line-height: px; font-weight: 100; color: transparent;border-color:rgba(255, 255, 255, 0.5);border-style:solid;border-width:1px 1px 1px 1px;border-radius:23px 23px 23px 23px;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">
+                    <div class="tp-caption rev-scroll-btn " id="slide-144-layer-9"
+                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                         data-y="['bottom','bottom','bottom','bottom']" data-voffset="['50','50','50','50']"
+                         data-width="35" data-height="55" data-whitespace="nowrap"
+                         data-visibility="['on','on','on','off']" data-type="button"
+                         data-actions='[{"event":"click","action":"scrollbelow","offset":"0px","delay":"","speed":"300","ease":"Linear.easeNone"}]'
+                         data-basealign="slide" data-responsive_offset="off" data-responsive="off"
+                         data-frames='[{"delay":2000,"speed":1500,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"y:50px;opacity:0;","ease":"nothing"}]'
+                         data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                         style="z-index: 8; min-width: 35px; max-width: 35px; max-width: 55px; max-width: 55px; white-space: nowrap; font-size: px; line-height: px; font-weight: 100; color: transparent;border-color:rgba(255, 255, 255, 0.5);border-style:solid;border-width:1px 1px 1px 1px;border-radius:23px 23px 23px 23px;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">
                         <span></span>
                     </div>
 
                     <!-- LAYER NR. 30 -->
-                    <a class="tp-caption NotGeneric-Button rev-btn " href="https://themeforest.net/item/citytours-city-tours-tour-tickets-and-guides/10715647?ref=ansonika" target="_blank" id="slide-144-layer-10" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['124','125','124','104']" data-fontweight="['400','500','500','500']" data-width="none" data-height="none" data-whitespace="nowrap" data-type="button" data-actions='' data-responsive_offset="on" data-responsive="off" data-frames='[{"delay":2000,"speed":300,"frame":"0","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","ease":"nothing"},{"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(255, 255, 255, 1);bc:rgba(255, 255, 255, 1);bw:1 1 1 1;"}]' data-textAlign="['left','left','left','left']" data-paddingtop="[10,10,10,10]" data-paddingright="[30,30,30,30]" data-paddingbottom="[10,10,10,10]" data-paddingleft="[30,30,30,30]" style="z-index: 9; white-space: nowrap; font-weight: 400;font-family:Montserrat;border-color:rgba(255,255,255,0.50);border-width:1px 1px 1px 1px;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;text-decoration: none;">BUY ON ENVATO </a>
+                    <a class="tp-caption NotGeneric-Button rev-btn "
+                       href="https://themeforest.net/item/citytours-city-tours-tour-tickets-and-guides/10715647?ref=ansonika"
+                       target="_blank" id="slide-144-layer-10" data-x="['center','center','center','center']"
+                       data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']"
+                       data-voffset="['124','125','124','104']" data-fontweight="['400','500','500','500']"
+                       data-width="none" data-height="none" data-whitespace="nowrap" data-type="button" data-actions=''
+                       data-responsive_offset="on" data-responsive="off"
+                       data-frames='[{"delay":2000,"speed":300,"frame":"0","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","ease":"nothing"},{"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(255, 255, 255, 1);bc:rgba(255, 255, 255, 1);bw:1 1 1 1;"}]'
+                       data-textAlign="['left','left','left','left']" data-paddingtop="[10,10,10,10]"
+                       data-paddingright="[30,30,30,30]" data-paddingbottom="[10,10,10,10]"
+                       data-paddingleft="[30,30,30,30]"
+                       style="z-index: 9; white-space: nowrap; font-weight: 400;font-family:Montserrat;border-color:rgba(255,255,255,0.50);border-width:1px 1px 1px 1px;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;text-decoration: none;">BUY
+                        ON ENVATO </a>
                 </li>
             </ul>
             <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>
@@ -481,18 +846,24 @@
                         <a href="single_tour.html">
                             <img src="img/tour_box_1.jpg" class="img-responsive" alt="image">
                             <div class="short_info">
-                                <i class="icon_set_1_icon-44"></i>Historic Buildings<span class="price"><sup>$</sup>39</span>
+                                <i class="icon_set_1_icon-44"></i>Historic Buildings<span
+                                        class="price"><sup>$</sup>39</span>
                             </div>
                         </a>
                     </div>
                     <div class="tour_title">
                         <h3><strong>Ahsan Manjil</strong> tour</h3>
                         <div class="rating">
-                            <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><small>(75)</small>
+                            <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i
+                                    class="icon-smile voted"></i><i class="icon-smile voted"></i><i
+                                    class="icon-smile"></i>
+                            <small>(75)</small>
                         </div>
                         <!-- end rating -->
                         <div class="wishlist">
-                            <a class="tooltip_flip tooltip-effect-1" href="javascript:void(0);">+<span class="tooltip-content-flip"><span class="tooltip-back">Add to wishlist</span></span></a>
+                            <a class="tooltip_flip tooltip-effect-1" href="javascript:void(0);">+<span
+                                        class="tooltip-content-flip"><span
+                                            class="tooltip-back">Add to wishlist</span></span></a>
                         </div>
                         <!-- End wish list-->
                     </div>
@@ -515,11 +886,16 @@
                     <div class="tour_title">
                         <h3><strong>Notredame</strong> tour</h3>
                         <div class="rating">
-                            <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><small>(75)</small>
+                            <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i
+                                    class="icon-smile voted"></i><i class="icon-smile voted"></i><i
+                                    class="icon-smile"></i>
+                            <small>(75)</small>
                         </div>
                         <!-- end rating -->
                         <div class="wishlist">
-                            <a class="tooltip_flip tooltip-effect-1" href="javascript:void(0);">+<span class="tooltip-content-flip"><span class="tooltip-back">Add to wishlist</span></span></a>
+                            <a class="tooltip_flip tooltip-effect-1" href="javascript:void(0);">+<span
+                                        class="tooltip-content-flip"><span
+                                            class="tooltip-back">Add to wishlist</span></span></a>
                         </div>
                         <!-- End wish list-->
                     </div>
@@ -536,18 +912,24 @@
                             <img src="img/tour_box_3.jpg" width="800" height="533" class="img-responsive" alt="image">
                             <div class="badge_save">Save<strong>30%</strong></div>
                             <div class="short_info">
-                                <i class="icon_set_1_icon-44"></i>Historic Buildings<span class="price"><sup>$</sup>48</span>
+                                <i class="icon_set_1_icon-44"></i>Historic Buildings<span
+                                        class="price"><sup>$</sup>48</span>
                             </div>
                         </a>
                     </div>
                     <div class="tour_title">
                         <h3><strong>LalBag Kella</strong> tour</h3>
                         <div class="rating">
-                            <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><small>(75)</small>
+                            <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i
+                                    class="icon-smile voted"></i><i class="icon-smile voted"></i><i
+                                    class="icon-smile"></i>
+                            <small>(75)</small>
                         </div>
                         <!-- end rating -->
                         <div class="wishlist">
-                            <a class="tooltip_flip tooltip-effect-1" href="javascript:void(0);">+<span class="tooltip-content-flip"><span class="tooltip-back">Add to wishlist</span></span></a>
+                            <a class="tooltip_flip tooltip-effect-1" href="javascript:void(0);">+<span
+                                        class="tooltip-content-flip"><span
+                                            class="tooltip-back">Add to wishlist</span></span></a>
                         </div>
                         <!-- End wish list-->
                     </div>
@@ -571,11 +953,16 @@
                     <div class="tour_title">
                         <h3><strong>Ramna Park</strong> tour</h3>
                         <div class="rating">
-                            <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><small>(75)</small>
+                            <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i
+                                    class="icon-smile voted"></i><i class="icon-smile voted"></i><i
+                                    class="icon-smile"></i>
+                            <small>(75)</small>
                         </div>
                         <!-- end rating -->
                         <div class="wishlist">
-                            <a class="tooltip_flip tooltip-effect-1" href="javascript:void(0);">+<span class="tooltip-content-flip"><span class="tooltip-back">Add to wishlist</span></span></a>
+                            <a class="tooltip_flip tooltip-effect-1" href="javascript:void(0);">+<span
+                                        class="tooltip-content-flip"><span
+                                            class="tooltip-back">Add to wishlist</span></span></a>
                         </div>
                         <!-- End wish list-->
                     </div>
@@ -598,11 +985,16 @@
                     <div class="tour_title">
                         <h3><strong>Tour Eiffel</strong> tour</h3>
                         <div class="rating">
-                            <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><small>(75)</small>
+                            <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i
+                                    class="icon-smile voted"></i><i class="icon-smile voted"></i><i
+                                    class="icon-smile"></i>
+                            <small>(75)</small>
                         </div>
                         <!-- end rating -->
                         <div class="wishlist">
-                            <a class="tooltip_flip tooltip-effect-1" href="javascript:void(0);">+<span class="tooltip-content-flip"><span class="tooltip-back">Add to wishlist</span></span></a>
+                            <a class="tooltip_flip tooltip-effect-1" href="javascript:void(0);">+<span
+                                        class="tooltip-content-flip"><span
+                                            class="tooltip-back">Add to wishlist</span></span></a>
                         </div>
                         <!-- End wish list-->
                     </div>
@@ -618,18 +1010,24 @@
                         <a href="single_tour.html">
                             <img src="img/tour_box_5.jpg" width="800" height="533" class="img-responsive" alt="image">
                             <div class="short_info">
-                                <i class="icon_set_1_icon-44"></i>Historic Buildings<span class="price"><sup>$</sup>40</span>
+                                <i class="icon_set_1_icon-44"></i>Historic Buildings<span
+                                        class="price"><sup>$</sup>40</span>
                             </div>
                         </a>
                     </div>
                     <div class="tour_title">
                         <h3><strong>ShatGombuj Mosque</strong> tour</h3>
                         <div class="rating">
-                            <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><small>(75)</small>
+                            <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i
+                                    class="icon-smile voted"></i><i class="icon-smile voted"></i><i
+                                    class="icon-smile"></i>
+                            <small>(75)</small>
                         </div>
                         <!-- end rating -->
                         <div class="wishlist">
-                            <a class="tooltip_flip tooltip-effect-1" href="javascript:void(0);">+<span class="tooltip-content-flip"><span class="tooltip-back">Add to wishlist</span></span></a>
+                            <a class="tooltip_flip tooltip-effect-1" href="javascript:void(0);">+<span
+                                        class="tooltip-content-flip"><span
+                                            class="tooltip-back">Add to wishlist</span></span></a>
                         </div>
                         <!-- End wish list-->
                     </div>
@@ -668,11 +1066,14 @@
                     <div class="hotel_title">
                         <h3><strong>Park Hyatt</strong> Hotel</h3>
                         <div class="rating">
-                            <i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star-empty"></i>
+                            <i class="icon-star voted"></i><i class="icon-star voted"></i><i
+                                    class="icon-star voted"></i><i class="icon-star voted"></i><i
+                                    class="icon-star-empty"></i>
                         </div>
                         <!-- end rating -->
                         <div class="wishlist">
-                            <a class="tooltip_flip tooltip-effect-1" href="#">+<span class="tooltip-content-flip"><span class="tooltip-back">Add to wishlist</span></span></a>
+                            <a class="tooltip_flip tooltip-effect-1" href="#">+<span class="tooltip-content-flip"><span
+                                            class="tooltip-back">Add to wishlist</span></span></a>
                         </div>
                         <!-- End wish list-->
                     </div>
@@ -696,11 +1097,14 @@
                     <div class="hotel_title">
                         <h3><strong>Mariott</strong> Hotel</h3>
                         <div class="rating">
-                            <i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star-empty"></i>
+                            <i class="icon-star voted"></i><i class="icon-star voted"></i><i
+                                    class="icon-star voted"></i><i class="icon-star voted"></i><i
+                                    class="icon-star-empty"></i>
                         </div>
                         <!-- end rating -->
                         <div class="wishlist">
-                            <a class="tooltip_flip tooltip-effect-1" href="#">+<span class="tooltip-content-flip"><span class="tooltip-back">Add to wishlist</span></span></a>
+                            <a class="tooltip_flip tooltip-effect-1" href="#">+<span class="tooltip-content-flip"><span
+                                            class="tooltip-back">Add to wishlist</span></span></a>
                         </div>
                         <!-- End wish list-->
                     </div>
@@ -724,11 +1128,14 @@
                     <div class="hotel_title">
                         <h3><strong>Lumiere</strong> Hotel</h3>
                         <div class="rating">
-                            <i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star-empty"></i>
+                            <i class="icon-star voted"></i><i class="icon-star voted"></i><i
+                                    class="icon-star voted"></i><i class="icon-star voted"></i><i
+                                    class="icon-star-empty"></i>
                         </div>
                         <!-- end rating -->
                         <div class="wishlist">
-                            <a class="tooltip_flip tooltip-effect-1" href="#">+<span class="tooltip-content-flip"><span class="tooltip-back">Add to wishlist</span></span></a>
+                            <a class="tooltip_flip tooltip-effect-1" href="#">+<span class="tooltip-content-flip"><span
+                                            class="tooltip-back">Add to wishlist</span></span></a>
                         </div>
                         <!-- End wish list-->
                     </div>
@@ -752,11 +1159,15 @@
                     <div class="hotel_title">
                         <h3><strong>Novelle</strong> Hotel</h3>
                         <div class="rating">
-                            <i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star-empty"></i>
+                            <i class="icon-star voted"></i><i class="icon-star voted"></i><i
+                                    class="icon-star voted"></i><i class="icon-star voted"></i><i
+                                    class="icon-star-empty"></i>
                         </div>
                         <!-- end rating -->
                         <div class="wishlist">
-                            <a class="tooltip_flip tooltip-effect-1" href="javascript:void(0);">+<span class="tooltip-content-flip"><span class="tooltip-back">Add to wishlist</span></span></a>
+                            <a class="tooltip_flip tooltip-effect-1" href="javascript:void(0);">+<span
+                                        class="tooltip-content-flip"><span
+                                            class="tooltip-back">Add to wishlist</span></span></a>
                         </div>
                         <!-- End wish list-->
                     </div>
@@ -780,11 +1191,14 @@
                     <div class="hotel_title">
                         <h3><strong>Louvre</strong> Hotel</h3>
                         <div class="rating">
-                            <i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star-empty"></i>
+                            <i class="icon-star voted"></i><i class="icon-star voted"></i><i
+                                    class="icon-star voted"></i><i class="icon-star voted"></i><i
+                                    class="icon-star-empty"></i>
                         </div>
                         <!-- end rating -->
                         <div class="wishlist">
-                            <a class="tooltip_flip tooltip-effect-1" href="#">+<span class="tooltip-content-flip"><span class="tooltip-back">Add to wishlist</span></span></a>
+                            <a class="tooltip_flip tooltip-effect-1" href="#">+<span class="tooltip-content-flip"><span
+                                            class="tooltip-back">Add to wishlist</span></span></a>
                         </div>
                         <!-- End wish list-->
                     </div>
@@ -808,11 +1222,15 @@
                     <div class="hotel_title">
                         <h3><strong>Concorde</strong> Hotel</h3>
                         <div class="rating">
-                            <i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star-empty"></i>
+                            <i class="icon-star voted"></i><i class="icon-star voted"></i><i
+                                    class="icon-star voted"></i><i class="icon-star voted"></i><i
+                                    class="icon-star-empty"></i>
                         </div>
                         <!-- end rating -->
                         <div class="wishlist">
-                            <a class="tooltip_flip tooltip-effect-1" href="javascript:void(0);">+<span class="tooltip-content-flip"><span class="tooltip-back">Add to wishlist</span></span></a>
+                            <a class="tooltip_flip tooltip-effect-1" href="javascript:void(0);">+<span
+                                        class="tooltip-content-flip"><span
+                                            class="tooltip-back">Add to wishlist</span></span></a>
                         </div>
                         <!-- End wish list-->
                     </div>
@@ -840,33 +1258,42 @@
             <div class="row add_bottom_45">
                 <div class="col-md-4 other_tours">
                     <ul>
-                        <li><a href="#"><i class="icon_set_1_icon-3"></i>Tour Eiffel<span class="other_tours_price">$42</span></a>
+                        <li><a href="#"><i class="icon_set_1_icon-3"></i>Tour Eiffel<span
+                                        class="other_tours_price">$42</span></a>
                         </li>
                         <li><a href="#"><i class="icon_set_1_icon-30"></i>Shopping tour<span class="other_tours_price">$35</span></a>
                         </li>
-                        <li><a href="#"><i class="icon_set_1_icon-44"></i>Versailles tour<span class="other_tours_price">$20</span></a>
+                        <li><a href="#"><i class="icon_set_1_icon-44"></i>Versailles tour<span
+                                        class="other_tours_price">$20</span></a>
                         </li>
-                        <li><a href="#"><i class="icon_set_1_icon-3"></i>Montparnasse skyline<span class="other_tours_price">$26</span></a>
+                        <li><a href="#"><i class="icon_set_1_icon-3"></i>Montparnasse skyline<span
+                                        class="other_tours_price">$26</span></a>
                         </li>
-                        <li><a href="#"><i class="icon_set_1_icon-44"></i>Pompidue<span class="other_tours_price">$26</span></a>
+                        <li><a href="#"><i class="icon_set_1_icon-44"></i>Pompidue<span
+                                        class="other_tours_price">$26</span></a>
                         </li>
-                        <li><a href="#"><i class="icon_set_1_icon-3"></i>Senna River tour<span class="other_tours_price">$32</span></a>
+                        <li><a href="#"><i class="icon_set_1_icon-3"></i>Senna River tour<span
+                                        class="other_tours_price">$32</span></a>
                         </li>
                     </ul>
                 </div>
                 <div class="col-md-4 other_tours">
                     <ul>
-                        <li><a href="#"><i class="icon_set_1_icon-1"></i>Notredame<span class="other_tours_price">$48</span></a>
+                        <li><a href="#"><i class="icon_set_1_icon-1"></i>Notredame<span
+                                        class="other_tours_price">$48</span></a>
                         </li>
-                        <li><a href="#"><i class="icon_set_1_icon-4"></i>Lafaiette<span class="other_tours_price">$55</span></a>
+                        <li><a href="#"><i class="icon_set_1_icon-4"></i>Lafaiette<span
+                                        class="other_tours_price">$55</span></a>
                         </li>
-                        <li><a href="#"><i class="icon_set_1_icon-30"></i>Trocadero<span class="other_tours_price">$76</span></a>
+                        <li><a href="#"><i class="icon_set_1_icon-30"></i>Trocadero<span
+                                        class="other_tours_price">$76</span></a>
                         </li>
                         <li><a href="#"><i class="icon_set_1_icon-3"></i>Open Bus tour<span class="other_tours_price">$55</span></a>
                         </li>
                         <li><a href="#"><i class="icon_set_1_icon-30"></i>Louvre museum<span class="other_tours_price">$24</span></a>
                         </li>
-                        <li><a href="#"><i class="icon_set_1_icon-3"></i>Madlene Cathedral<span class="other_tours_price">$24</span></a>
+                        <li><a href="#"><i class="icon_set_1_icon-3"></i>Madlene Cathedral<span
+                                        class="other_tours_price">$24</span></a>
                         </li>
                     </ul>
                 </div>
@@ -876,13 +1303,17 @@
                         </li>
                         <li><a href="#"><i class="icon_set_1_icon-1"></i>D'Orsey museum<span class="other_tours_price">$28</span></a>
                         </li>
-                        <li><a href="#"><i class="icon_set_1_icon-50"></i>Gioconda Louvre musuem<span class="other_tours_price">$44</span></a>
+                        <li><a href="#"><i class="icon_set_1_icon-50"></i>Gioconda Louvre musuem<span
+                                        class="other_tours_price">$44</span></a>
                         </li>
-                        <li><a href="#"><i class="icon_set_1_icon-44"></i>Tour Eiffel<span class="other_tours_price">$56</span></a>
+                        <li><a href="#"><i class="icon_set_1_icon-44"></i>Tour Eiffel<span
+                                        class="other_tours_price">$56</span></a>
                         </li>
-                        <li><a href="#"><i class="icon_set_1_icon-50"></i>Ladefanse<span class="other_tours_price">$16</span></a>
+                        <li><a href="#"><i class="icon_set_1_icon-50"></i>Ladefanse<span
+                                        class="other_tours_price">$16</span></a>
                         </li>
-                        <li><a href="#"><i class="icon_set_1_icon-44"></i>Notredame<span class="other_tours_price">$26</span></a>
+                        <li><a href="#"><i class="icon_set_1_icon-44"></i>Notredame<span
+                                        class="other_tours_price">$26</span></a>
                         </li>
                     </ul>
                 </div>
@@ -903,7 +1334,8 @@
                     </p>
                     <h4><span>Sightseen tour</span> booking</h4>
                     <p>
-                        Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex.
+                        Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor
+                        imperdiet deterruisset, doctus volumus explicari qui ex.
                     </p>
                 </div>
                 <div class="col-md-3 col-sm-6 text-center">
@@ -912,7 +1344,8 @@
                     </p>
                     <h4><span>Transfer</span> booking</h4>
                     <p>
-                        Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex.
+                        Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor
+                        imperdiet deterruisset, doctus volumus explicari qui ex.
                     </p>
                 </div>
                 <div class="col-md-3 col-sm-6 text-center">
@@ -921,7 +1354,8 @@
                     </p>
                     <h4><span>Tour guide</span> booking</h4>
                     <p>
-                        Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex.
+                        Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor
+                        imperdiet deterruisset, doctus volumus explicari qui ex.
                     </p>
                 </div>
                 <div class="col-md-3 col-sm-6 text-center">
@@ -930,7 +1364,8 @@
                     </p>
                     <h4><span>Hotel</span> booking</h4>
                     <p>
-                        Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex.
+                        Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor
+                        imperdiet deterruisset, doctus volumus explicari qui ex.
                     </p>
                 </div>
             </div>
@@ -945,7 +1380,8 @@
             <div>
                 <h3>BELONG ANYWHERE</h3>
                 <p>
-                    Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex.
+                    Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor
+                    imperdiet deterruisset, doctus volumus explicari qui ex.
                 </p>
                 <a href="https://www.youtube.com/watch?v=Zz5cu72Gv5Y" class="video"><i class="icon-play-circled2-1"></i></a>
             </div>
@@ -969,7 +1405,8 @@
                     <i class="icon_set_1_icon-41"></i>
                     <h3><span>+120</span> Premium tours</h3>
                     <p>
-                        Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset.
+                        Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor
+                        imperdiet deterruisset.
                     </p>
                     <a href="about.html" class="btn_1 outline">Read more</a>
                 </div>
@@ -980,7 +1417,8 @@
                     <i class="icon_set_1_icon-30"></i>
                     <h3><span>+1000</span> Customers</h3>
                     <p>
-                        Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset.
+                        Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor
+                        imperdiet deterruisset.
                     </p>
                     <a href="about.html" class="btn_1 outline">Read more</a>
                 </div>
@@ -991,7 +1429,8 @@
                     <i class="icon_set_1_icon-57"></i>
                     <h3><span>H24 </span> Support</h3>
                     <p>
-                        Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset.
+                        Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor
+                        imperdiet deterruisset.
                     </p>
                     <a href="about.html" class="btn_1 outline">Read more</a>
                 </div>
@@ -1009,7 +1448,8 @@
             <div class="col-md-4 col-sm-6">
                 <h3><span>Get started</span> with CityTours</h3>
                 <p>
-                    Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset.
+                    Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor
+                    imperdiet deterruisset.
                 </p>
                 <ul class="list_order">
                     <li><span>1</span>Select your preferred tours</li>
@@ -1095,7 +1535,7 @@
 <div class="search-overlay-menu">
     <span class="search-overlay-close"><i class="icon_set_1_icon-77"></i></span>
     <form role="search" id="searchform" method="get">
-        <input value="" name="q" type="search" placeholder="Search..." />
+        <input value="" name="q" type="search" placeholder="Search..."/>
         <button type="submit"><i class="icon_set_1_icon-78"></i>
         </button>
     </form>
@@ -1133,14 +1573,14 @@
                 dottedOverlay: "none",
                 delay: 9000,
                 navigation: {
-                    keyboardNavigation:"off",
+                    keyboardNavigation: "off",
                     keyboard_direction: "horizontal",
-                    mouseScrollNavigation:"off",
-                    mouseScrollReverse:"default",
-                    onHoverStop:"off",
-                    touch:{
-                        touchenabled:"on",
-                        touchOnDesktop:"off",
+                    mouseScrollNavigation: "off",
+                    mouseScrollReverse: "default",
+                    onHoverStop: "off",
+                    touch: {
+                        touchenabled: "on",
+                        touchOnDesktop: "off",
                         swipe_threshold: 75,
                         swipe_min_touches: 50,
                         swipe_direction: "horizontal",
@@ -1148,25 +1588,25 @@
                     }
                     ,
                     arrows: {
-                        style:"uranus",
-                        enable:true,
-                        hide_onmobile:true,
-                        hide_under:778,
-                        hide_onleave:true,
-                        hide_delay:200,
-                        hide_delay_mobile:1200,
-                        tmp:'',
+                        style: "uranus",
+                        enable: true,
+                        hide_onmobile: true,
+                        hide_under: 778,
+                        hide_onleave: true,
+                        hide_delay: 200,
+                        hide_delay_mobile: 1200,
+                        tmp: '',
                         left: {
-                            h_align:"left",
-                            v_align:"center",
-                            h_offset:20,
-                            v_offset:0
+                            h_align: "left",
+                            v_align: "center",
+                            h_offset: 20,
+                            v_offset: 0
                         },
                         right: {
-                            h_align:"right",
-                            v_align:"center",
-                            h_offset:20,
-                            v_offset:0
+                            h_align: "right",
+                            v_align: "center",
+                            h_offset: 20,
+                            v_offset: 0
                         }
                     }
                 },
@@ -1202,7 +1642,8 @@
                 }
             });
         }
-    }); /*ready*/
+    });
+    /*ready*/
 </script>
 
 <script src="js/notify_func.js"></script>
