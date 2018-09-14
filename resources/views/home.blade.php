@@ -247,7 +247,7 @@
                         <li class="submenu">
                             <a href="javascript:void(0);" class="show-submenu">Tours <i class="icon-down-open-mini"></i></a>
                             <ul>
-                                <li><a href="{{URL::to('/all_tour')}}">All tours list</a></li>
+                                <li><a href="{{URL::to('/all-tour')}}">All tours list</a></li>
                                 <li><a href="{{URL::to('/coming_soon')}}">Popular List</a></li>
                                 <li><a href="{{URL::to('/coming_soon')}}">Close to Sea</a></li>
                                 <li><a href="{{URL::to('/coming_soon')}}">Hill Tracking</a></li>
