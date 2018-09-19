@@ -11,9 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+
+Route::get('/', 'HomeController@index');
 
 
 
@@ -39,3 +38,4 @@ Route::get('/coming_soon', 'UserController@comingSoon');
  * Hotels & Resorts
  */
 Route::get('/hotels', 'HotelsController@hotels');
+Route::get('/resorts', 'HotelsController@resorts');

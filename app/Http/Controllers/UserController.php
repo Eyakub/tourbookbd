@@ -22,8 +22,10 @@ class UserController extends Controller
 
     public function allTour()
     {
-        $all_tour_list = view('Users.all_tour_list_in_grid');
-        return $all_tour_list;
+        $tour_content = view('Tours.tour_contents');
+
+        return view('Tours.all_tour_list_in_grid')
+            ->with('content_of_tours', $tour_content);
     }
 
     public function popularTour()

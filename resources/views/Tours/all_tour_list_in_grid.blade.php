@@ -243,15 +243,16 @@
 </header>
 <!-- End Header -->
 
-<section class="parallax-window" data-parallax="scroll" data-image-src="img/hotels_bg.jpg" data-natural-width="1400" data-natural-height="470">
+<section class="parallax-window" data-parallax="scroll" data-image-src="img/home_bg_1.jpg" data-natural-width="1400" data-natural-height="470">
     <div class="parallax-content-1">
         <div class="animated fadeInDown">
-            <h1>Paris Hotels</h1>
+            <h1>Paris tours</h1>
             <p>Ridiculus sociosqu cursus neque cursus curae ante scelerisque vehicula.</p>
         </div>
     </div>
 </section>
 <!-- End section -->
+
 
 <main>
     <div id="position">
@@ -279,70 +280,71 @@
                     <a class="btn_map" data-toggle="collapse" href="#collapseMap" aria-expanded="false" aria-controls="collapseMap" data-text-swap="Hide map" data-text-original="View on map">View on map</a>
                 </p>
 
+                <div class="box_style_cat">
+                    <ul id="cat_nav">
+                        <li><a href="#" id="active"><i class="icon_set_1_icon-51"></i>All tours <span>(141)</span></a>
+                        </li>
+                        <li><a href="#"><i class="icon_set_1_icon-3"></i>City sightseeing <span>(20)</span></a>
+                        </li>
+                        <li><a href="#"><i class="icon_set_1_icon-4"></i>Museum tours <span>(16)</span></a>
+                        </li>
+                        <li><a href="#"><i class="icon_set_1_icon-44"></i>Historic Buildings <span>(12)</span></a>
+                        </li>
+                        <li><a href="#"><i class="icon_set_1_icon-37"></i>Walking tours <span>(11)</span></a>
+                        </li>
+                        <li><a href="#"><i class="icon_set_1_icon-14"></i>Eat & Drink <span>(20)</span></a>
+                        </li>
+                        <li><a href="#"><i class="icon_set_1_icon-43"></i>Churces <span>(08)</span></a>
+                        </li>
+                        <li><a href="#"><i class="icon_set_1_icon-28"></i>Skyline tours <span>(11)</span></a>
+                        </li>
+                    </ul>
+                </div>
+
                 <div id="filters_col">
                     <a data-toggle="collapse" href="#collapseFilters" aria-expanded="false" aria-controls="collapseFilters" id="filters_col_bt"><i class="icon_set_1_icon-65"></i>Filters <i class="icon-plus-1 pull-right"></i></a>
-                    <div class="collapse in" id="collapseFilters">
+                    <div class="collapse" id="collapseFilters">
                         <div class="filter_type">
                             <h6>Price</h6>
                             <input type="text" id="range" name="range" value="">
                         </div>
                         <div class="filter_type">
-                            <h6>Star Category</h6>
+                            <h6>Rating</h6>
                             <ul>
                                 <li>
                                     <label>
                                         <input type="checkbox"><span class="rating">
-						<i class="icon_set_1_icon-81 voted"></i><i class="icon_set_1_icon-81 voted"></i><i class="icon_set_1_icon-81 voted"></i><i class="icon_set_1_icon-81 voted"></i><i class="icon_set_1_icon-81 voted"></i>
-						</span>(15)</label>
+						<i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i>
+						</span>
+                                    </label>
                                 </li>
                                 <li>
                                     <label>
                                         <input type="checkbox"><span class="rating">
-						<i class="icon_set_1_icon-81 voted"></i><i class="icon_set_1_icon-81 voted"></i><i class="icon_set_1_icon-81 voted"></i><i class="icon_set_1_icon-81 voted"></i><i class="icon_set_1_icon-81"></i>
-						</span>(45)</label>
+						<i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i>
+						</span>
+                                    </label>
                                 </li>
                                 <li>
                                     <label>
                                         <input type="checkbox"><span class="rating">
-						<i class="icon_set_1_icon-81 voted"></i><i class="icon_set_1_icon-81 voted"></i><i class="icon_set_1_icon-81 voted"></i><i class="icon_set_1_icon-81"></i><i class="icon_set_1_icon-81"></i>
-						</span>(35)</label>
+						<i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><i class="icon-smile"></i>
+						</span>
+                                    </label>
                                 </li>
                                 <li>
                                     <label>
                                         <input type="checkbox"><span class="rating">
-						<i class="icon_set_1_icon-81 voted"></i><i class="icon_set_1_icon-81 voted"></i><i class="icon_set_1_icon-81"></i><i class="icon_set_1_icon-81"></i><i class="icon_set_1_icon-81"></i>
-						</span>(25)</label>
+						<i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><i class="icon-smile"></i><i class="icon-smile"></i>
+						</span>
+                                    </label>
                                 </li>
                                 <li>
                                     <label>
                                         <input type="checkbox"><span class="rating">
-						<i class="icon_set_1_icon-81 voted"></i><i class="icon_set_1_icon-81"></i><i class="icon_set_1_icon-81"></i><i class="icon_set_1_icon-81"></i><i class="icon_set_1_icon-81"></i>
-						</span>(15)</label>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="filter_type">
-                            <h6>Review Score</h6>
-                            <ul>
-                                <li>
-                                    <label>
-                                        <input type="checkbox">Superb: 9+ (77)</label>
-                                </li>
-                                <li>
-                                    <label>
-                                        <input type="checkbox">Very good: 8+ (552)</label>
-                                </li>
-                                <li>
-                                    <label>
-                                        <input type="checkbox">Good: 7+ (909)</label>
-                                </li>
-                                <li>
-                                    <label>
-                                        <input type="checkbox">Pleasant: 6+ (1196)</label>
-                                </li>
-                                <li>
-                                    <label>
-                                        <input type="checkbox">No rating (198)</label>
+						<i class="icon-smile voted"></i><i class="icon-smile"></i><i class="icon-smile"></i><i class="icon-smile"></i><i class="icon-smile"></i>
+						</span>
+                                    </label>
                                 </li>
                             </ul>
                         </div>
@@ -355,48 +357,15 @@
                                 </li>
                                 <li>
                                     <label>
-                                        <input type="checkbox">Wifi</label>
+                                        <input type="checkbox">Groups allowed</label>
                                 </li>
                                 <li>
                                     <label>
-                                        <input type="checkbox">Spa</label>
+                                        <input type="checkbox">Tour guides</label>
                                 </li>
                                 <li>
                                     <label>
-                                        <input type="checkbox">Restaurant</label>
-                                </li>
-                                <li>
-                                    <label>
-                                        <input type="checkbox">Pool</label>
-                                </li>
-                                <li>
-                                    <label>
-                                        <input type="checkbox">Parking</label>
-                                </li>
-                                <li>
-                                    <label>
-                                        <input type="checkbox">Fitness center</label>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="filter_type">
-                            <h6>District</h6>
-                            <ul>
-                                <li>
-                                    <label>
-                                        <input type="checkbox">Paris Centre</label>
-                                </li>
-                                <li>
-                                    <label>
-                                        <input type="checkbox">La Defance</label>
-                                </li>
-                                <li>
-                                    <label>
-                                        <input type="checkbox">La Marais</label>
-                                </li>
-                                <li>
-                                    <label>
-                                        <input type="checkbox">Latin Quarter</label>
+                                        <input type="checkbox">Access for disabled</label>
                                 </li>
                             </ul>
                         </div>
@@ -436,14 +405,18 @@
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-6 hidden-xs text-right">
-                            <a href="#" class="bt_filters"><i class="icon-th"></i></a> <a href="all_hotels_list.html" class="bt_filters"><i class=" icon-list"></i></a>
+                            <a href="#" class="bt_filters"><i class="icon-th"></i></a> <a href="all_tours_list.html" class="bt_filters"><i class=" icon-list"></i></a>
                         </div>
                     </div>
                 </div>
                 <!--End tools -->
 
 
-                @yield('hotel_content')
+
+                @yield('content_of_tours')
+
+
+
 
                 <hr>
 
@@ -476,13 +449,14 @@
 </main>
 <!-- End main -->
 
+
 <footer class="revealed">
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-sm-3">
                 <h3>Need help?</h3>
                 <a href="tel://+8801937424217" id="phone">+8801937424217</a>
-                <a href="mailto:eyakubsorkar@gmail.com" id="email_footer">eyakubsorkar@gmail.com</a>
+                <a href="mailto:eyakubsorkar@gmail.com" id="email_footer">eyakubso@gmail.com</a>
             </div>
             <div class="col-md-3 col-sm-3">
                 <h3>About</h3>
@@ -557,6 +531,11 @@
 <script src="js/functions.js"></script>
 
 <!-- Specific scripts -->
+<!-- Cat nav mobile -->
+<script src="js/cat_nav_mobile.js"></script>
+<script>
+    $('#cat_nav').mobileMenu();
+</script>
 <!-- Check and radio inputs -->
 <script src="js/icheck.js"></script>
 <script>
@@ -569,7 +548,7 @@
 <script src="http://maps.googleapis.com/maps/api/js"></script>
 
 
-<script src="js/map_hotels.js"></script>
+<script src="js/map.js"></script>
 <script src="js/infobox.js"></script>
 
 </body>
