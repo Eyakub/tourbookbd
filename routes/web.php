@@ -29,6 +29,8 @@ Route::get('/tours-insert-form', 'AdminController@insertTour');
 Route::get('/user-login', 'UserController@Userlogin');
 Route::get('/user-registration', 'UserController@UserRegistration')->name('upload.info');
 Route::post('/user-registration', 'UserController@storeUserInformation');
+Route::post('/login-check', 'UserController@loginCheck')->name('login_check');
+
 
 Route::get('/all-tour', 'UserController@allTour');
 Route::get('/single-tour', 'UserController@SingleDetails');

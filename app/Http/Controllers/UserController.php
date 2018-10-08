@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Users;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Redirect;
 
 class UserController extends Controller
@@ -22,13 +26,17 @@ class UserController extends Controller
         return $reg;
     }
 
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function storeUserInformation(request $request){
         $this->validate($request, [
             'username' => 'required',
             'password' => 'required|confirmed|min:6',
             'first_name' => 'required',
             'last_name' => 'required',
-            'email' => 'required',
+            'email' => 'required|email',
             'phone_number' => 'required',
             'date_of_birth' => 'required',
             'street_address' => 'required',
@@ -37,6 +45,18 @@ class UserController extends Controller
             'country' => 'required',
             'user_profile' => 'image|max:3000'
         ]);
+
+        $message = array(
+            'password_confirmation.required'=>'The confirm password is required',
+            'user_profile.required'=>'Photo is required'
+        );
+
+//        $validator = Validator::make($message);
+//        if($validator->fails()){
+//            return Redirect::to('/user-registration')->withErrors($validator);
+//        }else{
+//            echo 'no';
+//        }
 
         //handle file upload
         if($request->hasFile('user_profile')){
@@ -63,8 +83,50 @@ class UserController extends Controller
         $user->src_user = $fileName;
         $user->save();
 
-        return Redirect::to('/user-registration');
+        return Redirect::to('/user-registration')->with('success', 'Successfully Registered');
 
+    }
+
+    public function loginCheck(Request $request){
+//        $data = Input::except(array('_token'));
+//
+//        $rule = array(
+//            'email'=>'required|email',
+//            'password'=>'required',
+//        );
+//
+//        $validator = Validator::make($data, $rule);
+//        if($validator->fails()){
+//            return Redirect::to('user-login')->withErrors($validator);
+//        }else{
+//            $data = Input::except(array('_token'));
+//            if(Auth::attempt($data)){
+//                return Redirect::to('/coming_soon');
+//            }else{
+//                return Redirect::to('user-login');
+//            }
+//        }
+
+        $user_email = $request->email;
+        $user_pass = $request->password;
+
+        $result = DB::table('users')->select('*')
+            ->where('email', $user_email)
+            ->where('password', $user_pass)
+            ->first();
+        if($result){
+            Session::put('id', $result->id);
+            return Redirect::to('/coming_soon');
+        }
+
+    }
+
+    public function auth_check(){
+        session_start();
+        $user_id = Session::get('id');
+        if($user_id !== NULL){
+            return Redirect::to('/coming_soon')->send();
+        }
     }
 
     public function allTour()

@@ -4,7 +4,7 @@
             <div class="col-md-4 col-sm-3">
                 <h3>Need help?</h3>
                 <a href="tel://+8801937424217" id="phone">+8801937424217</a>
-                <a href="mailto:eyakubsorkar@gmail.com" id="email_footer">eyakubso@gmail.com</a>
+                <a href="mailto:eyakubsorkar@gmail.com" id="email_footer">eyakubsorkar@gmail.com</a>
             </div>
             <div class="col-md-3 col-sm-3">
                 <h3>About</h3>

@@ -11,20 +11,21 @@
                             <div class="dropdown dropdown-access">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="access_link">Sign in</a>
                                 <div class="dropdown-menu">
-                                    <div class="row">
-                                        <div class="col-md-6 col-sm-6 col-xs-6">
-                                            <a href="#" class="bt_facebook">
-                                                <i class="icon-facebook"></i>Facebook </a>
-                                        </div>
-                                        <div class="col-md-6 col-sm-6 col-xs-6">
-                                            <a href="#" class="bt_paypal">
-                                                <i class="icon-paypal"></i>Paypal </a>
-                                        </div>
-                                    </div>
-                                    <div class="login-or">
-                                        <hr class="hr-or">
-                                        <span class="span-or">or</span>
-                                    </div>
+                                    <h4 align="center">TourBookBD</h4>
+                                    {{--<div class="row">--}}
+                                        {{--<div class="col-md-6 col-sm-6 col-xs-6">--}}
+                                            {{--<a href="#" class="bt_facebook">--}}
+                                                {{--<i class="icon-facebook"></i>Facebook </a>--}}
+                                        {{--</div>--}}
+                                        {{--<div class="col-md-6 col-sm-6 col-xs-6">--}}
+                                            {{--<a href="#" class="bt_paypal">--}}
+                                                {{--<i class="icon-paypal"></i>Paypal </a>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                    {{--<div class="login-or">--}}
+                                        {{--<hr class="hr-or">--}}
+                                        {{--<span class="span-or">or</span>--}}
+                                    {{--</div>--}}
                                     <div class="form-group">
                                         <input type="text" class="form-control" id="inputUsernameEmail"
                                                placeholder="Email">

@@ -280,7 +280,8 @@
                                 <div class="col-md-6 col-sm-6">
                                     <div class="form-group">
                                         <label>Confirm Password</label>
-                                        <input class="form-control" name="password_confirmation" id="password_confirmation"
+                                        <input class="form-control" name="password_confirmation"
+                                               id="password_confirmation"
                                                type="password">
                                     </div>
                                 </div>
@@ -372,6 +373,25 @@
                             </div>
                             <div id="pass-info" class="clearfix"></div>
                             <input type="submit" value="Sign Up" class="btn_full">
+
+                            @if(Session::has('success'))
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="alert alert-success">
+                                            {{Session::get('success')}}
+                                        </div>
+                                    </div>
+                                </div>
+                            @else{
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="alert alert-success">
+                                        {{Session::get('success')}}
+                                    </div>
+                                </div>
+                            </div>
+                            }
+                            @endif
                         </form>
                     </div>
                 </div>
