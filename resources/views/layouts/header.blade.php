@@ -7,25 +7,25 @@
 
                 <div class="col-md-6 col-sm-6 col-xs-6">
                     <ul id="top_links">
-                        <li>
-                            <div class="dropdown dropdown-access">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="access_link">Sign in</a>
+                        {{--<li>--}}
+                            <a href="{{URL::to('/user-login')}}" id="access_link">Sign in </a>
+                            {{--<div class="dropdown dropdown-access">
                                 <div class="dropdown-menu">
                                     <h4 align="center">TourBookBD</h4>
-                                    {{--<div class="row">--}}
-                                        {{--<div class="col-md-6 col-sm-6 col-xs-6">--}}
-                                            {{--<a href="#" class="bt_facebook">--}}
-                                                {{--<i class="icon-facebook"></i>Facebook </a>--}}
-                                        {{--</div>--}}
-                                        {{--<div class="col-md-6 col-sm-6 col-xs-6">--}}
-                                            {{--<a href="#" class="bt_paypal">--}}
-                                                {{--<i class="icon-paypal"></i>Paypal </a>--}}
-                                        {{--</div>--}}
-                                    {{--</div>--}}
-                                    {{--<div class="login-or">--}}
-                                        {{--<hr class="hr-or">--}}
-                                        {{--<span class="span-or">or</span>--}}
-                                    {{--</div>--}}
+                                    --}}{{--<div class="row">--}}{{--
+                                        --}}{{--<div class="col-md-6 col-sm-6 col-xs-6">--}}{{--
+                                            --}}{{--<a href="#" class="bt_facebook">--}}{{--
+                                                --}}{{--<i class="icon-facebook"></i>Facebook </a>--}}{{--
+                                        --}}{{--</div>--}}{{--
+                                        --}}{{--<div class="col-md-6 col-sm-6 col-xs-6">--}}{{--
+                                            --}}{{--<a href="#" class="bt_paypal">--}}{{--
+                                                --}}{{--<i class="icon-paypal"></i>Paypal </a>--}}{{--
+                                        --}}{{--</div>--}}{{--
+                                    --}}{{--</div>--}}{{--
+                                    --}}{{--<div class="login-or">--}}{{--
+                                        --}}{{--<hr class="hr-or">--}}{{--
+                                        --}}{{--<span class="span-or">or</span>--}}{{--
+                                    --}}{{--</div>--}}{{--
                                     <div class="form-group">
                                         <input type="text" class="form-control" id="inputUsernameEmail"
                                                placeholder="Email">
@@ -35,13 +35,13 @@
                                                placeholder="Password">
                                     </div>
                                     <a id="forgot_pw">Forgot password?</a>
-                                    <input type="button" name="Sign_in" value="Sign In" id="Sign_in"
+                                    <input type="submit" name="Sign_in" value="Sign In" id="Sign_in"
                                            class="button_drop">
                                     <input type="submit" name="Sign_up" value="Sign up" id="Sign_up"
                                            class="button_drop outline">
                                 </div>
-                            </div><!-- End Dropdown access -->
-                        </li>
+                            </div><!-- End Dropdown access -->--}}
+                        {{--</li>--}}
                         <li><a href="wishlist.html" id="wishlist_link">Wishlist</a></li>
                         {{--<li><a href="http://themeforest.net/item/citytours-city-tours-tour-tickets-and-guides/10715647?ref=ansonika">Purchase this template</a></li>--}}
                     </ul>
