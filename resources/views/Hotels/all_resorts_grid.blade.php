@@ -10,7 +10,7 @@
 
     <meta name="description" content="Citytours - Premium site template for city tours agencies, transfers and tickets.">
     <meta name="author" content="Ansonika">
-    <title>CITY TOURS - City tours and travel site template by Ansonika</title>
+    <title>TourBookBD - A place of natural beauty</title>
 
     <!-- Favicons-->
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
@@ -115,9 +115,9 @@
         <div class="row">
             <div class="col-md-3 col-sm-3 col-xs-3">
                 <div id="logo">
-                    <a href="index.html"><img src="img/logo.png" width="160" height="34" alt="City tours" data-retina="true" class="logo_normal">
+                    <a href="{{URL::to('/')}}"><img src="img/logo.png" width="160" height="34" alt="City tours" data-retina="true" class="logo_normal">
                     </a>
-                    <a href="index.html"><img src="img/logo_sticky.png" width="160" height="34" alt="City tours" data-retina="true" class="logo_sticky">
+                    <a href="{{URL::to('/')}}"><img src="img/logo_sticky.png" width="160" height="34" alt="City tours" data-retina="true" class="logo_sticky">
                     </a>
                 </div>
             </div>
@@ -130,11 +130,11 @@
                     <a href="#" class="open_close" id="close_in"><i class="icon_set_1_icon-77"></i></a>
                     <ul>
                         <li class="submenu">
-                            <a href="javascript:void(0);" class="show-submenu">Home </a>
+                            <a href={{URL::to('/')}} class="show-submenu">Home </a>
                             {{--<ul>
                                 <li><a href="javascript:void(0);">Revolution slider</a>
                                     <ul>
-                                        <li><a href="index.html">Default slider</a></li>
+                                        <li><a href="{{URL::to('/')}}">Default slider</a></li>
                                         <li><a href="index_20.html">Advanced slider</a></li>
                                         <li><a href="index_14.html">Youtube Hero</a></li>
                                         <li><a href="index_15.html">Vimeo Hero</a></li>
@@ -176,20 +176,19 @@
                                     </ul>
                                 </li>--}}
                                 <li><a href="{{URL::to('/coming_soon')}}">Hide in Nature</a></li>
-                                <li><a href="{{URL::to('/coming_soon')}}">City Tours</a></li>
                             </ul>
                         </li>
 
                         <li class="submenu">
-                            <a href="{{URL::to('/resorts')}}">Resorts {{--<i class="icon-down-open-mini"></i>--}}</a>
+                            <a href="{{URL::to('/restaurants')}}">Restaurants {{--<i class="icon-down-open-mini"></i>--}}</a>
                         </li>
 
                         <li class="submenu">
-                            <a href="javascript:void(0);" class="show-submenu">Hotels <i
+                            <a href="javascript:void(0);" class="show-submenu">Hotels & Resorts <i
                                         class="icon-down-open-mini"></i></a>
                             <ul>
                                 <li><a href="{{URL::to('/hotels')}}">All hotels list</a></li>
-                                <li><a href="">Swimming Pools</a></li>
+                                <li><a href="{{URL::to('/resorts')}}">All Resorts</a></li>
                             </ul>
                         </li>
 
@@ -261,7 +260,7 @@
                 </li>
                 <li><a href="#">Category</a>
                 </li>
-                <li>Page active</li>
+                <li>All Resorts</li>
             </ul>
         </div>
     </div>

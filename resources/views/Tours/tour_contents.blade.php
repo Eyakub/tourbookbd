@@ -7,7 +7,7 @@
                 <div class="ribbon_3 popular"><span>Popular</span>
                 </div>
                 <div class="img_container">
-                    <a href="single_tour.html">
+                    <a href="{{URL::to('/single-tour')}}">
                         <img src="img/tour_box_1.jpg" width="800" height="533" class="img-responsive" alt="Image">
                         <div class="short_info">
                             <i class="icon_set_1_icon-44"></i>Historic Buildings<span class="price"><sup>$</sup>45</span>
@@ -35,7 +35,7 @@
                 <div class="ribbon_3 popular"><span>Popular</span>
                 </div>
                 <div class="img_container">
-                    <a href="single_tour.html">
+                    <a href="{{URL::to('/single-tour')}}">
                         <img src="img/tour_box_2.jpg" width="800" height="533" class="img-responsive" alt="Image">
                         <div class="short_info">
                             <i class="icon_set_1_icon-43"></i>Churches<span class="price"><sup>$</sup>45</span>
@@ -66,7 +66,7 @@
                 <div class="ribbon_3 popular"><span>Popular</span>
                 </div>
                 <div class="img_container">
-                    <a href="single_tour.html">
+                    <a href="{{URL::to('/single-tour')}}">
                         <img src="img/tour_box_3.jpg" width="800" height="533" class="img-responsive" alt="Image">
                         <div class="short_info">
                             <i class="icon_set_1_icon-44"></i>Historic Buildings<span class="price"><sup>$</sup>45</span>
@@ -94,7 +94,7 @@
                 <div class="ribbon_3 popular"><span>Popular</span>
                 </div>
                 <div class="img_container">
-                    <a href="single_tour.html">
+                    <a href="{{URL::to('/single-tour')}}">
                         <img src="img/tour_box_4.jpg" width="800" height="533" class="img-responsive" alt="Image">
                         <div class="short_info">
                             <i class="icon_set_1_icon-30"></i>Walking tour<span class="price"><sup>$</sup>45</span>
@@ -125,7 +125,7 @@
                 <div class="ribbon_3 popular"><span>Popular</span>
                 </div>
                 <div class="img_container">
-                    <a href="single_tour.html">
+                    <a href="{{URL::to('/single-tour')}}">
                         <img src="img/tour_box_14.jpg" width="800" height="533" class="img-responsive" alt="Image">
                         <div class="short_info">
                             <i class="icon_set_1_icon-28"></i>Skyline tours<span class="price"><sup>$</sup>45</span>
@@ -153,7 +153,7 @@
                 <div class="ribbon_3"><span>Top rated</span>
                 </div>
                 <div class="img_container">
-                    <a href="single_tour.html">
+                    <a href="{{URL::to('/single-tour')}}">
                         <img src="img/tour_box_5.jpg" width="800" height="533" class="img-responsive" alt="Image">
                         <div class="short_info">
                             <i class="icon_set_1_icon-44"></i>Historic Buildings<span class="price"><sup>$</sup>45</span>
@@ -184,7 +184,7 @@
                 <div class="ribbon_3"><span>Top rated</span>
                 </div>
                 <div class="img_container">
-                    <a href="single_tour.html">
+                    <a href="{{URL::to('/single-tour')}}">
                         <img src="img/tour_box_8.jpg" width="800" height="533" class="img-responsive" alt="Image">
                         <div class="short_info">
                             <i class="icon_set_1_icon-3"></i>City sightseeing<span class="price"><sup>$</sup>45</span>
@@ -212,7 +212,7 @@
                 <div class="ribbon_3"><span>Top rated</span>
                 </div>
                 <div class="img_container">
-                    <a href="single_tour.html">
+                    <a href="{{URL::to('/single-tour')}}">
                         <img src="img/tour_box_9.jpg" width="800" height="533" class="img-responsive" alt="Image">
                         <div class="short_info">
                             <i class="icon_set_1_icon-4"></i>Museums<span class="price"><sup>$</sup>45</span>

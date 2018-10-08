@@ -12,7 +12,7 @@
 
     <meta name="description" content="TourBookBD - A Place of country tours agencies, transfers and tickets.">
     <meta name="author" content="Ansonika">
-    <title>Tour Book BD - A place of heaven called Bangladesh</title>
+    <title>TourBookBD - A place of natural beauty</title>
 
     <!--JS-->
     <script type="text/javascript" src="rev-slider-files/js/extensions/revolution.extension.slideanims.min.js"></script>
@@ -204,19 +204,19 @@
         <div class="row">
             <div class="col-md-3 col-sm-3 col-xs-3">
                 <div id="logo_home">
-                    <h1><a href="index.html" title="City tours travel template">City Tours travel template</a></h1>
+                    <h1><a href={{URL::to('/')}} title="City tours travel template">City Tours travel template</a></h1>
                 </div>
             </div>
             <nav class="col-md-9 col-sm-9 col-xs-9">
                 <a class="cmn-toggle-switch cmn-toggle-switch__htx open_close" href="javascript:void(0);"><span>Menu mobile</span></a>
                 <div class="main-menu">
                     <div id="header_menu">
-                        <img src="img/logo_sticky.png" width="160" height="34" alt="City tours" data-retina="true">
+                        <img src="img/tourbookbd.png" width="160" height="34" alt="City tours" data-retina="true">
                     </div>
                     <a href="#" class="open_close" id="close_in"><i class="icon_set_1_icon-77"></i></a>
                     <ul>
                         <li class="submenu">
-                            <a href="javascript:void(0);" class="show-submenu">Home </a>
+                            <a href={{URL::to('/')}} class="show-submenu">Home </a>
                             {{--<ul>
                                 <li><a href="javascript:void(0);">Revolution slider</a>
                                     <ul>
@@ -267,15 +267,15 @@
                         </li>
 
                         <li class="submenu">
-                            <a href="{{URL::to('/resorts')}}">Resorts {{--<i class="icon-down-open-mini"></i>--}}</a>
+                            <a href="{{URL::to('/restaurants')}}">Restaurants {{--<i class="icon-down-open-mini"></i>--}}</a>
                         </li>
 
                         <li class="submenu">
-                            <a href="javascript:void(0);" class="show-submenu">Hotels <i
+                            <a href="javascript:void(0);" class="show-submenu">Hotels & Resorts <i
                                         class="icon-down-open-mini"></i></a>
                             <ul>
-                                <li><a href="{{URL::to('/hotels')}}">All hotels list</a></li>
-                                <li><a href="">Swimming Pools</a></li>
+                                <li><a href="{{URL::to('/hotels')}}">All hotels</a></li>
+                                <li><a href="{{URL::to('/resorts')}}">All Resorts</a></li>
                             </ul>
                         </li>
 
@@ -329,6 +329,8 @@
     </div><!-- container -->
 </header><!-- End Header -->
 
+
+
 <main>
     <div id="rev_slider_54_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="notgeneric1"
          data-source="gallery"
@@ -345,7 +347,7 @@
                     data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9=""
                     data-param10="" data-description="">
                     <!-- MAIN IMAGE -->
-                    <img src="rev-slider-files/assets/notgeneric_bg1.jpg" alt="" data-bgposition="center center"
+                    <img src="rev-slider-files/assets/700X1800-4.jpg" alt="" data-bgposition="center center"
                          data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg"
                          data-no-retina>
                     <!-- LAYERS -->
@@ -427,7 +429,7 @@
                     data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9=""
                     data-param10="" data-description="">
                     <!-- MAIN IMAGE -->
-                    <img src="rev-slider-files/assets/notgeneric_bg5.jpg" alt="" data-bgposition="center center"
+                    <img src="rev-slider-files/assets/700X1800-3.jpg" alt="" data-bgposition="center center"
                          data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg"
                          data-no-retina>
                     <!-- LAYERS -->
@@ -572,7 +574,7 @@
                     data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8=""
                     data-param9="" data-param10="" data-description="">
                     <!-- MAIN IMAGE -->
-                    <img src="rev-slider-files/assets/notgeneric_bg2.jpg" alt="" data-bgposition="center center"
+                    <img src="rev-slider-files/assets/700X1800-2.jpg" alt="" data-bgposition="center center"
                          data-kenburns="on" data-duration="30000" data-ease="Linear.easeNone" data-scalestart="100"
                          data-scaleend="120" data-rotatestart="0" data-rotateend="0" data-blurstart="0" data-blurend="0"
                          data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="10" class="rev-slidebg"
@@ -655,14 +657,14 @@
                     data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9=""
                     data-param10="" data-description="">
                     <!-- MAIN IMAGE -->
-                    <img src="rev-slider-files/assets/iceberg.jpg" alt="" data-bgposition="center center"
+                    <img src="rev-slider-files/assets/700X1800-5.jpg" alt="" data-bgposition="center center"
                          data-bgfit="cover" data-bgparallax="10" class="rev-slidebg" data-no-retina>
                     <!-- LAYERS -->
 
                     <!-- BACKGROUND VIDEO LAYER -->
                     <div class="rs-background-video-layer" data-forcerewind="on" data-volume="mute"
                          data-videowidth="100%" data-videoheight="100%"
-                         data-videomp4="rev-slider-files/assets/iceberg.mp4" data-videopreload="auto"
+                         data-videomp4="rev-slider-files/assets/Beautiful Bangladesh - Land Of Stories - YouTube.mp4" data-videopreload="auto"
                          data-videoloop="loopandnoslidestop" data-forceCover="1" data-aspectratio="16:9"
                          data-autoplay="true" data-autoplayonlyfirsttime="false"></div>
                     <!-- LAYER NR. 20 -->
@@ -752,7 +754,7 @@
                     data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8=""
                     data-param9="" data-param10="" data-description="">
                     <!-- MAIN IMAGE -->
-                    <img src="rev-slider-files/assets/notgeneric_bg3.jpg" alt="" data-bgposition="center center"
+                    <img src="rev-slider-files/assets/700X1800-5.jpg" alt="" data-bgposition="center center"
                          data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg"
                          data-no-retina>
                     <!-- LAYERS -->
@@ -830,6 +832,15 @@
     </div>
     <!-- END REVOLUTION SLIDER -->
 
+    <div id="position">
+        <div class="container">
+            <ul>
+                <li><a href="{{URL::to('/')}}">Home</a>
+
+            </ul>
+        </div>
+    </div>
+
     <div class="container margin_60">
 
         @yield('bangladesh_top_tours')
@@ -842,67 +853,67 @@
     </div>
     <!-- End container -->
 
-    <div class="white_bg">
-        <div class="container margin_60">
+    {{--<div class="white_bg">--}}
+        {{--<div class="container margin_60">--}}
 
 
-            @yield('other_popular_tours')
+            {{--@yield('other_popular_tours')--}}
 
 
 
-            <div class="banner colored">
-                <h4>Discover our Top tours <span>from $34</span></h4>
-                <p>
-                    Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in.
-                </p>
-                <a href="single_tour.html" class="btn_1 white">Read more</a>
-            </div>
-            <div class="row">
-                <div class="col-md-3 col-sm-6 text-center">
-                    <p>
-                        <a href="#"><img src="img/bus.jpg" alt="Pic" class="img-responsive"></a>
-                    </p>
-                    <h4><span>Sightseen tour</span> booking</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor
-                        imperdiet deterruisset, doctus volumus explicari qui ex.
-                    </p>
-                </div>
-                <div class="col-md-3 col-sm-6 text-center">
-                    <p>
-                        <a href="#"><img src="img/transfer.jpg" alt="Pic" class="img-responsive"></a>
-                    </p>
-                    <h4><span>Transfer</span> booking</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor
-                        imperdiet deterruisset, doctus volumus explicari qui ex.
-                    </p>
-                </div>
-                <div class="col-md-3 col-sm-6 text-center">
-                    <p>
-                        <a href="#"><img src="img/guide.jpg" alt="Pic" class="img-responsive"></a>
-                    </p>
-                    <h4><span>Tour guide</span> booking</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor
-                        imperdiet deterruisset, doctus volumus explicari qui ex.
-                    </p>
-                </div>
-                <div class="col-md-3 col-sm-6 text-center">
-                    <p>
-                        <a href="#"><img src="img/hotel.jpg" alt="Pic" class="img-responsive"></a>
-                    </p>
-                    <h4><span>Hotel</span> booking</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor
-                        imperdiet deterruisset, doctus volumus explicari qui ex.
-                    </p>
-                </div>
-            </div>
-            <!-- End row -->
-        </div>
-        <!-- End container -->
-    </div>
+            {{--<div class="banner colored">--}}
+                {{--<h4>Discover our Top tours <span>from $34</span></h4>--}}
+                {{--<p>--}}
+                    {{--Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in.--}}
+                {{--</p>--}}
+                {{--<a href="single_tour.html" class="btn_1 white">Read more</a>--}}
+            {{--</div>--}}
+            {{--<div class="row">--}}
+                {{--<div class="col-md-3 col-sm-6 text-center">--}}
+                    {{--<p>--}}
+                        {{--<a href="#"><img src="img/bus.jpg" alt="Pic" class="img-responsive"></a>--}}
+                    {{--</p>--}}
+                    {{--<h4><span>Sightseen tour</span> booking</h4>--}}
+                    {{--<p>--}}
+                        {{--Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor--}}
+                        {{--imperdiet deterruisset, doctus volumus explicari qui ex.--}}
+                    {{--</p>--}}
+                {{--</div>--}}
+                {{--<div class="col-md-3 col-sm-6 text-center">--}}
+                    {{--<p>--}}
+                        {{--<a href="#"><img src="img/transfer.jpg" alt="Pic" class="img-responsive"></a>--}}
+                    {{--</p>--}}
+                    {{--<h4><span>Transfer</span> booking</h4>--}}
+                    {{--<p>--}}
+                        {{--Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor--}}
+                        {{--imperdiet deterruisset, doctus volumus explicari qui ex.--}}
+                    {{--</p>--}}
+                {{--</div>--}}
+                {{--<div class="col-md-3 col-sm-6 text-center">--}}
+                    {{--<p>--}}
+                        {{--<a href="#"><img src="img/guide.jpg" alt="Pic" class="img-responsive"></a>--}}
+                    {{--</p>--}}
+                    {{--<h4><span>Tour guide</span> booking</h4>--}}
+                    {{--<p>--}}
+                        {{--Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor--}}
+                        {{--imperdiet deterruisset, doctus volumus explicari qui ex.--}}
+                    {{--</p>--}}
+                {{--</div>--}}
+                {{--<div class="col-md-3 col-sm-6 text-center">--}}
+                    {{--<p>--}}
+                        {{--<a href="#"><img src="img/hotel.jpg" alt="Pic" class="img-responsive"></a>--}}
+                    {{--</p>--}}
+                    {{--<h4><span>Hotel</span> booking</h4>--}}
+                    {{--<p>--}}
+                        {{--Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor--}}
+                        {{--imperdiet deterruisset, doctus volumus explicari qui ex.--}}
+                    {{--</p>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+            {{--<!-- End row -->--}}
+        {{--</div>--}}
+        {{--<!-- End container -->--}}
+    {{--</div>--}}
     <!-- End white_bg -->
 
     <section class="promo_full">
@@ -910,10 +921,9 @@
             <div>
                 <h3>BELONG ANYWHERE</h3>
                 <p>
-                    Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor
-                    imperdiet deterruisset, doctus volumus explicari qui ex.
+                    A greenery land of river.
                 </p>
-                <a href="https://www.youtube.com/watch?v=Zz5cu72Gv5Y" class="video"><i class="icon-play-circled2-1"></i></a>
+                <a href="https://www.youtube.com/watch?v=QNUSIOMb6vI" class="video"><i class="icon-play-circled2-1"></i></a>
             </div>
         </div>
     </section>
@@ -933,10 +943,9 @@
             <div class="col-md-4 wow zoomIn" data-wow-delay="0.2s">
                 <div class="feature_home">
                     <i class="icon_set_1_icon-41"></i>
-                    <h3><span>+120</span> Premium tours</h3>
+                    <h3><span>000</span> Premium tours</h3>
                     <p>
-                        Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor
-                        imperdiet deterruisset.
+                        We aren't doing anything like this, so this is just an example for future development.
                     </p>
                     <a href="about.html" class="btn_1 outline">Read more</a>
                 </div>
@@ -945,10 +954,9 @@
             <div class="col-md-4 wow zoomIn" data-wow-delay="0.4s">
                 <div class="feature_home">
                     <i class="icon_set_1_icon-30"></i>
-                    <h3><span>+1000</span> Customers</h3>
+                    <h3><span>000</span> Customers</h3>
                     <p>
-                        Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor
-                        imperdiet deterruisset.
+                        We are providing good care of our customer.
                     </p>
                     <a href="about.html" class="btn_1 outline">Read more</a>
                 </div>
@@ -959,8 +967,7 @@
                     <i class="icon_set_1_icon-57"></i>
                     <h3><span>H24 </span> Support</h3>
                     <p>
-                        Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor
-                        imperdiet deterruisset.
+                        Supporting our customer is our first duty.
                     </p>
                     <a href="about.html" class="btn_1 outline">Read more</a>
                 </div>
@@ -973,13 +980,12 @@
 
         <div class="row">
             <div class="col-md-8 col-sm-6 hidden-xs">
-                <img src="img/laptop.png" alt="Laptop" class="img-responsive laptop">
+                <img src="img/14.png" alt="Laptop" class="img-responsive laptop">
             </div>
             <div class="col-md-4 col-sm-6">
                 <h3><span>Get started</span> with TourBookBD</h3>
                 <p>
-                    Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor
-                    imperdiet deterruisset.
+                    Go and give it a try to our site, enjoy.
                 </p>
                 <ul class="list_order">
                     <li><span>1</span>Select your preferred tours</li>

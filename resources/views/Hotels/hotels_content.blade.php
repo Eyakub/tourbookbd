@@ -7,7 +7,7 @@
                 <div class="ribbon_3 popular"><span>Popular</span>
                 </div>
                 <div class="img_container">
-                    <a href="single_hotel.html">
+                    <a href="{{URL::to('/single-hotel')}}">
                         <img src="img/hotel_1.jpg" width="800" height="533" class="img-responsive" alt="Image">
                         <div class="score"><span>7.5</span>Good</div>
                         <div class="short_info hotel">
@@ -36,7 +36,7 @@
                 <div class="ribbon_3 popular"><span>Popular</span>
                 </div>
                 <div class="img_container">
-                    <a href="single_hotel.html">
+                    <a href="{{URL::to('/single-hotel')}}">
                         <img src="img/hotel_2.jpg" width="800" height="533" class="img-responsive" alt="Image">
                         <div class="score"><span>9.0</span>Superb</div>
                         <div class="short_info hotel">
@@ -68,7 +68,7 @@
                 <div class="ribbon_3"><span>Top rated</span>
                 </div>
                 <div class="img_container">
-                    <a href="single_hotel.html">
+                    <a href="{{URL::to('/single-hotel')}}">
                         <img src="img/hotel_3.jpg" width="800" height="533" class="img-responsive" alt="Image">
                         <div class="score"><span>9.5</span>Superb</div>
                         <div class="short_info hotel">
@@ -97,7 +97,7 @@
                 <div class="ribbon_3"><span>Top rated</span>
                 </div>
                 <div class="img_container">
-                    <a href="single_hotel.html">
+                    <a href="{{URL::to('/single-hotel')}}">
                         <img src="img/hotel_4.jpg" width="800" height="533" class="img-responsive" alt="Image">
                         <div class="score"><span>7.5</span>Good</div>
                         <div class="short_info hotel">
@@ -129,7 +129,7 @@
                 <div class="ribbon_3"><span>Top rated</span>
                 </div>
                 <div class="img_container">
-                    <a href="single_hotel.html">
+                    <a href="{{URL::to('/single-hotel')}}">
                         <img src="img/hotel_5.jpg" width="800" height="533" class="img-responsive" alt="Image">
                         <div class="score"><span>8.0</span>Good</div>
                         <div class="short_info hotel">
@@ -158,7 +158,7 @@
                 <div class="ribbon_3"><span>Top rated</span>
                 </div>
                 <div class="img_container">
-                    <a href="single_hotel.html">
+                    <a href="{{URL::to('/single-hotel')}}">
                         <img src="img/hotel_6.jpg" width="800" height="533" class="img-responsive" alt="Image">
                         <div class="score"><span>8.5</span>Superb</div>
                         <div class="short_info hotel">

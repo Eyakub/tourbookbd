@@ -57,4 +57,9 @@ class UserController extends Controller
         $coming_soon = view('coming_soon');
         return $coming_soon;
     }
+
+    public function singleDetails(){
+        $single_details = view('Tours.single_tour_details');
+        return $single_details;
+    }
 }

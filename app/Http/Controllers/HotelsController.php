@@ -19,4 +19,14 @@ class HotelsController extends Controller
         return view('Hotels.all_resorts_grid')
             ->with('resort_content', $resort_content);
     }
+
+    public function singleHotel(){
+        $single_hotel = view('Hotels.single_hotel_details');
+        return $single_hotel;
+    }
+
+    public function singleResort(){
+        $single_resort = view('Hotels.single_resort_details');
+        return $single_resort;
+    }
 }

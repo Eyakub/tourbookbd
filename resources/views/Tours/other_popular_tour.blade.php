@@ -5,7 +5,7 @@
     <div class="main_title">
         <h2>Other <span>Popular</span> tours</h2>
         <p>
-            Quisque at tortor a libero posuere laoreet vitae sed arcu. Curabitur consequat.
+            Some popular tour's for you at your service.
         </p>
     </div>
     <div class="row add_bottom_45">
