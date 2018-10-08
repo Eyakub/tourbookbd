@@ -18,16 +18,17 @@ class AdminController extends Controller
             ->with('tourstable', $tourstable);
     }
     public function insertTour(request $request){
-        if($request->hasFile('small-cover') && $request->hasFile('large-cover')){
-            $tourSmallCover = $request->file->getClientOriginalName();
-            $tourLargeCover = $request->file->getClientOriginalName();
-            $filesize = $request->file->getClientSize();
-            $request->file->storeAs('public/small_cover', $filename);
-
-            $file = new Tour;
-            $file->name = $filename;
-            $file->size = $filesize;
-            $file->save();
-        }
+//        if($request->hasFile('small-cover') && $request->hasFile('large-cover')){
+//            $tourSmallCover = $request->file->getClientOriginalName();
+//            $tourLargeCover = $request->file->getClientOriginalName();
+//            $filesize = $request->file->getClientSize();
+//            $request->file->storeAs('public/small_cover', $filename);
+//
+//            $file = new Tour;
+//            $file->name = $filename;
+//            $file->size = $filesize;
+//            $file->save();
+//        }
+        return view('Admin.forms.inserttour');
     }
 }

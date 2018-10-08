@@ -1,14 +1,14 @@
 @extends('Admin.adminlayout')
 
 @section('admin_panel_content')
-    <div class="col-lg-6">
+    <div class="col-lg-12">
         <div class="card">
             <div class="card-header">
                 <strong>Tour</strong> Information
             </div>
             <div class="card-body card-block">
-                <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
-
+                <form action="{{route('upload.tour')}}" method="post" enctype="multipart/form-data", class="form-horizontal">
+                    {{csrf_field()}}
                     <div class="row form-group">
                         <div class="col col-md-3"><label for="text-input" class=" form-control-label">Name </label>
                         </div>

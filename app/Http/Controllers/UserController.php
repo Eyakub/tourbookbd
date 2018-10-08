@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Users;
+use Illuminate\Support\Facades\Redirect;
 
 class UserController extends Controller
 {
@@ -18,6 +20,51 @@ class UserController extends Controller
     {
         $reg = view('Users.registering');
         return $reg;
+    }
+
+    public function storeUserInformation(request $request){
+        $this->validate($request, [
+            'username' => 'required',
+            'password' => 'required|confirmed|min:6',
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'email' => 'required',
+            'phone_number' => 'required',
+            'date_of_birth' => 'required',
+            'street_address' => 'required',
+            'city' => 'required',
+            'zip_code' => 'required',
+            'country' => 'required',
+            'user_profile' => 'image|max:3000'
+        ]);
+
+        //handle file upload
+        if($request->hasFile('user_profile')){
+            $fileName = $request->file('user_profile')->getClientOriginalName();
+            //Upload image
+            $request->file('user_profile')->storeAs('/public/user_images', $fileName);
+        }else{
+            $fileName = 'noimage.jpg';
+        }
+
+        //Create user profile
+        $user = new Users;
+        $user->username = $request->input('username');
+        $user->password = $request->input('password');
+        $user->first_name = $request->input('first_name');
+        $user->last_name = $request->input('last_name');
+        $user->email = $request->input('email');
+        $user->phone_number = $request->input('phone_number');
+        $user->date_of_birth = $request->input('date_of_birth');
+        $user->street_address = $request->input('street_address');
+        $user->city = $request->input('city');
+        $user->zip_code = $request->input('zip_code');
+        $user->country = $request->input('country');
+        $user->src_user = $fileName;
+        $user->save();
+
+        return Redirect::to('/user-registration');
+
     }
 
     public function allTour()
