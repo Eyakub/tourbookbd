@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Users;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
@@ -110,11 +111,13 @@ class UserController extends Controller
         $user_email = $request->email;
         $user_pass = $request->password;
 
+
         $result = DB::table('users')->select('*')
             ->where('email', $user_email)
             ->where('password', $user_pass)
             ->first();
         if($result){
+
             Session::put('id', $result->id);
             return Redirect::to('/coming_soon');
         }
