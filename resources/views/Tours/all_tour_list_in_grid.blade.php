@@ -74,8 +74,8 @@
          data-natural-height="470">
     <div class="parallax-content-1">
         <div class="animated fadeInDown">
-            <h1>Paris tours</h1>
-            <p>Ridiculus sociosqu cursus neque cursus curae ante scelerisque vehicula.</p>
+            <h1>All tours</h1>
+            <p>This is all you want to enjoy your time.</p>
         </div>
     </div>
 </section>

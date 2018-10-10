@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Users;
+use App\{Users};
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
@@ -116,9 +116,13 @@ class UserController extends Controller
             ->where('email', $user_email)
             ->where('password', $user_pass)
             ->first();
-        if($result){
 
-            Session::put('id', $result->id);
+        $res = USERS::where('email', $user_email)
+            ->where('password', $user_pass)
+            ->first();
+        if($res){
+            Session::put('id', $res->id);
+            //dd(session()->all());
             return Redirect::to('/coming_soon');
         }
 
@@ -132,13 +136,13 @@ class UserController extends Controller
         }
     }
 
-    public function allTour()
-    {
-        $tour_content = view('Tours.tour_contents');
-
-        return view('Tours.all_tour_list_in_grid')
-            ->with('content_of_tours', $tour_content);
-    }
+//    public function allTour()
+//    {
+//        $tour_content = view('Tours.tour_contents');
+//
+//        return view('Tours.all_tour_list_in_grid')
+//            ->with('content_of_tours', $tour_content);
+//    }
 
     public function popularTour()
     {

@@ -20,7 +20,8 @@ Route::get('/', 'HomeController@index');
  */
 Route::get('/admin-panel', 'AdminController@index');
 Route::get('/tours-table', 'AdminController@toursPanel');
-Route::get('/tours-insert-form', 'AdminController@insertTour');
+Route::get('/tours-insert-form', 'AdminController@showTourForm')->name('upload.tour');
+Route::post('/tours-insert-form', 'AdminController@insertTour');
 
 
 /**
@@ -32,7 +33,13 @@ Route::post('/user-registration', 'UserController@storeUserInformation');
 Route::post('/login-check', 'UserController@loginCheck')->name('login_check');
 
 
-Route::get('/all-tour', 'UserController@allTour');
+/**
+ * Tour Panel
+ */
+Route::get('/all-tour', 'TourController@allTour');
+
+
+
 Route::get('/single-tour', 'UserController@SingleDetails');
 Route::get('/single-hotel', 'HotelsController@SingleHotel');
 Route::get('/single-resort', 'HotelsController@SingleResort');
