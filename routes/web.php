@@ -37,10 +37,9 @@ Route::post('/login-check', 'UserController@loginCheck')->name('login_check');
  * Tour Panel
  */
 Route::get('/all-tour', 'TourController@allTour');
+Route::get('/single-tour/{id}', 'TourController@singleDetails');
 
 
-
-Route::get('/single-tour', 'UserController@SingleDetails');
 Route::get('/single-hotel', 'HotelsController@SingleHotel');
 Route::get('/single-resort', 'HotelsController@SingleResort');
 Route::get('/popular', 'UserController@popularTour');

@@ -174,8 +174,4 @@ class UserController extends Controller
         return $coming_soon;
     }
 
-    public function singleDetails(){
-        $single_details = view('Tours.single_tour_details');
-        return $single_details;
-    }
 }

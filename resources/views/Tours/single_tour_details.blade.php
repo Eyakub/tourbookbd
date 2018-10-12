@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta name="description" content="Citytours - Premium site template for city tours agencies, transfers and tickets.">
+    <meta name="description" content="TourBookBD - A place of heaven.">
     <meta name="author" content="Ansonika">
     <title>TourBookBD - A place of natural beauty</title>
 
@@ -23,10 +23,10 @@
     <link href="https://fonts.googleapis.com/css?family=Gochi+Hand|Lato:300,400|Montserrat:400,400i,700,700i" rel="stylesheet">
 
     <!-- CSS -->
-    <link href="css/base.css" rel="stylesheet">
+    <link href="{{URL::asset('/css/base.css')}}" rel="stylesheet">
 
     <!-- CSS -->
-    <link href="css/date_time_picker.css" rel="stylesheet">
+    <link href="{{URL::asset('/css/date_time_picker.css')}}" rel="stylesheet">
 
     <!--[if lt IE 9]>
     <script src="js/html5shiv.min.js"></script>
@@ -59,13 +59,13 @@
 @include('layouts.header')
 <!-- End Header -->
 
-<section class="parallax-window" data-parallax="scroll" data-image-src="img/single_tour_bg_1.jpg" data-natural-width="1400" data-natural-height="470">
+<section class="parallax-window" data-parallax="scroll" data-image-src="{{--storage/large_cover/{{$tour->tour_large_cover}}--}}" data-natural-width="1400" data-natural-height="470">
     <div class="parallax-content-2">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-sm-8">
-                    <h1>Arc de Triomphe</h1>
-                    <span>Champ de Mars, 5 Avenue Anatole, 75007 Paris.</span>
+                    <h1>{{--{{ $tour->tour_title }}--}}</h1>
+                    <span>{{--{{$tour->tour_address}}--}}</span>
                     <span class="rating"><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><small>(75)</small></span>
                 </div>
                 <div class="col-md-4 col-sm-4">
@@ -123,9 +123,8 @@
                         <h3>Description</h3>
                     </div>
                     <div class="col-md-9">
-                        <h4>Paris in love</h4>
                         <p>
-                            Lorem ipsum dolor sit amet, at omnes deseruisse pri. Quo aeterno legimus insolens ad. Sit cu detraxit constituam, an mel iudico constituto efficiendi. Eu ponderum mediocrem has, vitae adolescens in pro. Mea liber ridens inermis ei, mei legendos vulputate an, labitur tibique te qui.
+                            {{--{{$tour->tour_description}}--}}
                         </p>
                         <h4>What's include</h4>
                         <p>
