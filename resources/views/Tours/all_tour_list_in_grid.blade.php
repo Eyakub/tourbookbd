@@ -63,7 +63,7 @@
 </div>
 <!-- End Preload -->
 
-<div class="layer"></div>
+{{--<div class="layer"></div>--}}
 <!-- Mobile menu overlay mask -->
 
 <!-- Header================================================== -->

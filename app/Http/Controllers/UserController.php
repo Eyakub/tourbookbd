@@ -112,11 +112,6 @@ class UserController extends Controller
         $user_pass = $request->password;
 
 
-        $result = DB::table('users')->select('*')
-            ->where('email', $user_email)
-            ->where('password', $user_pass)
-            ->first();
-
         $res = USERS::where('email', $user_email)
             ->where('password', $user_pass)
             ->first();

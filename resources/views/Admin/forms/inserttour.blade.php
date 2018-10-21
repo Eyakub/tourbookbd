@@ -30,7 +30,7 @@
 
                     <div class="row form-group">
                         <div class="col col-md-3"><label for="textarea-input"
-                                                         class=" form-control-label">Textarea</label></div>
+                                                         class=" form-control-label">Description</label></div>
                         <div class="col-12 col-md-9"><textarea name="tour_description" id="textarea-input" rows="9"
                                                                placeholder="Content..." class="form-control"></textarea>
                         </div>

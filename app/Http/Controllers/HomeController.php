@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Blog;
+use App\User;
 use Illuminate\Http\Request;
+use App\Tour;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -14,6 +18,23 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $topTours = Tour::take(6)
+            ->get();
+
+        $topTourView = view('Tours.top_tours')
+            ->with('topTour', $topTours);
+
+        $topHotelView = view('Hotels.top_hotels');
+
+        return view('home')
+            ->with('topTourContent', $topTourView)
+            ->with('topHotelContent', $topHotelView);
+    }
+
+    public function user()
+    {
+        $user = User::where('id', Auth::user()->id)->first();
+        $blog = $user->blogs();
+
     }
 }

@@ -21,7 +21,11 @@ class TourController extends Controller
     public function singleDetails($id){
         $tour = Tour::find($id);
 
-        return view('Tours.single_tour_details')
+        return view('Tours.single_tour')
             ->with('tour', $tour);
+    }
+
+    public function allTours(){
+        return view('Tours.single_tour');
     }
 }

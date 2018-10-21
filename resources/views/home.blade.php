@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <meta name="description" content="TourBookBD - A Place of country tours agencies, transfers and tickets.">
-    <meta name="author" content="Ansonika">
+    <meta name="author" content="Eyakub">
     <title>TourBookBD - A place of natural beauty</title>
 
     <!--JS-->
@@ -36,12 +36,12 @@
           rel="stylesheet">
 
     <!-- BASE CSS -->
-    <link href="css/base.css" rel="stylesheet">
+    <link href="{{asset('css/base.css')}}" rel="stylesheet">
 
     <!-- REVOLUTION SLIDER CSS -->
-    <link rel="stylesheet" type="text/css" href="rev-slider-files/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
-    <link rel="stylesheet" type="text/css" href="rev-slider-files/fonts/font-awesome/css/font-awesome.css">
-    <link rel="stylesheet" type="text/css" href="rev-slider-files/css/settings.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('rev-slider-files/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('rev-slider-files/fonts/font-awesome/css/font-awesome.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('rev-slider-files/css/settings.css')}}">
 
     <!-- REVOLUTION LAYERS STYLES -->
     <style>
@@ -121,9 +121,8 @@
         }
     </style>
 
-    <!--[if lt IE 9]>
-    <script src="js/html5shiv.min.js"></script>
-    <script src="js/respond.min.js"></script>
+    <script src="{{URL::asset('js/html5shiv.min.js')}}"></script>
+    <script src="{{URL::asset('js/respond.min.js')}}"></script>
     <![endif]-->
 
 </head>
@@ -665,11 +664,11 @@
 
     <div class="container margin_60">
 
-        @include('Tours.top_tours')
+        @yield('top_tours')
 
         <hr>
 
-        @include('Hotels.top_hotels')
+        @yield('top_hotels')
 
 
     </div>

@@ -19,9 +19,12 @@ Route::get('/', 'HomeController@index');
  * Admin Panel
  */
 Route::get('/admin-panel', 'AdminController@index');
-Route::get('/tours-table', 'AdminController@toursPanel');
 Route::get('/tours-insert-form', 'AdminController@showTourForm')->name('upload.tour');
 Route::post('/tours-insert-form', 'AdminController@insertTour');
+Route::get('/all-tour-data', 'AdminController@showData');
+
+Route::get('/edit-tour-information/{id}', 'AdminController@editTourInfo');
+Route::post('/update-tour-information', 'AdminController@updateTourInfo');
 
 
 /**
@@ -38,7 +41,8 @@ Route::post('/login-check', 'UserController@loginCheck')->name('login_check');
  */
 Route::get('/all-tour', 'TourController@allTour');
 Route::get('/single-tour/{id}', 'TourController@singleDetails');
-
+//Route::get('/single-tour', 'TourController@allTours');
+//
 
 Route::get('/single-hotel', 'HotelsController@SingleHotel');
 Route::get('/single-resort', 'HotelsController@SingleResort');
@@ -46,6 +50,13 @@ Route::get('/popular', 'UserController@popularTour');
 Route::get('/close-to-sea', 'UserController@closeToSea');
 Route::get('/hill-tracking', 'UserController@hillTracking');
 Route::get('/waterfalls', 'UserController@waterfalls');
+
+
+/**
+ * Blog Panel
+ */
+Route::get('/blogs', 'BlogController@blogIndex');
+Route::get('/blog_details', 'BlogController@blogDetails');
 
 
 /**
