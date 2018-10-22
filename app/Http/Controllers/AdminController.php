@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Tour;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
@@ -51,7 +52,7 @@ class AdminController extends Controller
 
     public function showData()
     {
-        $showData = Tour::all();
+        $showData = Tour::all()->sortBy('tour_title');
         return view('Admin.tourstable')
             ->with('showData', $showData);
     }
@@ -104,5 +105,31 @@ class AdminController extends Controller
 
         return Redirect::to('/edit-tour-information/'.$tour_id)->with('success', 'Successfully Updated');
 
+    }
+
+    public function deleteTour($id)
+    {
+        $deleteTour = Tour::find($id);
+        $deleteTour->delete();
+        return Redirect::to('/all-tour-data/');
+
+    }
+
+
+    /**
+     * User Panel
+     */
+    public function showUserData()
+    {
+        $showUserData = User::all();
+        return view('Admin.userstable')
+            ->with('showUserData', $showUserData);
+    }
+
+    public function deleteUser($id)
+    {
+        $deleteuser = User::find($id);
+        $deleteuser->delete();
+        return Redirect::to('/all-user-data/');
     }
 }

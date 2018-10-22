@@ -50,33 +50,33 @@
                                 <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Title</th>
-                                    <th>Description</th>
-                                    <th>Status</th>
+                                    <th>Username</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Phone Number</th>
+                                    <th>Date Of Birth</th>
+                                    <th>Street Address</th>
+                                    <th>City</th>
+                                    <th>Zip Code</th>
+                                    <th>Country</th>
                                     <th>Actions</th>
                                 </tr>
                                 </thead>
-                                @foreach($showData as $data)
+                                @foreach($showUserData as $data)
                                     <tbody>
                                     <td>{{$data->id}}</td>
-                                    <td>{{$data->tour_title}}</td>
-                                    <td>{{$data->tour_description}}</td>
+                                    <td>{{$data->username}}</td>
+                                    <td>{{$data->first_name}}</td>
+                                    <td>{{$data->last_name}}</td>
+                                    <td>{{$data->phone_number}}</td>
+                                    <td>{{$data->date_of_birth}}</td>
+                                    <td>{{$data->street_address}}</td>
+                                    <td>{{$data->city}}</td>
+                                    <td>{{$data->zip_code}}</td>
+                                    <td>{{$data->country}}</td>
                                     <td>
-                                        <span class="label label-success">Published</span>
-                                    </td>
-                                    <td>
-                                        <a class="btn btn-success"
-                                           href="{{URL::to('/published-blog/')}}">
-                                            <i class="halflings-icon white thumbs-up"></i>
-                                        </a>
-
-                                        <a class="btn btn-info"
-                                           href="{{URL::to('/edit-tour-information/'.$data->id)}}">
-                                            <i class="halflings-icon white edit"></i>
-                                        </a>
-
                                         <a class="btn btn-danger"
-                                           href="{{URL::to('/delete-tour/'.$data->id)}}"
+                                           href="{{URL::to('/delete-user/'.$data->id)}}"
                                            onclick="return check_delete();">
                                             <i class="halflings-icon white trash"></i>
                                         </a>

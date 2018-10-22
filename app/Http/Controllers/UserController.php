@@ -112,13 +112,18 @@ class UserController extends Controller
         $user_pass = $request->password;
 
 
-        $res = USERS::where('email', $user_email)
+        $res = Users::where('email', $user_email)
             ->where('password', $user_pass)
             ->first();
         if($res){
             Session::put('id', $res->id);
             //dd(session()->all());
-            return Redirect::to('/coming_soon');
+            $user = Users::find($res->id);
+            return view('Users.userlayout')
+                ->with('user', $user);
+        }else{
+            Session::put('message', 'Your User ID or Password Invalid...!!!');
+            return redirect::to('/user-login');
         }
 
     }
@@ -127,8 +132,13 @@ class UserController extends Controller
         session_start();
         $user_id = Session::get('id');
         if($user_id !== NULL){
-            return Redirect::to('/coming_soon')->send();
+            return Redirect::to('/user-profile')->send();
         }
+    }
+
+    public function userProfile()
+    {
+        return view('Users.userlayout');
     }
 
 //    public function allTour()

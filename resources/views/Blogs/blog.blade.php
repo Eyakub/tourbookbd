@@ -112,7 +112,7 @@
                         <p>
                             Ludus albucius adversarium eam eu. Sit eu reque tation aliquip. Quo no dolorum albucius lucilius, hinc eligendi ut sed. Ex nam quot ferri suscipit, mea ne legere alterum repudiandae. Ei pri quaerendum intellegebat, ut vel consequuntur voluptatibus. Et volumus sententiae adversarium duo......
                         </p>
-                        <a href="blog_post_right_sidebar.html" class="btn_1">Read more</a>
+                        <a href="{{URL::to('/blog-details')}}" class="btn_1">Read more</a>
                     </div>
                     <!-- end post -->
 

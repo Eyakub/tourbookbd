@@ -52,6 +52,15 @@
                 <li class="active">
                     <a href="{{URL::to('/admin-panel')}}"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                 </li>
+
+                <h3 class="menu-title">Uers</h3><!-- /.menu-title -->
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Tables</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="fa fa-table"></i><a href="{{URL::to('/all-user-data')}}">User Table</a></li>
+                    </ul>
+                </li>
+
                 <h3 class="menu-title">About Tours</h3><!-- /.menu-title -->
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Tables</a>
@@ -67,8 +76,22 @@
                     </ul>
                 </li>
 
-                <h3 class="menu-title">Hotels & Restaurants</h3><!-- /.menu-title -->
+                <h3 class="menu-title">Hotels & Resorts</h3><!-- /.menu-title -->
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Tables</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="fa fa-table"></i><a href="{{URL::to('/all-hotel-data')}}">Data Table</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Forms</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="menu-icon fa fa-th"></i><a href="{{URL::to('hotels-insert-form')}}">Insert A Hotels Info</a></li>
 
+                    </ul>
+                </li>
+
+                <h3 class="menu-title">Restaurants</h3><!-- /.menu-title -->
 
             </ul>
         </div><!-- /.navbar-collapse -->

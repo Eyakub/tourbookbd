@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class TourController extends Controller
 {
     public function allTour(){
-        $tours = Tour::all();
+        $tours = Tour::paginate(6);
 
         $tourContent = view('Tours.tour_contents')
             ->with('tours', $tours);

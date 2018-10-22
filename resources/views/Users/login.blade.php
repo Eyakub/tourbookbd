@@ -28,12 +28,12 @@
           rel="stylesheet">
 
     <!-- CSS -->
-    <link href="css/base.css" rel="stylesheet">
+    <link href="{{URL::asset('css/base.css')}}" rel="stylesheet">
 
-    <!--[if lt IE 9]>
-    <script src="js/html5shiv.min.js"></script>
-    <script src="js/respond.min.js"></script>
-    <![endif]-->
+    {{--<!--[if lt IE 9]>--}}
+    <script src="{{URL::to('js/html5shiv.min.js')}}"></script>
+    <script src="{{URL::to('js/respond.min.js')}}"></script>
+    {{--<![endif]-->--}}
 
 </head>
 <body>
@@ -121,9 +121,9 @@
 </div><!-- End Search Menu -->
 
 <!-- Common scripts -->
-<script src="js/jquery-2.2.4.min.js"></script>
-<script src="js/common_scripts_min.js"></script>
-<script src="js/functions.js"></script>
+<script src="{{URL::to('js/jquery-2.2.4.min.js')}}"></script>
+<script src="{{URL::to('js/common_scripts_min.js')}}"></script>
+<script src="{{URL::to('js/functions.js')}}"></script>
 
 
 </body>

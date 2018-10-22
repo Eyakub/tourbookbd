@@ -130,7 +130,7 @@
                         </li>
 
                         <li class="submenu">
-                            <a href="javascript:void(0);">Tour Blog {{--<i class="icon-down-open-mini"></i>--}}</a>
+                            <a href={{--javascript:void(0);--}}{{URL::to('/blogs')}}>Tour Blog {{--<i class="icon-down-open-mini"></i>--}}</a>
                         </li>
 
                     </ul>

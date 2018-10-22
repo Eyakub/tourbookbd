@@ -20,7 +20,7 @@
                         </a>
                     </div>
                     <div class="tour_title">
-                        <h3><strong>{{$top->tour_title}}</strong> tour</h3>
+                        <h3><strong>{{$top->tour_title}}</strong></h3>
                         <div class="rating">
                             <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i
                                     class="icon-smile voted"></i><i class="icon-smile voted"></i><i

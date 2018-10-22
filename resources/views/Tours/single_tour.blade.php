@@ -121,7 +121,7 @@
                             {{ $tour-> tour_description }}
                         </p>
                         <h4>What's include</h4>
-                        <p>
+                        {{--<p>
                             Lorem ipsum dolor sit amet, at omnes deseruisse pri. Quo aeterno legimus insolens ad. Sit cu detraxit constituam, an mel iudico constituto efficiendi.
                         </p>
                         <div class="row">
@@ -143,7 +143,7 @@
                                     <li>No scripta electram necessitatibus sit</li>
                                 </ul>
                             </div>
-                        </div>
+                        </div>--}}
                         <!-- End row  -->
                     </div>
                 </div>

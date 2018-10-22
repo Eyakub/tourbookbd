@@ -25,6 +25,10 @@ Route::get('/all-tour-data', 'AdminController@showData');
 
 Route::get('/edit-tour-information/{id}', 'AdminController@editTourInfo');
 Route::post('/update-tour-information', 'AdminController@updateTourInfo');
+Route::get('/delete-tour/{id}', 'AdminController@deleteTour');
+
+Route::get('/all-user-data/', 'AdminController@showUserData');
+Route::get('/delete-user/{id}', 'AdminController@deleteUser');
 
 
 /**
@@ -33,7 +37,8 @@ Route::post('/update-tour-information', 'AdminController@updateTourInfo');
 Route::get('/user-login', 'UserController@Userlogin');
 Route::get('/user-registration', 'UserController@UserRegistration')->name('upload.info');
 Route::post('/user-registration', 'UserController@storeUserInformation');
-Route::post('/login-check', 'UserController@loginCheck')->name('login_check');
+Route::post('/user-profile', 'UserController@loginCheck')->name('login_check');
+
 
 
 /**
@@ -56,7 +61,7 @@ Route::get('/waterfalls', 'UserController@waterfalls');
  * Blog Panel
  */
 Route::get('/blogs', 'BlogController@blogIndex');
-Route::get('/blog_details', 'BlogController@blogDetails');
+Route::get('/blog-details', 'BlogController@blogDetails');
 
 
 /**

@@ -256,7 +256,7 @@
 
                 <hr>
 
-                <div class="text-center">
+                {{--<div class="text-center">
                     <ul class="pagination">
                         <li><a href="#">Prev</a>
                         </li>
@@ -273,7 +273,7 @@
                         <li><a href="#">Next</a>
                         </li>
                     </ul>
-                </div>
+                </div>--}}
                 <!-- end pagination-->
 
             </div>

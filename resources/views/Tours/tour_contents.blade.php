@@ -10,13 +10,13 @@
                 <div class="img_container">
                     <a href="{{URL::to('/single-tour/'.$tour->id)}}">
                         <img src="storage/small_cover/{{$tour->tour_small_cover}}" width="800" height="533" class="img-responsive" alt="Image">
-                        <div class="short_info">
+                        {{--<div class="short_info">
                             <i class="icon_set_1_icon-44"></i>Historic Buildings<span class="price"><sup>$</sup>45</span>
-                        </div>
+                        </div>--}}
                     </a>
                 </div>
                 <div class="tour_title">
-                    <h3><strong>{{$tour->tour_title}}</strong> tour</h3>
+                    <h3><strong>{{$tour->tour_title}}</strong></h3>
                     <div class="rating">
                         <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><small>(75)</small>
                     </div>
@@ -32,7 +32,12 @@
         <!-- End col-md-6 -->
         @endforeach
 
+            <div class="text-center">
+                <ul class="pagination">
+                    {!! $tours-> links() !!}
+                </ul>
 
+            </div>
         <!-- End col-md-6 -->
     </div>
     <!-- End row -->

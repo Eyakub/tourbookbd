@@ -18,8 +18,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $topTours = Tour::take(6)
-            ->get();
+        $topTours = Tour::paginate(6);
 
         $topTourView = view('Tours.top_tours')
             ->with('topTour', $topTours);
