@@ -9,7 +9,7 @@
                     <ul id="top_links">
                         {{--<li>--}}
                         @if(!empty(Session::get('id')))
-                            {{Session::get('name')}}<a href="">Logout</a>
+                            {{Session::get('name')}}<a href="{{URL::to('logout')}}">Logout</a>
                         @else
                             <a href="{{URL::to('/user-login')}}" id="access_link">Sign in </a>
                         @endif

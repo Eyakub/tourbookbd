@@ -8,7 +8,7 @@
                     <div class="ribbon_3 popular"><span>Popular</span>
                     </div>
                     <div class="img_container">
-                        <a href="{{URL::to('/single-hotels/'.$resort->id)}}">
+                        <a href="{{URL::to('/single-hotel/'.$resort->id)}}">
                             <img src="storage/small_cover/{{$resort->hotels_small_cover}}" width="800" height="533" class="img-responsive" alt="Image">
                             <div class="score"><span>7.5</span>Good</div>
                             <div class="short_info hotel">

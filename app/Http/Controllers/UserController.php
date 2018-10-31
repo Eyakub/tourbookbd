@@ -89,30 +89,12 @@ class UserController extends Controller
     }
 
     public function loginCheck(){
-//        $data = Input::except(array('_token'));
-//
-//        $rule = array(
-//            'email'=>'required|email',
-//            'password'=>'required',
-//        );
-//
-//        $validator = Validator::make($data, $rule);
-//        if($validator->fails()){
-//            return Redirect::to('user-login')->withErrors($validator);
-//        }else{
-//            $data = Input::except(array('_token'));
-//            if(Auth::attempt($data)){
-//                return Redirect::to('/coming_soon');
-//            }else{
-//                return Redirect::to('user-login');
-//            }
-//        }
 
         $user_email = Session::get('id');
         $res = Users::where('id', $user_email)
             ->first();
 
-        if($res != null){
+        if($res !== null){
             return view('Users.userlayout')
                 ->with('user', $res);
         }else{
@@ -131,24 +113,6 @@ class UserController extends Controller
     }
 
     public function user_login(Request $request){
-//        $data = Input::except(array('_token'));
-//
-//        $rule = array(
-//            'email'=>'required|email',
-//            'password'=>'required',
-//        );
-//
-//        $validator = Validator::make($data, $rule);
-//        if($validator->fails()){
-//            return Redirect::to('user-login')->withErrors($validator);
-//        }else{
-//            $data = Input::except(array('_token'));
-//            if(Auth::attempt($data)){
-//                return Redirect::to('/coming_soon');
-//            }else{
-//                return Redirect::to('user-login');
-//            }
-//        }
 
         $user_email = $request->email;
         $user_pass = $request->password;
@@ -172,18 +136,14 @@ class UserController extends Controller
 
     }
 
-    public function userProfile()
+    public function logout()
     {
-        return view('Users.userlayout');
+        Auth::logout();
+        Session::flush();
+        return redirect('/user-login');
     }
 
-//    public function allTour()
-//    {
-//        $tour_content = view('Tours.tour_contents');
-//
-//        return view('Tours.all_tour_list_in_grid')
-//            ->with('content_of_tours', $tour_content);
-//    }
+
 
     public function popularTour()
     {
