@@ -17,6 +17,7 @@ class UserController extends Controller
 
     public function Userlogin()
     {
+        $this->loginCheck();
         $login = view('Users.login');
         return $login;
     }
@@ -89,26 +90,14 @@ class UserController extends Controller
     }
 
     public function loginCheck(){
-
-        $user_email = Session::get('id');
-        $res = Users::where('id', $user_email)
-            ->first();
-
-        if($res !== null){
-            return view('Users.userlayout')
-                ->with('user', $res);
-        }else{
-            Session::put('message', 'Your User ID or Password Invalid...!!!');
-            return redirect::to('/user-login');
-        }
-
-    }
-
-    public function auth_check(){
-        session_start();
+        //session_start();
         $user_id = Session::get('id');
-        if($user_id !== NULL){
-            return Redirect::to('/user-profile')->send();
+
+        if($user_id !== null){
+            return redirect::to('/user-profile');
+        }else{
+            Session::put('message', 'You must login first.');
+            return redirect::to('/user-login');
         }
     }
 
@@ -117,11 +106,10 @@ class UserController extends Controller
         $user_email = $request->email;
         $user_pass = $request->password;
 
-
         $res = Users::where('email', $user_email)
             ->where('password', $user_pass)
             ->first();
-        if($res){
+        if($res !== null){
             Session::put('id', $res->id);
             $name = $res->first_name.' '.$res->last_name;
             Session::put('name', $name);
