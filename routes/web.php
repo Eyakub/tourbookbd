@@ -50,8 +50,8 @@ Route::get('/delete-user/{id}', 'AdminController@deleteUser');
  */
 Route::get('/user-registration', 'UserController@UserRegistration')->name('upload.info');
 Route::post('/user-registration', 'UserController@storeUserInformation');
-Route::get('/user-login', 'UserController@login_user')->name('login_user');
-Route::get('/user-profile', 'UserController@loginCheck')->name('login_check_sfsdfsd');
+Route::get('/user-login', 'UserController@user_login')->name('login_user');
+Route::get('/user-profile', 'UserController@loginCheck')->name('login_check');
 
 
 
