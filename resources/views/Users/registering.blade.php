@@ -69,7 +69,7 @@
             <div class="row">
                 <div class="col-md-6 col-md-offset-6 col-sm-6 col-sm-offset-6">
                     <div id="login">
-                        <div class="text-center"><img src="img/tourbookbd.png" alt="Image" data-retina="true"></div>
+                        <div class="text-center"><img src="{{URL::asset('img/tourbookbd.png')}}" alt="Image" data-retina="true"></div>
                         <hr>
                         <form action="{{route('upload.info')}}" method="post" enctype="multipart/form-data">
                             {{csrf_field()}}

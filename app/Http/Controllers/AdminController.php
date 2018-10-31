@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Tour;
 use App\User;
+use App\Hotel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
@@ -20,6 +21,7 @@ class AdminController extends Controller
     public function showTourForm(){
         return view('Admin.forms.inserttour');
     }
+
     public function insertTour(request $request){
 
         $this->validate($request, [
@@ -131,5 +133,51 @@ class AdminController extends Controller
         $deleteuser = User::find($id);
         $deleteuser->delete();
         return Redirect::to('/all-user-data/');
+    }
+
+
+
+    /**
+     * Hotels Panel
+     */
+    public function showHotelForm()
+    {
+        return view('Admin.forms.inserthotelsResorts');
+    }
+
+    public function insertHotel(request $request){
+
+        $this->validate($request, [
+            'hotels_title' => 'required',
+            'hotels_description' => 'required',
+            'hotels_address' => 'required',
+            'hotels_category' => 'required',
+        ]);
+
+        if($request->hasFile('hotels_small_cover') && $request->hasFile('hotels_large_cover')){
+            $hotelsSmallCover = time().'-'.$request->file('hotels_small_cover')->getClientOriginalName();
+            $hotelsLargeCover = time().'-'.$request->file('hotels_large_cover')->getClientOriginalName();
+            $request->file('hotels_small_cover')->storeAs('public/small_cover', $hotelsSmallCover);
+            $request->file('hotels_large_cover')->storeAs('public/large_cover', $hotelsLargeCover);
+        }
+
+        //Store tour information to db using model
+        $file = new Hotel;
+        $file->hotels_title = $request->input('hotels_title');
+        $file->hotels_description = $request->input('hotels_description');
+        $file->hotels_address = $request->input('hotels_address');
+        $file->hotels_category = $request->input('hotels_category');
+        $file->hotels_small_cover = $hotelsSmallCover;
+        $file->hotels_large_cover = $hotelsLargeCover;
+        $file->save();
+
+        return Redirect::to('/hotels-insert-form')->with('success', 'Successfully Inserted Hotels Information');
+    }
+
+    public function showHotelData()
+    {
+        $showHotelData = Hotel::all();
+        return view('Admin.hotelstable')
+            ->with('showHotelData', $showHotelData);
     }
 }

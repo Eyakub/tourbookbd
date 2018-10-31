@@ -8,8 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta name="description" content="Citytours - Premium site template for city tours agencies, transfers and tickets.">
-    <meta name="author" content="Ansonika">
+    <meta name="description" content="TourBookBD - Hotels">
+    <meta name="author" content="Eyakub">
     <title>TourBookBD - A place of natural beauty</title>
 
     <!-- Favicons-->
@@ -23,18 +23,18 @@
     <link href="https://fonts.googleapis.com/css?family=Gochi+Hand|Lato:300,400|Montserrat:400,400i,700,700i" rel="stylesheet">
 
     <!-- CSS -->
-    <link href="css/base.css" rel="stylesheet">
+    <link href="{{URL::asset('css/base.css')}}" rel="stylesheet">
 
     <!-- Radio and check inputs -->
-    <link href="css/skins/square/grey.css" rel="stylesheet">
+    <link href="{{URL::asset('css/skins/square/grey.css')}}" rel="stylesheet">
 
     <!-- Range slider -->
-    <link href="css/ion.rangeSlider.css" rel="stylesheet">
-    <link href="css/ion.rangeSlider.skinFlat.css" rel="stylesheet">
+    <link href="{{URL::asset('css/ion.rangeSlider.css')}}" rel="stylesheet">
+    <link href="{{URL::asset('css/ion.rangeSlider.skinFlat.css')}}" rel="stylesheet">
 
-    <!--[if lt IE 9]>
-    <script src="js/html5shiv.min.js"></script>
-    <script src="js/respond.min.js"></script>
+    <!--[if lt IE 9] -->
+    <script src="{{URL::to('js/html5shiv.min.js')}}"></script>
+    <script src="{{URL::to('js/respond.min.js')}}"></script>
     <![endif]-->
 
 </head>
@@ -63,11 +63,11 @@
 @include('layouts.header')
 <!-- End Header -->
 
-<section class="parallax-window" data-parallax="scroll" data-image-src="img/hotels_bg.jpg" data-natural-width="1400" data-natural-height="470">
+<section class="parallax-window" data-parallax="scroll" data-image-src="storage/dubai-hotels.jpg" data-natural-width="1400" data-natural-height="470">
     <div class="parallax-content-1">
         <div class="animated fadeInDown">
-            <h1>Paris Hotels</h1>
-            <p>Ridiculus sociosqu cursus neque cursus curae ante scelerisque vehicula.</p>
+            <h1>Bangladesh's Hotels</h1>
+            <p>Feel safe.</p>
         </div>
     </div>
 </section>
@@ -267,25 +267,6 @@
 
                 <hr>
 
-                <div class="text-center">
-                    <ul class="pagination">
-                        <li><a href="#">Prev</a>
-                        </li>
-                        <li class="active"><a href="#">1</a>
-                        </li>
-                        <li><a href="#">2</a>
-                        </li>
-                        <li><a href="#">3</a>
-                        </li>
-                        <li><a href="#">4</a>
-                        </li>
-                        <li><a href="#">5</a>
-                        </li>
-                        <li><a href="#">Next</a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- end pagination-->
 
             </div>
             <!-- End col lg 9 -->
@@ -311,13 +292,13 @@
 </div><!-- End Search Menu -->
 
 <!-- Common scripts -->
-<script src="js/jquery-2.2.4.min.js"></script>
-<script src="js/common_scripts_min.js"></script>
-<script src="js/functions.js"></script>
+<script src="{{URL::to('js/jquery-2.2.4.min.js')}}"></script>
+<script src="{{URL::to('js/common_scripts_min.js')}}"></script>
+<script src="{{URL::to('js/functions.js')}}"></script>
 
 <!-- Specific scripts -->
 <!-- Check and radio inputs -->
-<script src="js/icheck.js"></script>
+<script src="{{URL::to('js/icheck.js')}}"></script>
 <script>
     $('input').iCheck({
         checkboxClass: 'icheckbox_square-grey',
@@ -328,8 +309,8 @@
 <script src="http://maps.googleapis.com/maps/api/js"></script>
 
 
-<script src="js/map_hotels.js"></script>
-<script src="js/infobox.js"></script>
+<script src="{{URL::to('js/map_hotels.js')}}"></script>
+<script src="{{URL::to('js/infobox.js')}}"></script>
 
 </body>
 

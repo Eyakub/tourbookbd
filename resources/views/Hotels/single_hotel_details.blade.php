@@ -23,17 +23,17 @@
     <link href="https://fonts.googleapis.com/css?family=Gochi+Hand|Lato:300,400|Montserrat:400,400i,700,700i" rel="stylesheet">
 
     <!-- CSS -->
-    <link href="css/base.css" rel="stylesheet">
+    <link href="{{URL::asset('css/base.css')}}" rel="stylesheet">
 
     <!-- CSS -->
-    <link href="css/slider-pro.min.css" rel="stylesheet">
-    <link href="css/date_time_picker.css" rel="stylesheet">
-    <link href="css/owl.carousel.css" rel="stylesheet">
-    <link href="css/owl.theme.css" rel="stylesheet">
+    <link href="{{URL::asset('css/slider-pro.min.css')}}" rel="stylesheet">
+    <link href="{{URL::asset('css/date_time_picker.css')}}" rel="stylesheet">
+    <link href="{{URL::asset('css/owl.carousel.css')}}" rel="stylesheet">
+    <link href="{{URL::asset('css/owl.theme.css')}}" rel="stylesheet">
 
-    <!--[if lt IE 9]>
-    <script src="js/html5shiv.min.js"></script>
-    <script src="js/respond.min.js"></script>
+    <!--[if lt IE 9] -->
+    <script src="{{URL::to('js/html5shiv.min.js')}}"></script>
+    <script src="{{URL::to('js/respond.min.js')}}"></script>
     <![endif]-->
 
 </head>
@@ -59,197 +59,17 @@
 <!-- Mobile menu overlay mask -->
 
 <!-- Header================================================== -->
-<header>
-    <div id="top_line">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-sm-6 col-xs-6"><i class="icon-phone"></i><strong>+880 1937424217</strong>
-                </div>
-
-                <div class="col-md-6 col-sm-6 col-xs-6">
-                    <ul id="top_links">
-                        <li>
-                            <div class="dropdown dropdown-access">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="access_link">Sign in</a>
-                                <div class="dropdown-menu">
-                                    <div class="row">
-                                        <div class="col-md-6 col-sm-6 col-xs-6">
-                                            <a href="#" class="bt_facebook">
-                                                <i class="icon-facebook"></i>Facebook </a>
-                                        </div>
-                                        <div class="col-md-6 col-sm-6 col-xs-6">
-                                            <a href="#" class="bt_paypal">
-                                                <i class="icon-paypal"></i>Paypal </a>
-                                        </div>
-                                    </div>
-                                    <div class="login-or">
-                                        <hr class="hr-or">
-                                        <span class="span-or">or</span>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="inputUsernameEmail" placeholder="Email">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="password" class="form-control" id="inputPassword" placeholder="Password">
-                                    </div>
-                                    <a id="forgot_pw" href="#">Forgot password?</a>
-                                    <input type="submit" name="Sign in" value="Sign in" id="Sign_in" class="button_drop">
-                                    <input type="submit" name="Sign up" value="Sign up" id="Sign_up" class="button_drop outline">
-                                </div>
-                            </div>
-                            <!-- End Dropdown access -->
-                        </li>
-                        <li><a href="wishlist.html" id="wishlist_link">Wishlist</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <!-- End row -->
-        </div>
-        <!-- End container-->
-    </div>
-    <!-- End top line-->
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3 col-sm-3 col-xs-3">
-                <div id="logo">
-                    <a href="index.html"><img src="img/logo.png" width="160" height="34" alt="City tours" data-retina="true" class="logo_normal">
-                    </a>
-                    <a href="index.html"><img src="img/logo_sticky.png" width="160" height="34" alt="City tours" data-retina="true" class="logo_sticky">
-                    </a>
-                </div>
-            </div>
-            <nav class="col-md-9 col-sm-9 col-xs-9">
-                <a class="cmn-toggle-switch cmn-toggle-switch__htx open_close" href="javascript:void(0);"><span>Menu mobile</span></a>
-                <div class="main-menu">
-                    <div id="header_menu">
-                        <img src="img/logo_sticky.png" width="160" height="34" alt="City tours" data-retina="true">
-                    </div>
-                    <a href="#" class="open_close" id="close_in"><i class="icon_set_1_icon-77"></i></a>
-                    <ul>
-                        <li class="submenu">
-                            <a href="javascript:void(0);" class="show-submenu">Home </a>
-                            {{--<ul>
-                                <li><a href="javascript:void(0);">Revolution slider</a>
-                                    <ul>
-                                        <li><a href="index.html">Default slider</a></li>
-                                        <li><a href="index_20.html">Advanced slider</a></li>
-                                        <li><a href="index_14.html">Youtube Hero</a></li>
-                                        <li><a href="index_15.html">Vimeo Hero</a></li>
-                                        <li><a href="index_17.html">Youtube 4K</a></li>
-                                        <li><a href="index_16.html">Carousel</a></li>
-                                        <li><a href="index_19.html">Mailchimp Newsletter</a></li>
-                                        <li><a href="index_18.html">Fixed Caption</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="index_12.html">Layer slider</a></li>
-                                <li><a href="index_2.html">With Only tours</a></li>
-                                <li><a href="index_3.html">Single image</a></li>
-                                <li><a href="index_4.html">Header video</a></li>
-                                <li><a href="index_7.html">With search panel</a></li>
-                                <li><a href="index_13.html">With tabs</a></li>
-                                <li><a href="index_5.html">With map</a></li>
-                                <li><a href="index_6.html">With search bar</a></li>
-                                <li><a href="index_8.html">Search bar + Video</a></li>
-                                <li><a href="index_9.html">With Text Rotator</a></li>
-                                <li><a href="index_10.html">With Cookie Bar (EU law)</a></li>
-                                <li><a href="index_11.html">Popup Advertising</a></li>
-                            </ul>--}}
-                        </li>
-                        <li class="submenu">
-                            <a href="javascript:void(0);" class="show-submenu">Tours <i class="icon-down-open-mini"></i></a>
-                            <ul>
-                                <li><a href="{{URL::to('/all-tour')}}">All tours list</a></li>
-                                <li><a href="{{URL::to('/coming_soon')}}">Popular List</a></li>
-                                <li><a href="{{URL::to('/coming_soon')}}">Close to Sea</a></li>
-                                <li><a href="{{URL::to('/coming_soon')}}">Hill Tracking</a></li>
-                                <li><a href="{{URL::to('/coming_soon')}}">Waterfalls</a></li>
-                                {{--<li><a href="javascript:void(0);">Single tour fixed sidebar</a>
-                                    <ul>
-                                        <li><a href="single_tour_fixed_sidebar.html">Single tour fixed sidebar</a></li>
-                                        <li><a href="single_tour_with_gallery_fixed_sidebar.html">Single tour 2 Fixed Sidebar</a></li>
-                                        <li><a href="cart_fixed_sidebar.html">Cart Fixed Sidebar</a></li>
-                                        <li><a href="payment_fixed_sidebar.html">Payment Fixed Sidebar</a></li>
-                                        <li><a href="confirmation_fixed_sidebar.html">Confirmation Fixed Sidebar</a></li>
-                                    </ul>
-                                </li>--}}
-                                <li><a href="{{URL::to('/coming_soon')}}">Hide in Nature</a></li>
-                                <li><a href="{{URL::to('/coming_soon')}}">City Tours</a></li>
-                            </ul>
-                        </li>
-
-                        <li class="submenu">
-                            <a href="{{URL::to('/resorts')}}">Resorts {{--<i class="icon-down-open-mini"></i>--}}</a>
-                        </li>
-
-                        <li class="submenu">
-                            <a href="javascript:void(0);" class="show-submenu">Hotels <i
-                                        class="icon-down-open-mini"></i></a>
-                            <ul>
-                                <li><a href="{{URL::to('/hotels')}}">All hotels list</a></li>
-                                <li><a href="">Swimming Pools</a></li>
-                            </ul>
-                        </li>
-
-                        <li class="submenu">
-                            <a href="javascript:void(0);">Tour Blog {{--<i class="icon-down-open-mini"></i>--}}</a>
-                        </li>
-
-                    </ul>
-                </div><!-- End main-menu -->
-                <ul id="top_tools">
-                    <li>
-                        <div class="dropdown dropdown-search">
-                            <a href="#" class="search-overlay-menu-btn" data-toggle="dropdown"><i class="icon-search"></i></a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="dropdown dropdown-cart">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class=" icon-basket-1"></i>Cart (0) </a>
-                            <ul class="dropdown-menu" id="cart_items">
-                                <li>
-                                    <div class="image"><img src="img/thumb_cart_1.jpg" alt="image"></div>
-                                    <strong>
-                                        <a href="#">Louvre museum</a>1x $36.00 </strong>
-                                    <a href="#" class="action"><i class="icon-trash"></i></a>
-                                </li>
-                                <li>
-                                    <div class="image"><img src="img/thumb_cart_2.jpg" alt="image"></div>
-                                    <strong>
-                                        <a href="#">Versailles tour</a>2x $36.00 </strong>
-                                    <a href="#" class="action"><i class="icon-trash"></i></a>
-                                </li>
-                                <li>
-                                    <div class="image"><img src="img/thumb_cart_3.jpg" alt="image"></div>
-                                    <strong>
-                                        <a href="#">Versailles tour</a>1x $36.00 </strong>
-                                    <a href="#" class="action"><i class="icon-trash"></i></a>
-                                </li>
-                                <li>
-                                    <div>Total: <span>$120.00</span></div>
-                                    <a href="cart.html" class="button_drop">Go to cart</a>
-                                    <a href="payment.html" class="button_drop outline">Check out</a>
-                                </li>
-                            </ul>
-                        </div><!-- End dropdown-cart-->
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </div>
-    <!-- container -->
-</header>
+@include('layouts.header')
 <!-- End Header -->
 
-<section class="parallax-window" data-parallax="scroll" data-image-src="img/single_hotel_bg_1.jpg" data-natural-width="1400" data-natural-height="470">
+<section class="parallax-window" data-parallax="scroll" data-image-src="{{asset('storage/large_cover/'.$hotel->hotels_large_cover)}}" data-natural-width="1400" data-natural-height="470">
     <div class="parallax-content-2">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-sm-8">
                     <span class="rating"><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class=" icon-star-empty"></i></span>
-                    <h1>Mariott Hotel</h1>
-                    <span>Champ de Mars, 5 Avenue Anatole, 75007 Paris.</span>
+                    <h1>{{$hotel->hotels_title}}</h1>
+                    <span>{{$hotel->hotels_address}}</span>
                 </div>
                 <div class="col-md-4 col-sm-4">
                     <div id="price_single_main" class="hotel">
@@ -298,7 +118,8 @@
                 <p class="visible-sm visible-xs"><a class="btn_map" data-toggle="collapse" href="#collapseMap" aria-expanded="false" aria-controls="collapseMap" data-text-swap="Hide map" data-text-original="View on map">View on map</a>
                 </p>
                 <!-- Map button for tablets/mobiles -->
-                <div id="Img_carousel" class="slider-pro">
+
+                {{--<div id="Img_carousel" class="slider-pro">
                     <div class="sp-slides">
 
                         <div class="sp-slide">
@@ -379,7 +200,7 @@
                         <img alt="Image" class="sp-thumbnail" src="img/slider_single_tour/8_medium.jpg">
                         <img alt="Image" class="sp-thumbnail" src="img/slider_single_tour/9_medium.jpg">
                     </div>
-                </div>
+                </div>--}}
 
                 <hr>
 
@@ -389,29 +210,28 @@
                     </div>
                     <div class="col-md-9">
                         <p>
-                            Lorem ipsum dolor sit amet, at omnes deseruisse pri. Quo aeterno legimus insolens ad. Sit cu detraxit constituam, an mel iudico constituto efficiendi. Eu ponderum mediocrem has, vitae adolescens in pro. Mea liber ridens inermis ei, mei legendos vulputate an, labitur tibique te qui.
+                            {{$hotel->hotels_description}}
                         </p>
                         <h4>Hotel facilities</h4>
                         <p>
-                            Lorem ipsum dolor sit amet, at omnes deseruisse pri. Quo aeterno legimus insolens ad. Sit cu detraxit constituam, an mel iudico constituto efficiendi.
+                            include latter details
                         </p>
                         <div class="row">
                             <div class="col-md-6 col-sm-6">
                                 <ul class="list_ok">
-                                    <li>Lorem ipsum dolor sit amet</li>
-                                    <li>No scripta electram necessitatibus sit</li>
-                                    <li>Quidam percipitur instructior an eum</li>
-                                    <li>Ut est saepe munere ceteros</li>
-                                    <li>No scripta electram necessitatibus sit</li>
-                                    <li>Quidam percipitur instructior an eum</li>
+                                    <li>item 1</li>
+                                    <li>item 2</li>
+                                    <li>item 3</li>
+                                    <li>item 4</li>
+                                    <li>item 5</li>
+
                                 </ul>
                             </div>
                             <div class="col-md-6 col-sm-6">
                                 <ul class="list_ok">
-                                    <li>Lorem ipsum dolor sit amet</li>
-                                    <li>No scripta electram necessitatibus sit</li>
-                                    <li>Quidam percipitur instructior an eum</li>
-                                    <li>No scripta electram necessitatibus sit</li>
+                                    <li>item 1</li>
+                                    <li>item 1</li>
+                                    <li>item 1</li>
                                 </ul>
                             </div>
                         </div>
@@ -452,21 +272,22 @@
                         <!-- End row  -->
                         <div class="carousel magnific-gallery">
                             <div class="item">
-                                <a href="img/carousel/1.jpg"><img src="img/carousel/1.jpg" alt="Image">
+                                <a href="{{URL::to('img/carousel/1.jpg')}}"><img src="{{URL::asset('img/carousel/1.jpg')}}" alt="Image">
                                 </a>
                             </div>
                             <div class="item">
-                                <a href="img/carousel/2.jpg"><img src="img/carousel/2.jpg" alt="Image">
+                                <a href="{{URL::to('img/carousel/1.jpg')}}"><img src="{{URL::asset('img/carousel/1.jpg')}}" alt="Image">
                                 </a>
                             </div>
                             <div class="item">
-                                <a href="img/carousel/3.jpg"><img src="img/carousel/3.jpg" alt="Image">
+                                <a href="{{URL::to('img/carousel/1.jpg')}}"><img src="{{URL::asset('img/carousel/1.jpg')}}" alt="Image">
                                 </a>
                             </div>
                             <div class="item">
-                                <a href="img/carousel/4.jpg"><img src="img/carousel/4.jpg" alt="Image">
+                                <a href="{{URL::to('img/carousel/1.jpg')}}"><img src="{{URL::asset('img/carousel/1.jpg')}}" alt="Image">
                                 </a>
                             </div>
+
                         </div>
                         <!-- End photo carousel  -->
 
@@ -496,19 +317,19 @@
                         <!-- End row  -->
                         <div class="carousel magnific-gallery">
                             <div class="item">
-                                <a href="img/carousel/1.jpg"><img src="img/carousel/1.jpg" alt="Image">
+                                <a href="{{URL::to('img/carousel/1.jpg')}}"><img src="{{URL::asset('img/carousel/1.jpg')}}" alt="Image">
                                 </a>
                             </div>
                             <div class="item">
-                                <a href="img/carousel/2.jpg"><img src="img/carousel/2.jpg" alt="Image">
+                                <a href="{{URL::to('img/carousel/1.jpg')}}"><img src="{{URL::asset('img/carousel/1.jpg')}}" alt="Image">
                                 </a>
                             </div>
                             <div class="item">
-                                <a href="img/carousel/3.jpg"><img src="img/carousel/3.jpg" alt="Image">
+                                <a href="{{URL::to('img/carousel/1.jpg')}}"><img src="{{URL::asset('img/carousel/1.jpg')}}" alt="Image">
                                 </a>
                             </div>
                             <div class="item">
-                                <a href="img/carousel/4.jpg"><img src="img/carousel/4.jpg" alt="Image">
+                                <a href="{{URL::to('img/carousel/1.jpg')}}"><img src="{{URL::asset('img/carousel/1.jpg')}}" alt="Image">
                                 </a>
                             </div>
                         </div>
@@ -562,9 +383,9 @@
                         <!-- End row -->
                         <hr>
                         <div class="review_strip_single">
-                            <img src="img/avatar1.jpg" alt="Image" class="img-circle">
+                            <img src="{{asset('img/eyakub.jpg')}}" width="68" height="68" alt="Image" class="img-circle">
                             <small> - 10 March 2015 -</small>
-                            <h4>Jhon Doe</h4>
+                            <h4>Eyakub Sorkar</h4>
                             <p>
                                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus."
                             </p>
@@ -574,31 +395,6 @@
                         </div>
                         <!-- End review strip -->
 
-                        <div class="review_strip_single">
-                            <img src="img/avatar2.jpg" alt="Image" class="img-circle">
-                            <small> - 10 March 2015 -</small>
-                            <h4>Jhon Doe</h4>
-                            <p>
-                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus."
-                            </p>
-                            <div class="rating">
-                                <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><i class="icon-smile"></i>
-                            </div>
-                        </div>
-                        <!-- End review strip -->
-
-                        <div class="review_strip_single last">
-                            <img src="img/avatar3.jpg" alt="Image" class="img-circle">
-                            <small> - 10 March 2015 -</small>
-                            <h4>Jhon Doe</h4>
-                            <p>
-                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus."
-                            </p>
-                            <div class="rating">
-                                <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><i class="icon-smile"></i>
-                            </div>
-                        </div>
-                        <!-- End review strip -->
                     </div>
                 </div>
             </div>
@@ -652,7 +448,7 @@
                 <div class="box_style_4">
                     <i class="icon_set_1_icon-90"></i>
                     <h4><span>Book</span> by phone</h4>
-                    <a href="tel://004542344599" class="phone">+45 423 445 99</a>
+                    <a href="tel://01937424217" class="phone">+8801937424217</a>
                     <small>Monday to Friday 9.00am - 7.30pm</small>
                 </div>
 
@@ -668,72 +464,7 @@
 </main>
 <!-- End main -->
 
-<footer class="revealed">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 col-sm-3">
-                <h3>Need help?</h3>
-                <a href="tel://+8801937424217" id="phone">+880 1937424217</a>
-                <a href="mailto:eyakubsorkar@gmail.com" id="email_footer">eyakubsorkar@gmail.com</a>
-            </div>
-            <div class="col-md-3 col-sm-3">
-                <h3>About</h3>
-                <ul>
-                    <li><a href="#">About us</a></li>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Login</a></li>
-                    <li><a href="#">Register</a></li>
-                    <li><a href="#">Terms and condition</a></li>
-                </ul>
-            </div>
-            <div class="col-md-3 col-sm-3">
-                <h3>Discover</h3>
-                <ul>
-                    <li><a href="#">Community blog</a></li>
-                    <li><a href="#">Tour guide</a></li>
-                    <li><a href="#">Wishlist</a></li>
-                    <li><a href="#">Gallery</a></li>
-                </ul>
-            </div>
-            <div class="col-md-2 col-sm-3">
-                <h3>Settings</h3>
-                <div class="styled-select">
-                    <select class="form-control" name="lang" id="lang">
-                        <option value="English" selected>English</option>
-                        <option value="French">French</option>
-                        <option value="Spanish">Spanish</option>
-                        <option value="Russian">Russian</option>
-                    </select>
-                </div>
-                <div class="styled-select">
-                    <select class="form-control" name="currency" id="currency">
-                        <option value="USD" selected>USD</option>
-                        <option value="EUR">EUR</option>
-                        <option value="GBP">GBP</option>
-                        <option value="RUB">RUB</option>
-                    </select>
-                </div>
-            </div>
-        </div><!-- End row -->
-        <div class="row">
-            <div class="col-md-12">
-                <div id="social_footer">
-                    <ul>
-                        <li><a href="#"><i class="icon-facebook"></i></a></li>
-                        <li><a href="#"><i class="icon-twitter"></i></a></li>
-                        <li><a href="#"><i class="icon-google"></i></a></li>
-                        <li><a href="#"><i class="icon-instagram"></i></a></li>
-                        <li><a href="#"><i class="icon-pinterest"></i></a></li>
-                        <li><a href="#"><i class="icon-vimeo"></i></a></li>
-                        <li><a href="#"><i class="icon-youtube-play"></i></a></li>
-                        <li><a href="#"><i class="icon-linkedin"></i></a></li>
-                    </ul>
-                    <p>© Citytours 2015</p>
-                </div>
-            </div>
-        </div><!-- End row -->
-    </div><!-- End container -->
-</footer><!-- End footer -->
+@include('layouts.footer')<!-- End footer -->
 
 <div id="toTop"></div><!-- Back to top button -->
 
@@ -870,12 +601,12 @@
 <!-- End modal review -->
 
 <!-- Common scripts -->
-<script src="js/jquery-2.2.4.min.js"></script>
-<script src="js/common_scripts_min.js"></script>
-<script src="js/functions.js"></script>
+<script src="{{URL::to('js/jquery-2.2.4.min.js')}}"></script>
+<script src="{{URL::to('js/common_scripts_min.js')}}"></script>
+<script src="{{URL::to('js/functions.js')}}"></script>
 
 <!-- Specific scripts -->
-<script src="js/icheck.js"></script>
+<script src="{{URL::to('js/icheck.js')}}"></script>
 <script>
     $('input').iCheck({
         checkboxClass: 'icheckbox_square-grey',
@@ -883,7 +614,7 @@
     });
 </script>
 <!-- Date and time pickers -->
-<script src="js/jquery.sliderPro.min.js"></script>
+<script src="{{URL::to('js/jquery.sliderPro.min.js')}}"></script>
 <script type="text/javascript">
     $(document).ready(function ($) {
         $('#Img_carousel').sliderPro({
@@ -905,7 +636,7 @@
 
 
 <!-- Date and time pickers -->
-<script src="js/bootstrap-datepicker.js"></script>
+<script src="{{URL::to('js/bootstrap-datepicker.js')}}"></script>
 <script>
     $('input.date-pick').datepicker('setDate', 'today');
 </script>
@@ -913,10 +644,10 @@
 <script src="http://maps.googleapis.com/maps/api/js"></script>
 
 
-<script src="js/map.js"></script>
-<script src="js/infobox.js"></script>
+<script src="{{URL::to('js/map.js')}}"></script>
+<script src="{{URL::to('js/infobox.js')}}"></script>
 <!-- Carousel -->
-<script src="js/owl.carousel.min.js"></script>
+<script src="{{URL::to('js/owl.carousel.min.js')}}"></script>
 <script>
     $(document).ready(function () {
         $(".carousel").owlCarousel({
@@ -928,7 +659,7 @@
 </script>
 
 <!--Review modal validation -->
-<script src="assets/validate.js"></script>
+<script src="{{URL::to('assets/validate.js')}}"></script>
 </body>
 
 </html>

@@ -2,31 +2,42 @@
 
 namespace App\Http\Controllers;
 
+use App\Hotel;
 use Illuminate\Http\Request;
 
 class HotelsController extends Controller
 {
-    public function hotels()
+    public function allHotels()
     {
-        $hotel_content = view('Hotels.hotels_content');
+        $hotels = Hotel::where('hotels_category', 'Hotels')
+            ->paginate(6);
+
+        $hotelContent = view('Hotels.hotels_content')
+            ->with('hotels', $hotels);
+
         return view('Hotels.all_hotels_grid')
-            ->with('hotel_content', $hotel_content);
+            ->with('tours_content', $hotelContent);
+
     }
 
-    public function resorts()
+    public function allResorts()
     {
-        $resort_content = view('Hotels.resorts_content');
+        $resorts = Hotel::where('hotels_category', 'Resorts')
+            ->paginate(6);
+
+        $resortContent = view('Hotels.resorts_content')
+            ->with('resorts', $resorts);
+
         return view('Hotels.all_resorts_grid')
-            ->with('resort_content', $resort_content);
+            ->with('resort_content', $resortContent);
     }
 
-    public function singleHotel(){
-        $single_hotel = view('Hotels.single_hotel_details');
-        return $single_hotel;
+    public function singleDetails($id)
+    {
+        $hotel = Hotel::find($id);
+
+        return view('Hotels.single_hotel_details')
+            ->with('hotel', $hotel);
     }
 
-    public function singleResort(){
-        $single_resort = view('Hotels.single_resort_details');
-        return $single_resort;
-    }
 }

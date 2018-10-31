@@ -15,11 +15,11 @@
     <title>TourBookBD - A place of natural beauty</title>
 
     <!--JS-->
-    <script type="text/javascript" src="rev-slider-files/js/extensions/revolution.extension.slideanims.min.js"></script>
+    <script type="text/javascript" src="{{URL::to('rev-slider-files/js/extensions/revolution.extension.slideanims.min.js')}}"></script>
     <script type="text/javascript"
-            src="rev-slider-files/js/extensions/revolution.extension.layeranimation.min.js"></script>
-    <script type="text/javascript" src="rev-slider-files/js/extensions/revolution.extension.navigation.min.js"></script>
-    <script type="text/javascript" src="rev-slider-files/js/extensions/revolution.extension.parallax.min.js"></script>
+            src="{{URL::to('rev-slider-files/js/extensions/revolution.extension.layeranimation.min.js')}}"></script>
+    <script type="text/javascript" src="{{URL::to('rev-slider-files/js/extensions/revolution.extension.navigation.min.js')}}"></script>
+    <script type="text/javascript" src="{{URL::to('rev-slider-files/js/extensions/revolution.extension.parallax.min.js')}}"></script>
 
 
     <!-- Favicons-->

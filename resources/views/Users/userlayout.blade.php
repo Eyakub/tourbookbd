@@ -33,11 +33,14 @@
     <!-- SPECIFIC CSS -->
     <link href="{{URL::asset('css/admin.css')}}" rel="stylesheet">
     <link href="{{URL::asset('css/jquery.switch.css')}}" rel="stylesheet">
+    <link href="{{URL::asset('css/statusbox.css')}}" rel="stylesheet">
+    <link href="{{URL::asset('css/bootstrap.min.css')}}">
 
 
     <script src="{{URL::to('js/html5shiv.min.js')}}"></script>
     <script src="{{URL::to('js/respond.min.js')}}"></script>
     <![endif]-->
+
 
 </head>
 
@@ -101,6 +104,9 @@
                         <a href="#section-4" class="icon-profile"><span>Profile</span></a>
                     </li>
                     <li>
+                        <a href="#section-5" class="icon-profile"><span>Timeline</span></a>
+                    </li>
+                    <li>
                         <a href="#section-2" class="icon-wishlist"><span>Wishlist</span></a>
                     </li>
                     <li>
@@ -112,6 +118,7 @@
                 </ul>
             </nav>
             <div class="content">
+
 
                 <section id="section-4">
                     <div class="row">
@@ -139,7 +146,8 @@
                             </ul>
                         </div>
                         <div class="col-md-6 col-sm-6">
-                            <img src="storage/user_images/{{$user->src_user}}" height="250" width="250" alt="Image" class="img-responsive styled profile_pic">
+                            <img src="storage/user_images/{{$user->src_user}}" height="250" width="250" alt="Image"
+                                 class="img-responsive styled profile_pic">
                         </div>
                     </div>
                     <!-- End row -->
@@ -258,6 +266,108 @@
                         <button type="submit" class="btn_1 green">Update Profile</button>
                 </section>
                 <!-- End section 4 -->
+
+                <section id="section-5">
+                    <div class="row">
+
+                        <div class="col-md-9" id="new_status">
+                            <ul class="navbar-nav col-md-9" id="post_header" role="navigation">
+                                <h5>Post</h5>
+                                {{--<li><a href="#"><span class="glyphicon glyphicon-pencil"></span>Update Status</a></li>--}}
+                                {{--<li><a href="#"><span class="glyphicon glyphicon-picture"></span>Add Photos/Video</a></li>--}}
+                                {{--<li><a href="#"><span class="glyphicon glyphicon-th"></span>Create Photo Album</a></li>--}}
+                            </ul>
+                            <div class="col-md-8" id="post_content">
+                                <img alt="profile picture" class="col-xs-1"
+                                     src="storage/user_images/{{$user->src_user}}">
+                                <div class="textarea_wrap"><textarea class="col-md-7"
+                                                                     placeholder="What's on your mind?"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-12" id="post_footer">
+                                <ul class="navbar-nav col-md-7">
+                                    <li><a href="#"><span class="glyphicon glyphicon-camera"></span></a></li>
+                                    <li><a href="#"><span class="glyphicon glyphicon-user"></span></a></li>
+                                    <li><a href="#"><span class="glyphicon glyphicon-sunglasses"></span></a></li>
+                                    <li><a href="#"><span class="glyphicon glyphicon-map-marker"></span></a></li>
+                                </ul>
+                                <div class="col-md-5">
+                                    <button class="btn btn-default"><span
+                                                class="glyphicon glyphicon-cog"></span>Custom<span class="caret"></span>
+                                    </button>
+                                    <button class="btn btn-primary">Post</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-9">
+                            <div class="box_style_1">
+                                <div class="post">
+                                    <a href="blog_post_right_sidebar.html"><img src="img/blog-3.jpg" alt="Image"
+                                                                                class="img-responsive">
+                                    </a>
+                                    <div class="post_info clearfix">
+                                        <div class="post-left">
+                                            <ul>
+                                                <li><i class="icon-calendar-empty"></i> On <span>12 Nov 2020</span>
+                                                </li>
+                                                <li><i class="icon-inbox-alt"></i> In <a href="#">Top tours</a>
+                                                </li>
+                                                <li><i class="icon-tags"></i> Tags <a href="#">Works</a>, <a href="#">Personal</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="post-right"><i class="icon-comment"></i><a href="#">25 </a>
+                                        </div>
+                                    </div>
+                                    <h2>Duis aute irure dolor in reprehenderit</h2>
+                                    <p>
+                                        Ludus albucius adversarium eam eu. Sit eu reque tation aliquip. Quo no dolorum
+                                        albucius lucilius, hinc eligendi ut sed. Ex nam quot ferri suscipit, mea ne
+                                        legere alterum repudiandae. Ei pri quaerendum intellegebat, ut vel consequuntur
+                                        voluptatibus. Et volumus sententiae adversarium duo......
+                                    </p>
+                                    <p>
+                                        Ludus albucius adversarium eam eu. Sit eu reque tation aliquip. Quo no dolorum
+                                        albucius lucilius, hinc eligendi ut sed. Ex nam quot ferri suscipit, mea ne
+                                        legere alterum repudiandae. Ei pri quaerendum intellegebat, ut vel consequuntur
+                                        voluptatibus. Et volumus sententiae adversarium duo......
+                                    </p>
+                                    <a href="{{URL::to('/blog-details')}}" class="btn_1">Read more</a>
+                                </div>
+                                <!-- end post -->
+
+                                <hr>
+
+                            </div>
+                            <hr>
+
+                            <div class="text-center">
+                                <ul class="pagination">
+                                    <li><a href="#">Prev</a>
+                                    </li>
+                                    <li class="active"><a href="#">1</a>
+                                    </li>
+                                    <li><a href="#">2</a>
+                                    </li>
+                                    <li><a href="#">3</a>
+                                    </li>
+                                    <li><a href="#">4</a>
+                                    </li>
+                                    <li><a href="#">5</a>
+                                    </li>
+                                    <li><a href="#">Next</a>
+                                    </li>
+                                </ul>
+                                <!-- end pagination-->
+                            </div>
+                        </div>
+                        <!-- End col-md-8-->
+                    </div>
+
+                </section>
 
                 <section id="section-2">
                     <div class="row">

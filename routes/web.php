@@ -19,13 +19,27 @@ Route::get('/', 'HomeController@index');
  * Admin Panel
  */
 Route::get('/admin-panel', 'AdminController@index');
+
 Route::get('/tours-insert-form', 'AdminController@showTourForm')->name('upload.tour');
 Route::post('/tours-insert-form', 'AdminController@insertTour');
 Route::get('/all-tour-data', 'AdminController@showData');
-
 Route::get('/edit-tour-information/{id}', 'AdminController@editTourInfo');
 Route::post('/update-tour-information', 'AdminController@updateTourInfo');
 Route::get('/delete-tour/{id}', 'AdminController@deleteTour');
+
+Route::get('/hotels-insert-form', 'AdminController@showHotelForm')->name('upload.hotels');
+Route::post('/hotels-insert-form', 'AdminController@insertHotel');
+Route::get('/all-hotel-data', 'AdminController@showHotelData');
+Route::get('/edit-hotel-information/{id}', 'AdminController@editHotelInfo');
+Route::post('/update-hotel-information', 'AdminController@updateHotelInfo');
+Route::get('/delete-hotel/{id}', 'AdminController@deleteHotel');
+
+Route::get('/resorts-insert-form', 'AdminController@showResortForm')->name('upload.resorts');
+Route::post('/resorts-insert-form', 'AdminController@insertResort');
+Route::get('/all-resort-data', 'AdminController@showResortData');
+Route::get('/edit-resort-information/{id}', 'AdminController@editResortInfo');
+Route::post('/update-resort-information', 'AdminController@updateResortInfo');
+Route::get('/delete-resort/{id}', 'AdminController@deleteResort');
 
 Route::get('/all-user-data/', 'AdminController@showUserData');
 Route::get('/delete-user/{id}', 'AdminController@deleteUser');
@@ -46,11 +60,8 @@ Route::post('/user-profile', 'UserController@loginCheck')->name('login_check');
  */
 Route::get('/all-tour', 'TourController@allTour');
 Route::get('/single-tour/{id}', 'TourController@singleDetails');
-//Route::get('/single-tour', 'TourController@allTours');
-//
 
-Route::get('/single-hotel', 'HotelsController@SingleHotel');
-Route::get('/single-resort', 'HotelsController@SingleResort');
+Route::get('/single-hotel/{id}', 'HotelsController@singleDetails');
 Route::get('/popular', 'UserController@popularTour');
 Route::get('/close-to-sea', 'UserController@closeToSea');
 Route::get('/hill-tracking', 'UserController@hillTracking');
@@ -73,10 +84,8 @@ Route::get('/coming_soon', 'UserController@comingSoon');
 /**
  * Hotels & Resorts
  */
-Route::get('/hotels', 'HotelsController@hotels');
-Route::get('/resorts', 'HotelsController@resorts');
+Route::get('/hotels', 'HotelsController@allHotels');
+Route::get('/resorts', 'HotelsController@allResorts');
 Route::get('/restaurants', 'HotelsController@resorts');
 
 
-
-//Route::get('/home', 'HomeController@index')->name('home');

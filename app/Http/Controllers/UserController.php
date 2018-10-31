@@ -179,4 +179,6 @@ class UserController extends Controller
         return $coming_soon;
     }
 
+
+
 }
