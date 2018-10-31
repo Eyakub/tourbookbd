@@ -31,7 +31,7 @@ Route::get('/hotels-insert-form', 'AdminController@showHotelForm')->name('upload
 Route::post('/hotels-insert-form', 'AdminController@insertHotel');
 Route::get('/all-hotel-data', 'AdminController@showHotelData');
 Route::get('/edit-hotel-information/{id}', 'AdminController@editHotelInfo');
-Route::post('/update-hotel-information', 'AdminController@updateHotelInfo');
+Route::post('/update-hotefl-information', 'AdminController@updateHotelInfo');
 Route::get('/delete-hotel/{id}', 'AdminController@deleteHotel');
 
 Route::get('/resorts-insert-form', 'AdminController@showResortForm')->name('upload.resorts');
@@ -48,10 +48,10 @@ Route::get('/delete-user/{id}', 'AdminController@deleteUser');
 /**
  * User Panel
  */
-Route::get('/user-login', 'UserController@Userlogin');
 Route::get('/user-registration', 'UserController@UserRegistration')->name('upload.info');
 Route::post('/user-registration', 'UserController@storeUserInformation');
-Route::post('/user-profile', 'UserController@loginCheck')->name('login_check');
+Route::get('/user-login', 'UserController@login_user')->name('login_user');
+Route::get('/user-profile', 'UserController@loginCheck')->name('login_check_sfsdfsd');
 
 
 

@@ -270,35 +270,38 @@
                 <section id="section-5">
                     <div class="row">
 
-                        <div class="col-md-9" id="new_status">
-                            <ul class="navbar-nav col-md-9" id="post_header" role="navigation">
-                                <h5>Post</h5>
-                                {{--<li><a href="#"><span class="glyphicon glyphicon-pencil"></span>Update Status</a></li>--}}
-                                {{--<li><a href="#"><span class="glyphicon glyphicon-picture"></span>Add Photos/Video</a></li>--}}
-                                {{--<li><a href="#"><span class="glyphicon glyphicon-th"></span>Create Photo Album</a></li>--}}
-                            </ul>
-                            <div class="col-md-8" id="post_content">
-                                <img alt="profile picture" class="col-xs-1"
-                                     src="storage/user_images/{{$user->src_user}}">
-                                <div class="textarea_wrap"><textarea class="col-md-7"
-                                                                     placeholder="What's on your mind?"></textarea>
-                                </div>
-                            </div>
-                            <div class="col-md-12" id="post_footer">
-                                <ul class="navbar-nav col-md-7">
-                                    <li><a href="#"><span class="glyphicon glyphicon-camera"></span></a></li>
-                                    <li><a href="#"><span class="glyphicon glyphicon-user"></span></a></li>
-                                    <li><a href="#"><span class="glyphicon glyphicon-sunglasses"></span></a></li>
-                                    <li><a href="#"><span class="glyphicon glyphicon-map-marker"></span></a></li>
+                        <div class="row">
+                            <div class="col-md-9" id="new_status">
+                                <ul class="navbar-nav col-md-9" id="post_header" role="navigation">
+                                    <h5>Post</h5>
+                                    {{--<li><a href="#"><span class="glyphicon glyphicon-pencil"></span>Update Status</a></li>--}}
+                                    {{--<li><a href="#"><span class="glyphicon glyphicon-picture"></span>Add Photos/Video</a></li>--}}
+                                    {{--<li><a href="#"><span class="glyphicon glyphicon-th"></span>Create Photo Album</a></li>--}}
                                 </ul>
-                                <div class="col-md-5">
-                                    <button class="btn btn-default"><span
-                                                class="glyphicon glyphicon-cog"></span>Custom<span class="caret"></span>
-                                    </button>
-                                    <button class="btn btn-primary">Post</button>
+                                <div class="col-md-8" id="post_content">
+                                    <img alt="profile picture" class="col-xs-1"
+                                         src="storage/user_images/{{$user->src_user}}">
+                                    <div class="textarea_wrap"><textarea class="col-md-7"
+                                                                         placeholder="What's on your mind?"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-12" id="post_footer">
+                                    <ul class="navbar-nav col-md-7">
+                                        <li><a href="#"><span class="glyphicon glyphicon-camera"></span></a></li>
+                                        <li><a href="#"><span class="glyphicon glyphicon-user"></span></a></li>
+                                        <li><a href="#"><span class="glyphicon glyphicon-sunglasses"></span></a></li>
+                                        <li><a href="#"><span class="glyphicon glyphicon-map-marker"></span></a></li>
+                                    </ul>
+                                    <div class="col-md-5">
+                                        <button class="btn btn-default"><span
+                                                    class="glyphicon glyphicon-cog"></span>Custom<span class="caret"></span>
+                                        </button>
+                                        <button class="btn btn-primary">Post</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+
                     </div>
 
                     <div class="row">

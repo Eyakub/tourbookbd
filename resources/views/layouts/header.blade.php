@@ -3,12 +3,17 @@
     <div id="top_line">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 col-sm-6 col-xs-6"><i class="icon-phone"></i><strong>+8801937424217</strong></div>
+                <div class="col-md-6 col-sm-6 col-xs-6"><i class="icon-phone"></i><strong>+8801937424217 </strong></div>
 
                 <div class="col-md-6 col-sm-6 col-xs-6">
                     <ul id="top_links">
                         {{--<li>--}}
+                        @if(!empty(Session::get('id')))
+                            {{Session::get('name')}}<a href="">Logout</a>
+                        @else
                             <a href="{{URL::to('/user-login')}}" id="access_link">Sign in </a>
+                        @endif
+
                             {{--<div class="dropdown dropdown-access">
                                 <div class="dropdown-menu">
                                     <h4 align="center">TourBookBD</h4>

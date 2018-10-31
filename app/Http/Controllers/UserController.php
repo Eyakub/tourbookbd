@@ -88,7 +88,49 @@ class UserController extends Controller
 
     }
 
-    public function loginCheck(Request $request){
+    public function loginCheck(){
+//        $data = Input::except(array('_token'));
+//
+//        $rule = array(
+//            'email'=>'required|email',
+//            'password'=>'required',
+//        );
+//
+//        $validator = Validator::make($data, $rule);
+//        if($validator->fails()){
+//            return Redirect::to('user-login')->withErrors($validator);
+//        }else{
+//            $data = Input::except(array('_token'));
+//            if(Auth::attempt($data)){
+//                return Redirect::to('/coming_soon');
+//            }else{
+//                return Redirect::to('user-login');
+//            }
+//        }
+
+        $user_email = Session::get('id');
+        $res = Users::where('id', $user_email)
+            ->first();
+
+        if($res != null){
+            return view('Users.userlayout')
+                ->with('user', $res);
+        }else{
+            Session::put('message', 'Your User ID or Password Invalid...!!!');
+            return redirect::to('/user-login');
+        }
+
+    }
+
+    public function auth_check(){
+        session_start();
+        $user_id = Session::get('id');
+        if($user_id !== NULL){
+            return Redirect::to('/user-profile')->send();
+        }
+    }
+
+    public function user_login(Request $request){
 //        $data = Input::except(array('_token'));
 //
 //        $rule = array(
@@ -117,6 +159,8 @@ class UserController extends Controller
             ->first();
         if($res){
             Session::put('id', $res->id);
+            $name = $res->first_name.' '.$res->last_name;
+            Session::put('name', $name);
             //dd(session()->all());
             $user = Users::find($res->id);
             return view('Users.userlayout')
@@ -126,14 +170,6 @@ class UserController extends Controller
             return redirect::to('/user-login');
         }
 
-    }
-
-    public function auth_check(){
-        session_start();
-        $user_id = Session::get('id');
-        if($user_id !== NULL){
-            return Redirect::to('/user-profile')->send();
-        }
     }
 
     public function userProfile()
