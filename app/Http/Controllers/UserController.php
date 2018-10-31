@@ -128,7 +128,7 @@ class UserController extends Controller
     {
         Auth::logout();
         Session::flush();
-        return redirect('/user-login');
+        return redirect('/');
     }
 
 
