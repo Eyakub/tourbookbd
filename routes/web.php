@@ -90,6 +90,6 @@ Route::get('/coming_soon', 'UserController@comingSoon');
  */
 Route::get('/hotels', 'HotelsController@allHotels');
 Route::get('/resorts', 'HotelsController@allResorts');
-Route::get('/restaurants', 'HotelsController@resorts');
+Route::get('/restaurants', 'HotelsController@restaurants');
 
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Tour;
+use App\TourCategory;
 use App\User;
 use App\Hotel;
 use Illuminate\Http\Request;
@@ -19,7 +20,9 @@ class AdminController extends Controller
 
 
     public function showTourForm(){
-        return view('Admin.forms.inserttour');
+        $categorys = TourCategory::all();
+        return view('Admin.forms.inserttour')
+            ->with('categorys', $categorys);
     }
 
     public function insertTour(request $request){
@@ -62,8 +65,10 @@ class AdminController extends Controller
     public function editTourInfo($id)
     {
         $passData = Tour::find($id);
+        $categorys = TourCategory::all();
         return view('Admin.forms.editTourInfo')
-            ->with('datapass', $passData);
+            ->with('datapass', $passData)
+            ->with('categorys', $categorys);
     }
 
     public function updateTourInfo(request $request)

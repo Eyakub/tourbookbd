@@ -40,10 +40,10 @@
                                 Category</label></div>
                         <div class="col-12 col-md-9">
                             <select name="tour_category" id="select" class="form-control">
-                                <option value="0">Please select</option>
-                                <option value="1">Close to sea</option>
-                                <option value="2">Hill Tracking</option>
-                                <option value="3">Waterfalls</option>
+                                <option>Please Select</option>
+                                @foreach($categorys as $category)
+                                    <option value="{{$category->tour_category_name}}">{{$category->tour_category_name}}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>

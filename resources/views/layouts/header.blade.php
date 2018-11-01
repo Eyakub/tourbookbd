@@ -47,9 +47,7 @@
                             <ul>
                                 <li><a href="{{URL::to('/all-tour')}}">All tours list</a></li>
                                 <li><a href="{{URL::to('/coming_soon')}}">Popular List</a></li>
-                                <li><a href="{{URL::to('/coming_soon')}}">Close to Sea</a></li>
-                                <li><a href="{{URL::to('/coming_soon')}}">Hill Tracking</a></li>
-                                <li><a href="{{URL::to('/coming_soon')}}">Waterfalls</a></li>
+                                <li><a href="{{URL::to('/coming_soon')}}">Top Rated List</a></li>
                                 {{--<li><a href="javascript:void(0);">Single tour fixed sidebar</a>
                                     <ul>
                                         <li><a href="single_tour_fixed_sidebar.html">Single tour fixed sidebar</a></li>
@@ -59,8 +57,6 @@
                                         <li><a href="confirmation_fixed_sidebar.html">Confirmation Fixed Sidebar</a></li>
                                     </ul>
                                 </li>--}}
-                                <li><a href="{{URL::to('/coming_soon')}}">Hide in Nature</a></li>
-                                <li><a href="{{URL::to('/coming_soon')}}">City Tours</a></li>
                             </ul>
                         </li>
 

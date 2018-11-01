@@ -40,4 +40,9 @@ class HotelsController extends Controller
             ->with('hotel', $hotel);
     }
 
+    public function restaurants()
+    {
+        return view('coming_soon');
+    }
+
 }
