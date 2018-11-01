@@ -66,10 +66,7 @@ Route::get('/all-tour', 'TourController@allTour');
 Route::get('/single-tour/{id}', 'TourController@singleDetails');
 
 Route::get('/single-hotel/{id}', 'HotelsController@singleDetails');
-Route::get('/popular', 'UserController@popularTour');
-Route::get('/close-to-sea', 'UserController@closeToSea');
-Route::get('/hill-tracking', 'UserController@hillTracking');
-Route::get('/waterfalls', 'UserController@waterfalls');
+Route::get('/close-to-sea', 'TourController@closeToSea');
 
 
 /**

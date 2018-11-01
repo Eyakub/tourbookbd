@@ -28,4 +28,17 @@ class TourController extends Controller
     public function allTours(){
         return view('Tours.single_tour');
     }
+
+    public function closeToSea()
+    {
+
+        $datas = Tour::where('tour_category', 'Close To Sea')
+            ->paginate(6);
+
+        $tourContent = view('Tours.tour_contents')
+            ->with('tours', $datas);
+
+        return view('Tours.all_tour_list_in_grid')
+            ->with('tours_content', $tourContent);
+    }
 }

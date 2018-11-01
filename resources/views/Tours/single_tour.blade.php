@@ -202,7 +202,7 @@
                             <small> - 10 March 2015 -</small>
                             <h4>Eyakub Sorkar</h4>
                             <p>
-                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus."
+                                "Beautiful place :p"
                             </p>
                             <div class="rating">
                                 <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><i class="icon-smile"></i>

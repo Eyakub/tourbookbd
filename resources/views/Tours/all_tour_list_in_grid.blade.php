@@ -124,7 +124,7 @@
                         </li>
                         <li><a href="{{URL::to('/coming_soon')}}"><i class="icon_set_1_icon-28"></i>Skyline tours <span>(11)</span></a>
                         </li>
-                        <li><a href="{{URL::to('/coming_soon')}}"><i class=" icon-anchor-2"></i>Close To Sea <span>(11)</span></a>
+                        <li><a href="{{URL::to('/close-to-sea')}}"><i class=" icon-anchor-2"></i>Close To Sea <span></span></a>
                         </li>
                         <li><a href="{{URL::to('/coming_soon')}}"><i class="icon_set_2_icon-108"></i>Nature & Wildlife <span>(11)</span></a>
                         </li>
