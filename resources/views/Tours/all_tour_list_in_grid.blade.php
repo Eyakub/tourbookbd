@@ -112,23 +112,25 @@
 
                 <div class="box_style_cat">
                     <ul id="cat_nav">
-                        <li><a href="{{URL::to('/all-tour')}}" id="active"><i class="icon_set_1_icon-51"></i>All tours <span></span></a>
+                        <li><a href="{{URL::to('/all-tour')}}" id="active"><i class="icon_set_1_icon-51"></i>All tours <span>({{$count}})</span></a>
                         </li>
-                        <li><a href="{{URL::to('/coming_soon')}}"><i class="icon_set_1_icon-3"></i>City sightseeing <span></span></a>
+                        <li><a href="{{URL::to('/coming_soon')}}"><i class="icon_set_1_icon-3"></i>City sightseeing <span>()</span></a>
                         </li>
-                        <li><a href="{{URL::to('/coming_soon')}}"><i class="icon_set_1_icon-4"></i>Museum <span>(16)</span></a>
+                        <li><a href="{{URL::to('/coming_soon')}}"><i class="icon_set_1_icon-4"></i>Museum <span>()</span></a>
                         </li>
-                        <li><a href="{{URL::to('/coming_soon')}}"><i class="icon_set_1_icon-44"></i>Historic Places <span>(12)</span></a>
+                        <li><a href="{{URL::to('/coming_soon')}}"><i class="icon_set_1_icon-44"></i>Historic Places <span>()</span></a>
                         </li>
-                        <li><a href="{{URL::to('/coming_soon')}}"><i class="icon_set_1_icon-43"></i>Churces <span>(08)</span></a>
+                        <li><a href="{{URL::to('/coming_soon')}}"><i class="icon_set_1_icon-43"></i>Churces <span>()</span></a>
                         </li>
-                        <li><a href="{{URL::to('/coming_soon')}}"><i class="icon_set_1_icon-28"></i>Skyline tours <span>(11)</span></a>
+                        <li><a href="{{URL::to('/coming_soon')}}"><i class="icon_set_1_icon-28"></i>Skyline tours <span>()</span></a>
                         </li>
-                        <li><a href="{{URL::to('/close-to-sea')}}"><i class=" icon-anchor-2"></i>Close To Sea <span></span></a>
+                        <li><a href="{{URL::to('/close-to-sea')}}"><i class=" icon-anchor-2"></i>Close To Sea <span>({{$closeToCount}})</span></a>
                         </li>
-                        <li><a href="{{URL::to('/coming_soon')}}"><i class="icon_set_2_icon-108"></i>Nature & Wildlife <span>(11)</span></a>
+                        <li><a href="{{URL::to('/waterfall')}}"><i class=" icon-waves"></i>Waterfall <span>({{$waterfallCount}})</span></a>
                         </li>
-                        <li><a href="{{URL::to('/coming_soon')}}"><i class="icon-pitch"></i>Hiking & Camping <span>(11)</span></a>
+                        <li><a href="{{URL::to('/naturelife')}}"><i class="icon_set_2_icon-108"></i>Nature & Wildlife <span>({{$natureCount}})</span></a>
+                        </li>
+                        <li><a href="{{URL::to('/hikingcamping')}}"><i class="icon-pitch"></i>Hiking & Camping <span>({{$hikingCount}})</span></a>
                         </li>
                     </ul>
                 </div>

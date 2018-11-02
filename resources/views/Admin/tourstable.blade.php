@@ -51,6 +51,9 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Title</th>
+                                    <th>Address</th>
+                                    <th>District</th>
+                                    <th>Category</th>
                                     <th>Description</th>
                                     <th>Status</th>
                                     <th>Actions</th>
@@ -60,6 +63,9 @@
                                     <tbody>
                                     <td>{{$data->id}}</td>
                                     <td>{{$data->tour_title}}</td>
+                                    <td>{{$data->tour_address}}</td>
+                                    <td>{{$data->district_id}}</td>
+                                    <td>{{$data->tour_category}}</td>
                                     <td>{{$data->tour_description}}</td>
                                     <td>
                                         <span class="label label-success">Published</span>

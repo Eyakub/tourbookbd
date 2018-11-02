@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\District;
 use App\Tour;
 use App\TourCategory;
 use App\User;
 use App\Hotel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
 
@@ -21,8 +23,10 @@ class AdminController extends Controller
 
     public function showTourForm(){
         $categorys = TourCategory::all();
+        $district = District::all();
         return view('Admin.forms.inserttour')
-            ->with('categorys', $categorys);
+            ->with('categorys', $categorys)
+            ->with('district', $district);
     }
 
     public function insertTour(request $request){
@@ -32,6 +36,7 @@ class AdminController extends Controller
             'tour_description' => 'required',
             'tour_address' => 'required',
             'tour_category' => 'required',
+            'district_id' => 'required',
         ]);
 
         if($request->hasFile('tour_small_cover') && $request->hasFile('tour_large_cover')){
@@ -49,6 +54,7 @@ class AdminController extends Controller
         $file->tour_category = $request->input('tour_category');
         $file->tour_small_cover = $tourSmallCover;
         $file->tour_large_cover = $tourLargeCover;
+        $file->district_id = $request->input('district_id');
         $file->save();
 
         return Redirect::to('/tours-insert-form')->with('success', 'Successfully Inserted');
@@ -64,11 +70,20 @@ class AdminController extends Controller
 
     public function editTourInfo($id)
     {
-        $passData = Tour::find($id);
+        $datapass = Tour::find($id);
         $categorys = TourCategory::all();
+        $districts = District::all();
+        $oneDis = DB::table('tour')
+            ->join('districts', 'tour.district_id', '=', 'districts.id')
+            ->select('districts.*', 'tour.district_id')
+            ->get();
+
         return view('Admin.forms.editTourInfo')
-            ->with('datapass', $passData)
-            ->with('categorys', $categorys);
+            ->with(compact('datapass'))
+            ->with(compact('categorys'))
+            ->with(compact('oneDis'))
+            ->with(compact('districts'));
+
     }
 
     public function updateTourInfo(request $request)
@@ -82,6 +97,7 @@ class AdminController extends Controller
             'tour_description' => 'required',
             'tour_address' => 'required',
             'tour_category' => 'required',
+            'district_id' => 'required',
         ]);
 
         if($request->hasFile('tour_small_cover') || $request->hasFile('tour_large_cover')){
@@ -108,6 +124,7 @@ class AdminController extends Controller
         $tour->tour_category = $request->input('tour_category');
         $tour->tour_small_cover = $tourSmallCover;
         $tour->tour_large_cover = $tourLargeCover;
+        $tour->district_id = $request->input('district_id');
         $tour->save();
 
         return Redirect::to('/edit-tour-information/'.$tour_id)->with('success', 'Successfully Updated');

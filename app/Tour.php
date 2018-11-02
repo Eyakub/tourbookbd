@@ -8,10 +8,9 @@ class Tour extends Model
 {
     protected $table = "tour";
 
-
-    public function users()
+    public function disTour()
     {
-        return $this->belongsToMany('App\User','tour_user');
+        return $this->hasMany('App\District', 'district_id');
     }
 
 }

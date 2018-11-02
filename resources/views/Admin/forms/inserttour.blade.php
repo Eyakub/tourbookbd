@@ -29,6 +29,19 @@
                     </div>
 
                     <div class="row form-group">
+                        <div class="col col-md-3"><label for="select" class=" form-control-label">Select
+                                District</label></div>
+                        <div class="col-12 col-md-9">
+                            <select name="district_id" id="select" class="form-control">
+                                <option>Please Select</option>
+                                @foreach($district as $dis)
+                                    <option value="{{$dis->id}}">{{$dis->district_name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
                         <div class="col col-md-3"><label for="textarea-input"
                                                          class=" form-control-label">Description</label></div>
                         <div class="col-12 col-md-9"><textarea name="tour_description" id="textarea-input" rows="9"

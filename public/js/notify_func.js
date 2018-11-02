@@ -4,7 +4,7 @@ $.notify({
 	// options
 	icon: 'icon_set_1_icon-29',
 	title: "<h4>Welcome Traveller</h4> ",
-	message: "Epicuri vituperata complectitur in quo, primis labore possim sed in, vim no elaboraret reprehendunt. "
+	message: "You are cordially invited to have a tour in our site. "
 },{
 	// settings
 	type: 'info',
@@ -28,7 +28,7 @@ $.notify({
 	// options
 	icon: 'img/notify_img.jpg',
 	title: "<h4>Most Viewed Tour</h4> ",
-	message: "<p>Arch de Triomphe Tour (13 min. ago).</p><a href=\"single_tour.html\" target=\"_blank\" class=\"btn_1\">Read more</a> "
+	message: "<p>Best tour of this season.</p><a href=\"single_tour.html\" target=\"_blank\" class=\"btn_1\">Read more</a> "
 },{
 	// settings
 	icon_type: 'image',

@@ -16,6 +16,7 @@
                             </li>
                         @else
                             <li><a href="{{URL::to('/user-login')}}">Sign In</a></li>
+                            <li><a href="{{URL::to('/user-registration')}}">Sign Up</a> </li>
                         @endif
                     </ul>
                 </div>

@@ -168,7 +168,7 @@
                     data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9=""
                     data-param10="" data-description="">
                     <!-- MAIN IMAGE -->
-                    <img src="rev-slider-files/assets/700X1800-4.jpg" alt="" data-bgposition="center center"
+                    <img src="{{URL::asset('rev-slider-files/assets/700X1800-4.jpg')}}" alt="" data-bgposition="center center"
                          data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg"
                          data-no-retina>
                     <!-- LAYERS -->
@@ -250,7 +250,7 @@
                     data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9=""
                     data-param10="" data-description="">
                     <!-- MAIN IMAGE -->
-                    <img src="rev-slider-files/assets/700X1800-3.jpg" alt="" data-bgposition="center center"
+                    <img src="{{URL::asset('rev-slider-files/assets/700X1800-3.jpg')}}" alt="" data-bgposition="center center"
                          data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg"
                          data-no-retina>
                     <!-- LAYERS -->
@@ -334,7 +334,7 @@
                          style="z-index: 10;">
                         <div class="rs-looped rs-pendulum" data-easing="linearEaseNone" data-startdeg="-20"
                              data-enddeg="360" data-speed="35" data-origin="50% 50%"><img
-                                    src="rev-slider-files/assets/blurflake4.png" alt=""
+                                    src="{{URL::asset('rev-slider-files/assets/blurflake4.png')}}" alt=""
                                     data-ww="['240px','240px','240px','240px']"
                                     data-hh="['240px','240px','240px','240px']" data-no-retina></div>
                     </div>
@@ -349,7 +349,7 @@
                          data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
                          style="z-index: 11;">
                         <div class="rs-looped rs-wave" data-speed="20" data-angle="0" data-radius="50px"
-                             data-origin="50% 50%"><img src="rev-slider-files/assets/blurflake3.png" alt=""
+                             data-origin="50% 50%"><img src="{{asset('rev-slider-files/assets/blurflake3.png')}}" alt=""
                                                         data-ww="['170px','170px','170px','170px']"
                                                         data-hh="['170px','170px','170px','170px']" data-no-retina>
                         </div>
@@ -366,7 +366,7 @@
                          style="z-index: 12;">
                         <div class="rs-looped rs-rotate" data-easing="Power2.easeInOut" data-startdeg="-20"
                              data-enddeg="360" data-speed="20" data-origin="50% 50%"><img
-                                    src="rev-slider-files/assets/blurflake2.png" alt=""
+                                    src="{{asset('rev-slider-files/assets/blurflake2.png')}}" alt=""
                                     data-ww="['50px','50px','50px','50px']" data-hh="['51px','51px','51px','51px']"
                                     data-no-retina></div>
                     </div>
@@ -381,7 +381,7 @@
                          data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
                          style="z-index: 13;">
                         <div class="rs-looped rs-wave" data-speed="4" data-angle="0" data-radius="10"
-                             data-origin="50% 50%"><img src="rev-slider-files/assets/blurflake1.png" alt=""
+                             data-origin="50% 50%"><img src="{{asset('rev-slider-files/assets/blurflake1.png')}}" alt=""
                                                         data-ww="['120px','120px','120px','120px']"
                                                         data-hh="['120px','120px','120px','120px']" data-no-retina>
                         </div>
@@ -395,7 +395,7 @@
                     data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8=""
                     data-param9="" data-param10="" data-description="">
                     <!-- MAIN IMAGE -->
-                    <img src="rev-slider-files/assets/700X1800-2.jpg" alt="" data-bgposition="center center"
+                    <img src="{{asset('rev-slider-files/assets/700X1800-2.jpg')}}" alt="" data-bgposition="center center"
                          data-kenburns="on" data-duration="30000" data-ease="Linear.easeNone" data-scalestart="100"
                          data-scaleend="120" data-rotatestart="0" data-rotateend="0" data-blurstart="0" data-blurend="0"
                          data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="10" class="rev-slidebg"
@@ -478,7 +478,7 @@
                     data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9=""
                     data-param10="" data-description="">
                     <!-- MAIN IMAGE -->
-                    <img src="rev-slider-files/assets/700X1800-5.jpg" alt="" data-bgposition="center center"
+                    <img src="{{asset('rev-slider-files/assets/700X1800-5.jpg')}}" alt="" data-bgposition="center center"
                          data-bgfit="cover" data-bgparallax="10" class="rev-slidebg" data-no-retina>
                     <!-- LAYERS -->
 
@@ -575,7 +575,7 @@
                     data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8=""
                     data-param9="" data-param10="" data-description="">
                     <!-- MAIN IMAGE -->
-                    <img src="rev-slider-files/assets/700X1800-5.jpg" alt="" data-bgposition="center center"
+                    <img src="{{asset('rev-slider-files/assets/700X1800-5.jpg')}}" alt="" data-bgposition="center center"
                          data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg"
                          data-no-retina>
                     <!-- LAYERS -->
@@ -602,7 +602,7 @@
                          data-frames='[{"delay":1500,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
                          data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
                          data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
-                         style="z-index: 6; white-space: nowrap; font-weight: 400;font-family:Montserrat;">GET CITYTOURS
+                         style="z-index: 6; white-space: nowrap; font-weight: 400;font-family:Montserrat;">GET TourBookBD
                         TODAY
                     </div>
 
@@ -673,69 +673,6 @@
 
     </div>
     <!-- End container -->
-
-    {{--<div class="white_bg">--}}
-        {{--<div class="container margin_60">--}}
-
-
-            {{--@yield('other_popular_tours')--}}
-
-
-
-            {{--<div class="banner colored">--}}
-                {{--<h4>Discover our Top tours <span>from $34</span></h4>--}}
-                {{--<p>--}}
-                    {{--Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in.--}}
-                {{--</p>--}}
-                {{--<a href="single_tour.html" class="btn_1 white">Read more</a>--}}
-            {{--</div>--}}
-            {{--<div class="row">--}}
-                {{--<div class="col-md-3 col-sm-6 text-center">--}}
-                    {{--<p>--}}
-                        {{--<a href="#"><img src="img/bus.jpg" alt="Pic" class="img-responsive"></a>--}}
-                    {{--</p>--}}
-                    {{--<h4><span>Sightseen tour</span> booking</h4>--}}
-                    {{--<p>--}}
-                        {{--Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor--}}
-                        {{--imperdiet deterruisset, doctus volumus explicari qui ex.--}}
-                    {{--</p>--}}
-                {{--</div>--}}
-                {{--<div class="col-md-3 col-sm-6 text-center">--}}
-                    {{--<p>--}}
-                        {{--<a href="#"><img src="img/transfer.jpg" alt="Pic" class="img-responsive"></a>--}}
-                    {{--</p>--}}
-                    {{--<h4><span>Transfer</span> booking</h4>--}}
-                    {{--<p>--}}
-                        {{--Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor--}}
-                        {{--imperdiet deterruisset, doctus volumus explicari qui ex.--}}
-                    {{--</p>--}}
-                {{--</div>--}}
-                {{--<div class="col-md-3 col-sm-6 text-center">--}}
-                    {{--<p>--}}
-                        {{--<a href="#"><img src="img/guide.jpg" alt="Pic" class="img-responsive"></a>--}}
-                    {{--</p>--}}
-                    {{--<h4><span>Tour guide</span> booking</h4>--}}
-                    {{--<p>--}}
-                        {{--Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor--}}
-                        {{--imperdiet deterruisset, doctus volumus explicari qui ex.--}}
-                    {{--</p>--}}
-                {{--</div>--}}
-                {{--<div class="col-md-3 col-sm-6 text-center">--}}
-                    {{--<p>--}}
-                        {{--<a href="#"><img src="img/hotel.jpg" alt="Pic" class="img-responsive"></a>--}}
-                    {{--</p>--}}
-                    {{--<h4><span>Hotel</span> booking</h4>--}}
-                    {{--<p>--}}
-                        {{--Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor--}}
-                        {{--imperdiet deterruisset, doctus volumus explicari qui ex.--}}
-                    {{--</p>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-            {{--<!-- End row -->--}}
-        {{--</div>--}}
-        {{--<!-- End container -->--}}
-    {{--</div>--}}
-    <!-- End white_bg -->
 
     <section class="promo_full">
         <div class="promo_full_wp magnific">
@@ -838,22 +775,22 @@
 </div><!-- End Search Menu -->
 
 <!-- Common scripts -->
-<script src="js/jquery-2.2.4.min.js"></script>
-<script src="js/common_scripts_min.js"></script>
-<script src="js/functions.js"></script>
+<script src="{{URL::asset('js/jquery-2.2.4.min.js')}}"></script>
+<script src="{{URL::asset('js/common_scripts_min.js')}}"></script>
+<script src="{{URL::asset('js/functions.js')}}"></script>
 
 <!-- SLIDER REVOLUTION SCRIPTS  -->
-<script type="text/javascript" src="rev-slider-files/js/jquery.themepunch.tools.min.js"></script>
-<script type="text/javascript" src="rev-slider-files/js/jquery.themepunch.revolution.min.js"></script>
-<script type="text/javascript" src="rev-slider-files/js/extensions/revolution.extension.actions.min.js"></script>
-<script type="text/javascript" src="rev-slider-files/js/extensions/revolution.extension.carousel.min.js"></script>
-<script type="text/javascript" src="rev-slider-files/js/extensions/revolution.extension.kenburn.min.js"></script>
-<script type="text/javascript" src="rev-slider-files/js/extensions/revolution.extension.layeranimation.min.js"></script>
-<script type="text/javascript" src="rev-slider-files/js/extensions/revolution.extension.migration.min.js"></script>
-<script type="text/javascript" src="rev-slider-files/js/extensions/revolution.extension.navigation.min.js"></script>
-<script type="text/javascript" src="rev-slider-files/js/extensions/revolution.extension.parallax.min.js"></script>
-<script type="text/javascript" src="rev-slider-files/js/extensions/revolution.extension.slideanims.min.js"></script>
-<script type="text/javascript" src="rev-slider-files/js/extensions/revolution.extension.video.min.js"></script>
+<script type="text/javascript" src="{{URL::asset('rev-slider-files/js/jquery.themepunch.tools.min.js')}}"></script>
+<script type="text/javascript" src="{{URL::asset('rev-slider-files/js/jquery.themepunch.revolution.min.js')}}"></script>
+<script type="text/javascript" src="{{URL::asset('rev-slider-files/js/extensions/revolution.extension.actions.min.js')}}"></script>
+<script type="text/javascript" src="{{URL::asset('rev-slider-files/js/extensions/revolution.extension.carousel.min.js')}}"></script>
+<script type="text/javascript" src="{{URL::asset('rev-slider-files/js/extensions/revolution.extension.kenburn.min.js')}}"></script>
+<script type="text/javascript" src="{{URL::asset('rev-slider-files/js/extensions/revolution.extension.layeranimation.min.js')}}"></script>
+<script type="text/javascript" src="{{URL::asset('rev-slider-files/js/extensions/revolution.extension.migration.min.js')}}"></script>
+<script type="text/javascript" src="{{URL::asset('rev-slider-files/js/extensions/revolution.extension.navigation.min.js')}}"></script>
+<script type="text/javascript" src="{{URL::asset('rev-slider-files/js/extensions/revolution.extension.parallax.min.js')}}"></script>
+<script type="text/javascript" src="{{URL::asset('rev-slider-files/js/extensions/revolution.extension.slideanims.min.js')}}"></script>
+<script type="text/javascript" src="{{URL::asset('rev-slider-files/js/extensions/revolution.extension.video.min.js')}}"></script>
 <script type="text/javascript">
     var tpj = jQuery;
 
@@ -942,7 +879,7 @@
     /*ready*/
 </script>
 
-<script src="js/notify_func.js"></script>
+<script src="{{URL::asset('js/notify_func.js')}}"></script>
 
 </body>
 
