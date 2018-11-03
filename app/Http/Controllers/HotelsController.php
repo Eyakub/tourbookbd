@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\District;
+use App\Division;
 use App\Hotel;
 use Illuminate\Http\Request;
 
@@ -11,12 +13,13 @@ class HotelsController extends Controller
     {
         $hotels = Hotel::where('hotels_category', 'Hotels')
             ->paginate(6);
+        $division = Division::all();
 
-        $hotelContent = view('Hotels.hotels_content')
-            ->with('hotels', $hotels);
+        $tours_content = view('Hotels.hotels_content')
+            ->with(compact('hotels'));
 
         return view('Hotels.all_hotels_grid')
-            ->with('tours_content', $hotelContent);
+            ->with(compact('tours_content', 'division'));
 
     }
 
@@ -24,12 +27,13 @@ class HotelsController extends Controller
     {
         $resorts = Hotel::where('hotels_category', 'Resorts')
             ->paginate(6);
+        $division = Division::all();
 
-        $resortContent = view('Hotels.resorts_content')
-            ->with('resorts', $resorts);
+        $resort_content = view('Hotels.resorts_content')
+            ->with(compact('resorts'));
 
         return view('Hotels.all_resorts_grid')
-            ->with('resort_content', $resortContent);
+            ->with(compact('resort_content', 'division'));
     }
 
     public function singleDetails($id)

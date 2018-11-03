@@ -32,15 +32,13 @@
         <!-- End col-md-6 -->
         @endforeach
 
-            <div class="text-center">
-                <ul class="pagination">
-                    {!! $tours-> links() !!}
-                </ul>
-
-            </div>
-        <!-- End col-md-6 -->
     </div>
     <!-- End row -->
+    <div class="text-center">
+        <ul class="pagination">
+            {!! $tours-> links() !!}
+        </ul>
+    </div>
 
 
 

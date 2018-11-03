@@ -62,8 +62,8 @@
 <section class="parallax-window" data-parallax="scroll" data-image-src="{{asset('storage/large_cover/1539129351-470x1400.JPG')}}" data-natural-width="1400" data-natural-height="470">
     <div class="parallax-content-1">
         <div class="animated fadeInDown">
-            <h1>Tour Blog</h1>
-            <p>Ridiculus sociosqu cursus neque cursus curae ante scelerisque vehicula.</p>
+            <h1>Tour Blogs</h1>
+            <p>Know about all tours where people visited and shared their opinion.</p>
         </div>
     </div>
 </section>
@@ -72,13 +72,12 @@
 <main>
     <div id="position">
         <div class="container">
-            {{--<ul>
-                <li><a href="#">Home</a>
+            <ul>
+                <li><a href="{{URL::to('/')}}">Home</a>
                 </li>
-                <li><a href="#">Category</a>
+                <li>Tour Blog
                 </li>
-                <li>Page active</li>
-            </ul>--}}
+            </ul>
         </div>
     </div>
     <!-- End position -->
@@ -88,33 +87,35 @@
 
             <div class="col-md-9">
                 <div class="box_style_1">
-                    <div class="post">
-                        <a href="blog_post_right_sidebar.html"><img src="img/blog-3.jpg" alt="Image" class="img-responsive">
-                        </a>
-                        <div class="post_info clearfix">
-                            <div class="post-left">
-                                <ul>
-                                    <li><i class="icon-calendar-empty"></i> On <span>12 Nov 2020</span>
-                                    </li>
-                                    <li><i class="icon-inbox-alt"></i> In <a href="#">Top tours</a>
-                                    </li>
-                                    <li><i class="icon-tags"></i> Tags <a href="#">Works</a>, <a href="#">Personal</a>
-                                    </li>
-                                </ul>
+                    @foreach($blogs as $blog)
+                        <div class="post">
+                            <a href="{{URL::to('/blog-details/'.$blog->id)}}"><img src="storage/large_cover/{{$blog->blog_img}}" alt="Image" class="img-responsive">
+                            </a>
+                            <div class="post_info clearfix">
+                                <div class="post-left">
+                                    <ul>
+                                        <li><i class="icon-calendar-empty"></i> On <span>12 Nov 2020</span>
+                                        </li>
+                                        <li><i class="icon-inbox-alt"></i> In <a href="#">Top tours</a>
+                                        </li>
+                                        <li><i class="icon-tags"></i> Tags <a href="#">Works</a>, <a href="#">Public</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="post-right"><i class="icon-comment"></i><a href="#">25 </a>
+                                </div>
                             </div>
-                            <div class="post-right"><i class="icon-comment"></i><a href="#">25 </a>
-                            </div>
+                            {{--<h2>Duis aute irure dolor in reprehenderit</h2>--}}
+                            <p>
+                                <?php
+                                $str = "$blog->blog_desc";
+                                ?>
+                                {{str_limit($str, 250, "...")}}
+                            </p>
+                            <a href="{{URL::to('/blog-details/'.$blog->id)}}" class="btn_1">Read more</a>
                         </div>
-                        <h2>Duis aute irure dolor in reprehenderit</h2>
-                        <p>
-                            Ludus albucius adversarium eam eu. Sit eu reque tation aliquip. Quo no dolorum albucius lucilius, hinc eligendi ut sed. Ex nam quot ferri suscipit, mea ne legere alterum repudiandae. Ei pri quaerendum intellegebat, ut vel consequuntur voluptatibus. Et volumus sententiae adversarium duo......
-                        </p>
-                        <p>
-                            Ludus albucius adversarium eam eu. Sit eu reque tation aliquip. Quo no dolorum albucius lucilius, hinc eligendi ut sed. Ex nam quot ferri suscipit, mea ne legere alterum repudiandae. Ei pri quaerendum intellegebat, ut vel consequuntur voluptatibus. Et volumus sententiae adversarium duo......
-                        </p>
-                        <a href="{{URL::to('/blog-details')}}" class="btn_1">Read more</a>
-                    </div>
-                    <!-- end post -->
+                        <!-- end post -->
+                    @endforeach
 
                     <hr>
 
@@ -123,22 +124,8 @@
 
                 <div class="text-center">
                     <ul class="pagination">
-                        <li><a href="#">Prev</a>
-                        </li>
-                        <li class="active"><a href="#">1</a>
-                        </li>
-                        <li><a href="#">2</a>
-                        </li>
-                        <li><a href="#">3</a>
-                        </li>
-                        <li><a href="#">4</a>
-                        </li>
-                        <li><a href="#">5</a>
-                        </li>
-                        <li><a href="#">Next</a>
-                        </li>
+                        {!! $blogs-> links() !!}
                     </ul>
-                    <!-- end pagination-->
                 </div>
             </div>
             <!-- End col-md-8-->
@@ -159,52 +146,15 @@
                 <div class="widget" id="cat_blog">
                     <h4>Categories</h4>
                     <ul>
-                        <li><a href="#">Places to visit</a>
-                        </li>
-                        <li><a href="#">Top tours</a>
-                        </li>
-                        <li><a href="#">Tips for travellers</a>
-                        </li>
-                        <li><a href="#">Events</a>
-                        </li>
+                        @foreach($category as $cat)
+                            <li><a href="#">{{$cat->tour_category_name}}</a>
+                            </li>
+                        @endforeach
                     </ul>
                 </div>
                 <!-- End widget -->
 
                 <hr>
-
-                <div class="widget">
-                    <h4>Recent post</h4>
-                    <ul class="recent_post">
-                        <li>
-                            <i class="icon-calendar-empty"></i> 16th July, 2020
-                            <div><a href="#">It is a long established fact that a reader will be distracted </a>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="icon-calendar-empty"></i> 16th July, 2020
-                            <div><a href="#">It is a long established fact that a reader will be distracted </a>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="icon-calendar-empty"></i> 16th July, 2020
-                            <div><a href="#">It is a long established fact that a reader will be distracted </a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <!-- End widget -->
-                <hr>
-                <div class="widget tags">
-                    <h4>Tags</h4>
-                    <a href="#">Lorem ipsum</a>
-                    <a href="#">Dolor</a>
-                    <a href="#">Long established</a>
-                    <a href="#">Sit amet</a>
-                    <a href="#">Latin words</a>
-                    <a href="#">Excepteur sint</a>
-                </div>
-                <!-- End widget -->
 
             </aside>
             <!-- End aside -->

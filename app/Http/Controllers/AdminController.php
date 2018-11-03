@@ -73,16 +73,11 @@ class AdminController extends Controller
         $datapass = Tour::find($id);
         $categorys = TourCategory::all();
         $districts = District::all();
-        $oneDis = DB::table('tour')
-            ->join('districts', 'tour.district_id', '=', 'districts.id')
-            ->select('districts.*', 'tour.district_id')
-            ->get();
-
+        $oneDis = District::find($id);
+        $oneDis->tourDis();
+        //dd($oneDis);
         return view('Admin.forms.editTourInfo')
-            ->with(compact('datapass'))
-            ->with(compact('categorys'))
-            ->with(compact('oneDis'))
-            ->with(compact('districts'));
+            ->with(compact('datapass', 'categorys', 'districts', 'oneDis'));
 
     }
 
@@ -148,6 +143,13 @@ class AdminController extends Controller
         $showUserData = User::all();
         return view('Admin.userstable')
             ->with('showUserData', $showUserData);
+    }
+
+    public function showUserProfile()
+    {
+        $showUserData = User::all();
+        return view('Admin.usersprofileview')
+            ->with('showUserProfile', $showUserData);
     }
 
     public function deleteUser($id)

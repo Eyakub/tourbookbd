@@ -200,24 +200,13 @@
                             </ul>
                         </div>
                         <div class="filter_type">
-                            <h6>District</h6>
+                            <h6>Division</h6>
                             <ul>
-                                <li>
-                                    <label>
-                                        <input type="checkbox">Paris Centre</label>
-                                </li>
-                                <li>
-                                    <label>
-                                        <input type="checkbox">La Defance</label>
-                                </li>
-                                <li>
-                                    <label>
-                                        <input type="checkbox">La Marais</label>
-                                </li>
-                                <li>
-                                    <label>
-                                        <input type="checkbox">Latin Quarter</label>
-                                </li>
+                                @foreach($division as $div)
+                                    <li>
+                                        <label><input type="checkbox">{{$div->division_name}}</label>
+                                    </li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>

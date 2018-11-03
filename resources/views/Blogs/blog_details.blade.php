@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<!--[if IE 8]><html class="ie ie8"> <![endif]-->
-<!--[if IE 9]><html class="ie ie9"> <![endif]-->
-<html lang="en">
+<!--[if IE 8]>
+<html class="ie ie8"> <![endif]-->
+<!--[if IE 9]>
+<html class="ie ie9"> <![endif]-->
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 
 <head>
     <meta charset="utf-8">
@@ -16,11 +18,14 @@
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" type="image/x-icon" href="img/apple-touch-icon-57x57-precomposed.png">
     <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="img/apple-touch-icon-72x72-precomposed.png">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="img/apple-touch-icon-114x114-precomposed.png">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="img/apple-touch-icon-144x144-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114"
+          href="img/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144"
+          href="img/apple-touch-icon-144x144-precomposed.png">
 
     <!-- Google web fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Gochi+Hand|Lato:300,400|Montserrat:400,400i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gochi+Hand|Lato:300,400|Montserrat:400,400i,700,700i"
+          rel="stylesheet">
 
     <!-- CSS -->
     <link href="{{asset('css/base.css')}}" rel="stylesheet">
@@ -37,7 +42,8 @@
 <body>
 
 <!--[if lte IE 8]>
-<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a>.</p>
+<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a>.</p>
 <![endif]-->
 
 <div id="preloader">
@@ -59,11 +65,13 @@
 <!-- End Header -->
 
 
-<section class="parallax-window" data-parallax="scroll" data-image-src="{{asset('storage/large_cover/1539129351-470x1400.JPG')}}" data-natural-width="1400" data-natural-height="470">
+<section class="parallax-window" data-parallax="scroll"
+         data-image-src="{{asset('storage/large_cover/1539129351-470x1400.JPG')}}" data-natural-width="1400"
+         data-natural-height="470">
     <div class="parallax-content-1">
         <div class="animated fadeInDown">
-            <h1>Tour Blog</h1>
-            <p>Ridiculus sociosqu cursus neque cursus curae ante scelerisque vehicula.</p>
+            <h1>Tour Blog Details</h1>
+            <p>Read with your heart and enjoy and go for adventure.</p>
         </div>
     </div>
 </section>
@@ -73,11 +81,11 @@
     <div id="position">
         <div class="container">
             <ul>
-                <li><a href="#">Home</a>
+                <li><a href="{{URL::to('/')}}">Home</a>
                 </li>
-                <li><a href="#">Category</a>
+                <li><a href="{{URL::to('/blogs')}}">Tour Blog</a>
                 </li>
-                <li>Page active</li>
+                <li>Blog Details</li>
             </ul>
         </div>
     </div>
@@ -88,7 +96,8 @@
             <div class="col-md-9">
                 <div class="box_style_1">
                     <div class="post nopadding">
-                        <img src="img/blog-1.jpg" alt="Image" class="img-responsive">
+                        <img src="{{asset('storage/small_cover/1539129177-533x800.jpg')}}" height="375" width="950"
+                             alt="Image" class="img-responsive">
                         <div class="post_info clearfix">
                             <div class="post-left">
                                 <ul>
@@ -102,17 +111,10 @@
                             </div>
                             <div class="post-right"><i class="icon-comment"></i><a href="#">25 </a>Comments</div>
                         </div>
-                        <h2>Duis aute irure dolor in reprehenderit</h2>
+                        {{--<h2>Title</h2>--}}
                         <p>
-                            Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi nascetur ridiculus mus. Nulla dui. Fusce feugiat malesuada odio. Morbi nunc odio, gravida at, cursus nec, luctus a, lorem.....
+                            {{$blogDetails->blog_desc}}
                         </p>
-                        <p>
-                            Aenean iaculis sodales dui, non hendrerit lorem rhoncus ut. Pellentesque ullamcorper venenatis elit idaipiscingi Duis tellus neque, tincidunt eget pulvinar sit amet, rutrum nec urna. Suspendisse pretium laoreet elit vel ultricies. Maecenas ullamcorper ultricies rhoncus. Aliquam erat volutpat.
-                        </p>
-                        <blockquote class="styled">
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
-                            <small>Someone famous in <cite title="">Body of work</cite></small>
-                        </blockquote>
                     </div>
                     <!-- end post -->
                 </div>
@@ -124,18 +126,22 @@
                     <ol>
                         <li>
                             <div class="avatar">
-                                <a href="#"><img src="img/avatar1.jpg" alt="Image">
+                                <a href="#"><img src="{{asset('img/eyakub.jpg')}}" height="48" width="48" alt="Image">
                                 </a>
                             </div>
                             <div class="comment_right clearfix">
                                 <div class="comment_info">
-                                    Posted by <a href="#">Anna Smith</a><span>|</span> 25 apr 2019 <span>|</span><a href="#">Reply</a>
+                                    Posted by <a href="#">Anna Smith</a><span>|</span> 25 apr 2019 <span>|</span><a
+                                            href="#">Reply</a>
                                 </div>
                                 <p>
-                                    Nam cursus tellus quis magna porta adipiscing. Donec et eros leo, non pellentesque arcu. Curabitur vitae mi enim, at vestibulum magna. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed sit amet sem a urna rutrumeger fringilla. Nam vel enim ipsum, et congue ante.
+                                    Nam cursus tellus quis magna porta adipiscing. Donec et eros leo, non pellentesque
+                                    arcu. Curabitur vitae mi enim, at vestibulum magna. Cum sociis natoque penatibus et
+                                    magnis dis parturient montes, nascetur ridiculus mus. Sed sit amet sem a urna
+                                    rutrumeger fringilla. Nam vel enim ipsum, et congue ante.
                                 </p>
                             </div>
-                            <ul>
+                            {{--<ul>
                                 <li>
                                     <div class="avatar">
                                         <a href="#"><img src="img/avatar2.jpg" alt="Image">
@@ -154,43 +160,33 @@
                                         </p>
                                     </div>
                                 </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <div class="avatar">
-                                <a href="#"><img src="img/avatar3.jpg" alt="Image">
-                                </a>
-                            </div>
-
-                            <div class="comment_right clearfix">
-                                <div class="comment_info">
-                                    Posted by <a href="#">Adam White</a><span>|</span> 25 apr 2019 <span>|</span><a href="#">Reply</a>
-                                </div>
-                                <p>
-                                    Cursus tellus quis magna porta adipiscin
-                                </p>
-                            </div>
+                            </ul>--}}
                         </li>
                     </ol>
                 </div>
                 <!-- End Comments -->
 
-                <h4>Leave a comment</h4>
-                <form action="#" method="post">
-                    <div class="form-group">
-                        <input class="form-control style_2" type="text" name="name" placeholder="Enter name">
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control style_2" type="text" name="mail" placeholder="Enter email">
-                    </div>
-                    <div class="form-group">
-                        <textarea name="message" class="form-control style_2" style="height:150px;" placeholder="Message"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <input type="reset" class="btn_1" value="Clear form" />
-                        <input type="submit" class="btn_1" value="Post Comment" />
-                    </div>
-                </form>
+                @if(!empty(Session::get('name')))
+                    <h4>Leave a comment</h4>
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <input class="form-control style_2" type="text" name="name" placeholder="Enter name">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control style_2" type="text" name="mail" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" class="form-control style_2" style="height:150px;"
+                                      placeholder="Message"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input type="reset" class="btn_1" value="Clear form"/>
+                            <input type="submit" class="btn_1" value="Post Comment"/>
+                        </div>
+                    </form>
+                    @else
+                    <h4><strong><a href="{{URL::to('/user-login')}}">Sign In</a></strong> to Leave a comment</></h4>
+                @endif
             </div>
             <!-- End col-md-8-->
 
@@ -210,21 +206,17 @@
                 <div class="widget" id="cat_blog">
                     <h4>Categories</h4>
                     <ul>
-                        <li><a href="#">Places to visit</a>
-                        </li>
-                        <li><a href="#">Top tours</a>
-                        </li>
-                        <li><a href="#">Tips for travellers</a>
-                        </li>
-                        <li><a href="#">Events</a>
-                        </li>
+                        @foreach($category as $cat)
+                            <li><a href="#">{{$cat->tour_category_name}}</a>
+                            </li>
+                        @endforeach
                     </ul>
                 </div>
                 <!-- End widget -->
 
-                <hr>
+                {{--<hr>--}}
 
-                <div class="widget">
+                {{--<div class="widget">
                     <h4>Recent post</h4>
                     <ul class="recent_post">
                         <li>
@@ -243,17 +235,15 @@
                             </div>
                         </li>
                     </ul>
-                </div>
+                </div>--}}
                 <!-- End widget -->
                 <hr>
                 <div class="widget tags">
                     <h4>Tags</h4>
-                    <a href="#">Lorem ipsum</a>
-                    <a href="#">Dolor</a>
-                    <a href="#">Long established</a>
-                    <a href="#">Sit amet</a>
-                    <a href="#">Latin words</a>
-                    <a href="#">Excepteur sint</a>
+                    <a href="#">Nature</a>
+                    <a href="#">Wildlife</a>
+                    <a href="#">Camping</a>
+                    <a href="#">Waterfall</a>
                 </div>
                 <!-- End widget -->
 
@@ -275,7 +265,7 @@
 <div class="search-overlay-menu">
     <span class="search-overlay-close"><i class="icon_set_1_icon-77"></i></span>
     <form role="search" id="searchform" method="get">
-        <input value="" name="q" type="search" placeholder="Search..." />
+        <input value="" name="q" type="search" placeholder="Search..."/>
         <button type="submit"><i class="icon_set_1_icon-78"></i>
         </button>
     </form>

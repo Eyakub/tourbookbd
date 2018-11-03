@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\{Users};
+use App\{TourCategory, Users};
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
@@ -92,9 +92,10 @@ class UserController extends Controller
     public function loginCheck(){
         //session_start();
         $user_id = Session::get('id');
-
+        $user_name = Session::get('username');
+        //dd($user_name);
         if($user_id !== null){
-            return redirect::to('/user-profile');
+            return redirect::to('/user-profile/');
         }else{
             Session::put('message', 'You must login first.');
             return redirect::to('/user-login');
@@ -111,12 +112,14 @@ class UserController extends Controller
             ->first();
         if($res !== null){
             Session::put('id', $res->id);
+            Session::put('username', $res->username);
             $name = $res->first_name.' '.$res->last_name;
             Session::put('name', $name);
             //dd(session()->all());
             $user = Users::find($res->id);
+            $blogCat = TourCategory::all();
             return view('Users.userlayout')
-                ->with('user', $user);
+                ->with(compact('user', 'blogCat'));
         }else{
             Session::put('message', 'Your User ID or Password Invalid...!!!');
             return redirect::to('/user-login');
@@ -131,36 +134,22 @@ class UserController extends Controller
         return redirect('/');
     }
 
-
-
-    public function popularTour()
+    
+    /**
+     * blogs
+     */
+    public function saveBlog(request $request)
     {
-        $popular_tour = view('');
-        return $popular_tour;
-    }
+        $this->validate($request,[
+           'blog_desc' => 'required',
+           'blog_img' => 'image|mimes:jpeg, png, jpg, gif, svg | max:3048'
+        ]);
 
-    public function closeToSea()
-    {
-        $close_to_sea = view('');
-        return $close_to_sea;
-    }
+        if($request->hasFile('blog_image')){
+            foreach ($request->blog_image as $file){
 
-    public function hillTracking()
-    {
-        $hill_tracking = view('');
-        return $hill_tracking;
-    }
-
-    public function waterfalls()
-    {
-        $waterfalls = view('');
-        return $waterfalls;
-    }
-
-    public function comingSoon()
-    {
-        $coming_soon = view('coming_soon');
-        return $coming_soon;
+            }
+        }
     }
 
 

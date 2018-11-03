@@ -42,6 +42,7 @@ Route::post('/update-resort-information', 'AdminController@updateResortInfo');
 Route::get('/delete-resort/{id}', 'AdminController@deleteResort');
 
 Route::get('/all-user-data/', 'AdminController@showUserData');
+Route::get('/all-user-profile/', 'AdminController@showUserProfile');
 Route::get('/delete-user/{id}', 'AdminController@deleteUser');
 
 
@@ -52,10 +53,11 @@ Route::get('/user-registration', 'UserController@UserRegistration')->name('uploa
 Route::post('/user-registration', 'UserController@storeUserInformation');
 
 Route::post('/user-profile', 'UserController@user_login')->name('login_check');
+Route::get('/user-profile/', 'UserController@loginCheck');
 Route::get('/user-login', 'UserController@Userlogin');
-Route::get('/user-profile', 'UserController@loginCheck');
-
 Route::get('/logout', 'UserController@logout');
+
+Route::post('/save-blog', 'UserController@saveBlog')->name('blog.save');
 
 
 
@@ -70,13 +72,14 @@ Route::get('/close-to-sea', 'TourController@closeToSea');
 Route::get('/waterfall', 'TourController@waterfall');
 Route::get('/naturelife', 'TourController@natureWild');
 Route::get('/hikingcamping', 'TourController@hikingCamping');
+Route::get('/churces', 'TourController@churces');
 
 
 /**
  * Blog Panel
  */
 Route::get('/blogs', 'BlogController@blogIndex');
-Route::get('/blog-details', 'BlogController@blogDetails');
+Route::get('/blog-details/{id}', 'BlogController@blogDetails');
 
 
 /**

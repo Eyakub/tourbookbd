@@ -36,7 +36,7 @@
                             District</label></div>
                     <div class="col-12 col-md-9">
                         <select name="district_id" id="select" class="form-control">
-                            <option value="{{$datapass->district_id}}">Select District</option>
+                            <option value="{{$datapass->district_id}}">{{$oneDis->district_name}}</option>
                             @foreach($districts as $dis)
                                 <option value="{{$dis->id}}">{{$dis->district_name}}</option>
                             @endforeach

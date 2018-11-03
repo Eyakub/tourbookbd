@@ -8,10 +8,8 @@ use Illuminate\Http\Request;
 class TourController extends Controller
 {
 
-    public function allTour()
+    public function countValue($tours)
     {
-        $tours = Tour::paginate(6);
-
         $count = Tour::all()->count();
         $closeToCount = Tour::where('tour_category', 'Close To Sea')->count();
         $hikingCount = Tour::where('tour_category', 'Hiking & Camping')->count();
@@ -19,12 +17,20 @@ class TourController extends Controller
         $waterfallCount = Tour::where('tour_category', 'Waterfall')->count();
         $historicCount = Tour::where('tour_category', 'Historic Places')->count();
         $museumCount = Tour::where('tour_category', 'Museum')->count();
+        $churcesCount = Tour::where('tour_category', 'Churces')->count();
 
         $tours_content = view('Tours.tour_contents')
             ->with(compact('tours'));
 
         return view('Tours.all_tour_list_in_grid')
-            ->with(compact('tours_content', 'count', 'closeToCount', 'hikingCount', 'natureCount', 'waterfallCount', 'historicCount', 'museumCount'));
+            ->with(compact('tours_content', 'count', 'closeToCount', 'hikingCount', 'natureCount', 'waterfallCount', 'historicCount', 'museumCount', 'churcesCount'));
+    }
+
+    public function allTour()
+    {
+        $tours = Tour::paginate(6);
+
+        return $this->countValue($tours);
     }
 
     public function singleDetails($id)
@@ -35,25 +41,12 @@ class TourController extends Controller
             ->with('tour', $tour);
     }
 
-
     public function closeToSea()
     {
         $tours = Tour::where('tour_category', 'Close To Sea')
             ->paginate(6);
 
-        $count = Tour::all()->count();
-        $closeToCount = Tour::where('tour_category', 'Close To Sea')->count();
-        $hikingCount = Tour::where('tour_category', 'Hiking & Camping')->count();
-        $natureCount = Tour::where('tour_category', 'Nature & Wildlife')->count();
-        $waterfallCount = Tour::where('tour_category', 'Waterfall')->count();
-        $historicCount = Tour::where('tour_category', 'Historic Places')->count();
-        $museumCount = Tour::where('tour_category', 'Museum')->count();
-
-        $tours_content = view('Tours.tour_contents')
-            ->with(compact('tours'));
-
-        return view('Tours.all_tour_list_in_grid')
-            ->with(compact('tours_content', 'count', 'closeToCount', 'hikingCount', 'natureCount', 'waterfallCount', 'historicCount', 'museumCount'));
+        return $this->countValue($tours);
     }
 
     public function waterfall()
@@ -61,19 +54,7 @@ class TourController extends Controller
         $tours = Tour::where('tour_category', 'Waterfall')
             ->paginate(6);
 
-        $count = Tour::all()->count();
-        $closeToCount = Tour::where('tour_category', 'Close To Sea')->count();
-        $hikingCount = Tour::where('tour_category', 'Hiking & Camping')->count();
-        $natureCount = Tour::where('tour_category', 'Nature & Wildlife')->count();
-        $waterfallCount = Tour::where('tour_category', 'Waterfall')->count();
-        $historicCount = Tour::where('tour_category', 'Historic Places')->count();
-        $museumCount = Tour::where('tour_category', 'Museum')->count();
-
-        $tours_content = view('Tours.tour_contents')
-            ->with(compact('tours'));
-
-        return view('Tours.all_tour_list_in_grid')
-            ->with(compact('tours_content', 'count', 'closeToCount', 'hikingCount', 'natureCount', 'waterfallCount', 'historicCount', 'museumCount'));
+        return $this->countValue($tours);
     }
 
     public function natureWild()
@@ -81,19 +62,7 @@ class TourController extends Controller
         $tours = Tour::where('tour_category', 'Nature & Wildlife')
             ->paginate(6);
 
-        $count = Tour::all()->count();
-        $closeToCount = Tour::where('tour_category', 'Close To Sea')->count();
-        $hikingCount = Tour::where('tour_category', 'Hiking & Camping')->count();
-        $natureCount = Tour::where('tour_category', 'Nature & Wildlife')->count();
-        $waterfallCount = Tour::where('tour_category', 'Waterfall')->count();
-        $historicCount = Tour::where('tour_category', 'Historic Places')->count();
-        $museumCount = Tour::where('tour_category', 'Museum')->count();
-
-        $tours_content = view('Tours.tour_contents')
-            ->with(compact('tours'));
-
-        return view('Tours.all_tour_list_in_grid')
-            ->with(compact('tours_content', 'count', 'closeToCount', 'hikingCount', 'natureCount', 'waterfallCount', 'historicCount', 'museumCount'));
+        return $this->countValue($tours);
     }
 
     public function hikingCamping()
@@ -101,18 +70,14 @@ class TourController extends Controller
         $tours = Tour::where('tour_category', 'Hiking & Camping')
             ->paginate(6);
 
-        $count = Tour::all()->count();
-        $closeToCount = Tour::where('tour_category', 'Close To Sea')->count();
-        $hikingCount = Tour::where('tour_category', 'Hiking & Camping')->count();
-        $natureCount = Tour::where('tour_category', 'Nature & Wildlife')->count();
-        $waterfallCount = Tour::where('tour_category', 'Waterfall')->count();
-        $historicCount = Tour::where('tour_category', 'Historic Places')->count();
-        $museumCount = Tour::where('tour_category', 'Museum')->count();
+        return $this->countValue($tours);
+    }
 
-        $tours_content = view('Tours.tour_contents')
-            ->with(compact('tours'));
+    public function churces()
+    {
+        $tours = Tour::where('tour_category', 'Churces')
+            ->paginate(6);
 
-        return view('Tours.all_tour_list_in_grid')
-            ->with(compact('tours_content', 'count', 'closeToCount', 'hikingCount', 'natureCount', 'waterfallCount', 'historicCount', 'museumCount'));
+        return $this->countValue($tours);
     }
 }

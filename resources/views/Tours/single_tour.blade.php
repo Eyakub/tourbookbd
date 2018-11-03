@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<!--[if IE 8]><html class="ie ie8"> <![endif]-->
-<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8"> <![endif]-->
+<!--[if IE 9]>
+<html class="ie ie9"> <![endif]-->
 <html lang="en">
 
 <head>
@@ -8,14 +10,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta name="description" content="TourBookBD - Premium site template for city tours agencies, transfers and tickets.">
+    <meta name="description"
+          content="TourBookBD - Single Tour Details.">
     <meta name="author" content="Eyakub">
     <title>Tour Book BD - by Eyakub</title>
 
-
+    <!-- Favicons-->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/x-icon" href="img/apple-touch-icon-57x57-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="img/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114"
+          href="img/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144"
+          href="img/apple-touch-icon-144x144-precomposed.png">
 
     <!-- Google web fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Gochi+Hand|Lato:300,400|Montserrat:400,400i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gochi+Hand|Lato:300,400|Montserrat:400,400i,700,700i"
+          rel="stylesheet">
 
     <!-- CSS -->
     <link href="{{asset('css/base.css')}}" rel="stylesheet">
@@ -32,7 +43,8 @@
 <body>
 
 <!--[if lte IE 8]>
-<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a>.</p>
+<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a>.</p>
 <![endif]-->
 
 <div id="preloader">
@@ -53,14 +65,17 @@
 @include('layouts.header')
 <!-- End Header -->
 
-<section class="parallax-window" data-parallax="scroll" data-image-src="{{asset('storage/large_cover/'.$tour->tour_large_cover)}}" data-natural-width="1400" data-natural-height="470">
+<section class="parallax-window" data-parallax="scroll"
+         data-image-src="{{asset('storage/large_cover/'.$tour->tour_large_cover)}}" data-natural-width="1400"
+         data-natural-height="470">
     <div class="parallax-content-2">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-sm-8">
                     <h1>{{$tour->tour_title}}</h1>
                     <span>{{ $tour->tour_address }}</span>
-                    <span class="rating"><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><small>(75)</small></span>
+                    <span class="rating"><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i
+                                class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><small>(75)</small></span>
                 </div>
                 <div class="col-md-4 col-sm-4">
                     <div id="price_single_main">
@@ -98,17 +113,39 @@
 
                 <div id="single_tour_feat">
                     <ul>
-                        <li><i class="icon_set_1_icon-4"></i>Museum</li>
+                        @if($tour->tour_category === 'Nature & Wildlife')
+                            <li><i class="icon_set_2_icon-108"></i>Nature & Wildlife</li>
+                        @elseif($tour->tour_category === 'Close To Sea')
+                            <li><i class="icon-anchor-2"></i>Close To Sea</li>
+                        @elseif($tour->tour_category === 'City Sightseeing')
+                            <li><i class="icon_set_1_icon-3"></i>City Sightseeing</li>
+                        @elseif($tour->tour_category === 'Museum')
+                            <li><i class="icon_set_1_icon-4"></i>Museum</li>
+                        @elseif($tour->tour_category === 'Churces')
+                            <li><i class="icon_set_1_icon-43"></i>Churces</li>
+                        @elseif($tour->tour_category === 'Skyline')
+                            <li><i class="icon_set_1_icon-28"></i>Skyline</li>
+                        @elseif($tour->tour_category === 'Hiking & Camping')
+                            <li><i class="icon-pitch"></i>Hiking & Camping</li>
+                        @elseif($tour->tour_category === 'Waterfall')
+                            <li><i class="icon-waves"></i>Waterfall</li>
+                        @elseif($tour->tour_category === 'Historic Places')
+                            <li><i class="icon_set_1_icon-44"></i>Historic Places</li>
+                        @endif
                         <li><i class="icon_set_1_icon-83"></i>3 Hours</li>
                         <li><i class="icon_set_1_icon-13"></i>Accessibiliy</li>
                         <li><i class="icon_set_1_icon-82"></i>144 Likes</li>
-                        <li><i class="icon_set_1_icon-22"></i>Pet allowed</li>
-                        <li><i class="icon_set_1_icon-97"></i>Audio guide</li>
+                        @if($tour->tour_pet_allowed === 1)
+                            <li><i class="icon_set_1_icon-22"></i>Pet allowed</li>
+                        @endif
                         <li><i class="icon_set_1_icon-29"></i>Tour guide</li>
                     </ul>
                 </div>
 
-                <p class="visible-sm visible-xs"><a class="btn_map" data-toggle="collapse" href="#collapseMap" aria-expanded="false" aria-controls="collapseMap" data-text-swap="Hide map" data-text-original="View on map">View on map</a>
+                <p class="visible-sm visible-xs">
+                    <a class="btn_map" data-toggle="collapse" href="#collapseMap"
+                       aria-expanded="false" aria-controls="collapseMap"
+                       data-text-swap="Hide map" data-text-original="View on map">View on map</a>
                 </p>
                 <!-- Map button for tablets/mobiles -->
 
@@ -121,30 +158,30 @@
                             {{ $tour-> tour_description }}
                         </p>
                         <h4>What's include</h4>
-                        {{--<p>
-                            Lorem ipsum dolor sit amet, at omnes deseruisse pri. Quo aeterno legimus insolens ad. Sit cu detraxit constituam, an mel iudico constituto efficiendi.
-                        </p>
-                        <div class="row">
-                            <div class="col-md-6 col-sm-6">
-                                <ul class="list_ok">
-                                    <li>Lorem ipsum dolor sit amet</li>
-                                    <li>No scripta electram necessitatibus sit</li>
-                                    <li>Quidam percipitur instructior an eum</li>
-                                    <li>Ut est saepe munere ceteros</li>
-                                    <li>No scripta electram necessitatibus sit</li>
-                                    <li>Quidam percipitur instructior an eum</li>
-                                </ul>
-                            </div>
-                            <div class="col-md-6 col-sm-6">
-                                <ul class="list_ok">
-                                    <li>Lorem ipsum dolor sit amet</li>
-                                    <li>No scripta electram necessitatibus sit</li>
-                                    <li>Quidam percipitur instructior an eum</li>
-                                    <li>No scripta electram necessitatibus sit</li>
-                                </ul>
-                            </div>
-                        </div>--}}
-                        <!-- End row  -->
+                    {{--<p>
+                        Lorem ipsum dolor sit amet, at omnes deseruisse pri. Quo aeterno legimus insolens ad. Sit cu detraxit constituam, an mel iudico constituto efficiendi.
+                    </p>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                            <ul class="list_ok">
+                                <li>Lorem ipsum dolor sit amet</li>
+                                <li>No scripta electram necessitatibus sit</li>
+                                <li>Quidam percipitur instructior an eum</li>
+                                <li>Ut est saepe munere ceteros</li>
+                                <li>No scripta electram necessitatibus sit</li>
+                                <li>Quidam percipitur instructior an eum</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <ul class="list_ok">
+                                <li>Lorem ipsum dolor sit amet</li>
+                                <li>No scripta electram necessitatibus sit</li>
+                                <li>Quidam percipitur instructior an eum</li>
+                                <li>No scripta electram necessitatibus sit</li>
+                            </ul>
+                        </div>
+                    </div>--}}
+                    <!-- End row  -->
                     </div>
                 </div>
 
@@ -156,12 +193,15 @@
                 <div class="row">
                     <div class="col-md-3">
                         <h3>Reviews </h3>
-                        <a href="#" class="btn_1 add_bottom_30" data-toggle="modal" data-target="#myReview">Leave a review</a>
+                        <a href="#" class="btn_1 add_bottom_30" data-toggle="modal" data-target="#myReview">Leave a
+                            review</a>
                     </div>
                     <div class="col-md-9">
                         <div id="general_rating">11 Reviews
                             <div class="rating">
-                                <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><i class="icon-smile"></i>
+                                <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i
+                                        class="icon-smile voted"></i><i class="icon-smile"></i><i
+                                        class="icon-smile"></i>
                             </div>
                         </div>
                         <!-- End general_rating -->
@@ -170,12 +210,16 @@
                                 <ul>
                                     <li>Position
                                         <div class="rating">
-                                            <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><i class="icon-smile"></i>
+                                            <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i
+                                                    class="icon-smile voted"></i><i class="icon-smile"></i><i
+                                                    class="icon-smile"></i>
                                         </div>
                                     </li>
                                     <li>Tourist guide
                                         <div class="rating">
-                                            <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i>
+                                            <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i
+                                                    class="icon-smile voted"></i><i class="icon-smile voted"></i><i
+                                                    class="icon-smile"></i>
                                         </div>
                                     </li>
                                 </ul>
@@ -184,12 +228,16 @@
                                 <ul>
                                     <li>Price
                                         <div class="rating">
-                                            <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><i class="icon-smile"></i>
+                                            <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i
+                                                    class="icon-smile voted"></i><i class="icon-smile"></i><i
+                                                    class="icon-smile"></i>
                                         </div>
                                     </li>
                                     <li>Quality
                                         <div class="rating">
-                                            <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i>
+                                            <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i
+                                                    class="icon-smile voted"></i><i class="icon-smile voted"></i><i
+                                                    class="icon-smile voted"></i>
                                         </div>
                                     </li>
                                 </ul>
@@ -198,14 +246,17 @@
                         <!-- End row -->
                         <hr>
                         <div class="review_strip_single">
-                            <img src="{{asset('img/eyakub.jpg')}}" width="68" height="68" alt="Image" class="img-circle">
+                            <img src="{{asset('img/eyakub.jpg')}}" width="68" height="68" alt="Image"
+                                 class="img-circle">
                             <small> - 10 March 2015 -</small>
                             <h4>Eyakub Sorkar</h4>
                             <p>
                                 "Beautiful place :p"
                             </p>
                             <div class="rating">
-                                <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><i class="icon-smile"></i>
+                                <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i
+                                        class="icon-smile voted"></i><i class="icon-smile"></i><i
+                                        class="icon-smile"></i>
                             </div>
                         </div>
                         <!-- End review strip -->
@@ -217,7 +268,9 @@
 
             <aside class="col-md-4" id="sidebar" style="z-index:999">
                 <p class="hidden-sm hidden-xs">
-                    <a class="btn_map" data-toggle="collapse" href="#collapseMap" aria-expanded="false" aria-controls="collapseMap" data-text-swap="Hide map" data-text-original="View on map">View on map</a>
+                    <a class="btn_map" data-toggle="collapse" href="#collapseMap" aria-expanded="false"
+                       aria-controls="collapseMap" data-text-swap="Hide map" data-text-original="View on map">View on
+                        map</a>
                 </p>
                 <div class="theiaStickySidebar">
                     <div class="box_style_1 expose" id="booking_box">
@@ -241,7 +294,8 @@
                                 <div class="form-group">
                                     <label>Adults</label>
                                     <div class="numbers-row">
-                                        <input type="text" value="1" id="adults" class="qty2 form-control" name="quantity">
+                                        <input type="text" value="1" id="adults" class="qty2 form-control"
+                                               name="quantity">
                                     </div>
                                 </div>
                             </div>
@@ -249,7 +303,8 @@
                                 <div class="form-group">
                                     <label>Children</label>
                                     <div class="numbers-row">
-                                        <input type="text" value="0" id="children" class="qty2 form-control" name="quantity">
+                                        <input type="text" value="0" id="children" class="qty2 form-control"
+                                               name="quantity">
                                     </div>
                                 </div>
                             </div>
@@ -317,7 +372,7 @@
 <div class="search-overlay-menu">
     <span class="search-overlay-close"><i class="icon_set_1_icon-77"></i></span>
     <form role="search" id="searchform" method="get">
-        <input value="" name="q" type="search" placeholder="Search..." />
+        <input value="" name="q" type="search" placeholder="Search..."/>
         <button type="submit"><i class="icon_set_1_icon-78"></i>
         </button>
     </form>
@@ -340,12 +395,14 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input name="name_review" id="name_review" type="text" placeholder="Your name" class="form-control">
+                                <input name="name_review" id="name_review" type="text" placeholder="Your name"
+                                       class="form-control">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input name="lastname_review" id="lastname_review" type="text" placeholder="Your last name" class="form-control">
+                                <input name="lastname_review" id="lastname_review" type="text"
+                                       placeholder="Your last name" class="form-control">
                             </div>
                         </div>
                     </div>
@@ -353,7 +410,8 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input name="email_review" id="email_review" type="email" placeholder="Your email" class="form-control">
+                                <input name="email_review" id="email_review" type="email" placeholder="Your email"
+                                       class="form-control">
                             </div>
                         </div>
                     </div>
@@ -422,10 +480,12 @@
                     </div>
                     <!-- End row -->
                     <div class="form-group">
-                        <textarea name="review_text" id="review_text" class="form-control" style="height:100px" placeholder="Write your review"></textarea>
+                        <textarea name="review_text" id="review_text" class="form-control" style="height:100px"
+                                  placeholder="Write your review"></textarea>
                     </div>
                     <div class="form-group">
-                        <input type="text" id="verify_review" class=" form-control" placeholder="Are you human? 3 + 1 =">
+                        <input type="text" id="verify_review" class=" form-control"
+                               placeholder="Are you human? 3 + 1 =">
                     </div>
                     <input type="submit" value="Submit" class="btn_1" id="submit-review">
                 </form>

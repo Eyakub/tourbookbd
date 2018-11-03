@@ -120,7 +120,7 @@
                         </li>
                         <li><a href="{{URL::to('/coming_soon')}}"><i class="icon_set_1_icon-44"></i>Historic Places <span>()</span></a>
                         </li>
-                        <li><a href="{{URL::to('/coming_soon')}}"><i class="icon_set_1_icon-43"></i>Churces <span>()</span></a>
+                        <li><a href="{{URL::to('/churces')}}"><i class="icon_set_1_icon-43"></i>Churces <span>({{$churcesCount}})</span></a>
                         </li>
                         <li><a href="{{URL::to('/coming_soon')}}"><i class="icon_set_1_icon-28"></i>Skyline tours <span>()</span></a>
                         </li>

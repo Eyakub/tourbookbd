@@ -35,6 +35,8 @@
     <link href="{{URL::asset('css/jquery.switch.css')}}" rel="stylesheet">
     <link href="{{URL::asset('css/statusbox.css')}}" rel="stylesheet">
     <link href="{{URL::asset('css/bootstrap.min.css')}}">
+    <link href="{{URL::asset('css/bootstrap.css')}}">
+    <link href="{{URL::asset('assets/stylesheets/glyphicon.css')}}">
 
 
     <script src="{{URL::to('js/html5shiv.min.js')}}"></script>
@@ -268,38 +270,48 @@
                 <!-- End section 4 -->
 
                 <section id="section-5">
-                    <div class="row">
+                    <div class="row" style="padding-bottom: 25px; padding-left: 30px; padding-right: 40px">
 
                         <div class="row">
-                            <div class="col-md-9" id="new_status">
-                                <ul class="navbar-nav col-md-9" id="post_header" role="navigation">
-                                    <h5>Post</h5>
-                                    {{--<li><a href="#"><span class="glyphicon glyphicon-pencil"></span>Update Status</a></li>--}}
-                                    {{--<li><a href="#"><span class="glyphicon glyphicon-picture"></span>Add Photos/Video</a></li>--}}
-                                    {{--<li><a href="#"><span class="glyphicon glyphicon-th"></span>Create Photo Album</a></li>--}}
-                                </ul>
-                                <div class="col-md-8" id="post_content">
-                                    <img alt="profile picture" class="col-xs-1"
-                                         src="storage/user_images/{{$user->src_user}}">
-                                    <div class="textarea_wrap"><textarea class="col-md-7"
-                                                                         placeholder="What's on your mind?"></textarea>
-                                    </div>
-                                </div>
-                                <div class="col-md-12" id="post_footer">
-                                    <ul class="navbar-nav col-md-7">
-                                        <li><a href="#"><span class="glyphicon glyphicon-camera"></span></a></li>
-                                        <li><a href="#"><span class="glyphicon glyphicon-user"></span></a></li>
-                                        <li><a href="#"><span class="glyphicon glyphicon-sunglasses"></span></a></li>
-                                        <li><a href="#"><span class="glyphicon glyphicon-map-marker"></span></a></li>
+                            <form action="{{route('blog.save')}}" method="post" enctype="multipart/form-data">
+                                {{csrf_field()}}
+                                <div class="col-md-9 col-xs-12" id="new_status">
+                                    <ul class="navbar-nav col-md-9 col-xs-12" id="post_header" role="navigation">
+                                        <h5>Post</h5>
+                                        {{--<li><a href="#"><span class="glyphicon glyphicon-pencil"></span>Update Status</a></li>--}}
+                                        {{--<li><a href="#"><span class="glyphicon glyphicon-picture"></span>Add Photos/Video</a></li>--}}
+                                        {{--<li><a href="#"><span class="glyphicon glyphicon-th"></span>Create Photo Album</a></li>--}}
                                     </ul>
-                                    <div class="col-md-5">
-                                        <button class="btn btn-default"><span
-                                                    class="glyphicon glyphicon-cog"></span>Custom<span class="caret"></span>
-                                        </button>
-                                        <button class="btn btn-primary">Post</button>
+                                    <div class="col-md-8 col-xs-8" id="post_content">
+                                        <img alt="profile picture" class="col-xs-1"
+                                             src="storage/user_images/{{$user->src_user}}">
+                                        <div class="textarea_wrap">
+                                            <textarea class="col-md-12"
+                                                      name="blog_desc"
+                                                      placeholder="What's on your mind?"></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12 col-xs-12" id="post_footer">
+                                        <ul class="navbar-nav col-md-6 col-xs-6">
+                                            <li><a href="#"><span><input type="file" name="blog_img[]"
+                                                                         multiple/></span></a></li>
+                                        </ul>
+                                        <div class="col-md-6 col-xs-6">
+                                            <select name="blog_category" class="btn btn-primary dropdown dropdown-toggle"
+                                                    style="height: 24px">
+                                                <option value="None">Select Category</option>
+                                            </select>
+                                            <select name="blog_status" class="btn btn-primary dropdown dropdown-toggle"
+                                                    style="height: 24px">
+                                                <option value="1">Public</option>
+                                                <option value="0">Only Me</option>
+                                            </select>
+                                            <button type="submit" class="btn btn-primary">Post</button>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </form>
                         </div>
 
                     </div>

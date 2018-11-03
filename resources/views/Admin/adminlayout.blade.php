@@ -19,6 +19,7 @@
     <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144"
           href="img/apple-touch-icon-144x144-precomposed.png">
 
+
     <link rel="stylesheet" href="{{asset('assets/css/normalize.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/font-awesome.min.css')}}">
@@ -30,7 +31,14 @@
     <link id="base-style" href="{{asset('admin_asset/css/halflings.css')}}" rel="stylesheet">
     <!-- <link rel="stylesheet" href="assets/css/bootstrap-select.less"> -->
     <link rel="stylesheet" href="{{asset('assets/scss/style.css')}}">
-    <link href="{{asset('assets/css/lib/vector-map/jqvmap.min.css')}}" rel="stylesheet">
+
+
+
+    <!-- Lib-->
+    <script src="{{URL::to('assets/scripts/lib/jquery-1.11.3.min.js')}}"></script>
+    <script src="{{URL::to('assets/scripts/lib/jquery-ui.js')}}"></script>
+    <script src="{{URL::to('assets/scripts/lib/tether.min.js')}}"></script>
+
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 
@@ -59,11 +67,12 @@
                     <a href="{{URL::to('/admin-panel')}}"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                 </li>
 
-                <h3 class="menu-title">Uers</h3><!-- /.menu-title -->
+                <h3 class="menu-title">Clients</h3><!-- /.menu-title -->
                 <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Tables</a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Users Action Tables</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="fa fa-table"></i><a href="{{URL::to('/all-user-data')}}">User Table</a></li>
+                        <li><i class="fa fa-table"></i><a href="{{URL::to('/all-user-data')}}">User Data Table</a></li>
+                        <li><i class="fa fa-table"></i><a href="{{URL::to('/all-user-profile')}}">User Data Profile</a></li>
                     </ul>
                 </li>
 

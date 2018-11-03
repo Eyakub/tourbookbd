@@ -64,6 +64,7 @@ h1 {
     outline: 0;
     padding: 2.5rem 0 0 1.25rem;
     resize: none;
+    width: 85%;
 }
 
 #post_footer {
