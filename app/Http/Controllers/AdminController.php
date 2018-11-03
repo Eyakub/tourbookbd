@@ -73,11 +73,10 @@ class AdminController extends Controller
         $datapass = Tour::find($id);
         $categorys = TourCategory::all();
         $districts = District::all();
-        $oneDis = District::find($id);
-        $oneDis->tourDis();
-        //dd($oneDis);
+        $oneDis = $datapass->district_id;
+        $oneDiss = District::find($oneDis);
         return view('Admin.forms.editTourInfo')
-            ->with(compact('datapass', 'categorys', 'districts', 'oneDis'));
+            ->with(compact('datapass', 'categorys', 'districts', 'oneDis', 'oneDiss'));
 
     }
 

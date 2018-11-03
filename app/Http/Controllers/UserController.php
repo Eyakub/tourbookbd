@@ -17,7 +17,6 @@ class UserController extends Controller
 
     public function Userlogin()
     {
-        $this->loginCheck();
         $login = view('Users.login');
         return $login;
     }

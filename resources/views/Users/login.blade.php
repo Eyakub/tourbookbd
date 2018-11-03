@@ -98,18 +98,20 @@
                             </p>
                             <input type="submit" value="Sign In" class="btn_full">
                             <a href="{{URL::to('/user-registration')}} " class="btn_full_outline">Register</a>
+                            <br>
+                            @if(Session::has('message'))
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="alert alert-success">
+                                            {{Session::get('message')}}
+                                        </div>
+                                    </div>
+                                </div>
+                            @else
+                            @endif
 
                         </form>
                     </div>
-                    @if(Session::has('success'))
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="alert alert-success">
-                                    {{Session::get('success')}}
-                                </div>
-                            </div>
-                        </div>
-                    @endif
                 </div>
             </div>
         </div>
