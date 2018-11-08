@@ -13,18 +13,12 @@
     <meta name="description"
           content="TourBookBD - Single Tour Details.">
     <meta name="author" content="Eyakub">
-    <title>Tour Book BD - by Eyakub</title>
+    <title>{{$tour->tour_title}} - TourBookBD</title>
 
     <!-- Favicons-->
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" type="image/x-icon" href="img/apple-touch-icon-57x57-precomposed.png">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="img/apple-touch-icon-72x72-precomposed.png">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114"
-          href="img/apple-touch-icon-114x114-precomposed.png">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144"
-          href="img/apple-touch-icon-144x144-precomposed.png">
+@include('layouts.baricon')
 
-    <!-- Google web fonts -->
+<!-- Google web fonts -->
     <link href="https://fonts.googleapis.com/css?family=Gochi+Hand|Lato:300,400|Montserrat:400,400i,700,700i"
           rel="stylesheet">
 
@@ -79,7 +73,7 @@
                 </div>
                 <div class="col-md-4 col-sm-4">
                     <div id="price_single_main">
-                        from/per person <span><sup>$</sup>00</span>
+                        from/per person <span><sup>BDT </sup>{{ $tour->tour_adult_price }}</span>
                     </div>
                 </div>
             </div>
@@ -188,8 +182,6 @@
                 <hr>
 
 
-                <hr>
-
                 <div class="row">
                     <div class="col-md-3">
                         <h3>Reviews </h3>
@@ -279,13 +271,14 @@
                             <div class="col-md-6 col-sm-6">
                                 <div class="form-group">
                                     <label><i class="icon-calendar-7"></i> Select a date</label>
-                                    <input class="date-pick form-control" data-date-format="M d, D" type="text">
+                                    <input id="tourDate" class="date-pick form-control" data-date-format="M d, D"
+                                           type="text">
                                 </div>
                             </div>
                             <div class="col-md-6 col-sm-6">
                                 <div class="form-group">
                                     <label><i class=" icon-clock"></i> Time</label>
-                                    <input class="time-pick form-control" value="12:00 AM" type="text">
+                                    <input id="tourTime" class="time-pick form-control" value="12:00 AM" type="text">
                                 </div>
                             </div>
                         </div>
@@ -294,8 +287,9 @@
                                 <div class="form-group">
                                     <label>Adults</label>
                                     <div class="numbers-row">
-                                        <input type="text" value="1" id="adults" class="qty2 form-control"
-                                               name="quantity">
+                                        <input type="text" value="0" id="adultsNo" class="qty2 form-control"
+                                               name="booking_adult_no">
+                                        <input type="hidden" value="{{$tour->tour_adult_price}}" id="adultPrice">
                                     </div>
                                 </div>
                             </div>
@@ -303,8 +297,9 @@
                                 <div class="form-group">
                                     <label>Children</label>
                                     <div class="numbers-row">
-                                        <input type="text" value="0" id="children" class="qty2 form-control"
-                                               name="quantity">
+                                        <input type="text" value="0" id="childrensNo" class="qty2 form-control"
+                                               name="booking_children_no">
+                                        <input type="hidden" value="{{$tour->tour_children_price}}" id="childrenPrice">
                                     </div>
                                 </div>
                             </div>
@@ -317,7 +312,7 @@
                                     Adults
                                 </td>
                                 <td class="text-right">
-                                    2
+                                    <span id="showAdultsNo"></span>
                                 </td>
                             </tr>
                             <tr>
@@ -325,7 +320,7 @@
                                     Children
                                 </td>
                                 <td class="text-right">
-                                    0
+                                    <span id="showChildrensNo"></span>
                                 </td>
                             </tr>
                             <tr>
@@ -333,7 +328,7 @@
                                     Total amount
                                 </td>
                                 <td class="text-right">
-                                    3x $52
+                                    <span id="showTotalAmount"></span>
                                 </td>
                             </tr>
                             <tr class="total">
@@ -341,12 +336,12 @@
                                     Total cost
                                 </td>
                                 <td class="text-right">
-                                    $154
+                                    <span id="showTotalCost"></span>
                                 </td>
                             </tr>
                             </tbody>
                         </table>
-                        <a class="btn_full" href="cart_fixed_sidebar.html">Book now</a>
+                        <a class="btn_full" href="{{URL::to('/tours/bookings/carts/')}}">Book now</a>
                         <a class="btn_full_outline" href="#"><i class=" icon-heart"></i> Add to whislist</a>
                     </div>
                     <!--/box_style_1 -->
@@ -499,6 +494,9 @@
 <script src="{{URL::asset('js/jquery-2.2.4.min.js')}}"></script>
 <script src="{{URL::asset('js/common_scripts_min.js')}}"></script>
 <script src="{{URL::asset('js/functions.js')}}"></script>
+
+{{--calculating js--}}
+<script src="{{URL::asset('assets/js/calculation.js')}}"></script>
 
 <!-- Specific scripts -->
 <script src="{{URL::asset('js/icheck.js')}}"></script>

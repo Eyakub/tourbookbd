@@ -53,6 +53,8 @@
                                     <th>Title</th>
                                     <th>Address</th>
                                     <th>District</th>
+                                    <th>Adult Cost</th>
+                                    <th>Kids Cost</th>
                                     <th>Category</th>
                                     <th>Description</th>
                                     <th>Status</th>
@@ -65,6 +67,8 @@
                                     <td>{{$data->tour_title}}</td>
                                     <td>{{$data->tour_address}}</td>
                                     <td>{{$data->district_id}}</td>
+                                    <td>{{$data->tour_adult_price}}</td>
+                                    <td>{{$data->tour_children_price}}</td>
                                     <td>{{$data->tour_category}}</td>
                                     <td>{{$data->tour_description}}</td>
                                     <td>

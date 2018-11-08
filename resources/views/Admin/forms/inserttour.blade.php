@@ -19,6 +19,7 @@
                                                             class="form-control">{{--<small class="form-text text-muted">This is a help text</small>--}}
                         </div>
                     </div>
+
                     <div class="row form-group">
                         <div class="col col-md-3"><label for="text-input" class=" form-control-label">Address </label>
                         </div>
@@ -38,6 +39,20 @@
                                     <option value="{{$dis->id}}">{{$dis->district_name}}</option>
                                 @endforeach
                             </select>
+                        </div>
+                    </div>
+
+
+                    <div class="row form-group">
+                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Price's </label>
+                        </div>
+                        <div class="col-12 col-md-4"><input type="text" id="text-input" name="tour_adult_price"
+                                                            placeholder="Price for Adult"
+                                                            class="form-control">{{--<small class="form-text text-muted">This is a help text</small>--}}
+                        </div>
+                        <div class="col-12 col-md-4"><input type="text" id="text-input" name="tour_children_price"
+                                                            placeholder="Price for Kids"
+                                                            class="form-control">{{--<small class="form-text text-muted">This is a help text</small>--}}
                         </div>
                     </div>
 

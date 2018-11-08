@@ -31,7 +31,7 @@ Route::get('/hotels-insert-form', 'AdminController@showHotelForm')->name('upload
 Route::post('/hotels-insert-form', 'AdminController@insertHotel');
 Route::get('/all-hotel-data', 'AdminController@showHotelData');
 Route::get('/edit-hotel-information/{id}', 'AdminController@editHotelInfo');
-Route::post('/update-hotefl-information', 'AdminController@updateHotelInfo');
+Route::post('/update-hotel-information', 'AdminController@updateHotelInfo');
 Route::get('/delete-hotel/{id}', 'AdminController@deleteHotel');
 
 Route::get('/resorts-insert-form', 'AdminController@showResortForm')->name('upload.resorts');
@@ -44,6 +44,7 @@ Route::get('/delete-resort/{id}', 'AdminController@deleteResort');
 Route::get('/all-user-data/', 'AdminController@showUserData');
 Route::get('/all-user-profile/', 'AdminController@showUserProfile');
 Route::get('/delete-user/{id}', 'AdminController@deleteUser');
+Route::get('/all-hotel-admin-data', 'AdminController@showHotelAdminData');
 
 
 /**
@@ -53,7 +54,7 @@ Route::get('/user-registration', 'UserController@UserRegistration')->name('uploa
 Route::post('/user-registration', 'UserController@storeUserInformation');
 
 Route::post('/user-profile', 'UserController@user_login')->name('login_check');
-Route::get('/user-profile/', 'UserController@loginCheck');
+//Route::get('/user-profile/', 'UserController@loginCheck');
 Route::get('/user-login', 'UserController@Userlogin');
 Route::get('/logout', 'UserController@logout');
 
@@ -73,6 +74,15 @@ Route::get('/waterfall', 'TourController@waterfall');
 Route::get('/naturelife', 'TourController@natureWild');
 Route::get('/hikingcamping', 'TourController@hikingCamping');
 Route::get('/churces', 'TourController@churces');
+
+
+/**
+ * Booking panel
+ */
+Route::get('/tours/bookings/carts/', 'BookingAndPaymentController@carts');
+Route::get('/tours/bookings/carts/payments/', 'BookingAndPaymentController@payments');
+Route::get('/tours/bookings/carts/payments/confirmation', 'BookingAndPaymentController@confirmation');
+Route::get('/tours/bookings/carts/payments/confirmation/invoice', 'BookingAndPaymentController@invoice');
 
 
 /**

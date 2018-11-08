@@ -23,13 +23,7 @@
 
 
     <!-- Favicons-->
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" type="image/x-icon" href="img/apple-touch-icon-57x57-precomposed.png">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="img/apple-touch-icon-72x72-precomposed.png">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114"
-          href="img/apple-touch-icon-114x114-precomposed.png">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144"
-          href="img/apple-touch-icon-144x144-precomposed.png">
+    @include('layouts.baricon')
 
     <!-- Google web fonts -->
     <link href="https://fonts.googleapis.com/css?family=Gochi+Hand|Lato:300,400|Montserrat:400,400i,700,700i"
@@ -149,8 +143,6 @@
 <!-- Mobile menu overlay mask -->
 
 @include('layouts.header')
-
-
 
 <main>
     <div id="rev_slider_54_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="notgeneric1"
@@ -663,14 +655,9 @@
     </div>
 
     <div class="container margin_60">
-
         @yield('top_tours')
-
         <hr>
-
         @yield('top_hotels')
-
-
     </div>
     <!-- End container -->
 

@@ -52,6 +52,8 @@ class AdminController extends Controller
         $file->tour_description = $request->input('tour_description');
         $file->tour_address = $request->input('tour_address');
         $file->tour_category = $request->input('tour_category');
+        $file->tour_adult_price = $request->input('tour_adult_price');
+        $file->tour_children_price = $request->input('tour_children_price');
         $file->tour_small_cover = $tourSmallCover;
         $file->tour_large_cover = $tourLargeCover;
         $file->district_id = $request->input('district_id');
@@ -116,6 +118,8 @@ class AdminController extends Controller
         $tour->tour_description = $request->input('tour_description');
         $tour->tour_address = $request->input('tour_address');
         $tour->tour_category = $request->input('tour_category');
+        $tour->tour_adult_price = $request->input('tour_adult_price');
+        $tour->tour_children_price = $request->input('tour_children_price');
         $tour->tour_small_cover = $tourSmallCover;
         $tour->tour_large_cover = $tourLargeCover;
         $tour->district_id = $request->input('district_id');
@@ -202,5 +206,10 @@ class AdminController extends Controller
         $showHotelData = Hotel::all();
         return view('Admin.hotelstable')
             ->with('showHotelData', $showHotelData);
+    }
+
+    public function showHotelAdminData()
+    {
+        return view('coming_soon');
     }
 }

@@ -17,6 +17,7 @@ class UserController extends Controller
 
     public function Userlogin()
     {
+        $this->auth_check();
         $login = view('Users.login');
         return $login;
     }
@@ -88,16 +89,13 @@ class UserController extends Controller
 
     }
 
-    public function loginCheck(){
-        //session_start();
+
+    public function auth_check()
+    {
+        session_start();
         $user_id = Session::get('id');
-        $user_name = Session::get('username');
-        //dd($user_name);
-        if($user_id !== null){
-            return redirect::to('/user-profile/');
-        }else{
-            Session::put('message', 'You must login first.');
-            return redirect::to('/user-login');
+        if($user_id !== NULL){
+            return redirect::to('/user-profile')->send();
         }
     }
 
@@ -106,16 +104,17 @@ class UserController extends Controller
         $user_email = $request->email;
         $user_pass = $request->password;
 
-        $res = Users::where('email', $user_email)
+        $user = Users::where('email', $user_email)
             ->where('password', $user_pass)
             ->first();
-        if($res !== null){
-            Session::put('id', $res->id);
-            Session::put('username', $res->username);
-            $name = $res->first_name.' '.$res->last_name;
+        if($user !== NULL){
+            Session::put('id', $user->id);
+            Session::put($user);
+            //Session::put('username', $user->username);
+            $name = $user->first_name.' '.$user->last_name;
             Session::put('name', $name);
             //dd(session()->all());
-            $user = Users::find($res->id);
+            //$user = Users::find($res->id);
             $blogCat = TourCategory::all();
             return view('Users.userlayout')
                 ->with(compact('user', 'blogCat'));
@@ -149,6 +148,11 @@ class UserController extends Controller
 
             }
         }
+    }
+
+    public function comingSoon()
+    {
+        return view('coming_soon');
     }
 
 

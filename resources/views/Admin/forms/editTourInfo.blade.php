@@ -15,9 +15,9 @@
                     </div>
                     <div class="col-12 col-md-9">
                         <input type="text" id="text-input" name="tour_title"
-                                                        value="{{$datapass->tour_title}}"
-                                                        placeholder="Enter the name of the place"
-                                                        class="form-control">{{--<small class="form-text text-muted">This is a help text</small>--}}
+                               value="{{$datapass->tour_title}}"
+                               placeholder="Enter the name of the place"
+                               class="form-control">{{--<small class="form-text text-muted">This is a help text</small>--}}
                         <input type="hidden" value="{{$datapass->id}}" name="tour_id">
                     </div>
                 </div>
@@ -41,6 +41,25 @@
                                 <option value="{{$dis->id}}">{{$dis->district_name}}</option>
                             @endforeach
                         </select>
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">Price's </label>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <input type="text" id="text-input" name="tour_adult_price"
+                               value="{{$datapass->tour_adult_price}}"
+                               placeholder="Price for Adult"
+                               class="form-control">{{--<small class="form-text text-muted">This is a help text</small>--}}
+
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <input type="text" id="text-input" name="tour_children_price"
+                               value="{{$datapass->tour_children_price}}"
+                               placeholder="Price for Kids"
+                               class="form-control">{{--<small class="form-text text-muted">This is a help text</small>--}}
+
                     </div>
                 </div>
 
@@ -84,7 +103,7 @@
                     </div>
                     <div class="col-12 col-md-9">
                         <input type="file" id="file-input" name="tour_large_cover"
-                                                        class="form-control-file">
+                               class="form-control-file">
                         <input class="form-control-file" value="{{$datapass->tour_large_cover}}"
                                name="tour_large_old_photo" type="hidden">
                         <img src="{{asset('storage/large_cover/'.$datapass->tour_large_cover)}}" width="97" height="50">
