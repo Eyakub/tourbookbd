@@ -99,8 +99,8 @@ class AdminController extends Controller
         if($request->hasFile('tour_small_cover') || $request->hasFile('tour_large_cover')){
             $tourSmallCover = time().'-'.$request->file('tour_small_cover')->getClientOriginalName();
             $tourLargeCover = time().'-'.$request->file('tour_large_cover')->getClientOriginalName();
-            $oldsmallcover = $request->file('tour_small_old_photo');
-            $oldlargecover = $request->file('tour_large_old_photo');
+            $oldsmallcover = $request->input('tour_small_old_photo');
+            $oldlargecover = $request->input('tour_large_old_photo');
             $request->file('tour_small_cover')->storeAs('public/small_cover', $tourSmallCover);
             $request->file('tour_large_cover')->storeAs('public/large_cover', $tourLargeCover);
 
@@ -108,8 +108,8 @@ class AdminController extends Controller
             Storage::delete('public/small_cover/'.$oldsmallcover);
             Storage::delete('public/large_cover/'.$oldlargecover);
         }else{
-            $tourSmallCover = $request->file('tour_small_old_photo');
-            $tourLargeCover = $request->file('tour_large_old_photo');
+            $tourSmallCover = $request->input('tour_small_old_photo');
+            $tourLargeCover = $request->input('tour_large_old_photo');
         }
 
 
@@ -204,15 +204,15 @@ class AdminController extends Controller
     public function updateGuideInfo(request $request)
     {
         $guide_id = $request->guide_id;
-        var_dump($guide_id);
+        //var_dump($guide_id);
         $guide = Guide::find($guide_id);
-        dd($guide);
+        //dd($request);
         $this->validate($request, [
             'guide_username' => 'required',
             'guide_name' => 'required',
             'guide_address' => 'required',
             'guide_about' => 'required',
-            'guide_quote' => '',
+            'guide_quote' => 'required',
             'guide_number' => 'required',
             'guide_languages' => 'required',
             'guide_education' => 'required',
@@ -223,13 +223,13 @@ class AdminController extends Controller
 
         if($request->hasFile('guide_picture')){
             $guidePicture = time().'-'.$request->file('guide_picture')->getClientOriginalName();
-            $oldGuidePhoto = $request->file('guide_old_picture');
-            $request->file('tour_small_cover')->storeAs('public/guide_pic', $guidePicture);
+            $oldGuidePhoto = $request->input('guide_old_picture');
+            $request->file('guide_picture')->storeAs('public/guide_pic/', $guidePicture);
 
             //delete old photo
-            Storage::delete('public/guide_pic'.$oldGuidePhoto);
+            Storage::delete('public/guide_pic/'.$oldGuidePhoto);
         }else{
-            $guidePicture = $request->file('guide_old_picture');
+            $guidePicture = $request->input('guide_old_picture');
         }
 
 
@@ -246,10 +246,10 @@ class AdminController extends Controller
         $guide->guide_experience = $request->input('guide_experience');
         $guide->guide_certificates = $request->input('guide_certificates');
         $guide->guide_nid = $request->input('guide_nid');
-        dd($guide);
+        //dd($guide);
         $guide->save();
 
-        //return Redirect::to('/admin-panel/edit-guide-information/'.$guide_id)->with('success', 'Successfully Updated the guide Information');
+        return Redirect::to('/admin-panel/edit-guide-information/'.$guide_id)->with('success', 'Successfully Updated the guide Information');
     }
 
     public function deleteGuide($id)
