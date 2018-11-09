@@ -16,13 +16,14 @@
     <title>TourBookBD - A place of natural beauty</title>
 
     <!-- Favicons-->
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" type="image/x-icon" href="img/apple-touch-icon-57x57-precomposed.png">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="img/apple-touch-icon-72x72-precomposed.png">
+    <link rel="shortcut icon" href="{{asset('img/favicon.ico')}}" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/x-icon" href="{{asset('img/apple-touch-icon-57x57-precomposed.png')}}">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72"
+          href="{{asset('img/apple-touch-icon-72x72-precomposed.png')}}">
     <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114"
-          href="img/apple-touch-icon-114x114-precomposed.png">
+          href="{{asset('img/apple-touch-icon-114x114-precomposed.png')}}">
     <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144"
-          href="img/apple-touch-icon-144x144-precomposed.png">
+          href="{{asset('img/apple-touch-icon-144x144-precomposed.png')}}">
 
     <!-- Google web fonts -->
     <link href="https://fonts.googleapis.com/css?family=Gochi+Hand|Lato:300,400|Montserrat:400,400i,700,700i"
@@ -70,7 +71,7 @@
 @include('layouts.header')
 <!-- End Header -->
 
-<section class="parallax-window" data-parallax="scroll" data-image-src="img/1000x1500-1.jpg" data-natural-width="1400"
+<section class="parallax-window" data-parallax="scroll" data-image-src="{{asset('img/1000x1500-1.jpg')}}" data-natural-width="1400"
          data-natural-height="470">
     <div class="parallax-content-1">
         <div class="animated fadeInDown">
@@ -112,7 +113,7 @@
 
                 <div class="box_style_cat">
                     <ul id="cat_nav">
-                        <li><a href="{{URL::to('/all-tour')}}" id="active"><i class="icon_set_1_icon-51"></i>All tours <span>({{$count}})</span></a>
+                        <li><a href="{{URL::to('/tours')}}" id="active"><i class="icon_set_1_icon-51"></i>All tours <span>({{$count}})</span></a>
                         </li>
                         <li><a href="{{URL::to('/coming_soon')}}"><i class="icon_set_1_icon-3"></i>City sightseeing <span>()</span></a>
                         </li>
@@ -120,17 +121,17 @@
                         </li>
                         <li><a href="{{URL::to('/coming_soon')}}"><i class="icon_set_1_icon-44"></i>Historic Places <span>()</span></a>
                         </li>
-                        <li><a href="{{URL::to('/churces')}}"><i class="icon_set_1_icon-43"></i>Churces <span>({{$churcesCount}})</span></a>
+                        <li><a href="{{URL::to('/tours/churces')}}"><i class="icon_set_1_icon-43"></i>Churces <span>({{$churcesCount}})</span></a>
                         </li>
                         <li><a href="{{URL::to('/coming_soon')}}"><i class="icon_set_1_icon-28"></i>Skyline tours <span>()</span></a>
                         </li>
-                        <li><a href="{{URL::to('/close-to-sea')}}"><i class=" icon-anchor-2"></i>Close To Sea <span>({{$closeToCount}})</span></a>
+                        <li><a href="{{URL::to('/tours/close-to-sea')}}"><i class=" icon-anchor-2"></i>Close To Sea <span>({{$closeToCount}})</span></a>
                         </li>
-                        <li><a href="{{URL::to('/waterfall')}}"><i class=" icon-waves"></i>Waterfall <span>({{$waterfallCount}})</span></a>
+                        <li><a href="{{URL::to('/tours/waterfall')}}"><i class=" icon-waves"></i>Waterfall <span>({{$waterfallCount}})</span></a>
                         </li>
-                        <li><a href="{{URL::to('/naturelife')}}"><i class="icon_set_2_icon-108"></i>Nature & Wildlife <span>({{$natureCount}})</span></a>
+                        <li><a href="{{URL::to('/tours/naturelife')}}"><i class="icon_set_2_icon-108"></i>Nature & Wildlife <span>({{$natureCount}})</span></a>
                         </li>
-                        <li><a href="{{URL::to('/hikingcamping')}}"><i class="icon-pitch"></i>Hiking & Camping <span>({{$hikingCount}})</span></a>
+                        <li><a href="{{URL::to('/tours/hikingcamping')}}"><i class="icon-pitch"></i>Hiking & Camping <span>({{$hikingCount}})</span></a>
                         </li>
                     </ul>
                 </div>

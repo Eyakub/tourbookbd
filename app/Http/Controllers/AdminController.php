@@ -212,4 +212,5 @@ class AdminController extends Controller
     {
         return view('coming_soon');
     }
+
 }

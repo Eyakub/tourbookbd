@@ -46,6 +46,10 @@ Route::get('/all-user-profile/', 'AdminController@showUserProfile');
 Route::get('/delete-user/{id}', 'AdminController@deleteUser');
 Route::get('/all-hotel-admin-data', 'AdminController@showHotelAdminData');
 
+Route::get('/about-us', 'HomeController@aboutus');
+Route::get('/faq', 'HomeController@faq');
+Route::get('/tourist-guides', 'HomeController@touristGuide');
+
 
 /**
  * User Panel
@@ -65,15 +69,15 @@ Route::post('/save-blog', 'UserController@saveBlog')->name('blog.save');
 /**
  * Tour Panel
  */
-Route::get('/all-tour', 'TourController@allTour');
-Route::get('/single-tour/{id}', 'TourController@singleDetails');
+Route::get('/tours', 'TourController@allTour');
+Route::get('/tours/single-tour/{id}', 'TourController@singleDetails');
 
 Route::get('/single-hotel/{id}', 'HotelsController@singleDetails');
-Route::get('/close-to-sea', 'TourController@closeToSea');
-Route::get('/waterfall', 'TourController@waterfall');
-Route::get('/naturelife', 'TourController@natureWild');
-Route::get('/hikingcamping', 'TourController@hikingCamping');
-Route::get('/churces', 'TourController@churces');
+Route::get('/tours/close-to-sea', 'TourController@closeToSea');
+Route::get('/tours/waterfall', 'TourController@waterfall');
+Route::get('/tours/naturelife', 'TourController@natureWild');
+Route::get('/tours/hikingcamping', 'TourController@hikingCamping');
+Route::get('/tours/churces', 'TourController@churces');
 
 
 /**

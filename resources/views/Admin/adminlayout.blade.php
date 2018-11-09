@@ -1,14 +1,15 @@
 <!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang=""> <!--<![endif]-->
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>TourBookBD - Admin Panel</title>
-    <meta name="description" content="TourBookBD - Admin Panel">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    @include('layouts.metadata')
+    <title>Admin Panel - TourBookBD</title>
 
     <!-- Favicons-->
     @include('layouts.baricon')
@@ -25,7 +26,6 @@
     <link id="base-style" href="{{asset('admin_asset/css/halflings.css')}}" rel="stylesheet">
     <!-- <link rel="stylesheet" href="assets/css/bootstrap-select.less"> -->
     <link rel="stylesheet" href="{{asset('assets/scss/style.css')}}">
-
 
 
     <!-- Lib-->
@@ -48,11 +48,13 @@
     <nav class="navbar navbar-expand-sm navbar-default">
 
         <div class="navbar-header">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu"
+                    aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fa fa-bars"></i>
             </button>
             <a class="navbar-brand" href="{{URL::to('/')}}"><img src="{{asset('images/logo.png')}}" alt="Logo"></a>
-            <a class="navbar-brand hidden" href="{{URL::to('admin-panel')}}"><img src="{{asset('images/logo2.png')}}" alt="Logo"></a>
+            <a class="navbar-brand hidden" href="{{URL::to('admin-panel')}}"><img src="{{asset('images/logo2.png')}}"
+                                                                                  alt="Logo"></a>
         </div>
 
         <div id="main-menu" class="main-menu collapse navbar-collapse">
@@ -63,40 +65,49 @@
 
                 <h3 class="menu-title">Clients</h3><!-- /.menu-title -->
                 <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Users Action Tables</a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                       aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Users Action Tables</a>
                     <ul class="sub-menu children dropdown-menu">
                         <li><i class="fa fa-table"></i><a href="{{URL::to('/all-user-data')}}">User Data Table</a></li>
-                        <li><i class="fa fa-table"></i><a href="{{URL::to('/all-user-profile')}}">User Data Profile</a></li>
-                        <li><i class="fa fa-table"></i><a href="{{URL::to('/all-hotel-admin-data')}}">Hotel Admin Profile</a></li>
+                        <li><i class="fa fa-table"></i><a href="{{URL::to('/all-user-profile')}}">User Data Profile</a>
+                        </li>
+                        <li><i class="fa fa-table"></i><a href="{{URL::to('/all-hotel-admin-data')}}">Hotel Admin
+                                Profile</a></li>
                     </ul>
                 </li>
 
                 <h3 class="menu-title">About Tours</h3><!-- /.menu-title -->
                 <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Tables</a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                       aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Tables</a>
                     <ul class="sub-menu children dropdown-menu">
                         <li><i class="fa fa-table"></i><a href="{{URL::to('/all-tour-data')}}">Data Table</a></li>
                     </ul>
                 </li>
                 <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Forms</a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                       aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Forms</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-th"></i><a href="{{URL::to('tours-insert-form')}}">Insert A Tour</a></li>
+                        <li><i class="menu-icon fa fa-th"></i><a href="{{URL::to('tours-insert-form')}}">Insert A
+                                Tour</a></li>
 
                     </ul>
                 </li>
 
                 <h3 class="menu-title">Hotels & Resorts</h3><!-- /.menu-title -->
                 <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Tables</a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                       aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Tables</a>
                     <ul class="sub-menu children dropdown-menu">
                         <li><i class="fa fa-table"></i><a href="{{URL::to('/all-hotel-data')}}">Data Table</a></li>
                     </ul>
                 </li>
                 <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Forms</a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                       aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Forms</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-th"></i><a href="{{URL::to('hotels-insert-form')}}">Insert A Hotels Info</a></li>
+                        <li><i class="menu-icon fa fa-th"></i><a href="{{URL::to('hotels-insert-form')}}">Insert A
+                                Hotels Info</a></li>
 
                     </ul>
                 </li>
@@ -125,13 +136,15 @@
                     <button class="search-trigger"><i class="fa fa-search"></i></button>
                     <div class="form-inline">
                         <form class="search-form">
-                            <input class="form-control mr-sm-2" type="text" placeholder="Search ..." aria-label="Search">
+                            <input class="form-control mr-sm-2" type="text" placeholder="Search ..."
+                                   aria-label="Search">
                             <button class="search-close" type="submit"><i class="fa fa-close"></i></button>
                         </form>
                     </div>
 
                     <div class="dropdown for-notification">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="notification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="notification"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fa fa-bell"></i>
                             <span class="count bg-danger">5</span>
                         </button>
@@ -200,14 +213,16 @@
 
             <div class="col-sm-5">
                 <div class="user-area dropdown float-right">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                       aria-expanded="false">
                         <img class="user-avatar rounded-circle" src="{{asset('images/eyakub.jpg')}}" alt="User Avatar">
                     </a>
 
                     <div class="user-menu dropdown-menu">
                         <a class="nav-link" href="#"><i class="fa fa- user"></i>My Profile</a>
 
-                        <a class="nav-link" href="#"><i class="fa fa- user"></i>Notifications <span class="count">13</span></a>
+                        <a class="nav-link" href="#"><i class="fa fa- user"></i>Notifications <span
+                                    class="count">13</span></a>
 
                         <a class="nav-link" href="#"><i class="fa fa -cog"></i>Settings</a>
 
@@ -216,10 +231,11 @@
                 </div>
 
                 <div class="language-select dropdown" id="language-select">
-                    <a class="dropdown-toggle" href="#" data-toggle="dropdown"  id="language" aria-haspopup="true" aria-expanded="true">
+                    <a class="dropdown-toggle" href="#" data-toggle="dropdown" id="language" aria-haspopup="true"
+                       aria-expanded="true">
                         <i class="flag-icon flag-icon-us"></i>
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="language" >
+                    <div class="dropdown-menu" aria-labelledby="language">
                         <div class="dropdown-item">
                             <span class="flag-icon flag-icon-fr"></span>
                         </div>
@@ -240,7 +256,6 @@
 
     </header><!-- /header -->
     <!-- Header-->
-
 
 
     @yield('admin_panel_content')
@@ -264,10 +279,10 @@
 <script src="{{URL::to('assets/js/lib/vector-map/jquery.vmap.sampledata.js')}}"></script>
 <script src="{{URL::to('assets/js/lib/vector-map/country/jquery.vmap.world.js')}}"></script>
 <script>
-    ( function ( $ ) {
+    (function ($) {
         "use strict";
 
-        jQuery( '#vmap' ).vectorMap( {
+        jQuery('#vmap').vectorMap({
             map: 'world_en',
             backgroundColor: null,
             color: '#ffffff',
@@ -276,10 +291,10 @@
             enableZoom: true,
             showTooltip: true,
             values: sample_data,
-            scaleColors: [ '#1de9b6', '#03a9f5' ],
+            scaleColors: ['#1de9b6', '#03a9f5'],
             normalizeFunction: 'polynomial'
-        } );
-    } )( jQuery );
+        });
+    })(jQuery);
 </script>
 
 </body>

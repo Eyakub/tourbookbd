@@ -8,8 +8,8 @@
                 <div class="ribbon_3 popular"><span>Popular</span>
                 </div>
                 <div class="img_container">
-                    <a href="{{URL::to('/single-tour/'.$tour->id)}}">
-                        <img src="storage/small_cover/{{$tour->tour_small_cover}}" width="800" height="533" class="img-responsive" alt="Image">
+                    <a href="{{URL::to('/tours/single-tour/'.$tour->id)}}">
+                        <img src="{{asset('storage/small_cover/'.$tour->tour_small_cover)}}" width="800" height="533" class="img-responsive" alt="Image">
                         {{--<div class="short_info">
                             <i class="icon_set_1_icon-44"></i>Historic Buildings<span class="price"><sup>$</sup>45</span>
                         </div>--}}
@@ -39,8 +39,5 @@
             {!! $tours-> links() !!}
         </ul>
     </div>
-
-
-
 
 @endsection

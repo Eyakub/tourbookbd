@@ -6,26 +6,24 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <meta name="description" content="TourBookBD - A Place of country tours agencies, transfers and tickets.">
-    <meta name="author" content="Eyakub">
+    @include('layouts.metadata')
     <title>TourBookBD - A place of natural beauty</title>
 
     <!--JS-->
-    <script type="text/javascript" src="{{URL::to('rev-slider-files/js/extensions/revolution.extension.slideanims.min.js')}}"></script>
+    <script type="text/javascript"
+            src="{{URL::to('rev-slider-files/js/extensions/revolution.extension.slideanims.min.js')}}"></script>
     <script type="text/javascript"
             src="{{URL::to('rev-slider-files/js/extensions/revolution.extension.layeranimation.min.js')}}"></script>
-    <script type="text/javascript" src="{{URL::to('rev-slider-files/js/extensions/revolution.extension.navigation.min.js')}}"></script>
-    <script type="text/javascript" src="{{URL::to('rev-slider-files/js/extensions/revolution.extension.parallax.min.js')}}"></script>
+    <script type="text/javascript"
+            src="{{URL::to('rev-slider-files/js/extensions/revolution.extension.navigation.min.js')}}"></script>
+    <script type="text/javascript"
+            src="{{URL::to('rev-slider-files/js/extensions/revolution.extension.parallax.min.js')}}"></script>
 
 
     <!-- Favicons-->
     @include('layouts.baricon')
 
-    <!-- Google web fonts -->
+<!-- Google web fonts -->
     <link href="https://fonts.googleapis.com/css?family=Gochi+Hand|Lato:300,400|Montserrat:400,400i,700,700i"
           rel="stylesheet">
 
@@ -33,7 +31,8 @@
     <link href="{{asset('css/base.css')}}" rel="stylesheet">
 
     <!-- REVOLUTION SLIDER CSS -->
-    <link rel="stylesheet" type="text/css" href="{{asset('rev-slider-files/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css')}}">
+    <link rel="stylesheet" type="text/css"
+          href="{{asset('rev-slider-files/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('rev-slider-files/fonts/font-awesome/css/font-awesome.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('rev-slider-files/css/settings.css')}}">
 
@@ -160,7 +159,8 @@
                     data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9=""
                     data-param10="" data-description="">
                     <!-- MAIN IMAGE -->
-                    <img src="{{URL::asset('rev-slider-files/assets/700X1800-4.jpg')}}" alt="" data-bgposition="center center"
+                    <img src="{{URL::asset('rev-slider-files/assets/700X1800-4.jpg')}}" alt=""
+                         data-bgposition="center center"
                          data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg"
                          data-no-retina>
                     <!-- LAYERS -->
@@ -242,7 +242,8 @@
                     data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9=""
                     data-param10="" data-description="">
                     <!-- MAIN IMAGE -->
-                    <img src="{{URL::asset('rev-slider-files/assets/700X1800-3.jpg')}}" alt="" data-bgposition="center center"
+                    <img src="{{URL::asset('rev-slider-files/assets/700X1800-3.jpg')}}" alt=""
+                         data-bgposition="center center"
                          data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg"
                          data-no-retina>
                     <!-- LAYERS -->
@@ -387,7 +388,8 @@
                     data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8=""
                     data-param9="" data-param10="" data-description="">
                     <!-- MAIN IMAGE -->
-                    <img src="{{asset('rev-slider-files/assets/700X1800-2.jpg')}}" alt="" data-bgposition="center center"
+                    <img src="{{asset('rev-slider-files/assets/700X1800-2.jpg')}}" alt=""
+                         data-bgposition="center center"
                          data-kenburns="on" data-duration="30000" data-ease="Linear.easeNone" data-scalestart="100"
                          data-scaleend="120" data-rotatestart="0" data-rotateend="0" data-blurstart="0" data-blurend="0"
                          data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="10" class="rev-slidebg"
@@ -470,14 +472,16 @@
                     data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9=""
                     data-param10="" data-description="">
                     <!-- MAIN IMAGE -->
-                    <img src="{{asset('rev-slider-files/assets/700X1800-5.jpg')}}" alt="" data-bgposition="center center"
+                    <img src="{{asset('rev-slider-files/assets/700X1800-5.jpg')}}" alt=""
+                         data-bgposition="center center"
                          data-bgfit="cover" data-bgparallax="10" class="rev-slidebg" data-no-retina>
                     <!-- LAYERS -->
 
                     <!-- BACKGROUND VIDEO LAYER -->
                     <div class="rs-background-video-layer" data-forcerewind="on" data-volume="mute"
                          data-videowidth="100%" data-videoheight="100%"
-                         data-videomp4="rev-slider-files/assets/Beautiful Bangladesh - Land Of Stories - YouTube.mp4" data-videopreload="auto"
+                         data-videomp4="rev-slider-files/assets/Beautiful Bangladesh - Land Of Stories - YouTube.mp4"
+                         data-videopreload="auto"
                          data-videoloop="loopandnoslidestop" data-forceCover="1" data-aspectratio="16:9"
                          data-autoplay="true" data-autoplayonlyfirsttime="false"></div>
                     <!-- LAYER NR. 20 -->
@@ -567,7 +571,8 @@
                     data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8=""
                     data-param9="" data-param10="" data-description="">
                     <!-- MAIN IMAGE -->
-                    <img src="{{asset('rev-slider-files/assets/700X1800-5.jpg')}}" alt="" data-bgposition="center center"
+                    <img src="{{asset('rev-slider-files/assets/700X1800-5.jpg')}}" alt=""
+                         data-bgposition="center center"
                          data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg"
                          data-no-retina>
                     <!-- LAYERS -->
@@ -594,7 +599,8 @@
                          data-frames='[{"delay":1500,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
                          data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
                          data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
-                         style="z-index: 6; white-space: nowrap; font-weight: 400;font-family:Montserrat;">GET TourBookBD
+                         style="z-index: 6; white-space: nowrap; font-weight: 400;font-family:Montserrat;">GET
+                        TourBookBD
                         TODAY
                     </div>
 
@@ -688,22 +694,22 @@
             <div class="col-md-4 wow zoomIn" data-wow-delay="0.2s">
                 <div class="feature_home">
                     <i class="icon_set_1_icon-41"></i>
-                    <h3><span>000</span> Premium tours</h3>
+                    <h3><span>{{$totalTour}}</span> Premium tours</h3>
                     <p>
                         We aren't doing anything like this, so this is just an example for future development.
                     </p>
-                    <a href="about.html" class="btn_1 outline">Read more</a>
+                    <a href="{{URL::to('/tours')}}" class="btn_1 outline">Read more</a>
                 </div>
             </div>
 
             <div class="col-md-4 wow zoomIn" data-wow-delay="0.4s">
                 <div class="feature_home">
                     <i class="icon_set_1_icon-30"></i>
-                    <h3><span>000</span> Customers</h3>
+                    <h3><span>{{$totalUser}}</span> Customers</h3>
                     <p>
                         We are providing good care of our customer.
                     </p>
-                    <a href="about.html" class="btn_1 outline">Read more</a>
+                    <a href="#" class="btn_1 outline">Read more</a>
                 </div>
             </div>
 
@@ -714,7 +720,7 @@
                     <p>
                         Supporting our customer is our first duty.
                     </p>
-                    <a href="about.html" class="btn_1 outline">Read more</a>
+                    <a href="{{URL::to('/about-us')}}" class="btn_1 outline">Read more</a>
                 </div>
             </div>
 
@@ -725,7 +731,7 @@
 
         <div class="row">
             <div class="col-md-8 col-sm-6 hidden-xs">
-                <img src="img/14.png" alt="Laptop" class="img-responsive laptop">
+                <img src="img/14.png" height="480" width="480" alt="Laptop" class="img-responsive laptop">
             </div>
             <div class="col-md-4 col-sm-6">
                 <h3><span>Get started</span> with TourBookBD</h3>
@@ -737,7 +743,7 @@
                     <li><span>2</span>Purchase tickets and options</li>
                     <li><span>3</span>Pick them directly from your office</li>
                 </ul>
-                <a href="{{URL::to('/all-tour')}}" class="btn_1">Start now</a>
+                <a href="{{URL::to('/tours')}}" class="btn_1">Start now</a>
             </div>
         </div>
         <!-- End row -->
@@ -769,15 +775,24 @@
 <!-- SLIDER REVOLUTION SCRIPTS  -->
 <script type="text/javascript" src="{{URL::asset('rev-slider-files/js/jquery.themepunch.tools.min.js')}}"></script>
 <script type="text/javascript" src="{{URL::asset('rev-slider-files/js/jquery.themepunch.revolution.min.js')}}"></script>
-<script type="text/javascript" src="{{URL::asset('rev-slider-files/js/extensions/revolution.extension.actions.min.js')}}"></script>
-<script type="text/javascript" src="{{URL::asset('rev-slider-files/js/extensions/revolution.extension.carousel.min.js')}}"></script>
-<script type="text/javascript" src="{{URL::asset('rev-slider-files/js/extensions/revolution.extension.kenburn.min.js')}}"></script>
-<script type="text/javascript" src="{{URL::asset('rev-slider-files/js/extensions/revolution.extension.layeranimation.min.js')}}"></script>
-<script type="text/javascript" src="{{URL::asset('rev-slider-files/js/extensions/revolution.extension.migration.min.js')}}"></script>
-<script type="text/javascript" src="{{URL::asset('rev-slider-files/js/extensions/revolution.extension.navigation.min.js')}}"></script>
-<script type="text/javascript" src="{{URL::asset('rev-slider-files/js/extensions/revolution.extension.parallax.min.js')}}"></script>
-<script type="text/javascript" src="{{URL::asset('rev-slider-files/js/extensions/revolution.extension.slideanims.min.js')}}"></script>
-<script type="text/javascript" src="{{URL::asset('rev-slider-files/js/extensions/revolution.extension.video.min.js')}}"></script>
+<script type="text/javascript"
+        src="{{URL::asset('rev-slider-files/js/extensions/revolution.extension.actions.min.js')}}"></script>
+<script type="text/javascript"
+        src="{{URL::asset('rev-slider-files/js/extensions/revolution.extension.carousel.min.js')}}"></script>
+<script type="text/javascript"
+        src="{{URL::asset('rev-slider-files/js/extensions/revolution.extension.kenburn.min.js')}}"></script>
+<script type="text/javascript"
+        src="{{URL::asset('rev-slider-files/js/extensions/revolution.extension.layeranimation.min.js')}}"></script>
+<script type="text/javascript"
+        src="{{URL::asset('rev-slider-files/js/extensions/revolution.extension.migration.min.js')}}"></script>
+<script type="text/javascript"
+        src="{{URL::asset('rev-slider-files/js/extensions/revolution.extension.navigation.min.js')}}"></script>
+<script type="text/javascript"
+        src="{{URL::asset('rev-slider-files/js/extensions/revolution.extension.parallax.min.js')}}"></script>
+<script type="text/javascript"
+        src="{{URL::asset('rev-slider-files/js/extensions/revolution.extension.slideanims.min.js')}}"></script>
+<script type="text/javascript"
+        src="{{URL::asset('rev-slider-files/js/extensions/revolution.extension.video.min.js')}}"></script>
 <script type="text/javascript">
     var tpj = jQuery;
 

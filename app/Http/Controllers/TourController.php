@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Tour;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
 
 class TourController extends Controller
 {
@@ -11,13 +12,13 @@ class TourController extends Controller
     public function countValue($tours)
     {
         $count = Tour::all()->count();
-        $closeToCount = Tour::where('tour_category', 'Close To Sea')->count();
-        $hikingCount = Tour::where('tour_category', 'Hiking & Camping')->count();
-        $natureCount = Tour::where('tour_category', 'Nature & Wildlife')->count();
-        $waterfallCount = Tour::where('tour_category', 'Waterfall')->count();
-        $historicCount = Tour::where('tour_category', 'Historic Places')->count();
-        $museumCount = Tour::where('tour_category', 'Museum')->count();
-        $churcesCount = Tour::where('tour_category', 'Churces')->count();
+        $closeToCount = Tour::where('tour_category', '=', 'Close To Sea')->count();
+        $hikingCount = Tour::where('tour_category', '=', 'Hiking & Camping')->count();
+        $natureCount = Tour::where('tour_category', '=', 'Nature & Wildlife')->count();
+        $waterfallCount = Tour::where('tour_category', '=', 'Waterfall')->count();
+        $historicCount = Tour::where('tour_category', '=', 'Historic Places')->count();
+        $museumCount = Tour::where('tour_category', '=', 'Museum')->count();
+        $churcesCount = Tour::where('tour_category', '=', 'Churces')->count();
 
         $tours_content = view('Tours.tour_contents')
             ->with(compact('tours'));

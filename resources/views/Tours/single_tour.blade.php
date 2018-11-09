@@ -16,7 +16,14 @@
     <title>{{$tour->tour_title}} - TourBookBD</title>
 
     <!-- Favicons-->
-@include('layouts.baricon')
+    <link rel="shortcut icon" href="{{asset('img/favicon.ico')}}" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/x-icon" href="{{asset('img/apple-touch-icon-57x57-precomposed.png')}}">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72"
+          href="{{asset('img/apple-touch-icon-72x72-precomposed.png')}}">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114"
+          href="{{asset('img/apple-touch-icon-114x114-precomposed.png')}}">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144"
+          href="{{asset('img/apple-touch-icon-144x144-precomposed.png')}}">
 
 <!-- Google web fonts -->
     <link href="https://fonts.googleapis.com/css?family=Gochi+Hand|Lato:300,400|Montserrat:400,400i,700,700i"
@@ -88,9 +95,9 @@
             <ul>
                 <li><a href="#">Home</a>
                 </li>
-                <li><a href="#">Category</a>
+                <li><a href="{{URL::to('/tours')}}">Tours</a>
                 </li>
-                <li>Page active</li>
+                <li>Single Tours</li>
             </ul>
         </div>
     </div>

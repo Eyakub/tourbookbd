@@ -10,7 +10,7 @@
                 <div class="tour_container">
                     <div class="ribbon_3 popular"><span>Popular</span></div>
                     <div class="img_container">
-                        <a href="{{URL::to('/single-tour/'.$top->id)}}">
+                        <a href="{{URL::to('/tours/single-tour/'.$top->id)}}">
                             <img src="storage/small_cover/{{$top->tour_small_cover}}" class="img-responsive"
                                  alt="image">
                             <div class="short_info">
@@ -44,7 +44,7 @@
     </div>
     <!-- End row -->
     <p class="text-center add_bottom_30">
-        <a href="{{URL::to('/all-tour')}}" class="btn_1 medium"><i class="icon-eye-7"></i>View all tours (144) </a>
+        <a href="{{URL::to('/tours')}}" class="btn_1 medium"><i class="icon-eye-7"></i>View all tours (144) </a>
     </p>
 
 @stop
