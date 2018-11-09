@@ -75,13 +75,15 @@
     <div class="margin_60 container">
         <div class="container-fluid">
             <div class="row panel-wrapper">
-                {{--@foreach($showUserProfile as $profile)--}}
+                @foreach($guides as $guide)
                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
                     <div class="widget">
                         <div class="w-section"
-                             style="background: url({{asset('storage/large_cover/1539129351-470x1400.JPG')}}); background-size: cover; height: 200px;">
-                            <div class="w-user"><img src="{{asset('storage/user_images/eyakub.jpg')}}" alt="">
-                                <div><a class="name" href="#">Eyakub</a></div>
+                             style="background: url({{asset('storage/ken-treloar-369039-unsplash.jpg')}}); background-size: cover; height: 200px;">
+                            <div class="w-user"><img src="{{asset('storage/guide_pic/'.$guide->guide_picture)}}" alt="">
+                                <div>
+                                    <a class="name" href="{{URL::To('/tourist-guides/'.$guide->guide_username)}}" target="_blank">{{$guide->guide_name}}</a>
+                                </div>
                             </div>
                         </div>
                         <div class="row-no-gutter text-xs-center p-b-2">
@@ -100,55 +102,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                    <div class="widget">
-                        <div class="w-section"
-                             style="background: url({{asset('storage/large_cover/1539129351-470x1400.JPG')}}); background-size: cover; height: 200px;">
-                            <div class="w-user"><img src="{{asset('storage/user_images/eyakub.jpg')}}" alt="">
-                                <div><a class="name" href="#">Eyakub</a></div>
-                            </div>
-                        </div>
-                        <div class="row-no-gutter text-xs-center p-b-2">
-                            <div class="col-xs-4">
-                                <div class="text-desc">Rating</div>
-                                <b>4.75</b>
-                            </div>
-                            <div class="col-xs-4">
-                                <div class="text-desc">Language</div>
-                                <b>3</b>
-                            </div>
-                            <div class="col-xs-4">
-                                <div class="text-desc">Blogs</div>
-                                <b>5</b>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                    <div class="widget">
-                        <div class="w-section"
-                             style="background: url({{asset('storage/large_cover/1539129351-470x1400.JPG')}}); background-size: cover; height: 200px;">
-                            <div class="w-user"><img src="{{asset('storage/user_images/eyakub.jpg')}}" alt="">
-                                <div><a class="name" href="#">Eyakub</a></div>
-                            </div>
-                        </div>
-                        <div class="row-no-gutter text-xs-center p-b-2">
-                            <div class="col-xs-4">
-                                <div class="text-desc">Rating</div>
-                                <b>4.75</b>
-                            </div>
-                            <div class="col-xs-4">
-                                <div class="text-desc">Language</div>
-                                <b>3</b>
-                            </div>
-                            <div class="col-xs-4">
-                                <div class="text-desc">Blogs</div>
-                                <b>5</b>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {{--@endforeach--}}
+                @endforeach
             </div>
         </div>
         <!-- end row -->

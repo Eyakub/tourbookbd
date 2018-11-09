@@ -51,6 +51,7 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Username</th>
+                                    <th>Picture</th>
                                     <th>First Name</th>
                                     <th>Last Name</th>
                                     <th>Phone Number</th>
@@ -66,6 +67,9 @@
                                     <tbody>
                                     <td>{{$data->id}}</td>
                                     <td>{{$data->username}}</td>
+                                    <td>
+                                        <img src="{{asset('storage/user_images/'.$data->src_user)}}" height="48" width="48">
+                                    </td>
                                     <td>{{$data->first_name}}</td>
                                     <td>{{$data->last_name}}</td>
                                     <td>{{$data->phone_number}}</td>

@@ -22,6 +22,9 @@ class AdminController extends Controller
     }
 
 
+    /**
+     * @return Tour
+     */
     public function showTourForm(){
         $categorys = TourCategory::all();
         $district = District::all();
@@ -254,7 +257,9 @@ class AdminController extends Controller
 
     public function deleteGuide($id)
     {
-
+        $deleteGuide = Guide::find($id);
+        $deleteGuide->delete();
+        return Redirect::to('/admin-panel/all-guide-profile/');
     }
 
 

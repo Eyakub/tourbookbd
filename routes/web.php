@@ -56,6 +56,7 @@ Route::get('/admin-panel/delete-guide/{id}', 'AdminController@deleteGuide');
 Route::get('/about-us', 'HomeController@aboutus');
 Route::get('/faq', 'HomeController@faq');
 Route::get('/tourist-guides', 'HomeController@touristGuide');
+Route::get('/tourist-guides/{name}', 'HomeController@guideProfilePublic');
 
 
 /**

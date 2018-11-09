@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Blog;
+use App\Guide;
 use App\Hotel;
 use App\User;
 use App\Users;
@@ -57,6 +58,16 @@ class HomeController extends Controller
 
     public function touristGuide()
     {
-        return view('layouts.touristguide');
+        $guides = Guide::all();
+        return view('layouts.touristguide')
+            ->with(compact('guides'));
+    }
+
+    public function guideProfilePublic($name)
+    {
+        $guidePublic = Guide::where('guide_username', '=', $name)->first();
+        //dd($guidePublic);
+        return view('layouts.touristPublicProfile')
+            ->with(compact('guidePublic'));
     }
 }
