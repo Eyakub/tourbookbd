@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\District;
+use App\Guide;
 use App\Tour;
 use App\TourCategory;
 use App\User;
@@ -59,9 +60,8 @@ class AdminController extends Controller
         $file->district_id = $request->input('district_id');
         $file->save();
 
-        return Redirect::to('/tours-insert-form')->with('success', 'Successfully Inserted');
+        return Redirect::to('/admin-panel/tours-insert-form')->with('success', 'Successfully Inserted');
     }
-
 
     public function showData()
     {
@@ -105,8 +105,8 @@ class AdminController extends Controller
             $request->file('tour_large_cover')->storeAs('public/large_cover', $tourLargeCover);
 
             //delete old photo
-            Storage::delete('public/small_cover'.$oldsmallcover);
-            Storage::delete('public/large_cover'.$oldlargecover);
+            Storage::delete('public/small_cover/'.$oldsmallcover);
+            Storage::delete('public/large_cover/'.$oldlargecover);
         }else{
             $tourSmallCover = $request->file('tour_small_old_photo');
             $tourLargeCover = $request->file('tour_large_old_photo');
@@ -125,7 +125,7 @@ class AdminController extends Controller
         $tour->district_id = $request->input('district_id');
         $tour->save();
 
-        return Redirect::to('/edit-tour-information/'.$tour_id)->with('success', 'Successfully Updated');
+        return Redirect::to('/admin-panel/edit-tour-information/'.$tour_id)->with('success', 'Successfully Updated');
 
     }
 
@@ -133,13 +133,133 @@ class AdminController extends Controller
     {
         $deleteTour = Tour::find($id);
         $deleteTour->delete();
-        return Redirect::to('/all-tour-data/');
+        return Redirect::to('/admin-panel/all-tour-data/');
 
     }
 
 
     /**
-     * User Panel
+     * Tour @GUIDE
+     */
+    public function showGuideForm()
+    {
+        return view('Admin.forms.insertGuide');
+    }
+
+    public function insertGuide(request $request)
+    {
+        $this->validate($request, [
+            'guide_username' => 'required',
+            'guide_name' => 'required',
+            'guide_address' => 'required',
+            'guide_about' => 'required',
+            'guide_quote' => '',
+            'guide_number' => 'required',
+            'guide_languages' => 'required',
+            'guide_education' => 'required',
+            'guide_experience' => 'required',
+            'guide_certificates' => 'required',
+            'guide_nid' => 'required',
+        ]);
+
+        if($request->hasFile('guide_picture')){
+            $guidePicture = time().'-'.$request->file('guide_picture')->getClientOriginalName();
+            $request->file('guide_picture')->storeAs('public/guide_pic', $guidePicture);
+        }
+
+        //Store GUIDE information to db using model
+        $file = new Guide;
+        $file->guide_name = $request->input('guide_name');
+        $file->guide_username = $request->input('guide_username');
+        $file->guide_picture = $guidePicture;
+        $file->guide_address = $request->input('guide_address');
+        $file->guide_number = $request->input('guide_number');
+        $file->guide_about = $request->input('guide_about');
+        $file->guide_quote = $request->input('guide_quote');
+        $file->guide_languages = $request->input('guide_languages');
+        $file->guide_education = $request->input('guide_education');
+        $file->guide_experience = $request->input('guide_experience');
+        $file->guide_certificates = $request->input('guide_certificates');
+        $file->guide_nid = $request->input('guide_nid');
+
+        $file->save();
+
+        return Redirect::to('/admin-panel/guideform')->with('success', 'Successfully Registered a guide');
+    }
+
+    public function guidesData()
+    {
+        $guides = Guide::all();
+        return view('Admin.guidestable')
+            ->with(compact('guides'));
+    }
+
+    public function editGuideInfo($id)
+    {
+        $datapass = Guide::find($id);
+        return view('Admin.forms.editGuideInfo')
+            ->with(compact('datapass'));
+    }
+
+    public function updateGuideInfo(request $request)
+    {
+        $guide_id = $request->guide_id;
+        var_dump($guide_id);
+        $guide = Guide::find($guide_id);
+        dd($guide);
+        $this->validate($request, [
+            'guide_username' => 'required',
+            'guide_name' => 'required',
+            'guide_address' => 'required',
+            'guide_about' => 'required',
+            'guide_quote' => '',
+            'guide_number' => 'required',
+            'guide_languages' => 'required',
+            'guide_education' => 'required',
+            'guide_experience' => 'required',
+            'guide_certificates' => 'required',
+            'guide_nid' => 'required',
+        ]);
+
+        if($request->hasFile('guide_picture')){
+            $guidePicture = time().'-'.$request->file('guide_picture')->getClientOriginalName();
+            $oldGuidePhoto = $request->file('guide_old_picture');
+            $request->file('tour_small_cover')->storeAs('public/guide_pic', $guidePicture);
+
+            //delete old photo
+            Storage::delete('public/guide_pic'.$oldGuidePhoto);
+        }else{
+            $guidePicture = $request->file('guide_old_picture');
+        }
+
+
+        //update data into database
+        $guide->guide_name = $request->input('guide_name');
+        $guide->guide_username = $request->input('guide_username');
+        $guide->guide_picture = $guidePicture;
+        $guide->guide_address = $request->input('guide_address');
+        $guide->guide_number = $request->input('guide_number');
+        $guide->guide_about = $request->input('guide_about');
+        $guide->guide_quote = $request->input('guide_quote');
+        $guide->guide_languages = $request->input('guide_languages');
+        $guide->guide_education = $request->input('guide_education');
+        $guide->guide_experience = $request->input('guide_experience');
+        $guide->guide_certificates = $request->input('guide_certificates');
+        $guide->guide_nid = $request->input('guide_nid');
+        dd($guide);
+        $guide->save();
+
+        //return Redirect::to('/admin-panel/edit-guide-information/'.$guide_id)->with('success', 'Successfully Updated the guide Information');
+    }
+
+    public function deleteGuide($id)
+    {
+
+    }
+
+
+    /**
+     * @User Panel
      */
     public function showUserData()
     {
@@ -159,13 +279,13 @@ class AdminController extends Controller
     {
         $deleteuser = User::find($id);
         $deleteuser->delete();
-        return Redirect::to('/all-user-data/');
+        return Redirect::to('/admin-panel/all-user-data/');
     }
 
 
 
     /**
-     * Hotels Panel
+     * @Hotels Panel
      */
     public function showHotelForm()
     {
@@ -198,7 +318,7 @@ class AdminController extends Controller
         $file->hotels_large_cover = $hotelsLargeCover;
         $file->save();
 
-        return Redirect::to('/hotels-insert-form')->with('success', 'Successfully Inserted Hotels Information');
+        return Redirect::to('/admin-panel/hotels-insert-form')->with('success', 'Successfully Inserted Hotels Information');
     }
 
     public function showHotelData()

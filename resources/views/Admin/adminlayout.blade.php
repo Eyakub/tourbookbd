@@ -33,6 +33,9 @@
     <script src="{{URL::to('assets/scripts/lib/jquery-ui.js')}}"></script>
     <script src="{{URL::to('assets/scripts/lib/tether.min.js')}}"></script>
 
+    <script src="{{URL::to('admin_asset/js/jquery.cleditor.min.js')}}"></script>
+    <link href="{{asset('admin_asset/css/jquery.cleditor.css')}}" rel="stylesheet">
+
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 
@@ -68,11 +71,21 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                        aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Users Action Tables</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="fa fa-table"></i><a href="{{URL::to('/all-user-data')}}">User Data Table</a></li>
-                        <li><i class="fa fa-table"></i><a href="{{URL::to('/all-user-profile')}}">User Data Profile</a>
+                        <li><i class="fa fa-table"></i><a href="{{URL::to('/admin-panel/all-user-data')}}">User Data Table</a></li>
+                        <li><i class="fa fa-table"></i><a href="{{URL::to('/admin-panel/all-user-profile')}}">User Data Profile</a>
                         </li>
-                        <li><i class="fa fa-table"></i><a href="{{URL::to('/all-hotel-admin-data')}}">Hotel Admin
+                        <li><i class="fa fa-table"></i><a href="{{URL::to('/admin-panel/all-hotel-admin-data')}}">Hotel Admin
                                 Profile</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                       aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Tourist Guide</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="fa fa-table"></i><a href="{{URL::to('/admin-panel/guideform')}}">Register Tour Guide</a></li>
+                        <li><i class="fa fa-table"></i><a href="{{URL::to('/admin-panel/all-guide-profile')}}">View Profile</a>
+                        </li>
                     </ul>
                 </li>
 
@@ -81,14 +94,14 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                        aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Tables</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="fa fa-table"></i><a href="{{URL::to('/all-tour-data')}}">Data Table</a></li>
+                        <li><i class="fa fa-table"></i><a href="{{URL::to('/admin-panel/all-tour-data')}}">Data Table</a></li>
                     </ul>
                 </li>
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                        aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Forms</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-th"></i><a href="{{URL::to('tours-insert-form')}}">Insert A
+                        <li><i class="menu-icon fa fa-th"></i><a href="{{URL::to('/admin-panel/tours-insert-form')}}">Insert A
                                 Tour</a></li>
 
                     </ul>
@@ -99,14 +112,14 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                        aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Tables</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="fa fa-table"></i><a href="{{URL::to('/all-hotel-data')}}">Data Table</a></li>
+                        <li><i class="fa fa-table"></i><a href="{{URL::to('/admin-panel/all-hotel-data')}}">Data Table</a></li>
                     </ul>
                 </li>
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                        aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Forms</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-th"></i><a href="{{URL::to('hotels-insert-form')}}">Insert A
+                        <li><i class="menu-icon fa fa-th"></i><a href="{{URL::to('/admin-panel/hotels-insert-form')}}">Insert A
                                 Hotels Info</a></li>
 
                     </ul>

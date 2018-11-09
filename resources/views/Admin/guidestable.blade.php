@@ -50,43 +50,50 @@
                                 <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Title</th>
+                                    <th>Name</th>
+                                    <th>Username</th>
+                                    <th>Picture</th>
                                     <th>Address</th>
-                                    <th>District</th>
-                                    <th>Adult Cost</th>
-                                    <th>Kids Cost</th>
-                                    <th>Category</th>
-                                    <th>Description</th>
-                                    <th>Status</th>
+                                    <th>Phone Number</th>
+                                    <th>About</th>
+                                    <th>Quote</th>
+                                    <th>Languages</th>
+                                    <th>Education</th>
+                                    <th>Experience</th>
+                                    <th>Certificates</th>
+                                    <th>NID</th>
                                     <th>Actions</th>
                                 </tr>
                                 </thead>
-                                @foreach($showData as $data)
+                                @foreach($guides as $data)
                                     <tbody>
                                     <td>{{$data->id}}</td>
-                                    <td>{{$data->tour_title}}</td>
-                                    <td>{{$data->tour_address}}</td>
-                                    <td>{{$data->district_id}}</td>
-                                    <td>{{$data->tour_adult_price}}</td>
-                                    <td>{{$data->tour_children_price}}</td>
-                                    <td>{{$data->tour_category}}</td>
-                                    <td>{{$data->tour_description}}</td>
+                                    <td>{{$data->guide_name}}</td>
+                                    <td>{{$data->guide_username}}</td>
                                     <td>
-                                        <span class="label label-success">Published</span>
+                                        <img src="{{asset('storage/guide_pic/'.$data->guide_picture)}}" height="48" width="48">
                                     </td>
+                                    <td>{{$data->guide_address}}</td>
+                                    <td>{{$data->guide_number}}</td>
+                                    <td>{{$data->guide_about}}</td>
+                                    <td>{{$data->guide_quote}}</td>
+                                    <td>{{$data->guide_languages}}</td>
+                                    <td>{{$data->guide_education}}</td>
+                                    <td>{{$data->guide_experience}}</td>
+                                    <td>{{$data->guide_certificates}}</td>
+                                    <td>{{$data->guide_nid}}</td>
                                     <td>
                                         <a class="btn btn-success"
-                                           href="{{URL::to('/admin-panel/published-blog/')}}">
+                                           href="{{URL::to('/admin-panel/published-guide/')}}">
                                             <i class="halflings-icon white thumbs-up"></i>
                                         </a>
 
                                         <a class="btn btn-info"
-                                           href="{{URL::to('/admin-panel/edit-tour-information/'.$data->id)}}">
+                                           href="{{URL::to('/admin-panel/edit-guide-information/'.$data->id)}}">
                                             <i class="halflings-icon white edit"></i>
                                         </a>
-
                                         <a class="btn btn-danger"
-                                           href="{{URL::to('/admin-panel/delete-tour/'.$data->id)}}"
+                                           href="{{URL::to('/admin-panel/delete-guide/'.$data->id)}}"
                                            onclick="return check_delete();">
                                             <i class="halflings-icon white trash"></i>
                                         </a>
@@ -103,4 +110,6 @@
             </div>
         </div><!-- .animated -->
     </div><!-- .content -->
+
+
 @endsection

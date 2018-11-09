@@ -8,7 +8,7 @@
 
             </div>
             <div class="card-body card-block">
-                {!! Form::open(['url' => '/update-tour-information', 'method'=>'post', 'enctype' => 'multipart/form-data', 'name'=>'editTourInfo']) !!}
+                {!! Form::open(['url' => '/admin-panel/update-tour-information', 'method'=>'post', 'enctype' => 'multipart/form-data', 'name'=>'editTourInfo']) !!}
 
                 <div class="row form-group">
                     <div class="col col-md-3"><label for="text-input" class=" form-control-label">Name </label>

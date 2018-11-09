@@ -76,7 +76,7 @@
                                     <td>{{$data->country}}</td>
                                     <td>
                                         <a class="btn btn-danger"
-                                           href="{{URL::to('/delete-user/'.$data->id)}}"
+                                           href="{{URL::to('/admin-panel/delete-user/'.$data->id)}}"
                                            onclick="return check_delete();">
                                             <i class="halflings-icon white trash"></i>
                                         </a>
