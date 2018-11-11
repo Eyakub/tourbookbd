@@ -5,36 +5,25 @@
 <html class="ie ie9"> <![endif]-->
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <meta name="description" content="Tour book BD">
-    <meta name="author" content="Ansonika">
-    <title>Tour Book BD - Tour Book BD site by Eyakub</title>
+    @include('layouts.metadata')
+    <title>Sign Up - TourBookBD</title>
 
     <!-- Favicons-->
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" type="image/x-icon" href="img/apple-touch-icon-57x57-precomposed.png">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="img/apple-touch-icon-72x72-precomposed.png">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114"
-          href="img/apple-touch-icon-114x114-precomposed.png">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144"
-          href="img/apple-touch-icon-144x144-precomposed.png">
+@include('layouts.baricon')
 
-    <!-- Google web fonts -->
+<!-- Google web fonts -->
     <link href="https://fonts.googleapis.com/css?family=Gochi+Hand|Lato:300,400|Montserrat:400,400i,700,700i"
           rel="stylesheet">
 
     <!-- CSS -->
-    <link href="css/base.css" rel="stylesheet">
+    <link href="{{asset('css/base.css')}}" rel="stylesheet">
 
     <!-- CSS -->
-    <link href="css/flickity.css" rel="stylesheet">
+    <link href="{{asset('css/flickity.css')}}" rel="stylesheet">
 
-    <!--[if lt IE 9]>
-    <script src="js/html5shiv.min.js"></script>
-    <script src="js/respond.min.js"></script>
+    <!--[if lt IE 9]-->
+    <script src="{{URL::asset('js/html5shiv.min.js')}}"></script>
+    <script src="{{URL::asset('js/respond.min.js')}}"></script>
     <![endif]-->
 
 </head>
@@ -69,7 +58,8 @@
             <div class="row">
                 <div class="col-md-6 col-md-offset-6 col-sm-6 col-sm-offset-6">
                     <div id="login">
-                        <div class="text-center"><img src="{{URL::asset('img/tourbookbd.png')}}" alt="Image" data-retina="true"></div>
+                        <div class="text-center"><img src="{{URL::asset('img/tourbookbd.png')}}" alt="Image"
+                                                      data-retina="true"></div>
                         <hr>
                         <form action="{{route('upload.info')}}" method="post" enctype="multipart/form-data">
                             {{csrf_field()}}
@@ -182,6 +172,11 @@
 
                             <div class="form-group">
                                 <input type="file" name="user_profile" id="user_profile">
+                                <span>
+                                    @if(Session::has('msg'))
+                                        {{Session::get('msg')}}
+                                    @endif
+                                </span>
                             </div>
                             <div id="pass-info" class="clearfix"></div>
                             <input type="submit" value="Sign Up" class="btn_full">

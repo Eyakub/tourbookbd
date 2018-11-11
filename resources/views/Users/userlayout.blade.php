@@ -63,7 +63,7 @@
 
 
 <section class="parallax-window" data-parallax="scroll"
-         data-image-src="{{asset('storage/large_cover/1539129351-470x1400.JPG')}}" data-natural-width="1400"
+         data-image-src="{{asset('storage/marc-zimmer-421611-unsplash.jpg')}}" data-natural-width="1400"
          data-natural-height="470">
     <div class="parallax-content-1">
         <div class="animated fadeInDown">
@@ -78,11 +78,11 @@
     <div id="position">
         <div class="container">
             <ul>
-                <li><a href="#">Home</a>
+                <li><a href="{{URL::to('/')}}">Home</a>
                 </li>
-                <li><a href="#">Category</a>
+                <li><a href="#">User</a>
                 </li>
-                <li>Page active</li>
+                <li>{{$user->first_name}}</li>
             </ul>
         </div>
     </div>
@@ -93,26 +93,27 @@
             <nav>
                 <ul>
                     <li>
-                        <a href="#section-4" class="icon-profile"><span>Profile</span></a>
+                        <a href="{{URL::to('/user-profile/'.$username.'#profile')}}"
+                           class="icon-profile"><span>Profile</span></a>
                     </li>
                     <li>
-                        <a href="#section-5" class="icon-profile"><span>Timeline</span></a>
+                        <a href="{{URL::to('/user-profile/'.$username.'#timeline')}}" class="icon-profile"><span>Timeline</span></a>
                     </li>
                     <li>
-                        <a href="#section-2" class="icon-wishlist"><span>Wishlist</span></a>
+                        <a href="{{URL::to('/user-profile/'.$username.'#wishlist')}}" class="icon-wishlist"><span>Wishlist</span></a>
                     </li>
                     <li>
-                        <a href="#section-3" class="icon-settings"><span>Settings</span></a>
+                        <a href="{{URL::to('/user-profile/'.$username.'#settings')}}" class="icon-settings"><span>Settings</span></a>
                     </li>
                     <li>
-                        <a href="#section-1" class="icon-booking"><span>Bookings</span></a>
+                        <a href="{{URL::to('/user-profile/'.$username.'#bookings')}}" class="icon-booking"><span>Bookings</span></a>
                     </li>
                 </ul>
             </nav>
             <div class="content">
 
 
-                <section id="section-4">
+                <section id="profile">
                     <div class="row">
                         <div class="col-md-6 col-sm-6">
                             <h4>Your profile</h4>
@@ -138,7 +139,8 @@
                             </ul>
                         </div>
                         <div class="col-md-6 col-sm-6">
-                            <img src="{{asset('storage/user_images/'.$user->src_user)}}" height="250" width="250" alt="Image"
+                            <img src="{{asset('storage/user_images/'.$user->src_user)}}" height="250" width="250"
+                                 alt="Image"
                                  class="img-responsive styled profile_pic">
                         </div>
                     </div>
@@ -231,7 +233,7 @@
                     </div>
 
                     <!-- Hidden on mobiles -->
-                    <div class="hidden-xs">
+                    {{--<div class="hidden-xs">
                         <!-- Drop Zone -->
                         <h5>Or drag and drop files below</h5>
                         <div class="upload-drop-zone" id="drop-zone">
@@ -253,13 +255,13 @@
                             </div>
                         </div>
                         <!-- End Hidden on mobiles -->
-
-                        <hr>
-                        <button type="submit" class="btn_1 green">Update Profile</button>
+                    </div>--}}
+                    <hr>
+                    <button type="submit" class="btn_1 green">Update Profile</button>
                 </section>
                 <!-- End section 4 -->
 
-                <section id="section-5">
+                <section id="timeline">
                     <div class="row" style="padding-bottom: 25px; padding-left: 30px; padding-right: 40px">
 
 
@@ -295,7 +297,8 @@
                                                     style="height: 24px">
                                                 <option value="None">Select Category</option>
                                             </select>
-                                            <select name="blog_status" class="btn btn-primary btn-xs dropdown dropdown-toggle"
+                                            <select name="blog_status"
+                                                    class="btn btn-primary btn-xs dropdown dropdown-toggle"
                                                     style="height: 24px">
                                                 <option value="1">Public</option>
                                                 <option value="0">Only Me</option>
@@ -341,7 +344,8 @@
                                             ?>
                                             {{str_limit($str, 250, "...")}}
                                         </p>
-                                        <a href="{{URL::to('/blog-details/'.$blog->id)}}" target="_blank" class="btn_1">Read more</a>
+                                        <a href="{{URL::to('/blog-details/'.$blog->id)}}" target="_blank" class="btn_1">Read
+                                            more</a>
                                     </div>
                                     <hr>
                                 @endforeach
@@ -360,7 +364,7 @@
 
                 </section>
 
-                <section id="section-2">
+                <section id="wishlist">
                     <div class="row">
                         <div class="col-md-4 col-sm-6">
                             <div class="hotel_container">
@@ -561,7 +565,7 @@
                 </section>
                 <!-- End section 2 -->
 
-                <section id="section-3">
+                <section id="settings">
                     <div class="row">
                         <div class="col-md-6 col-sm-6 add_bottom_30">
                             <h4>Change your password</h4>
@@ -688,7 +692,7 @@
                 </section>
                 <!-- End section 3 -->
 
-                <section id="section-1">
+                <section id="bookings">
                     <div id="tools">
                         <div class="row">
                             <div class="col-md-3 col-sm-3 col-xs-6">

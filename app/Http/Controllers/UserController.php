@@ -17,7 +17,7 @@ class UserController extends Controller
 
     public function userloginform()
     {
-        $this->auth_check();
+        $this->loginPrevent();
         $login = view('Users.login');
         return $login;
     }
@@ -60,7 +60,7 @@ class UserController extends Controller
             //Upload image
             $request->file('user_profile')->storeAs('/public/user_images', $fileName);
         }else{
-            $fileName = 'noimage.jpg';
+            return back()->with('msg', 'Please upload your photo');
         }
 
         //Create user profile
@@ -83,13 +83,22 @@ class UserController extends Controller
 
     }
 
-    public function auth_check()
+    public function loginPrevent()
     {
         session_start();
         $user_id = Session::get('id');
         $username = Session::get('username');
         if($user_id !== NULL){
             return redirect::to('/user-profile/'.$username)->send();
+        }
+    }
+
+    public function auth_check()
+    {
+        session_start();
+        $user_id = Session::get('id');
+        if($user_id === NULL){
+            return redirect::to('/user-login');
         }
     }
 
