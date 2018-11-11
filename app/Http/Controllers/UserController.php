@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\{Blog, TourCategory, Users};
+use App\{Blog, BlogImage, TourCategory, Users};
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
@@ -152,18 +152,39 @@ class UserController extends Controller
     public function saveBlog(request $request)
     {
         $user_id = Session::get('id');
-
+        $username = Session::get('username');
+        //dd($user_id);
         $this->validate($request,[
            'blog_desc' => 'required',
-           'blog_img' => 'image|mimes:jpeg, png, jpg, gif, svg | max:3048'
+           //'blog_img' => 'image|mimes:jpeg, png, jpg | max:3048'
         ]);
 
+        /**
+         * blog table
+         */
+        $imgModel = new BlogImage();
+        $blog = new Blog();
+        $blog->blog_desc = $request->input('blog_desc');
+        $blog->blog_category = $request->input('blog_category');
+        $blog->blog_status = $request->input('blog_status');
+        $blog->user_id = $user_id;
+        //dd($blog);
+        $blog->save();
 
-        if($request->hasFile('blog_image')){
-            foreach ($request->blog_image as $file){
-
+        /*if($files = $request->hasFile('blog_img')){
+            foreach($files as $file){
+                $name = time().'-'.$file->getClientOriginalName();
+                $file->storeAs('public/blog_img/'.$name);
+                $imgModel->blog_img = $name;
+                $imgModel->blog_id = $blog->id;
             }
-        }
+            dd($imgModel);
+        }else{
+            return back()->with('blogMsg', 'Please upload photos of your blog');
+        }*/
+
+
+        return redirect::to('/user-profile/'.$username.'#timeline');
     }
 
     public function comingSoon()

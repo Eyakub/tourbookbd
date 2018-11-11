@@ -70,7 +70,7 @@ Route::post('/user-login', 'UserController@user_login')->name('user-login');
 Route::get('/user-profile/{username}', 'UserController@userprofile');
 Route::get('/logout', 'UserController@logout');
 
-Route::post('/save-blog', 'UserController@saveBlog')->name('blog.save');
+Route::post('/users/save-blog', 'UserController@saveBlog')->name('blog.save');
 
 
 

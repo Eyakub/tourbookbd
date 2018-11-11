@@ -271,12 +271,23 @@
                                 <div class="col-md-9 col-xs-12" id="new_status">
                                     <ul class="navbar-nav col-md-9 col-xs-12" id="post_header" role="navigation">
                                         <h5>Post</h5>
+                                        @if(Session::has('message'))
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="alert alert-success">
+                                                        {{Session::get('message')}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @else
+                                        @endif
                                         {{--<li><a href="#"><span class="glyphicon glyphicon-pencil"></span>Update Status</a></li>--}}
                                         {{--<li><a href="#"><span class="glyphicon glyphicon-picture"></span>Add Photos/Video</a></li>--}}
                                         {{--<li><a href="#"><span class="glyphicon glyphicon-th"></span>Create Photo Album</a></li>--}}
                                     </ul>
                                     <div class="col-md-8 col-xs-8" id="post_content">
-                                        <Input type="hidden" value="{{$user->d}}" name="user_id">
+                                        <Input type="hidden" value="{{$user->id}}" name="user_id">
+                                        <Input type="hidden" value="{{$user->username}}" name="username">
                                         <img alt="profile picture" class="col-xs-1"
                                              src="{{asset('storage/user_images/'.$user->src_user)}}">
                                         <div class="textarea_wrap">
@@ -296,6 +307,7 @@
                                                     class="btn btn-primary dropdown dropdown-toggle"
                                                     style="height: 24px">
                                                 <option value="None">Select Category</option>
+                                                <option value="None">None</option>
                                             </select>
                                             <select name="blog_status"
                                                     class="btn btn-primary btn-xs dropdown dropdown-toggle"
