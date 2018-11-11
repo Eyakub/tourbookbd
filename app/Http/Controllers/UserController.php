@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\{TourCategory, Users};
+use App\{Blog, TourCategory, Users};
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
@@ -15,14 +15,14 @@ class UserController extends Controller
 {
     //
 
-    public function Userlogin()
+    public function userloginform()
     {
         $this->auth_check();
         $login = view('Users.login');
         return $login;
     }
 
-    public function UserRegistration()
+    public function userRegistration()
     {
         $reg = view('Users.registering');
         return $reg;
@@ -53,12 +53,6 @@ class UserController extends Controller
             'user_profile.required'=>'Photo is required'
         );
 
-//        $validator = Validator::make($message);
-//        if($validator->fails()){
-//            return Redirect::to('/user-registration')->withErrors($validator);
-//        }else{
-//            echo 'no';
-//        }
 
         //handle file upload
         if($request->hasFile('user_profile')){
@@ -89,13 +83,13 @@ class UserController extends Controller
 
     }
 
-
     public function auth_check()
     {
         session_start();
         $user_id = Session::get('id');
+        $username = Session::get('username');
         if($user_id !== NULL){
-            return redirect::to('/user-profile')->send();
+            return redirect::to('/user-profile/'.$username)->send();
         }
     }
 
@@ -107,22 +101,32 @@ class UserController extends Controller
         $user = Users::where('email', $user_email)
             ->where('password', $user_pass)
             ->first();
+
         if($user !== NULL){
             Session::put('id', $user->id);
-            Session::put($user);
-            //Session::put('username', $user->username);
+            Session::put('username', $user->username);
             $name = $user->first_name.' '.$user->last_name;
             Session::put('name', $name);
-            //dd(session()->all());
-            //$user = Users::find($res->id);
-            $blogCat = TourCategory::all();
-            return view('Users.userlayout')
-                ->with(compact('user', 'blogCat'));
-        }else{
-            Session::put('message', 'Your User ID or Password Invalid...!!!');
-            return redirect::to('/user-login');
+            Session::put('user', $user);
+
+            return redirect::to('/user-profile/'.$user->username);
         }
 
+        Session::put('message', 'Your User ID or Password Invalid...!!!');
+        return redirect::to('/user-login');
+
+    }
+
+    public function userprofile(request $reqest, $username)
+    {
+        $user_id = Session::get('id');
+        $user = Users::find($user_id);
+        $blogs = Blog::where('user_id', $user_id)
+            ->paginate(10);
+        $blogCat = TourCategory::all();
+
+        return view('Users.userlayout')
+            ->with(compact('user', 'blogCat', 'blogs', 'username'));
     }
 
     public function logout()
@@ -138,10 +142,13 @@ class UserController extends Controller
      */
     public function saveBlog(request $request)
     {
+        $user_id = Session::get('id');
+
         $this->validate($request,[
            'blog_desc' => 'required',
            'blog_img' => 'image|mimes:jpeg, png, jpg, gif, svg | max:3048'
         ]);
+
 
         if($request->hasFile('blog_image')){
             foreach ($request->blog_image as $file){

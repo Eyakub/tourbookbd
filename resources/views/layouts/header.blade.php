@@ -9,7 +9,7 @@
                     <ul id="top_links">
                         @if(!empty(Session::get('id')))
                             <li>
-                                <a href="{{URL::to('/user-profile')}}">{{Session::get('name')}}</a>
+                                <a href="{{URL::to('/user-profile/'.(Session::get('username')))}}">{{Session::get('name')}}</a>
                             </li>
                             <li>
                                 <a href="{{URL::to('/logout')}}">Logout</a>

@@ -6,24 +6,13 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <meta name="description" content="TourBookBD - User Profile.">
-    <meta name="author" content="Eyakub">
-    <title>TourBookBD - User Profile</title>
+    @include('layouts.metadata')
+    <title>{{$user->first_name}} - TourBookBD</title>
 
     <!-- Favicons-->
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" type="image/x-icon" href="img/apple-touch-icon-57x57-precomposed.png">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="img/apple-touch-icon-72x72-precomposed.png">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114"
-          href="img/apple-touch-icon-114x114-precomposed.png">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144"
-          href="img/apple-touch-icon-144x144-precomposed.png">
+@include('layouts.baricon')
 
-    <!-- Google web fonts -->
+<!-- Google web fonts -->
     <link href="https://fonts.googleapis.com/css?family=Gochi+Hand|Lato:300,400|Montserrat:400,400i,700,700i"
           rel="stylesheet">
 
@@ -33,9 +22,10 @@
     <!-- SPECIFIC CSS -->
     <link href="{{URL::asset('css/admin.css')}}" rel="stylesheet">
     <link href="{{URL::asset('css/jquery.switch.css')}}" rel="stylesheet">
-    <link href="{{URL::asset('css/statusbox.css')}}" rel="stylesheet">
     <link href="{{URL::asset('css/bootstrap.min.css')}}">
+    <link href="{{URL::asset('css/statusbox.css')}}" rel="stylesheet">
     <link href="{{URL::asset('css/bootstrap.css')}}">
+    <link href="{{asset('css/blog.css')}}" rel="stylesheet">
     <link href="{{URL::asset('assets/stylesheets/glyphicon.css')}}">
 
 
@@ -148,7 +138,7 @@
                             </ul>
                         </div>
                         <div class="col-md-6 col-sm-6">
-                            <img src="storage/user_images/{{$user->src_user}}" height="250" width="250" alt="Image"
+                            <img src="{{asset('storage/user_images/'.$user->src_user)}}" height="250" width="250" alt="Image"
                                  class="img-responsive styled profile_pic">
                         </div>
                     </div>
@@ -272,6 +262,7 @@
                 <section id="section-5">
                     <div class="row" style="padding-bottom: 25px; padding-left: 30px; padding-right: 40px">
 
+
                         <div class="row">
                             <form action="{{route('blog.save')}}" method="post" enctype="multipart/form-data">
                                 {{csrf_field()}}
@@ -283,8 +274,9 @@
                                         {{--<li><a href="#"><span class="glyphicon glyphicon-th"></span>Create Photo Album</a></li>--}}
                                     </ul>
                                     <div class="col-md-8 col-xs-8" id="post_content">
+                                        <Input type="hidden" value="{{$user->d}}" name="user_id">
                                         <img alt="profile picture" class="col-xs-1"
-                                             src="storage/user_images/{{$user->src_user}}">
+                                             src="{{asset('storage/user_images/'.$user->src_user)}}">
                                         <div class="textarea_wrap">
                                             <textarea class="col-md-12"
                                                       name="blog_desc"
@@ -298,11 +290,12 @@
                                                                          multiple/></span></a></li>
                                         </ul>
                                         <div class="col-md-6 col-xs-6">
-                                            <select name="blog_category" class="btn btn-primary dropdown dropdown-toggle"
+                                            <select name="blog_category"
+                                                    class="btn btn-primary dropdown dropdown-toggle"
                                                     style="height: 24px">
                                                 <option value="None">Select Category</option>
                                             </select>
-                                            <select name="blog_status" class="btn btn-primary dropdown dropdown-toggle"
+                                            <select name="blog_status" class="btn btn-primary btn-xs dropdown dropdown-toggle"
                                                     style="height: 24px">
                                                 <option value="1">Public</option>
                                                 <option value="0">Only Me</option>
@@ -319,62 +312,45 @@
                     <div class="row">
                         <div class="col-md-9">
                             <div class="box_style_1">
-                                <div class="post">
-                                    <a href="blog_post_right_sidebar.html"><img src="img/blog-3.jpg" alt="Image"
-                                                                                class="img-responsive">
-                                    </a>
-                                    <div class="post_info clearfix">
-                                        <div class="post-left">
-                                            <ul>
-                                                <li><i class="icon-calendar-empty"></i> On <span>12 Nov 2020</span>
-                                                </li>
-                                                <li><i class="icon-inbox-alt"></i> In <a href="#">Top tours</a>
-                                                </li>
-                                                <li><i class="icon-tags"></i> Tags <a href="#">Works</a>, <a href="#">Personal</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="post-right"><i class="icon-comment"></i><a href="#">25 </a>
-                                        </div>
-                                    </div>
-                                    <h2>Duis aute irure dolor in reprehenderit</h2>
-                                    <p>
-                                        Ludus albucius adversarium eam eu. Sit eu reque tation aliquip. Quo no dolorum
-                                        albucius lucilius, hinc eligendi ut sed. Ex nam quot ferri suscipit, mea ne
-                                        legere alterum repudiandae. Ei pri quaerendum intellegebat, ut vel consequuntur
-                                        voluptatibus. Et volumus sententiae adversarium duo......
-                                    </p>
-                                    <p>
-                                        Ludus albucius adversarium eam eu. Sit eu reque tation aliquip. Quo no dolorum
-                                        albucius lucilius, hinc eligendi ut sed. Ex nam quot ferri suscipit, mea ne
-                                        legere alterum repudiandae. Ei pri quaerendum intellegebat, ut vel consequuntur
-                                        voluptatibus. Et volumus sententiae adversarium duo......
-                                    </p>
-                                    <a href="{{URL::to('/blog-details')}}" class="btn_1">Read more</a>
-                                </div>
-                                <!-- end post -->
 
-                                <hr>
+                                @foreach($blogs as $blog)
+                                    <div class="post">
+                                        <a href="{{URL::to('/blog-details/'.$blog->id)}}" target="_blank"><img
+                                                    src="{{asset('storage/large_cover/'.$blog->blog_img)}}" alt="Image"
+                                                    class="img-responsive">
+                                        </a>
+                                        <div class="post_info clearfix">
+                                            <div class="post-left">
+                                                <ul>
+                                                    <li><i class="icon-calendar-empty"></i> On <span>12 Nov 2020</span>
+                                                    </li>
+                                                    <li><i class="icon-inbox-alt"></i> In <a href="#">Top tours</a>
+                                                    </li>
+                                                    <li><i class="icon-tags"></i> Tags <a href="#">Works</a>, <a
+                                                                href="#">Public</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="post-right"><i class="icon-comment"></i><a href="#">25 </a>
+                                            </div>
+                                        </div>
+                                        {{--<h2>Duis aute irure dolor in reprehenderit</h2>--}}
+                                        <p>
+                                            <?php
+                                            $str = $blog->blog_desc;
+                                            ?>
+                                            {{str_limit($str, 250, "...")}}
+                                        </p>
+                                        <a href="{{URL::to('/blog-details/'.$blog->id)}}" target="_blank" class="btn_1">Read more</a>
+                                    </div>
+                                    <hr>
+                                @endforeach
 
                             </div>
-                            <hr>
 
                             <div class="text-center">
                                 <ul class="pagination">
-                                    <li><a href="#">Prev</a>
-                                    </li>
-                                    <li class="active"><a href="#">1</a>
-                                    </li>
-                                    <li><a href="#">2</a>
-                                    </li>
-                                    <li><a href="#">3</a>
-                                    </li>
-                                    <li><a href="#">4</a>
-                                    </li>
-                                    <li><a href="#">5</a>
-                                    </li>
-                                    <li><a href="#">Next</a>
-                                    </li>
+                                    {!! $blogs-> links() !!}
                                 </ul>
                                 <!-- end pagination-->
                             </div>
@@ -636,7 +612,7 @@
                                         <i class="icon_set_1_icon-33"></i>
                                     </td>
                                     <td style="width:60%">
-                                        New Citytours Tours
+                                        New TourBookBD Tours
                                     </td>
                                     <td style="width:35%">
                                         <label class="switch-light switch-ios pull-right">
@@ -654,7 +630,7 @@
                                         <i class="icon_set_1_icon-6"></i>
                                     </td>
                                     <td>
-                                        New Citytours Hotels
+                                        New TourBookBD Hotels
                                     </td>
                                     <td>
                                         <label class="switch-light switch-ios pull-right">
@@ -672,7 +648,7 @@
                                         <i class="icon_set_1_icon-26"></i>
                                     </td>
                                     <td>
-                                        New Citytours Transfers
+                                        New TourBookBD Transfers
                                     </td>
                                     <td>
                                         <label class="switch-light switch-ios pull-right">
@@ -690,7 +666,7 @@
                                         <i class="icon_set_1_icon-81"></i>
                                     </td>
                                     <td>
-                                        New Citytours special offers
+                                        New TourBookBD special offers
                                     </td>
                                     <td>
                                         <label class="switch-light switch-ios pull-right">

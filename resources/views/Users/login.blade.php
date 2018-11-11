@@ -69,7 +69,7 @@
                     <div id="login">
                         <div class="text-center"><img src="img/tourbookbd.png" alt="Image" data-retina="true"></div>
                         <hr>
-                        <form action="{{route('login_check')}}" method="post">
+                        <form action="{{route('user-login')}}" method="post">
                             {{csrf_field()}}
                             {{--<div class="row">--}}
                             {{--<div class="col-md-6 col-sm-6 login_social">--}}

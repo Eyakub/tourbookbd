@@ -80,7 +80,7 @@
                 <div class="box_style_1">
                     @foreach($blogs as $blog)
                         <div class="post">
-                            <a href="{{URL::to('/blog-details/'.$blog->id)}}"><img src="storage/large_cover/{{$blog->blog_img}}" alt="Image" class="img-responsive">
+                            <a href="{{URL::to('/blog-details/'.$blog->id)}}"><img src="{{asset('storage/large_cover/'.$blog->blog_img)}}" alt="Image" class="img-responsive">
                             </a>
                             <div class="post_info clearfix">
                                 <div class="post-left">
@@ -99,7 +99,7 @@
                             {{--<h2>Duis aute irure dolor in reprehenderit</h2>--}}
                             <p>
                                 <?php
-                                $str = "$blog->blog_desc";
+                                $str = $blog->blog_desc;
                                 ?>
                                 {{str_limit($str, 250, "...")}}
                             </p>

@@ -62,12 +62,12 @@ Route::get('/tourist-guides/{name}', 'HomeController@guideProfilePublic');
 /**
  * User Panel
  */
-Route::get('/user-registration', 'UserController@UserRegistration')->name('upload.info');
+Route::get('/user-registration', 'UserController@userRegistration')->name('upload.info');
 Route::post('/user-registration', 'UserController@storeUserInformation');
 
-Route::post('/user-profile', 'UserController@user_login')->name('login_check');
-//Route::get('/user-profile/', 'UserController@loginCheck');
-Route::get('/user-login', 'UserController@Userlogin');
+Route::get('/user-login', 'UserController@userloginform');
+Route::post('/user-login', 'UserController@user_login')->name('user-login');
+Route::get('/user-profile/{username}', 'UserController@userprofile');
 Route::get('/logout', 'UserController@logout');
 
 Route::post('/save-blog', 'UserController@saveBlog')->name('blog.save');
