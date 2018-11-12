@@ -3,8 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Tour;
+use App\TourReview;
+use App\User;
+use App\Users;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 
 class TourController extends Controller
 {
@@ -38,8 +43,11 @@ class TourController extends Controller
     {
         $tour = Tour::find($id);
 
-        return view('Tours.single_tour')
-            ->with('tour', $tour);
+        $comments = TourReview::where('tour_id', $tour->id)->get();
+        //$user = Users::find($comments->user_id);
+        //dd($comments->pluck('user_id')); //get specific value from collection
+        /*return view('Tours.single_tour')
+            ->with(compact('tour', 'comments', 'user'));*/
     }
 
     public function closeToSea()
@@ -81,4 +89,26 @@ class TourController extends Controller
 
         return $this->countValue($tours);
     }
+
+    /**
+     * tour review
+     */
+    public function tourreview(request $request)
+    {
+        $user_id = Session::get('id');
+        $tour_id = $request->input('tour_id');
+
+        $review = new TourReview();
+        $review->tourreview_desc = $request->input('tourreview_desc');
+        $review->tourreview_position = $request->input('tourreview_position');
+        $review->tourreview_price = $request->input('tourreview_price');
+        $review->tourreview_guide = $request->input('tourreview_guide');
+        $review->tourreview_quality = $request->input('tourreview_quality');
+        $review->tour_id = $tour_id;
+        $review->user_id = $user_id;
+        $review->save();
+        dd($request->all());
+        return redirect::to('/tours/single-tour/'.$tour_id);
+    }
+
 }

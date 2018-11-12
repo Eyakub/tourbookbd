@@ -32,7 +32,8 @@ class UserController extends Controller
      * @param Request $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function storeUserInformation(request $request){
+    public function storeUserInformation(request $request)
+    {
         $this->validate($request, [
             'username' => 'required',
             'password' => 'required|confirmed|min:6',
@@ -49,17 +50,17 @@ class UserController extends Controller
         ]);
 
         $message = array(
-            'password_confirmation.required'=>'The confirm password is required',
-            'user_profile.required'=>'Photo is required'
+            'password_confirmation.required' => 'The confirm password is required',
+            'user_profile.required' => 'Photo is required'
         );
 
 
         //handle file upload
-        if($request->hasFile('user_profile')){
+        if ($request->hasFile('user_profile')) {
             $fileName = $request->file('user_profile')->getClientOriginalName();
             //Upload image
             $request->file('user_profile')->storeAs('/public/user_images', $fileName);
-        }else{
+        } else {
             return back()->with('msg', 'Please upload your photo');
         }
 
@@ -88,8 +89,8 @@ class UserController extends Controller
         session_start();
         $user_id = Session::get('id');
         $username = Session::get('username');
-        if($user_id !== NULL){
-            return redirect::to('/user-profile/'.$username)->send();
+        if ($user_id !== NULL) {
+            return redirect::to('/user-profile/' . $username)->send();
         }
     }
 
@@ -97,12 +98,13 @@ class UserController extends Controller
     {
         session_start();
         $user_id = Session::get('id');
-        if($user_id === NULL){
+        if ($user_id === NULL) {
             return redirect::to('/user-login');
         }
     }
 
-    public function user_login(Request $request){
+    public function user_login(Request $request)
+    {
 
         $user_email = $request->email;
         $user_pass = $request->password;
@@ -111,14 +113,14 @@ class UserController extends Controller
             ->where('password', $user_pass)
             ->first();
 
-        if($user !== NULL){
+        if ($user !== NULL) {
             Session::put('id', $user->id);
             Session::put('username', $user->username);
-            $name = $user->first_name.' '.$user->last_name;
+            $name = $user->first_name . ' ' . $user->last_name;
             Session::put('name', $name);
             Session::put('user', $user);
 
-            return redirect::to('/user-profile/'.$user->username);
+            return redirect::to('/user-profile/' . $user->username);
         }
 
         Session::put('message', 'Your User ID or Password Invalid...!!!');
@@ -145,7 +147,7 @@ class UserController extends Controller
         return redirect('/');
     }
 
-    
+
     /**
      * blogs
      */
@@ -154,34 +156,35 @@ class UserController extends Controller
         $user_id = Session::get('id');
         $username = Session::get('username');
         //dd($user_id);
-        $this->validate($request,[
+        /*$this->validate($request,[
            'blog_desc' => 'required',
-           //'blog_img' => 'image|mimes:jpeg, png, jpg | max:3048'
-        ]);
+           'blog_img' => 'image|mimes:jpeg, png, jpg | max:3048'
+        ]);*/
 
         /**
          * blog table
          */
-        $imgModel = new BlogImage();
         $blog = new Blog();
         $blog->blog_desc = $request->input('blog_desc');
         $blog->blog_category = $request->input('blog_category');
         $blog->blog_status = $request->input('blog_status');
         $blog->user_id = $user_id;
-        //dd($blog);
         $blog->save();
 
-        /*if($files = $request->hasFile('blog_img')){
-            foreach($files as $file){
-                $name = time().'-'.$file->getClientOriginalName();
-                $file->storeAs('public/blog_img/'.$name);
+        if ($request->hasFile('blog_img')) {
+            foreach ($request->file('blog_img') as $file) {
+                $imgModel = new BlogImage();
+                $name = time() . '-' . $file->getClientOriginalName();
+                print_r($name);
+                $file->storeAs('public/blog_img/', $name);
                 $imgModel->blog_img = $name;
                 $imgModel->blog_id = $blog->id;
+                $imgModel->save();
             }
-            dd($imgModel);
-        }else{
+        } else {
             return back()->with('blogMsg', 'Please upload photos of your blog');
-        }*/
+        }
+        //dd($imgModel);
 
 
         return redirect::to('/user-profile/'.$username.'#timeline');
@@ -191,7 +194,6 @@ class UserController extends Controller
     {
         return view('coming_soon');
     }
-
 
 
 }

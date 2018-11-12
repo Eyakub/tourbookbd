@@ -1,4 +1,4 @@
-@extend('home')
+extend('home')
 @section('other_popular_tours')
 
 

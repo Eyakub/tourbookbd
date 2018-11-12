@@ -13,4 +13,9 @@ class Tour extends Model
         return $this->hasMany('App\District', 'district_id');
     }
 
+    public function review()
+    {
+        return $this->hasMany('App\TourReview');
+    }
+
 }

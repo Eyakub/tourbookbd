@@ -25,7 +25,7 @@
     <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144"
           href="{{asset('img/apple-touch-icon-144x144-precomposed.png')}}">
 
-<!-- Google web fonts -->
+    <!-- Google web fonts -->
     <link href="https://fonts.googleapis.com/css?family=Gochi+Hand|Lato:300,400|Montserrat:400,400i,700,700i"
           rel="stylesheet">
 
@@ -192,11 +192,15 @@
                 <div class="row">
                     <div class="col-md-3">
                         <h3>Reviews </h3>
-                        <a href="#" class="btn_1 add_bottom_30" data-toggle="modal" data-target="#myReview">Leave a
-                            review</a>
+                        @if(!empty(Session::get('id')))
+                            <a href="#" class="btn_1 add_bottom_30" data-toggle="modal" data-target="#myReview">Leave a
+                                review</a>
+                        @else
+                            <h5><strong>Login to Review</strong></h5>
+                        @endif
                     </div>
                     <div class="col-md-9">
-                        <div id="general_rating">11 Reviews
+                        <div id="general_rating">{{count($comments->tourreview_desc)}}
                             <div class="rating">
                                 <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i
                                         class="icon-smile voted"></i><i class="icon-smile"></i><i
@@ -247,10 +251,10 @@
                         <div class="review_strip_single">
                             <img src="{{asset('img/eyakub.jpg')}}" width="68" height="68" alt="Image"
                                  class="img-circle">
-                            <small> - 10 March 2015 -</small>
-                            <h4>Eyakub Sorkar</h4>
+                            <small> - {{$comments->created_at}} -</small>
+                            <h4>{{$user->first_name}}</h4>
                             <p>
-                                "Beautiful place :p"
+                                {{$comments->tourreview_desc}}
                             </p>
                             <div class="rating">
                                 <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i
@@ -392,59 +396,37 @@
             <div class="modal-body">
                 <div id="message-review">
                 </div>
-                <form method="post" action="assets/review_tour.php" name="review_tour" id="review_tour">
-                    <input name="tour_name" id="tour_name" type="hidden" value="Paris Arch de Triomphe Tour">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input name="name_review" id="name_review" type="text" placeholder="Your name"
-                                       class="form-control">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input name="lastname_review" id="lastname_review" type="text"
-                                       placeholder="Your last name" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End row -->
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input name="email_review" id="email_review" type="email" placeholder="Your email"
-                                       class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End row -->
-                    <hr>
+                <form method="post" action="{{ route('tour.review') }}" name="review_tour" id="review_tour">
+                    {{csrf_field()}}
+                    <input type="hidden" name="_token" value="{{csrf_token()}}">
+                    <input name="tour_id" id="tour_name" type="hidden" value="{{$tour->id}}">
+
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Position</label>
-                                <select class="form-control" name="position_review" id="position_review">
-                                    <option value="">Please review</option>
-                                    <option value="Low">Low</option>
-                                    <option value="Sufficient">Sufficient</option>
-                                    <option value="Good">Good</option>
-                                    <option value="Excellent">Excellent</option>
-                                    <option value="Superb">Super</option>
-                                    <option value="Not rated">I don't know</option>
+                                <select class="form-control" name="tourreview_position" id="position_review">
+                                    <option value=0>Please review</option>
+                                    <option value=1>Low</option>
+                                    <option value=2>Sufficient</option>
+                                    <option value=3>Good</option>
+                                    <option value=4>Excellent</option>
+                                    <option value=5>Super</option>
+                                    <option value=0>I don't know</option>
                                 </select>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Tourist guide</label>
-                                <select class="form-control" name="guide_review" id="guide_review">
-                                    <option value="">Please review</option>
-                                    <option value="Low">Low</option>
-                                    <option value="Sufficient">Sufficient</option>
-                                    <option value="Good">Good</option>
-                                    <option value="Excellent">Excellent</option>
-                                    <option value="Superb">Super</option>
-                                    <option value="Not rated">I don't know</option>
+                                <select class="form-control" name="tourreview_guide" id="guide_review">
+                                    <option value=0>Please review</option>
+                                    <option value=1>Low</option>
+                                    <option value=2>Sufficient</option>
+                                    <option value=3>Good</option>
+                                    <option value=4>Excellent</option>
+                                    <option value=5>Super</option>
+                                    <option value=0>I don't know</option>
                                 </select>
                             </div>
                         </div>
@@ -454,42 +436,38 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Price</label>
-                                <select class="form-control" name="price_review" id="price_review">
-                                    <option value="">Please review</option>
-                                    <option value="Low">Low</option>
-                                    <option value="Sufficient">Sufficient</option>
-                                    <option value="Good">Good</option>
-                                    <option value="Excellent">Excellent</option>
-                                    <option value="Superb">Super</option>
-                                    <option value="Not rated">I don't know</option>
+                                <select class="form-control" name="tourreview_price" id="price_review">
+                                    <option value=0>Please review</option>
+                                    <option value=1>Low</option>
+                                    <option value=2>Sufficient</option>
+                                    <option value=3>Good</option>
+                                    <option value=4>Excellent</option>
+                                    <option value=5>Super</option>
+                                    <option value=0>I don't know</option>
                                 </select>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Quality</label>
-                                <select class="form-control" name="quality_review" id="quality_review">
-                                    <option value="">Please review</option>
-                                    <option value="Low">Low</option>
-                                    <option value="Sufficient">Sufficient</option>
-                                    <option value="Good">Good</option>
-                                    <option value="Excellent">Excellent</option>
-                                    <option value="Superb">Super</option>
-                                    <option value="Not rated">I don't know</option>
+                                <select class="form-control" name="tourreview_quality" id="quality_review">
+                                    <option value=0>Please review</option>
+                                    <option value=1>Low</option>
+                                    <option value=2>Sufficient</option>
+                                    <option value=3>Good</option>
+                                    <option value=4>Excellent</option>
+                                    <option value=5>Super</option>
+                                    <option value=0>I don't know</option>
                                 </select>
                             </div>
                         </div>
                     </div>
                     <!-- End row -->
                     <div class="form-group">
-                        <textarea name="review_text" id="review_text" class="form-control" style="height:100px"
+                        <textarea name="tourreview_desc" id="review_text" class="form-control" style="height:100px"
                                   placeholder="Write your review"></textarea>
                     </div>
-                    <div class="form-group">
-                        <input type="text" id="verify_review" class=" form-control"
-                               placeholder="Are you human? 3 + 1 =">
-                    </div>
-                    <input type="submit" value="Submit" class="btn_1" id="submit-review">
+                    <button type="submit" class="btn_1" id="submit-review">Submit</button>
                 </form>
             </div>
         </div>

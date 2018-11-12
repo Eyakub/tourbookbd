@@ -87,6 +87,8 @@ Route::get('/tours/naturelife', 'TourController@natureWild');
 Route::get('/tours/hikingcamping', 'TourController@hikingCamping');
 Route::get('/tours/churces', 'TourController@churces');
 
+Route::post('/tours.review', 'TourController@tourreview')->name('tour.review');
+
 
 /**
  * Booking panel
