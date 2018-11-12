@@ -134,10 +134,12 @@ class UserController extends Controller
         $user = Users::find($user_id);
         $blogs = Blog::where('user_id', $user_id)
             ->paginate(10);
+        $blogImage = BlogImage::where('blog_id', $blogs->pluck('id'))->get();
+        //dd($blogImage);
         $blogCat = TourCategory::all();
 
         return view('Users.userlayout')
-            ->with(compact('user', 'blogCat', 'blogs', 'username'));
+            ->with(compact('user', 'blogCat', 'blogs', 'username', 'blogImage'));
     }
 
     public function logout()
@@ -156,10 +158,10 @@ class UserController extends Controller
         $user_id = Session::get('id');
         $username = Session::get('username');
         //dd($user_id);
-        /*$this->validate($request,[
-           'blog_desc' => 'required',
-           'blog_img' => 'image|mimes:jpeg, png, jpg | max:3048'
-        ]);*/
+        $this->validate($request, [
+            'blog_desc' => 'required',
+            'blog_img.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:4048'
+        ]);
 
         /**
          * blog table
@@ -184,10 +186,8 @@ class UserController extends Controller
         } else {
             return back()->with('blogMsg', 'Please upload photos of your blog');
         }
-        //dd($imgModel);
 
-
-        return redirect::to('/user-profile/'.$username.'#timeline');
+        return redirect::to('/user-profile/' . $username . '#timeline');
     }
 
     public function comingSoon()
