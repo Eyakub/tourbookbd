@@ -133,8 +133,8 @@ class UserController extends Controller
         $user_id = Session::get('id');
         $user = Users::find($user_id);
         $tours = DB::table('tour_wishlist')
-            ->join('users', 'users.id', '=', 'tour_wishlist.user_id')
             ->join('tour', 'tour.id', '=', 'tour_wishlist.tour_id')
+            ->where('tour_wishlist.user_id', '=', $user_id)
             ->select('tour.*')
             ->get();
         //dd($tour);
