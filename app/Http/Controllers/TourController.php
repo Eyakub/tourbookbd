@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Tour;
 use App\TourReview;
+use App\TourWishlist;
 use App\User;
 use App\Users;
 use Illuminate\Http\Request;
@@ -43,11 +44,9 @@ class TourController extends Controller
     {
         $tour = Tour::find($id);
 
-        $comments = TourReview::where('tour_id', $tour->id)->get();
-        $user = Users::find($comments->user_id);
         //dd($comments->pluck('user_id')); //get specific value from collection
         return view('Tours.single_tour')
-            ->with(compact('tour', 'comments', 'user'));
+            ->with(compact('tour'));
     }
 
     public function closeToSea()
@@ -109,6 +108,23 @@ class TourController extends Controller
         $review->save();
         dd($request->all());
         return redirect::to('/tours/single-tour/'.$tour_id);
+    }
+
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     * @wishlist for USER of TOUR
+     */
+    public function addToWishlistTour(request $request)
+    {
+        $tour_id = $request->input('tour_id');
+        $user_id = Session::get('id');
+
+        $wishlist = new TourWishlist();
+        $wishlist->tour_id = $tour_id;
+        $wishlist->user_id = $user_id;
+        $wishlist->save();
+        return redirect::to('/tours/single-tour/' . $tour_id);
     }
 
 }

@@ -199,8 +199,9 @@
                             <h5><strong>Login to Review</strong></h5>
                         @endif
                     </div>
+
                     <div class="col-md-9">
-                        <div id="general_rating">{{count($comments->tourreview_desc)}}
+                        <div id="general_rating">{{count($tour->review)}} Reviews
                             <div class="rating">
                                 <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i
                                         class="icon-smile voted"></i><i class="icon-smile"></i><i
@@ -248,22 +249,23 @@
                         </div>
                         <!-- End row -->
                         <hr>
-                        <div class="review_strip_single">
-                            <img src="{{asset('img/eyakub.jpg')}}" width="68" height="68" alt="Image"
-                                 class="img-circle">
-                            <small> - {{$comments->created_at}} -</small>
-                            <h4>{{$user->first_name}}</h4>
-                            <p>
-                                {{$comments->tourreview_desc}}
-                            </p>
-                            <div class="rating">
-                                <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i
-                                        class="icon-smile voted"></i><i class="icon-smile"></i><i
-                                        class="icon-smile"></i>
+                        @foreach($tour->review as $comment)
+                            <div class="review_strip_single">
+                                <img src="{{asset('storage/user_images/'.$comment->user->src_user)}}" height="78" width="78" alt="Image"
+                                     class="img-circle">
+                                <small> - {{$comment->created_at->format('d M Y')}} -</small>
+                                <h4>{{$comment->user->first_name}}</h4>
+                                <p>
+                                    {{$comment->tourreview_desc}}
+                                </p>
+                                {{--<div class="rating">
+                                    <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i
+                                            class="icon-smile voted"></i><i class="icon-smile"></i><i
+                                            class="icon-smile"></i>
+                                </div>--}}
                             </div>
-                        </div>
-                        <!-- End review strip -->
-
+                            <!-- End review strip -->
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -352,8 +354,15 @@
                             </tr>
                             </tbody>
                         </table>
-                        <a class="btn_full" href="{{URL::to('/tours/bookings/carts/')}}">Book now</a>
-                        <a class="btn_full_outline" href="#"><i class=" icon-heart"></i> Add to whislist</a>
+                        @if(!empty(Session::get('id')))
+                            <a class="btn_full" href="{{URL::to('/tours/bookings/carts/')}}">Book now</a>
+                            @else
+                            <a class="btn_full" href="{{URL::to('/user-login')}}">Login to Book your Tour</a>
+                        @endif
+                        <form method="post" action="{{ route('tour.addToWishlist') }}" name="addToWishlist" id="wishlist">
+                            <input type="hidden" name="tour_id" value="{{$tour->id}}">
+                            <a class="btn_full_outline" onclick="document.getElementById('wishlist').submit();"><i class=" icon-heart"></i> Add to whislist</a>
+                        </form>
                     </div>
                     <!--/box_style_1 -->
                 </div>

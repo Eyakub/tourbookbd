@@ -10,12 +10,12 @@ class Tour extends Model
 
     public function disTour()
     {
-        return $this->hasMany('App\District', 'district_id');
+        return $this->hasMany('App\District');
     }
 
     public function review()
     {
-        return $this->hasMany('App\TourReview');
+        return $this->hasMany(TourReview::class);
     }
 
 }

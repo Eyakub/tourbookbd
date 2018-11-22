@@ -8,8 +8,15 @@ class TourReview extends Model
 {
     protected $table = 'tour_review';
 
-    public function tourR()
+    public function tour()
     {
         return $this->belongsTo('App\Tour');
     }
+
+    public function user()
+    {
+        return $this->belongsTo('App\Users');
+    }
+
+
 }
