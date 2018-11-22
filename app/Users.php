@@ -17,4 +17,9 @@ class Users extends Model
     {
         return $this->hasMany('App\TourReview');
     }
+
+    public function wishlist()
+    {
+        return $this->hasMany('App\TourWishlist');
+    }
 }

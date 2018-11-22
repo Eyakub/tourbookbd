@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\{Blog, BlogImage, TourCategory, TourWishlist, Users};
+use App\{Blog, BlogImage, Tour, TourCategory, TourWishlist, Users};
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
@@ -132,7 +132,8 @@ class UserController extends Controller
     {
         $user_id = Session::get('id');
         $user = Users::find($user_id);
-        $wishlist = TourWishlist::find($user_id);
+        $tour = Tour::with('wishlist.user')->find($user_id);
+        //dd($tour);
         //$blogs = Blog::where('user_id', $user_id)->paginate(10);
         /**
          * $blog = Blog::find($id)
@@ -145,7 +146,7 @@ class UserController extends Controller
         $blogCat = TourCategory::all();
 
         return view('Users.userlayout')
-            ->with(compact('user', 'blogCat', 'blogs', 'username', 'blogImage', 'wishlist'));
+            ->with(compact('user', 'blogCat', 'blogs', 'username', 'blogImage', 'tour'));
     }
 
     public function logout()

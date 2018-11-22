@@ -42,7 +42,8 @@ class TourController extends Controller
 
     public function singleDetails($id)
     {
-        $tour = Tour::find($id);
+        //$tour = Tour::find($id);
+        $tour = Tour::with(['review.user'])->find($id);
 
         //dd($comments->pluck('user_id')); //get specific value from collection
         return view('Tours.single_tour')
