@@ -3,6 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Users;
+
 
 class TourWishlist extends Model
 {
@@ -10,6 +12,11 @@ class TourWishlist extends Model
 
     public function user()
     {
-        return $this->belongsTo('App\Users');
+        return $this->belongsTo(Users::class);
+    }
+
+    public function tour()
+    {
+        return $this->hasMany(Tour::class);
     }
 }

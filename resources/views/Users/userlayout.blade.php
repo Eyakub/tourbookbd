@@ -382,34 +382,36 @@
 
                 <section id="wishlist">
                     <div class="row">
-                        <div class="col-md-4 col-sm-6">
-                            <div class="tour_container">
-                                <div class="img_container">
-                                    <a href="{{URL::to('/tours/single-tour/'.$tour->id)}}">
-                                        <img src="{{asset('storage/small_cover/'.$tour->tour_small_cover)}}" width="800"
-                                             height="533"
-                                             class="img-responsive" alt="Image">
-                                        <div class="ribbon top_rated">
+                        @foreach($tours as $tour)
+                            <div class="col-md-4 col-sm-6">
+                                <div class="tour_container">
+                                    <div class="img_container">
+                                        <a href="{{URL::to('/tours/single-tour/'.$tour->id)}}">
+                                            <img src="{{asset('storage/small_cover/'.$tour->tour_small_cover)}}" width="800"
+                                                 height="533"
+                                                 class="img-responsive" alt="Image">
+                                            {{--<div class="ribbon top_rated">
+                                            </div>--}}
+                                        </a>
+                                    </div>
+                                    <div class="tour_title">
+                                        <h3><strong>{{$tour->tour_title}}</strong></h3>
+                                        <div class="rating">
+                                            <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i
+                                                    class="icon-smile voted"></i><i class="icon-smile voted"></i><i
+                                                    class="icon-smile"></i>
+                                            <small>(75)</small>
                                         </div>
-                                    </a>
-                                </div>
-                                <div class="tour_title">
-                                    <h3><strong>Park Hyatt</strong> Hotel</h3>
-                                    <div class="rating">
-                                        <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i
-                                                class="icon-smile voted"></i><i class="icon-smile voted"></i><i
-                                                class="icon-smile"></i>
-                                        <small>(75)</small>
-                                    </div>
-                                    <!-- end rating -->
-                                    <div class="wishlist_close_admin">
-                                        -
+                                        <!-- end rating -->
+                                        <div class="wishlist_close_admin">
+                                            -
+                                        </div>
                                     </div>
                                 </div>
+                                <!-- End box tour -->
                             </div>
-                            <!-- End box tour -->
-                        </div>
-                        <!-- End col-md-6 -->
+                            <!-- End col-md-6 -->
+                        @endforeach
 
                     </div>
                     <!-- End row -->

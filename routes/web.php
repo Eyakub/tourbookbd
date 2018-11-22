@@ -88,7 +88,7 @@ Route::get('/tours/hikingcamping', 'TourController@hikingCamping');
 Route::get('/tours/churces', 'TourController@churces');
 
 Route::post('/tours.review', 'TourController@tourreview')->name('tour.review');
-Route::post('/tours.addToWishlist', 'TourController@addToWishlist')->name('tour.addToWishlist');
+Route::post('/tour/addtowishlist', 'TourController@addToWishlist')->name('tour.addtowishlist');
 
 
 /**

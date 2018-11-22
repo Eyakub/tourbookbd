@@ -116,7 +116,7 @@ class TourController extends Controller
      * @return \Illuminate\Http\RedirectResponse
      * @wishlist for USER of TOUR
      */
-    public function addToWishlistTour(request $request)
+    public function addToWishlist(request $request)
     {
         $tour_id = $request->input('tour_id');
         $user_id = Session::get('id');
@@ -124,8 +124,9 @@ class TourController extends Controller
         $wishlist = new TourWishlist();
         $wishlist->tour_id = $tour_id;
         $wishlist->user_id = $user_id;
+        //dd($wishlist);
         $wishlist->save();
-        return redirect::to('/tours/single-tour/' . $tour_id);
+        return Redirect::to('/tours/single-tour/' . $tour_id);
     }
 
 }

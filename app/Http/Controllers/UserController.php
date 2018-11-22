@@ -132,9 +132,12 @@ class UserController extends Controller
     {
         $user_id = Session::get('id');
         $user = Users::find($user_id);
-        $tour = Tour::with('wishlist.user')->find($user_id);
+        $tours = DB::table('tour_wishlist')
+            ->join('users', 'users.id', '=', 'tour_wishlist.user_id')
+            ->join('tour', 'tour.id', '=', 'tour_wishlist.tour_id')
+            ->select('tour.*')
+            ->get();
         //dd($tour);
-        //$blogs = Blog::where('user_id', $user_id)->paginate(10);
         /**
          * $blog = Blog::find($id)
          * $img = $blog->images()->get(); //images()it's in the model function
@@ -146,7 +149,7 @@ class UserController extends Controller
         $blogCat = TourCategory::all();
 
         return view('Users.userlayout')
-            ->with(compact('user', 'blogCat', 'blogs', 'username', 'blogImage', 'tour'));
+            ->with(compact('user', 'blogCat', 'blogs', 'username', 'blogImage', 'tours'));
     }
 
     public function logout()

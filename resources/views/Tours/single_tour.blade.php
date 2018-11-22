@@ -359,7 +359,8 @@
                             @else
                             <a class="btn_full" href="{{URL::to('/user-login')}}">Login to Book your Tour</a>
                         @endif
-                        <form method="post" action="{{ route('tour.addToWishlist') }}" name="addToWishlist" id="wishlist">
+                        <form method="post" action="{{ route('tour.addtowishlist') }}" id="wishlist">
+                            {{csrf_field()}}
                             <input type="hidden" name="tour_id" value="{{$tour->id}}">
                             <a class="btn_full_outline" onclick="document.getElementById('wishlist').submit();"><i class=" icon-heart"></i> Add to whislist</a>
                         </form>

@@ -3,6 +3,9 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Blog;
+use App\TourReview;
+use App\TourWishlist;
 
 class Users extends Model
 {
@@ -10,16 +13,16 @@ class Users extends Model
 
     public function userBlogs()
     {
-        return $this->hasMany('App\Blog');
+        return $this->hasMany(Blog::class);
     }
 
     public function tourReview()
     {
-        return $this->hasMany('App\TourReview');
+        return $this->hasMany(TourReview::class);
     }
 
     public function wishlist()
     {
-        return $this->hasMany('App\TourWishlist');
+        return $this->hasMany(TourWishlist::class);
     }
 }
