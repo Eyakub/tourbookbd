@@ -332,27 +332,12 @@
 
                                 @foreach($blogs as $blog)
                                     <div class="post">
-                                        @foreach($blogImage as $img)
-                                            <img src="{{asset('storage/blog_img/'.$img->blog_img)}}" alt="Image"
-                                                 class="img-responsive">
-                                        @endforeach
-                                        {{--<div id="Img_carousel" class="slider-pro">
-                                            --}}{{--<div class="sp-slides">
-                                                @foreach($blogImage as $img)
-                                                    <div class="sp-slide">
-                                                        <img width="1000" height="677" alt="Image" class="sp-image"
-                                                             src="{{asset('storage/blog_img/'.$img->blog_img)}}">
-                                                    </div>
-                                                @endforeach
 
-                                            </div>--}}{{--
-                                            <div class="sp-thumbnails">
-                                                @foreach($blogImage as $img)
-                                                    <img alt="Image" class="sp-thumbnail" height="78" width="78"
-                                                         src="{{asset('storage/blog_img/'.$img->blog_img)}}">
-                                                @endforeach
-                                            </div>
-                                        </div>--}}
+                                        @foreach($blog->images as $img)
+                                            <img src="{{asset('storage/blog_img/'.$img->blog_img)}}" alt="Image"
+                                                 class="img-responsive" height="80" width="80">
+                                        @endforeach
+
                                         <div class="post_info clearfix">
                                             <div class="post-left">
                                                 <ul>
@@ -373,7 +358,7 @@
                                             <?php
                                             $str = $blog->blog_desc;
                                             ?>
-                                            {{str_limit($str, 250, "...")}}
+                                            {{str_limit($str, 250, '...')}}
                                         </p>
                                         <a href="{{URL::to('/blog-details/'.$blog->id)}}" target="_blank" class="btn_1">Read
                                             more</a>
@@ -892,6 +877,8 @@
 <script src="{{URL::to('js/common_scripts_min.js')}}"></script>
 <script src="{{URL::to('js/functions.js')}}"></script>
 
+<script src="{{URL::to('ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js')}}"></script>
+
 <script src="{{URL::asset('js/jquery.sliderPro.min.js')}}"></script>
 <script type="text/javascript">
     $(document).ready(function ($) {
@@ -915,13 +902,13 @@
 <!-- Specific scripts -->
 <script src="{{URL::to('js/tabs.js')}}"></script>
 <script>
-new CBPFWTabs(document.getElementById('tabs'));
+    new CBPFWTabs(document.getElementById('tabs'));
 </script>
 <script>
-$('.wishlist_close_admin').on('click', function (c) {
-$(this).parent().parent().parent().fadeOut('slow', function (c) {
-});
-});
+    $('.wishlist_close_admin').on('click', function (c) {
+        $(this).parent().parent().parent().fadeOut('slow', function (c) {
+        });
+    });
 </script>
 
 

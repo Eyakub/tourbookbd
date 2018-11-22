@@ -44,10 +44,10 @@ class TourController extends Controller
         $tour = Tour::find($id);
 
         $comments = TourReview::where('tour_id', $tour->id)->get();
-        //$user = Users::find($comments->user_id);
+        $user = Users::find($comments->user_id);
         //dd($comments->pluck('user_id')); //get specific value from collection
-        /*return view('Tours.single_tour')
-            ->with(compact('tour', 'comments', 'user'));*/
+        return view('Tours.single_tour')
+            ->with(compact('tour', 'comments', 'user'));
     }
 
     public function closeToSea()

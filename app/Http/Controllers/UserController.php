@@ -132,10 +132,15 @@ class UserController extends Controller
     {
         $user_id = Session::get('id');
         $user = Users::find($user_id);
-        $blogs = Blog::where('user_id', $user_id)
-            ->paginate(10);
-        $blogImage = BlogImage::where('blog_id', $blogs->pluck('id'))->get();
-        //dd($blogImage);
+        //$blogs = Blog::where('user_id', $user_id)->paginate(10);
+        /**
+         * $blog = Blog::find($id)
+         * $img = $blog->images()->get(); //images()it's in the model function
+         */
+
+        $blogs = Blog::with('images')->where('user_id', $user_id)->paginate(10);
+        $blogImage = BlogImage::whereIn('blog_id', $blogs->pluck('id'))->get();
+        //dd($blogs);
         $blogCat = TourCategory::all();
 
         return view('Users.userlayout')
