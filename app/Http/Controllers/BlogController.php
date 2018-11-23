@@ -7,6 +7,7 @@ use App\Comment;
 use App\TourCategory;
 use App\Users;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 
 class BlogController extends Controller
@@ -24,7 +25,12 @@ class BlogController extends Controller
     {
         $blogDetails = Blog::with(['images'])->find($id);
         $blogOwner = Users::find($blogDetails->user_id);
-        $comments = Comment::with(['user'])->get();
+        //$comments = Comment::with('blog')->where('blog_id', '=', $id)->get();
+        $comments = DB::table('blog_comments')
+            ->join('blog', 'blog.id', '=', 'blog_comments.blog_id')
+            ->select('blog_comments.*')
+            ->get();
+        //dd($comments);
         $category = TourCategory::all();
 
         return view('Blogs.blog_details')

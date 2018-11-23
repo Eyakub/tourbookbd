@@ -7,7 +7,7 @@ use App\Blog;
 
 class Comment extends Model
 {
-    protected $table = 'comments';
+    protected $table = 'blog_comments';
 
     public function blog()
     {

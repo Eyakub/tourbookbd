@@ -102,9 +102,12 @@
                                     </li>
                                     <li><i class="icon-tags"></i>Tags <a href="#">Works</a> <a href="#">Personal</a>
                                     </li>
+                                    <li>
+                                        <i class="icon-comment"> {{count($comments)}}</i>
+                                    </li>
                                 </ul>
                             </div>
-                            <div class="post-right"><i class="icon-comment"></i><a href="#">{{count($comments)}} </a>Comments</div>
+                            <div class="post-right"><i class="icon-comment"></i><a href="#"> {{$blogOwner->first_name}}</a></div>
                         </div>
                         {{--<h2>Title</h2>--}}
                         <p>
