@@ -105,12 +105,14 @@ Route::get('/tours/bookings/carts/payments/confirmation/invoice', 'BookingAndPay
  */
 Route::get('/blogs', 'BlogController@blogIndex');
 Route::get('/blog-details/{id}', 'BlogController@blogDetails');
+Route::post('blog.comment', 'BlogController@saveComment')->name('blog.comment');
 
 
 /**
  * Coming Soon
  */
 Route::get('/coming_soon', 'UserController@comingSoon');
+Route::get('/test_img', 'UserController@imageslider');
 
 
 /**

@@ -80,8 +80,13 @@
                 <div class="box_style_1">
                     @foreach($blogs as $blog)
                         <div class="post">
-                            <a href="{{URL::to('/blog-details/'.$blog->id)}}"><img src="{{asset('storage/large_cover/'.$blog->blog_img)}}" alt="Image" class="img-responsive">
-                            </a>
+
+                            @foreach($blog->images as $img)
+                                <img src="{{asset('storage/blog_img/'.$img->blog_img)}}"
+                                     alt="Image"
+                                     class="img-responsive" height="433" width="800">
+                            @endforeach
+
                             <div class="post_info clearfix">
                                 <div class="post-left">
                                     <ul>
@@ -89,11 +94,13 @@
                                         </li>
                                         <li><i class="icon-inbox-alt"></i> In <a href="#">Top tours</a>
                                         </li>
-                                        <li><i class="icon-tags"></i> Tags <a href="#">Works</a>, <a href="#">Public</a>
+                                        <li><i class="icon-tags"></i> Tags <a href="#">Works</a>, <a
+                                                    href="#">Public</a>
                                         </li>
+                                        <li><i class="icon-comment"></i> {{count($blog->comment)}} </li>
                                     </ul>
                                 </div>
-                                <div class="post-right"><i class="icon-comment"></i><a href="#">25 </a>
+                                <div class="post-right"><i class="icon-user"></i><a href="#">{{$blog->user->first_name}} </a>
                                 </div>
                             </div>
                             {{--<h2>Duis aute irure dolor in reprehenderit</h2>--}}
@@ -101,11 +108,12 @@
                                 <?php
                                 $str = $blog->blog_desc;
                                 ?>
-                                {{str_limit($str, 250, "...")}}
+                                {{str_limit($str, 250, '...')}}
                             </p>
-                            <a href="{{URL::to('/blog-details/'.$blog->id)}}" class="btn_1">Read more</a>
+                            <a href="{{URL::to('/blog-details/'.$blog->id)}}" target="_blank" class="btn_1">Read
+                                more</a>
                         </div>
-                        <!-- end post -->
+                        <hr>
                     @endforeach
 
                     <hr>

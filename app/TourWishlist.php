@@ -17,6 +17,6 @@ class TourWishlist extends Model
 
     public function tour()
     {
-        return $this->hasMany(Tour::class);
+        return $this->belongsToMany(Tour::class);
     }
 }

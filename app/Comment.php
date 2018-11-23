@@ -3,11 +3,19 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Blog;
 
 class Comment extends Model
 {
-    public function blogs()
+    protected $table = 'comments';
+
+    public function blog()
     {
-        return $this->belongsTo('App\Blog');
+        return $this->belongsTo(Blog::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(Users::class);
     }
 }

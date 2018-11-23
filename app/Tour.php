@@ -21,7 +21,7 @@ class Tour extends Model
 
     public function wishlist()
     {
-        return $this->belongsTo(TourWishlist::class);
+        return $this->belongsToMany(TourWishlist::class);
     }
 
 }

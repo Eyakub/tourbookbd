@@ -137,7 +137,8 @@ class UserController extends Controller
             ->where('tour_wishlist.user_id', '=', $user_id)
             ->select('tour.*')
             ->get();
-        //dd($tour);
+        /*$tours = Tour::with('wishlist, tour')->where('user_id', '=', $user_id)->get();
+        dd($tours);*/
         /**
          * $blog = Blog::find($id)
          * $img = $blog->images()->get(); //images()it's in the model function
@@ -201,6 +202,13 @@ class UserController extends Controller
     }
 
 
+    public function imageslider()
+    {
+        $user_id = 1;
+        $blogs = BlogImage::all();
+        return view('Users.imageslider')
+            ->with(compact('blogs'));
+    }
 
     public function comingSoon()
     {

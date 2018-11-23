@@ -10,7 +10,7 @@
     <title>{{$user->first_name}} - TourBookBD</title>
 
     <!-- Favicons-->
-@include('layouts.baricon')
+    @include('layouts.baricon')
 
 <!-- Google web fonts -->
     <link href="https://fonts.googleapis.com/css?family=Gochi+Hand|Lato:300,400|Montserrat:400,400i,700,700i"
@@ -25,10 +25,11 @@
     <link href="{{URL::asset('css/bootstrap.min.css')}}">
     <link href="{{URL::asset('css/statusbox.css')}}" rel="stylesheet">
     <link href="{{URL::asset('css/bootstrap.css')}}">
-    <link href="{{URL::asset('css/slider-pro.css')}}">
-    <link href="{{URL::asset('css/slider-pro.min.css')}}">
+    {{--<link href="{{URL::asset('css/slider-pro.css')}}">
+    <link href="{{URL::asset('css/slider-pro.min.css')}}">--}}
     <link href="{{asset('css/blog.css')}}" rel="stylesheet">
     <link href="{{URL::asset('assets/stylesheets/glyphicon.css')}}">
+    <link href="{{URL::asset('css/bxslider.css')}}">
 
 
     <script src="{{URL::to('js/html5shiv.min.js')}}"></script>
@@ -334,8 +335,9 @@
                                     <div class="post">
 
                                         @foreach($blog->images as $img)
-                                            <img src="{{asset('storage/blog_img/'.$img->blog_img)}}" alt="Image"
-                                                 class="img-responsive" height="80" width="80">
+                                            <img src="{{asset('storage/blog_img/'.$img->blog_img)}}"
+                                                 alt="Image"
+                                                 class="img-responsive" height="68" width="68">
                                         @endforeach
 
                                         <div class="post_info clearfix">
@@ -387,7 +389,8 @@
                                 <div class="tour_container">
                                     <div class="img_container">
                                         <a href="{{URL::to('/tours/single-tour/'.$tour->id)}}">
-                                            <img src="{{asset('storage/small_cover/'.$tour->tour_small_cover)}}" width="800"
+                                            <img src="{{asset('storage/small_cover/'.$tour->tour_small_cover)}}"
+                                                 width="800"
                                                  height="533"
                                                  class="img-responsive" alt="Image">
                                             {{--<div class="ribbon top_rated">
@@ -717,8 +720,10 @@
 
 <script src="{{URL::to('ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js')}}"></script>
 
-<script src="{{URL::asset('js/jquery.sliderPro.min.js')}}"></script>
-<script type="text/javascript">
+{{--<script src="{{URL::asset('js/jquery.sliderPro.min.js')}}"></script>--}}
+<script src="{{URL::asset('js/jquery.bxslider.min.js')}}"></script>
+<script src="{{URL::asset('js/jqurysl.js')}}"></script>
+{{--<script type="text/javascript">
     $(document).ready(function ($) {
         $('#Img_carousel').sliderPro({
             width: 960,
@@ -734,6 +739,14 @@
             thumbnailArrows: true,
             autoplay: false
         });
+    });
+</script>--}}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('slider').bxSlider({
+            slideWidth: 500
+        })
     });
 </script>
 

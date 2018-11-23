@@ -7,12 +7,16 @@
 
 <head>
     @include('layouts.metadata')
-    <title>TourBookBD</title>
+    <title>{{$blogOwner->first_name}} - <?php
+        $str = $blogDetails->blog_desc;
+        ?>
+        {{str_limit($str, 50, '...')}}
+    </title>
 
     <!-- Favicons-->
-    @include('layouts.baricon')
+@include('layouts.baricon')
 
-    <!-- Google web fonts -->
+<!-- Google web fonts -->
     <link href="https://fonts.googleapis.com/css?family=Gochi+Hand|Lato:300,400|Montserrat:400,400i,700,700i"
           rel="stylesheet">
 
@@ -85,8 +89,10 @@
             <div class="col-md-9">
                 <div class="box_style_1">
                     <div class="post nopadding">
-                        <img src="{{asset('storage/small_cover/1539129177-533x800.jpg')}}" height="375" width="950"
-                             alt="Image" class="img-responsive">
+                        @foreach($blogDetails->images as $img)
+                            <img src="{{asset('storage/blog_img/'.$img->blog_img)}}" height="375" width="950"
+                                 alt="Image" class="img-responsive">
+                        @endforeach
                         <div class="post_info clearfix">
                             <div class="post-left">
                                 <ul>
@@ -98,7 +104,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="post-right"><i class="icon-comment"></i><a href="#">25 </a>Comments</div>
+                            <div class="post-right"><i class="icon-comment"></i><a href="#">{{count($comments)}} </a>Comments</div>
                         </div>
                         {{--<h2>Title</h2>--}}
                         <p>
@@ -109,27 +115,27 @@
                 </div>
                 <!-- end box_style_1 -->
 
-                <h4>3 comments</h4>
+                <h4>{{count($comments)}} comments</h4>
 
                 <div id="comments">
                     <ol>
                         <li>
-                            <div class="avatar">
-                                <a href="#"><img src="{{asset('img/eyakub.jpg')}}" height="48" width="48" alt="Image">
-                                </a>
-                            </div>
-                            <div class="comment_right clearfix">
-                                <div class="comment_info">
-                                    Posted by <a href="#">Anna Smith</a><span>|</span> 25 apr 2019 <span>|</span><a
-                                            href="#">Reply</a>
+                            @foreach($comments as $comment)
+                                <div class="avatar">
+                                    <a href="#"><img src="{{asset('storage/user_images/'.$comment->user->src_user)}}" height="48" width="48"
+                                                     alt="Image">
+                                    </a>
                                 </div>
-                                <p>
-                                    Nam cursus tellus quis magna porta adipiscing. Donec et eros leo, non pellentesque
-                                    arcu. Curabitur vitae mi enim, at vestibulum magna. Cum sociis natoque penatibus et
-                                    magnis dis parturient montes, nascetur ridiculus mus. Sed sit amet sem a urna
-                                    rutrumeger fringilla. Nam vel enim ipsum, et congue ante.
-                                </p>
-                            </div>
+                                <div class="comment_right clearfix">
+                                    <div class="comment_info">
+                                         <a href="#">{{$comment->user->first_name}}</a><span>|</span> {{$comment->created_at->format('d M Y')}} <span>|</span>{{--<a
+                                                href="#">Reply</a>--}}
+                                    </div>
+                                    <p>
+                                        {{$comment->comments_desc}}
+                                    </p>
+                                </div>
+                            @endforeach
                             {{--<ul>
                                 <li>
                                     <div class="avatar">
@@ -157,23 +163,20 @@
 
                 @if(!empty(Session::get('name')))
                     <h4>Leave a comment</h4>
-                    <form action="#" method="post">
+                    <form action="{{route('blog.comment')}}" name="blog.comment" method="post">
+                        {{csrf_field()}}
+                        <input type="hidden" name="user_id" value="{{Session::get('id')}}">
+                        <input type="hidden" name="blog_id" value="{{$blogDetails->id}}">
                         <div class="form-group">
-                            <input class="form-control style_2" type="text" name="name" placeholder="Enter name">
-                        </div>
-                        <div class="form-group">
-                            <input class="form-control style_2" type="text" name="mail" placeholder="Enter email">
-                        </div>
-                        <div class="form-group">
-                            <textarea name="message" class="form-control style_2" style="height:150px;"
+                            <textarea name="comments_desc" class="form-control style_2" style="height:150px;"
                                       placeholder="Message"></textarea>
                         </div>
                         <div class="form-group">
-                            <input type="reset" class="btn_1" value="Clear form"/>
+                            {{--<input type="reset" class="btn_1" value="Clear form"/>--}}
                             <input type="submit" class="btn_1" value="Post Comment"/>
                         </div>
                     </form>
-                    @else
+                @else
                     <h4><strong><a href="{{URL::to('/user-login')}}">Sign In</a></strong> to Leave a comment</></h4>
                 @endif
             </div>
@@ -203,29 +206,29 @@
                 </div>
                 <!-- End widget -->
 
-                {{--<hr>--}}
+            {{--<hr>--}}
 
-                {{--<div class="widget">
-                    <h4>Recent post</h4>
-                    <ul class="recent_post">
-                        <li>
-                            <i class="icon-calendar-empty"></i> 16th July, 2020
-                            <div><a href="#">It is a long established fact that a reader will be distracted </a>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="icon-calendar-empty"></i> 16th July, 2020
-                            <div><a href="#">It is a long established fact that a reader will be distracted </a>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="icon-calendar-empty"></i> 16th July, 2020
-                            <div><a href="#">It is a long established fact that a reader will be distracted </a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>--}}
-                <!-- End widget -->
+            {{--<div class="widget">
+                <h4>Recent post</h4>
+                <ul class="recent_post">
+                    <li>
+                        <i class="icon-calendar-empty"></i> 16th July, 2020
+                        <div><a href="#">It is a long established fact that a reader will be distracted </a>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="icon-calendar-empty"></i> 16th July, 2020
+                        <div><a href="#">It is a long established fact that a reader will be distracted </a>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="icon-calendar-empty"></i> 16th July, 2020
+                        <div><a href="#">It is a long established fact that a reader will be distracted </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>--}}
+            <!-- End widget -->
                 <hr>
                 <div class="widget tags">
                     <h4>Tags</h4>
