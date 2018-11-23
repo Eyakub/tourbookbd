@@ -144,7 +144,8 @@ class UserController extends Controller
          * $img = $blog->images()->get(); //images()it's in the model function
          */
 
-        $blogs = Blog::with('images')->where('user_id', $user_id)->paginate(10);
+        $blogs = Blog::with(['images'])->where('user_id', $user_id)->paginate(10);
+        //$comments = Blog::with('comment')->where('user_id', '=', $user_id)->get();
         $blogImage = BlogImage::whereIn('blog_id', $blogs->pluck('id'))->get();
         //dd($blogs);
         $blogCat = TourCategory::all();

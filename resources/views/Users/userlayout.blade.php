@@ -352,7 +352,7 @@
                                                     </li>
                                                 </ul>
                                             </div>
-                                            <div class="post-right"><i class="icon-comment"></i><a href="#">25 </a>
+                                            <div class="post-right"><i class="icon-comment"></i><a href="#">{{count($blog->comment)}} </a>
                                             </div>
                                         </div>
                                         {{--<h2>Duis aute irure dolor in reprehenderit</h2>--}}
