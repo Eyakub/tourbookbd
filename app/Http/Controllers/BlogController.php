@@ -26,9 +26,9 @@ class BlogController extends Controller
         $blogDetails = Blog::with(['images'])->find($id);
         $blogOwner = Users::find($blogDetails->user_id);
         $comments = Comment::with('blog')->where('blog_id', '=', $id)->get();
-        /*$comments = DB::table('blog_comments')
+        /*$comments = DB::table('blog_comments', 'blog')
             ->join('blog', 'blog.id', '=', 'blog_comments.blog_id')
-            ->select('blog_comments.*')
+            ->select('blog_comments.*', 'blog.*')
             ->get();*/
         //dd($comments);
         $category = TourCategory::all();

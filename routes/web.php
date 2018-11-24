@@ -16,9 +16,12 @@ Route::get('/', 'HomeController@index');
 
 
 /**
- * Admin Panel
+ * SuperAdmin Panel
  */
-Route::get('/admin-panel', 'AdminController@index');
+Route::get('/admin-login', 'AdminController@showAdminForm');
+Route::post('/admin-login', 'AdminController@superadminlogin')->name('superadmin.login');
+Route::get('/admin-logout', 'AdminController@logout');
+Route::get('/admin-panel/', 'AdminController@index');
 
 Route::get('/admin-panel/tours-insert-form', 'AdminController@showTourForm')->name('upload.tour');
 Route::post('/admin-panel/tours-insert-form', 'AdminController@insertTour');
@@ -71,6 +74,8 @@ Route::get('/user-profile/{username}', 'UserController@userprofile');
 Route::get('/logout', 'UserController@logout');
 
 Route::post('/users/save-blog', 'UserController@saveBlog')->name('blog.save');
+Route::get('/user-profile/{username}/blog-details/{id}', 'UserController@blogDetails');
+Route::post('/blog.comment.own', 'UserController@saveComment')->name('blog.comment.own');
 
 
 

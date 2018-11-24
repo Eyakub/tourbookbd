@@ -274,7 +274,7 @@
                                 <div class="col-md-9 col-xs-12" id="new_status">
                                     <ul class="navbar-nav col-md-9 col-xs-12" id="post_header" role="navigation">
                                         <h5>Post</h5>
-                                        @if(Session::has('message'))
+                                        {{--@if(Session::has('message'))
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <div class="alert alert-success">
@@ -283,7 +283,7 @@
                                                 </div>
                                             </div>
                                         @else
-                                        @endif
+                                        @endif--}}
                                         {{--<li><a href="#"><span class="glyphicon glyphicon-pencil"></span>Update Status</a></li>--}}
                                         {{--<li><a href="#"><span class="glyphicon glyphicon-picture"></span>Add Photos/Video</a></li>--}}
                                         {{--<li><a href="#"><span class="glyphicon glyphicon-th"></span>Create Photo Album</a></li>--}}
@@ -362,7 +362,7 @@
                                             ?>
                                             {{str_limit($str, 250, '...')}}
                                         </p>
-                                        <a href="{{URL::to('/blog-details/'.$blog->id)}}" target="_blank" class="btn_1">Read
+                                        <a href="{{URL::to('/user-profile/'.$user->username.'/blog-details/'.$blog->id)}}" target="_blank" class="btn_1">Read
                                             more</a>
                                     </div>
                                     <hr>

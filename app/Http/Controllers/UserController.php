@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\{Blog, BlogImage, Tour, TourCategory, TourWishlist, Users};
+use App\{Blog, BlogImage, Comment, Tour, TourCategory, TourWishlist, Users};
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
@@ -200,6 +200,43 @@ class UserController extends Controller
         }
 
         return redirect::to('/user-profile/' . $username . '#timeline');
+    }
+
+    public function saveComment(request $request)
+    {
+        $user_id = $request->input('user_id');
+        $username = Session::get('username');
+        $blog_id = $request->input('blog_id');
+        $comment = $request->input('comments_desc');
+
+        $savecomment = new Comment();
+        $savecomment->user_id = $user_id;
+        $savecomment->blog_id = $blog_id;
+        $savecomment->comments_desc = $comment;
+        //dd($savecomment);
+        $savecomment->save();
+
+        return redirect::to('/user-profile/'.$username.'/blog-details/'.$blog_id);
+    }
+
+    public function blogDetails($username, $id)
+    {
+        $blogDetails = Blog::with(['images'])->find($id);
+        $blogOwner = Users::where('username', '=', $username)->first();
+        //$blogDetailsView = view('Users.blogDetails');
+        $comments = Comment::with('blog')->where('blog_id', '=', $id)->get();
+        /*$comments = DB::table('blog_comments', 'blog')
+            ->join('blog', 'blog.id', '=', 'blog_comments.blog_id')
+            ->select('blog_comments.*', 'blog.*')
+            ->get();*/
+        //dd($blogOwner);
+        $category = TourCategory::all();
+
+        /*return redirect('/user-profile/'.$username.'/blog-details/'.$id)
+            ->with(compact('blogDetailsView', 'blogDetails', 'category', 'blogOwner', 'comments'));*/
+
+        return view('Users.blogDetails')
+            ->with(compact('blogDetails', 'category', 'blogOwner', 'comments', 'username'));
     }
 
 

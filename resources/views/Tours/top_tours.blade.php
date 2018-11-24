@@ -15,7 +15,7 @@
                                  alt="image">
                             <div class="short_info">
                                 <i class="icon_set_1_icon-44"></i>Historic Buildings<span
-                                        class="price"><sup>$</sup>39</span>
+                                        class="price"><sup>BDT</sup> {{$top->tour_adult_price}}</span>
                             </div>
                         </a>
                     </div>

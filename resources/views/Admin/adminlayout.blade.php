@@ -9,7 +9,7 @@
 <html class="no-js" lang=""> <!--<![endif]-->
 <head>
     @include('layouts.metadata')
-    <title>Admin Panel - TourBookBD</title>
+    <title>Eyakub Sorkar - Admin Panel</title>
 
     <!-- Favicons-->
     @include('layouts.baricon')
@@ -228,7 +228,7 @@
                 <div class="user-area dropdown float-right">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                        aria-expanded="false">
-                        <img class="user-avatar rounded-circle" src="{{asset('images/eyakub.jpg')}}" alt="User Avatar">
+                        <img class="user-avatar rounded-circle" src="{{asset('storage/superadmin/eyakub.jpg')}}" alt="User Avatar">
                     </a>
 
                     <div class="user-menu dropdown-menu">

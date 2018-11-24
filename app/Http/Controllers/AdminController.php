@@ -4,22 +4,85 @@ namespace App\Http\Controllers;
 
 use App\District;
 use App\Guide;
+use App\SuperAdmin;
 use App\Tour;
 use App\TourCategory;
-use App\User;
 use App\Hotel;
+use App\Users;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
 {
     public function index(){
-        $dashboard = view('Admin.dashboard');
+        $this->auth_check();
+
+        $admin_id = Session::get('admin_id');
+        $admininfo = SuperAdmin::find($admin_id);
+
+        //dd($admininfo);
+        $dashboard_content = view('Admin.dashboard');
+
         return view('Admin.adminlayout')
-            ->with('dashboard_content', $dashboard);
+            ->with('dashboard_content', $dashboard_content)
+            ->with(compact( 'admininfo'));
+
     }
+
+    public function showAdminForm ()
+    {
+        $this->loginPreventAdmin();
+        return view('Admin.superadmin.adminlogin');
+    }
+
+    public function superadminlogin(request $request)
+    {
+        $admin_email = $request->admin_email;
+        $admin_pass = $request->admin_password;
+
+        $admin = SuperAdmin::where('admin_email', $admin_email)
+            ->where('admin_password', $admin_pass)
+            ->first();
+
+        if ($admin !== NULL) {
+            Session::put('admin_id', $admin->id);
+
+            return redirect::to('/admin-panel/');
+        }
+
+        Session::put('message', 'Your User ID or Password Invalid...!!!');
+        return redirect::to('/admin-login');
+    }
+
+    public function loginPreventAdmin()
+    {
+        session_start();
+        $admin_id = Session::get('admin_id');
+        if ($admin_id !== NULL) {
+            return redirect::to('/admin-panel');
+        }
+    }
+
+    public function auth_check()
+    {
+        session_start();
+        $admin_id = Session::get('admin_id');
+        if ($admin_id === NULL) {
+            return redirect::to('/admin-login');
+        }
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        Session::flush();
+        return redirect('/admin-login');
+    }
+
 
 
     /**
@@ -268,21 +331,21 @@ class AdminController extends Controller
      */
     public function showUserData()
     {
-        $showUserData = User::all();
+        $showUserData = Users::all();
         return view('Admin.userstable')
             ->with('showUserData', $showUserData);
     }
 
     public function showUserProfile()
     {
-        $showUserData = User::all();
+        $showUserData = Users::all();
         return view('Admin.usersprofileview')
             ->with('showUserProfile', $showUserData);
     }
 
     public function deleteUser($id)
     {
-        $deleteuser = User::find($id);
+        $deleteuser = Users::find($id);
         $deleteuser->delete();
         return Redirect::to('/admin-panel/all-user-data/');
     }
