@@ -24,6 +24,7 @@ class UserController extends Controller
 
     public function userRegistration()
     {
+        $this->auth_check();
         $reg = view('Users.registering');
         return $reg;
     }
@@ -99,7 +100,7 @@ class UserController extends Controller
         session_start();
         $user_id = Session::get('id');
         if ($user_id === NULL) {
-            return redirect::to('/user-login');
+            return redirect::to('/user-login')->send();
         }
     }
 

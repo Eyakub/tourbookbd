@@ -19,7 +19,8 @@ use Illuminate\Support\Facades\Storage;
 class AdminController extends Controller
 {
     public function index(){
-        $this->auth_check();
+
+        $this->auth_checkAdmin();
 
         $admin_id = Session::get('admin_id');
         $admininfo = SuperAdmin::find($admin_id);
@@ -67,12 +68,12 @@ class AdminController extends Controller
         }
     }
 
-    public function auth_check()
+    public function auth_checkAdmin()
     {
         session_start();
         $admin_id = Session::get('admin_id');
         if ($admin_id === NULL) {
-            return redirect::to('/admin-login');
+            return redirect::to('/admin-login')->send();
         }
     }
 

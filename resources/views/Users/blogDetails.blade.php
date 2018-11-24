@@ -107,7 +107,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="post-right"><i class="icon-comment"></i><a
+                            <div class="post-right"><i class="icon-user"></i><a
                                         href="#"> {{$blogOwner->first_name}}</a></div>
                         </div>
                         {{--<h2>Title</h2>--}}

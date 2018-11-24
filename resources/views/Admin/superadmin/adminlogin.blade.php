@@ -4,7 +4,6 @@
     @include('layouts.metadata')
     @include('layouts.baricon')
 
-    <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
 
     <link rel="stylesheet" type="text/css" href="{{asset('superadmin/vendor/bootstrap/css/bootstrap.min.css')}}">
 
@@ -31,7 +30,7 @@
                 <img src="{{asset('superadmin/images/img-01.png')}}" alt="IMG">
             </div>
 
-            <form method="post" action="{{route('superadmin.login')}}" class="login100-form validate-form">
+            <form method="post" action="{{route('superadmin.login')}}" name="superadmin.login" class="login100-form validate-form">
                 {{csrf_field()}}
                 <span class="login100-form-title">
 						Super Admin Login
