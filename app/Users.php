@@ -13,7 +13,12 @@ class Users extends Model
 
     public function userBlogs()
     {
-        return $this->hasMany(Blog::class);
+        return $this->hasMany(Blog::class, 'User_id');
+    }
+
+    public function blogCount()
+    {
+        return $this->hasMany('Blog')->whereUserId($this->user_id)->count();
     }
 
     public function tourReview()

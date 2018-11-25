@@ -14,7 +14,7 @@
                             <img src="storage/small_cover/{{$top->tour_small_cover}}" class="img-responsive"
                                  alt="image">
                             <div class="short_info">
-                                <i class="icon_set_1_icon-44"></i>Historic Buildings<span
+                                <i class="icon_set_1_icon-44"></i>{{$top->tour_category}}<span
                                         class="price"><sup>BDT</sup> {{$top->tour_adult_price}}</span>
                             </div>
                         </a>

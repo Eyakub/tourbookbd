@@ -94,6 +94,7 @@ Route::get('/tours/churces', 'TourController@churces');
 
 Route::post('/tours.review', 'TourController@tourreview')->name('tour.review');
 Route::post('/tour/addtowishlist', 'TourController@addToWishlist')->name('tour.addtowishlist');
+Route::get('/tour-removewishlist/{id}', 'UserController@removewishlist');
 
 
 /**

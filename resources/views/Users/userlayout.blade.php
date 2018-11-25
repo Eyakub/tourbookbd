@@ -10,7 +10,7 @@
     <title>{{$user->first_name}} - TourBookBD</title>
 
     <!-- Favicons-->
-    @include('layouts.baricon')
+@include('layouts.baricon')
 
 <!-- Google web fonts -->
     <link href="https://fonts.googleapis.com/css?family=Gochi+Hand|Lato:300,400|Montserrat:400,400i,700,700i"
@@ -22,14 +22,10 @@
     <!-- SPECIFIC CSS -->
     <link href="{{URL::asset('css/admin.css')}}" rel="stylesheet">
     <link href="{{URL::asset('css/jquery.switch.css')}}" rel="stylesheet">
-    <link href="{{URL::asset('css/bootstrap.min.css')}}">
     <link href="{{URL::asset('css/statusbox.css')}}" rel="stylesheet">
-    <link href="{{URL::asset('css/bootstrap.css')}}">
-    {{--<link href="{{URL::asset('css/slider-pro.css')}}">
-    <link href="{{URL::asset('css/slider-pro.min.css')}}">--}}
     <link href="{{asset('css/blog.css')}}" rel="stylesheet">
-    <link href="{{URL::asset('assets/stylesheets/glyphicon.css')}}">
-    <link href="{{URL::asset('css/bxslider.css')}}">
+    <link rel="stylesheet" href="{{URL::to('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')}}"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 
     <script src="{{URL::to('js/html5shiv.min.js')}}"></script>
@@ -333,12 +329,46 @@
 
                                 @foreach($blogs as $blog)
                                     <div class="post">
+                                        @if(count($blog->images) !== 0)
+                                            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                                                <!-- Indicators -->
+                                                <ol class="carousel-indicators">
+                                                    @foreach($blog->images as $img)
+                                                        <li data-target="#myCarousel" data-slide-to="{{$loop->index}}"
+                                                            class="{{$loop->first? 'active': ''}}"></li>
+                                                    @endforeach
+                                                </ol>
 
-                                        @foreach($blog->images as $img)
+                                                <!-- Wrapper for slides -->
+                                                <div class="carousel-inner" role="listbox">
+                                                    @foreach($blog->images as $img)
+                                                        <div class="item {{$loop->first? 'active': ''}}">
+                                                            <img src="{{asset('storage/blog_img/'.$img->blog_img)}}"
+                                                                 alt="Image"
+                                                                 class="img-responsive"
+                                                                 style="width: 110%; height: 100%">
+                                                        </div>
+                                                    @endforeach
+
+                                                </div>
+
+                                                <!-- Left and right controls -->
+                                                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                                                    <span class="glyphicon glyphicon-chevron-left"></span>
+                                                    <span class="sr-only">Previous</span>
+                                                </a>
+                                                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                                                    <span class="glyphicon glyphicon-chevron-right"></span>
+                                                    <span class="sr-only">Next</span>
+                                                </a>
+                                            </div>
+                                        @endif
+
+                                        {{--@foreach($blog->images as $img)
                                             <img src="{{asset('storage/blog_img/'.$img->blog_img)}}"
                                                  alt="Image"
                                                  class="img-responsive" height="68" width="68">
-                                        @endforeach
+                                        @endforeach--}}
 
                                         <div class="post_info clearfix">
                                             <div class="post-left">
@@ -352,7 +382,8 @@
                                                     </li>
                                                 </ul>
                                             </div>
-                                            <div class="post-right"><i class="icon-comment"></i><a href="#">{{count($blog->comment)}} </a>
+                                            <div class="post-right"><i class="icon-comment"></i><a
+                                                        href="#">{{count($blog->comment)}} </a>
                                             </div>
                                         </div>
                                         {{--<h2>Duis aute irure dolor in reprehenderit</h2>--}}
@@ -362,7 +393,8 @@
                                             ?>
                                             {{str_limit($str, 250, '...')}}
                                         </p>
-                                        <a href="{{URL::to('/user-profile/'.$user->username.'/blog-details/'.$blog->id)}}" target="_blank" class="btn_1">Read
+                                        <a href="{{URL::to('/user-profile/'.$user->username.'/blog-details/'.$blog->id)}}"
+                                           target="_blank" class="btn_1">Read
                                             more</a>
                                     </div>
                                     <hr>
@@ -407,7 +439,7 @@
                                         </div>
                                         <!-- end rating -->
                                         <div class="wishlist_close_admin">
-                                            -
+                                            <a href="{{URL::to('/tour-removewishlist/'.$tour->id)}}">-</a>
                                         </div>
                                     </div>
                                 </div>
@@ -714,41 +746,20 @@
 </div><!-- End Search Menu -->
 
 <!-- Common scripts -->
-<script src="{{URL::to('js/jquery-2.2.4.min.js')}}"></script>
+<script
+        src="{{URL::to('https://code.jquery.com/jquery-2.2.4.js')}}"
+        integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+        crossorigin="anonymous"></script>
 <script src="{{URL::to('js/common_scripts_min.js')}}"></script>
 <script src="{{URL::to('js/functions.js')}}"></script>
+<script src="{{URL::to('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')}}"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
 
-<script src="{{URL::to('ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js')}}"></script>
 
 {{--<script src="{{URL::asset('js/jquery.sliderPro.min.js')}}"></script>--}}
-<script src="{{URL::asset('js/jquery.bxslider.min.js')}}"></script>
-<script src="{{URL::asset('js/jqurysl.js')}}"></script>
-{{--<script type="text/javascript">
-    $(document).ready(function ($) {
-        $('#Img_carousel').sliderPro({
-            width: 960,
-            height: 500,
-            fade: true,
-            arrows: true,
-            buttons: false,
-            fullScreen: false,
-            smallSize: 500,
-            startSlide: 0,
-            mediumSize: 1000,
-            largeSize: 3000,
-            thumbnailArrows: true,
-            autoplay: false
-        });
-    });
-</script>--}}
 
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('slider').bxSlider({
-            slideWidth: 500
-        })
-    });
-</script>
+
 
 <!-- Specific scripts -->
 <script src="{{URL::to('js/tabs.js')}}"></script>

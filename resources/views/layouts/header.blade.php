@@ -92,35 +92,32 @@
                         <div class="dropdown dropdown-cart">
                             @if(!empty(Session::get('id')))
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
-                                            class=" icon-basket-1"></i>Cart
-                                    (0) </a>
+                                            class=" icon-bell"></i>Notifications
+                                    (3) </a>
                                 <ul class="dropdown-menu" id="cart_items">
                                     <li>
                                         <div class="image"><img src="{{asset('img/thumb_cart_1.jpg')}}" alt="image">
                                         </div>
                                         <strong>
-                                            <a href="#">Louvre museum</a>1x $36.00 </strong>
-                                        <a href="#" class="action"><i class="icon-trash"></i></a>
+                                            <a href="#">comment on your post</a></strong>
                                     </li>
                                     <li>
-                                        <div class="image"><img src="{{asset('img/thumb_cart_2.jpg')}}" alt="image">
+                                        <div class="image"><img src="{{asset('img/thumb_cart_1.jpg')}}" alt="image">
                                         </div>
                                         <strong>
-                                            <a href="#">Versailles tour</a>2x $36.00 </strong>
-                                        <a href="#" class="action"><i class="icon-trash"></i></a>
+                                            <a href="#">comment on your post</a></strong>
                                     </li>
                                     <li>
-                                        <div class="image"><img src="{{asset('img/thumb_cart_3.jpg')}}" alt="image">
+                                        <div class="image"><img src="{{asset('img/thumb_cart_1.jpg')}}" alt="image">
                                         </div>
                                         <strong>
-                                            <a href="#">Versailles tour</a>1x $36.00 </strong>
-                                        <a href="#" class="action"><i class="icon-trash"></i></a>
+                                            <a href="#">comment on your post</a></strong>
                                     </li>
-                                    <li>
+                                    {{--<li>
                                         <div>Total: <span>$120.00</span></div>
                                         <a href="cart.html" class="button_drop">Go to cart</a>
                                         <a href="payment.html" class="button_drop outline">Check out</a>
-                                    </li>
+                                    </li>--}}
                                 </ul>
                             @endif
                         </div><!-- End dropdown-cart-->

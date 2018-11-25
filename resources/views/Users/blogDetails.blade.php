@@ -23,6 +23,8 @@
     <!-- CSS -->
     <link href="{{asset('css/base.css')}}" rel="stylesheet">
 
+    <link rel="stylesheet" href="{{URL::to('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')}}"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- CSS -->
     <link href="{{asset('css/blog.css')}}" rel="stylesheet">
 
@@ -89,10 +91,37 @@
             <div class="col-md-9">
                 <div class="box_style_1">
                     <div class="post nopadding">
-                        @foreach($blogDetails->images as $img)
-                            <img src="{{asset('storage/blog_img/'.$img->blog_img)}}" height="375" width="950"
-                                 alt="Image" class="img-responsive">
-                        @endforeach
+                        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                            <!-- Indicators -->
+                            <ol class="carousel-indicators">
+                                @foreach($blogDetails->images as $img)
+                                    <li data-target="#myCarousel" data-slide-to="{{$loop->index}}"
+                                        class="{{$loop->first? 'active': ''}}"></li>
+                                @endforeach
+                            </ol>
+
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner" role="listbox">
+                                @foreach($blogDetails->images as $img)
+                                    <div class="item {{$loop->first? 'active': ''}}">
+                                        <img src="{{asset('storage/blog_img/'.$img->blog_img)}}"
+                                             alt="Image"
+                                             class="img-responsive" style="width: 110%">
+                                    </div>
+                                @endforeach
+
+                            </div>
+
+                            <!-- Left and right controls -->
+                            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
                         <div class="post_info clearfix">
                             <div class="post-left">
                                 <ul>

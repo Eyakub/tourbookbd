@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Blog;
 use App\District;
 use App\Guide;
 use App\SuperAdmin;
@@ -89,7 +90,9 @@ class AdminController extends Controller
     /**
      * @return Tour
      */
-    public function showTourForm(){
+    public function showTourForm()
+    {
+        $this->auth_checkAdmin();
         $categorys = TourCategory::all();
         $district = District::all();
         return view('Admin.forms.inserttour')
@@ -132,6 +135,8 @@ class AdminController extends Controller
 
     public function showData()
     {
+        $this->auth_checkAdmin();
+
         $showData = Tour::all()->sortBy('tour_title');
         return view('Admin.tourstable')
             ->with('showData', $showData);
@@ -139,6 +144,8 @@ class AdminController extends Controller
 
     public function editTourInfo($id)
     {
+        $this->auth_checkAdmin();
+
         $datapass = Tour::find($id);
         $categorys = TourCategory::all();
         $districts = District::all();
@@ -151,6 +158,8 @@ class AdminController extends Controller
 
     public function updateTourInfo(request $request)
     {
+        $this->auth_checkAdmin();
+
         $tour_id = $request->tour_id;
         //var_dump($tour_id);
         $tour = Tour::find($tour_id);
@@ -210,11 +219,13 @@ class AdminController extends Controller
      */
     public function showGuideForm()
     {
+        $this->auth_checkAdmin();
         return view('Admin.forms.insertGuide');
     }
 
     public function insertGuide(request $request)
     {
+
         $this->validate($request, [
             'guide_username' => 'required',
             'guide_name' => 'required',
@@ -256,6 +267,7 @@ class AdminController extends Controller
 
     public function guidesData()
     {
+        $this->auth_checkAdmin();
         $guides = Guide::all();
         return view('Admin.guidestable')
             ->with(compact('guides'));
@@ -263,6 +275,7 @@ class AdminController extends Controller
 
     public function editGuideInfo($id)
     {
+        $this->auth_checkAdmin();
         $datapass = Guide::find($id);
         return view('Admin.forms.editGuideInfo')
             ->with(compact('datapass'));
@@ -332,6 +345,8 @@ class AdminController extends Controller
      */
     public function showUserData()
     {
+        $this->auth_checkAdmin();
+
         $showUserData = Users::all();
         return view('Admin.userstable')
             ->with('showUserData', $showUserData);
@@ -339,7 +354,11 @@ class AdminController extends Controller
 
     public function showUserProfile()
     {
-        $showUserData = Users::all();
+        $this->auth_checkAdmin();
+
+        $showUserData = Users::withCount('userBlogs')->get();
+
+        //dd($showUserData);
         return view('Admin.usersprofileview')
             ->with('showUserProfile', $showUserData);
     }
@@ -358,6 +377,7 @@ class AdminController extends Controller
      */
     public function showHotelForm()
     {
+        $this->auth_checkAdmin();
         return view('Admin.forms.inserthotelsResorts');
     }
 
@@ -392,6 +412,7 @@ class AdminController extends Controller
 
     public function showHotelData()
     {
+        $this->auth_checkAdmin();
         $showHotelData = Hotel::all();
         return view('Admin.hotelstable')
             ->with('showHotelData', $showHotelData);
@@ -399,6 +420,7 @@ class AdminController extends Controller
 
     public function showHotelAdminData()
     {
+        $this->auth_checkAdmin();
         return view('coming_soon');
     }
 

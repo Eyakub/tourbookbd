@@ -24,7 +24,7 @@ class UserController extends Controller
 
     public function userRegistration()
     {
-        $this->auth_check();
+        $this->loginPrevent();
         $reg = view('Users.registering');
         return $reg;
     }
@@ -98,9 +98,9 @@ class UserController extends Controller
     public function auth_check()
     {
         session_start();
-        $user_id = Session::get('id');
+        $user_id = Session::get('user_id');
         if ($user_id === NULL) {
-            return redirect::to('/user-login')->send();
+            return Redirect::to('/user-login')->send();
         }
     }
 
@@ -136,10 +136,10 @@ class UserController extends Controller
         $tours = DB::table('tour_wishlist')
             ->join('tour', 'tour.id', '=', 'tour_wishlist.tour_id')
             ->where('tour_wishlist.user_id', '=', $user_id)
-            ->select('tour.*')
+            ->select('tour.*', 'tour_wishlist.id')
             ->get();
-        /*$tours = Tour::with('wishlist, tour')->where('user_id', '=', $user_id)->get();
-        dd($tours);*/
+        //$tours = Tour::with('wishlist, tour')->where('user_id', '=', $user_id)->get();
+        //dd($tours);
         /**
          * $blog = Blog::find($id)
          * $img = $blog->images()->get(); //images()it's in the model function
@@ -173,7 +173,7 @@ class UserController extends Controller
         //dd($user_id);
         $this->validate($request, [
             'blog_desc' => 'required',
-            'blog_img.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:4048'
+            'blog_img.*' => 'image|mimes:jpeg,png,jpg,gif,svg'
         ]);
 
         /**
@@ -222,6 +222,9 @@ class UserController extends Controller
 
     public function blogDetails($username, $id)
     {
+
+        //$this->auth_check();
+
         $blogDetails = Blog::with(['images'])->find($id);
         $blogOwner = Users::where('username', '=', $username)->first();
         //$blogDetailsView = view('Users.blogDetails');
@@ -238,6 +241,13 @@ class UserController extends Controller
 
         return view('Users.blogDetails')
             ->with(compact('blogDetails', 'category', 'blogOwner', 'comments', 'username'));
+    }
+
+    public function removewishlist($id)
+    {
+        $remove = TourWishlist::find($id);
+        $remove->delete();
+        return Redirect::back()->withErrors(['msg', 'Item removed Successful']);
     }
 
 

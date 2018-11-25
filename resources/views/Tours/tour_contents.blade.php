@@ -9,10 +9,11 @@
                 </div>
                 <div class="img_container">
                     <a href="{{URL::to('/tours/single-tour/'.$tour->id)}}">
-                        <img src="{{asset('storage/small_cover/'.$tour->tour_small_cover)}}" width="800" height="533" class="img-responsive" alt="Image">
-                        {{--<div class="short_info">
-                            <i class="icon_set_1_icon-44"></i>Historic Buildings<span class="price"><sup>$</sup>45</span>
-                        </div>--}}
+                        <img src="{{asset('storage/small_cover/'.$tour->tour_small_cover)}}" style="height: 290px; width: 800px" class="img-responsive" alt="Image">
+                        <div class="short_info">
+                            <i class="icon_set_1_icon-44"></i>{{$tour->tour_category}}<span
+                                    class="price"><sup>BDT</sup> {{$tour->tour_adult_price}}</span>
+                        </div>
                     </a>
                 </div>
                 <div class="tour_title">
