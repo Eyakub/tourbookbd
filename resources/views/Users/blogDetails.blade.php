@@ -78,8 +78,9 @@
             <ul>
                 <li><a href="{{URL::to('/')}}">Home</a>
                 </li>
-                <li><a href="{{URL::to('/blogs')}}">Tour Blog</a>
+                <li><a>User Profile</a>
                 </li>
+                <li>User Blog</li>
                 <li>Blog Details</li>
             </ul>
         </div>
@@ -136,8 +137,9 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="post-right"><i class="icon-user"></i><a
-                                        href="#"> {{$blogOwner->first_name}}</a></div>
+                            <div class="post-right"><a
+                                        href="{{URL::to('/delete-personal-blog/'.$blogDetails->id)}}"
+                                        class="icon-error"></a></div>
                         </div>
                         {{--<h2>Title</h2>--}}
                         <p>

@@ -254,6 +254,14 @@ class UserController extends Controller
         return Redirect::back()->withErrors(['msg', 'Item removed Successful']);
     }
 
+    public function deletePersonalBlog($id)
+    {
+        $remove = Blog::find($id);
+        $username = Session::get('username');
+        $remove->delete();
+        return Redirect::to('/user-profile/'.$username);
+    }
+
 
     public function imageslider()
     {
