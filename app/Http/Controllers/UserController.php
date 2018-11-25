@@ -151,8 +151,12 @@ class UserController extends Controller
         //dd($blogs);
         $blogCat = TourCategory::all();
 
-        return view('Users.userlayout')
-            ->with(compact('user', 'blogCat', 'blogs', 'username', 'blogImage', 'tours'));
+        if($user_id){
+            return view('Users.userlayout')
+                ->with(compact('user', 'blogCat', 'blogs', 'username', 'blogImage', 'tours'));
+        }else{
+            return redirect::to('user-login');
+        }
     }
 
     public function logout()

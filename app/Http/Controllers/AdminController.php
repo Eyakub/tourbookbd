@@ -37,8 +37,12 @@ class AdminController extends Controller
 
     public function showAdminForm ()
     {
-        $this->loginPreventAdmin();
-        return view('Admin.superadmin.adminlogin');
+        $admin_id = Session::get('admin_id');
+        if($admin_id){
+            return redirect::to('/admin-panel');
+        }else{
+            return view('Admin.superadmin.adminlogin');
+        }
     }
 
     public function superadminlogin(request $request)

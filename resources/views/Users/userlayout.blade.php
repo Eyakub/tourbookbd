@@ -330,11 +330,11 @@
                                 @foreach($blogs as $blog)
                                     <div class="post">
                                         @if(count($blog->images) !== 0)
-                                            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                                            <div id="myCarousel1" class="carousel slide" data-ride="carousel">
                                                 <!-- Indicators -->
                                                 <ol class="carousel-indicators">
                                                     @foreach($blog->images as $img)
-                                                        <li data-target="#myCarousel" data-slide-to="{{$loop->index}}"
+                                                        <li data-target="#myCarousel1" data-slide-to="{{$loop->index}}"
                                                             class="{{$loop->first? 'active': ''}}"></li>
                                                     @endforeach
                                                 </ol>
@@ -346,18 +346,18 @@
                                                             <img src="{{asset('storage/blog_img/'.$img->blog_img)}}"
                                                                  alt="Image"
                                                                  class="img-responsive"
-                                                                 style="width: 110%; height: 100%">
+                                                                 style="width: 110%;">
                                                         </div>
                                                     @endforeach
 
                                                 </div>
 
                                                 <!-- Left and right controls -->
-                                                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                                                <a class="left carousel-control" href="#myCarousel1" data-slide="prev">
                                                     <span class="glyphicon glyphicon-chevron-left"></span>
                                                     <span class="sr-only">Previous</span>
                                                 </a>
-                                                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                                                <a class="right carousel-control" href="#myCarousel1" data-slide="next">
                                                     <span class="glyphicon glyphicon-chevron-right"></span>
                                                     <span class="sr-only">Next</span>
                                                 </a>

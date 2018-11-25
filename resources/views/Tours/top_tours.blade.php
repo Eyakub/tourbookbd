@@ -11,7 +11,7 @@
                     <div class="ribbon_3 popular"><span>Popular</span></div>
                     <div class="img_container">
                         <a href="{{URL::to('/tours/single-tour/'.$top->id)}}">
-                            <img src="storage/small_cover/{{$top->tour_small_cover}}" class="img-responsive"
+                            <img src="{{asset('storage/small_cover/'.$top->tour_small_cover)}}" class="img-responsive"
                                  alt="image">
                             <div class="short_info">
                                 <i class="icon_set_1_icon-44"></i>{{$top->tour_category}}<span
