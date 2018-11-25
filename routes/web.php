@@ -77,6 +77,7 @@ Route::post('/users/save-blog', 'UserController@saveBlog')->name('blog.save');
 Route::get('/user-profile/{username}/blog-details/{id}', 'UserController@blogDetails');
 Route::post('/blog.comment.own', 'UserController@saveComment')->name('blog.comment.own');
 Route::get('/delete-personal-blog/{id}', 'UserController@deletePersonalBlog');
+Route::post('update-user.info', 'UserController@updateUserProfile')->name('update-user.info');
 
 
 

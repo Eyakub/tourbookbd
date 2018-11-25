@@ -146,92 +146,119 @@
                     <!-- End row -->
 
                     <div class="divider"></div>
+                    <form action="{{route('update-user.info')}}" method="post" enctype="multipart/form-data">
+                        {{csrf_field()}}
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h4>Edit profile</h4>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                                <div class="form-group">
+                                    <label>First name</label>
+                                    <input class="form-control" name="first_name" value="{{$user->first_name}}"
+                                           type="text">
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                                <div class="form-group">
+                                    <label>Last name</label>
+                                    <input class="form-control" name="last_name" value="{{$user->last_name}}"
+                                           type="text">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End row -->
 
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h4>Edit profile</h4>
-                        </div>
-                        <div class="col-md-6 col-sm-6">
-                            <div class="form-group">
-                                <label>First name</label>
-                                <input class="form-control" name="first_name" id="first_name" type="text">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                                <div class="form-group">
+                                    <label>Phone number</label>
+                                    <input class="form-control" name="phone_number" value="{{$user->phone_number}}"
+                                           id="email_2" type="text">
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                                <div class="form-group">
+                                    <label>Date of birth
+                                        <small>(dd/mm/yyyy)</small>
+                                    </label>
+                                    <input class="form-control" name="date_of_birth" value="{{$user->date_of_birth}}"
+                                           id="email" type="text">
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-6">
-                            <div class="form-group">
-                                <label>Last name</label>
-                                <input class="form-control" name="last_name" id="last_name" type="text">
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End row -->
+                        <!-- End row -->
 
-                    <div class="row">
-                        <div class="col-md-6 col-sm-6">
-                            <div class="form-group">
-                                <label>Phone number</label>
-                                <input class="form-control" name="email_2" id="email_2" type="text">
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-6">
-                            <div class="form-group">
-                                <label>Date of birth
-                                    <small>(dd/mm/yyyy)</small>
-                                </label>
-                                <input class="form-control" name="email" id="email" type="text">
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End row -->
+                        <hr>
 
-                    <hr>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h4>Edit address</h4>
-                        </div>
-                        <div class="col-md-6 col-sm-6">
-                            <div class="form-group">
-                                <label>Street address</label>
-                                <input class="form-control" name="first_name" id="first_name" type="text">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h4>Edit address</h4>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                                <div class="form-group">
+                                    <label>Street address</label>
+                                    <input class="form-control" name="street_address" value="{{$user->street_address}}"
+                                           id="first_name" type="text">
+                                    <input type="hidden" value="{{$user->id}}" name="user_id">
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                                <div class="form-group">
+                                    <label>City/Town</label>
+                                    <input class="form-control" name="city" value="{{$user->city}}" id="last_name"
+                                           type="text">
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-6">
-                            <div class="form-group">
-                                <label>City/Town</label>
-                                <input class="form-control" name="last_name" id="last_name" type="text">
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End row -->
+                        <!-- End row -->
 
-                    <div class="row">
-                        <div class="col-md-6 col-sm-6">
-                            <div class="form-group">
-                                <label>Zip code</label>
-                                <input class="form-control" name="email" id="email" type="text">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                                <div class="form-group">
+                                    <label>Zip code</label>
+                                    <input class="form-control" name="zip_code" value="{{$user->zip_code}}" id="email"
+                                           type="text">
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                                <div class="form-group">
+                                    <label>Country</label>
+                                    <select id="country" class="form-control" name="country">
+                                        <option value="{{$user->country}}">{{$user->country}}</option>
+                                        @foreach($country as $c)
+                                            <option value="{{$c->country_name}}">{{$c->country_name}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-6">
+                        <!-- End row -->
+
+                        <hr>
+                        <h4>Upload profile photo</h4>
+                        <div class="form-inline upload_1">
                             <div class="form-group">
-                                <label>Country</label>
-                                <select id="country" class="form-control" name="country">
-                                    <option value="">Select...</option>
-                                </select>
+                                <input type="file" name="src_user" id="file-input">
+                                <input class="form-control-file" value="{{$user->src_user}}"
+                                       name="src_user_old" type="hidden">
                             </div>
                         </div>
-                    </div>
-                    <!-- End row -->
-
-                    <hr>
-                    <h4>Upload profile photo</h4>
-                    <div class="form-inline upload_1">
-                        <div class="form-group">
-                            <input type="file" name="files[]" id="js-upload-files" multiple>
+                        <hr>
+                        <input type="submit" class="btn_1 green" value="Update Profile">
+                    </form>
+                    <br>
+                    @if(Session::has('success'))
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="alert alert-success">
+                                    {{Session::get('success')}}
+                                </div>
+                            </div>
                         </div>
-                        <button type="submit" class="btn_1 green" id="js-upload-submit">Upload file</button>
-                    </div>
+                    @endif
 
-                    <!-- Hidden on mobiles -->
+                <!-- Hidden on mobiles -->
                     {{--<div class="hidden-xs">
                         <!-- Drop Zone -->
                         <h5>Or drag and drop files below</h5>
@@ -255,8 +282,7 @@
                         </div>
                         <!-- End Hidden on mobiles -->
                     </div>--}}
-                    <hr>
-                    <button type="submit" class="btn_1 green">Update Profile</button>
+
                 </section>
                 <!-- End section 4 -->
 

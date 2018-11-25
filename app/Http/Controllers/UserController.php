@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\{Blog, BlogImage, Comment, Tour, TourCategory, TourWishlist, Users};
+use App\{Blog, BlogImage, Comment, Country, Tour, TourCategory, TourWishlist, Users};
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Redirect;
 
@@ -133,6 +134,7 @@ class UserController extends Controller
     {
         $user_id = Session::get('id');
         $user = Users::find($user_id);
+        $country = Country::all();
         $tours = DB::table('tour_wishlist')
             ->join('tour', 'tour.id', '=', 'tour_wishlist.tour_id')
             ->where('tour_wishlist.user_id', '=', $user_id)
@@ -153,10 +155,53 @@ class UserController extends Controller
 
         if($user_id){
             return view('Users.userlayout')
-                ->with(compact('user', 'blogCat', 'blogs', 'username', 'blogImage', 'tours'));
+                ->with(compact('user', 'blogCat', 'blogs', 'username', 'blogImage', 'tours', 'country'));
         }else{
             return redirect::to('user-login');
         }
+    }
+
+    public function updateUserProfile(request $request)
+    {
+        $user_id = $request->input('user_id');
+        $username = Session::get('username');
+        $user = Users::find($user_id);
+        //dd($request->all());
+        /*$this->validate($request, [
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'phone_number' => 'required',
+            'date_of_birth' => 'required',
+            'zip_code' => 'required',
+            'street_address' => 'required',
+            'city' => 'required',
+            'country' => 'required',
+        ]);*/
+        //dd($request->all());
+        if($request->hasFile('src_user')){
+            $userPicture = time().'-'.$request->file('src_user')->getClientOriginalName();
+            $userOldPicture = $request->input('src_user_old');
+            $request->file('src_user')->storeAs('public/user_images/', $userPicture);
+
+            //delete old photo
+            Storage::delete('public/user_images/'.$userOldPicture);
+        }else{
+            $userPicture = $request->input('src_user_old');
+        }
+
+        $user->first_name = $request->input('first_name');
+        $user->last_name = $request->input('last_name');
+        $user->phone_number = $request->input('phone_number');
+        $user->date_of_birth = $request->input('date_of_birth');
+        $user->zip_code = $request->input('zip_code');
+        $user->street_address = $request->input('street_address');
+        $user->city = $request->input('city');
+        $user->country = $request->input('country');
+        $user->src_user = $userPicture;
+        //dd($user);
+        $user->save();
+
+        return redirect::to('/user-profile/'.$username)->with('success', 'Profile Updated Successfully');
     }
 
     public function logout()
