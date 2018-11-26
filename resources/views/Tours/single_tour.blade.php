@@ -97,7 +97,7 @@
                 </li>
                 <li><a href="{{URL::to('/tours')}}">Tours</a>
                 </li>
-                <li>Single Tours</li>
+                <li>{{$tour->tour_title}}</li>
             </ul>
         </div>
     </div>

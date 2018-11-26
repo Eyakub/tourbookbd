@@ -12,7 +12,7 @@
     <meta name="description"
           content="Citytours - Premium site template for city tours agencies, transfers and tickets.">
     <meta name="author" content="Eyakub">
-    <title>TourBookBD - A Place of heaven</title>
+    <title>Sign In - TourBookBD</title>
 
     <!-- Favicons-->
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">

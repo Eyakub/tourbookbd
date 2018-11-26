@@ -135,6 +135,7 @@ class UserController extends Controller
         $user_id = Session::get('id');
         $user = Users::find($user_id);
         $country = Country::all();
+        $userAll = Users::all();
         $tours = DB::table('tour_wishlist')
             ->join('tour', 'tour.id', '=', 'tour_wishlist.tour_id')
             ->where('tour_wishlist.user_id', '=', $user_id)
@@ -155,7 +156,7 @@ class UserController extends Controller
 
         if($user_id){
             return view('Users.userlayout')
-                ->with(compact('user', 'blogCat', 'blogs', 'username', 'blogImage', 'tours', 'country'));
+                ->with(compact('userAll','user', 'blogCat', 'blogs', 'username', 'blogImage', 'tours', 'country'));
         }else{
             return redirect::to('user-login');
         }

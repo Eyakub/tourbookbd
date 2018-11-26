@@ -92,20 +92,23 @@
             <nav>
                 <ul>
                     <li>
-                        <a href="{{URL::to('/user-profile/'.$username.'#profile')}}"
+                        <a href="#profile"
                            class="icon-profile"><span>Profile</span></a>
                     </li>
                     <li>
-                        <a href="{{URL::to('/user-profile/'.$username.'#timeline')}}" class="icon-profile"><span>Timeline</span></a>
+                        <a href="#timeline" class="icon-profile"><span>Timeline</span></a>
                     </li>
                     <li>
-                        <a href="{{URL::to('/user-profile/'.$username.'#wishlist')}}" class="icon-wishlist"><span>Wishlist</span></a>
+                        <a href="#wishlist" class="icon-wishlist"><span>Wishlist</span></a>
                     </li>
                     <li>
-                        <a href="{{URL::to('/user-profile/'.$username.'#settings')}}" class="icon-settings"><span>Settings</span></a>
+                        <a href="#settings" class="icon-settings"><span>Settings</span></a>
                     </li>
                     <li>
-                        <a href="{{URL::to('/user-profile/'.$username.'#bookings')}}" class="icon-booking"><span>Bookings</span></a>
+                        <a href="#bookings" class="icon-booking"><span>Bookings</span></a>
+                    </li>
+                    <li>
+                        <a href="#events" class="icon-eventful"><span>Events</span></a>
                     </li>
                 </ul>
             </nav>
@@ -464,9 +467,9 @@
                                             <small>(75)</small>
                                         </div>
                                         <!-- end rating -->
-                                        <div class="wishlist_close_admin">
-                                            <a href="{{URL::to('/tour-removewishlist/'.$tour->id)}}">-</a>
-                                        </div>
+                                        <a href="{{URL::to('/tour-removewishlist/'.$tour->id)}}">
+                                            <div class="wishlist_close_admin">-</div>
+                                        </a>
                                     </div>
                                 </div>
                                 <!-- End box tour -->
@@ -748,6 +751,96 @@
                 </section>
                 <!-- End section 1 -->
 
+                <section id="events">
+                    <div class="row" style="padding-bottom: 25px; padding-left: 30px; padding-right: 40px">
+                        <form method="post" action="">
+                            <div class="row">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <h4>Create an Event</h4>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6">
+                                        <div class="form-group">
+                                            <label>Event Title</label>
+                                            <input class="form-control" name="event_title" value=""
+                                                   type="text">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6">
+                                        <div class="form-group">
+                                            <label>Event Place</label>
+                                            <input class="form-control" name="event_place" value=""
+                                                   type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End row -->
+
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-6">
+                                        <div class="form-group">
+                                            <label>Event Time</label>
+                                            <input class="form-control" name="event_time" value=""
+                                                   id="email_2" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6">
+                                        <div class="form-group">
+                                            <label>Date
+                                                <small>(dd/mm/yyyy)</small>
+                                            </label>
+                                            <input class="form-control" name="event_date" value=""
+                                                   id="email" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12">
+                                        <div class="form-group">
+                                        <textarea name="event_details" id="textarea-input"
+                                                  rows="9"
+                                                  placeholder="Event Description..."
+                                                  class="form-control"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-6">
+                                        <div class="form-group">
+                                            <label>Tag People</label>
+                                            <select multiple="multiple" id="selectUser" name="event_tag"
+                                                    class="form-control">
+                                                <option selected="selected" value="Eyakub">Select</option>
+                                                @foreach($userAll as $all)
+                                                    <option value="{{$all->user_id}}">{{$all->username}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6">
+                                        <div class="form-group">
+                                            <label>Tagged People</label>
+                                            <div id="divResult"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-6">
+                                        <div class="form-group">
+                                            <input type="submit" class="btn btn-primary">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <hr>
+                        <hr>
+
+                    </div>
+                </section>
+
             </div>
             <!-- End content -->
         </div>
@@ -795,6 +888,20 @@
 <script>
     $('.wishlist_close_admin').on('click', function (c) {
         $(this).parent().parent().parent().fadeOut('slow', function (c) {
+        });
+    });
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#selectUser').change(function () {
+            var selectedOption = $('#selectUser option:selected');
+            if (selectedOption.length > 0) {
+                var resultString = '';
+                selectedOption.each(function () {
+                    resultString += $(this).val() + ', ' + $(this).text() + ' ';
+                });
+                $('#divResult').html(resultString);
+            }
         });
     });
 </script>
