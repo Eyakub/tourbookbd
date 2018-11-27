@@ -6,14 +6,8 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <meta name="description"
-          content="TourBookBD.">
-    <meta name="author" content="Eyakub">
-    <title>TourBookBD - A place of natural beauty</title>
+    @include('layouts.metadata')
+    <title>Tours - TourBookBD</title>
 
     <!-- Favicons-->
     <link rel="shortcut icon" href="{{asset('img/favicon.ico')}}" type="image/x-icon">
@@ -325,7 +319,7 @@
     });
 </script>
 <!-- Map -->
-<script src="http://maps.googleapis.com/maps/api/js"></script>
+<script src="{{URL::to('http://maps.googleapis.com/maps/api/js')}}"></script>
 
 
 <script src="{{URL::to('js/map.js')}}"></script>

@@ -12,7 +12,8 @@
                     <div class="ribbon_3 popular"><span>Popular</span></div>
                     <div class="img_container">
                         <a href="{{URL::to('/single-hotel/'.$top->id)}}">
-                            <img src="storage/small_cover/{{$top->hotels_small_cover}}" width="800" height="533" class="img-responsive" alt="image">
+                            <img src="storage/small_cover/{{$top->hotels_small_cover}}" width="800" height="533"
+                                 class="img-responsive" alt="image">
                             <div class="score"><span>7.5</span>Good</div>
                             <div class="short_info hotel">
                                 From/Per night<span class="price"><sup>$</sup>59</span>
@@ -28,8 +29,14 @@
                         </div>
                         <!-- end rating -->
                         <div class="wishlist">
-                            <a class="tooltip_flip tooltip-effect-1" href="#">+<span class="tooltip-content-flip"><span
+                            @if(Session::has('user_id'))<a class="tooltip_flip tooltip-effect-1" href="#">+<span
+                                        class="tooltip-content-flip"><span
                                             class="tooltip-back">Add to wishlist</span></span></a>
+                            @else
+                                <a class="tooltip_flip tooltip-effect-1" href="#"><span
+                                            class="tooltip-content-flip"><span
+                                                class="tooltip-back">Add to wishlist</span></span></a>
+                            @endif
                         </div>
                         <!-- End wish list-->
                     </div>

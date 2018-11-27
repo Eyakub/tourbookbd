@@ -35,7 +35,7 @@ class TourController extends Controller
 
     public function allTour()
     {
-        $tours = Tour::paginate(6);
+        $tours = Tour::with('review')->paginate(6);
 
         return $this->countValue($tours);
     }
@@ -44,6 +44,7 @@ class TourController extends Controller
     {
         //$tour = Tour::find($id);
         $tour = Tour::with(['review.user'])->find($id);
+
 
         //dd($comments->pluck('user_id')); //get specific value from collection
         return view('Tours.single_tour')

@@ -838,6 +838,33 @@
                         <hr>
                         <hr>
 
+                        <div class="strip_booking">
+                            <div class="row">
+                                <div class="col-md-2 col-sm-2">
+                                    <div class="date">
+                                        <span class="month">Dec</span>
+                                        <span class="day"><strong>30</strong>Fri</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-5">
+                                    <h3 class="tours_booking">Event One<span>10 People</span></h3>
+                                </div>
+                                <div class="col-md-2 col-sm-3">
+                                    <ul class="info_booking">
+                                        <li><strong>Tour Time</strong> 10:00AM</li>
+                                        <li><strong>Tour Date</strong> Sat. 20 Dec. 2015</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-2 col-sm-2">
+                                    <div class="booking_buttons">
+                                        <a href="#0" class="btn_2">Details</a>
+                                        <a href="#0" class="btn_3">Delete</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End row -->
+                        </div>
+
                     </div>
                 </section>
 

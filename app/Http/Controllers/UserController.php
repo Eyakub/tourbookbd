@@ -89,7 +89,7 @@ class UserController extends Controller
     public function loginPrevent()
     {
         session_start();
-        $user_id = Session::get('id');
+        $user_id = Session::get('user_id');
         $username = Session::get('username');
         if ($user_id !== NULL) {
             return redirect::to('/user-profile/' . $username)->send();
@@ -116,7 +116,7 @@ class UserController extends Controller
             ->first();
 
         if ($user !== NULL) {
-            Session::put('id', $user->id);
+            Session::put('user_id', $user->id);
             Session::put('username', $user->username);
             $name = $user->first_name . ' ' . $user->last_name;
             Session::put('name', $name);
@@ -132,7 +132,7 @@ class UserController extends Controller
 
     public function userprofile(request $reqest, $username)
     {
-        $user_id = Session::get('id');
+        $user_id = Session::get('user_id');
         $user = Users::find($user_id);
         $country = Country::all();
         $userAll = Users::all();

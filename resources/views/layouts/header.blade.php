@@ -7,7 +7,7 @@
 
                 <div class="col-md-6 col-sm-6 col-xs-6">
                     <ul id="top_links">
-                        @if(!empty(Session::get('id')))
+                        @if(!empty(Session::get('user_id')))
                             <li>
                                 <a href="{{URL::to('/user-profile/'.(Session::get('username')))}}">{{Session::get('name')}}</a>
                             </li>
@@ -90,7 +90,7 @@
                     </li>
                     <li>
                         <div class="dropdown dropdown-cart">
-                            @if(!empty(Session::get('id')))
+                            @if(!empty(Session::get('user_id')))
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
                                             class=" icon-bell"></i>Notifications
                                     (3) </a>

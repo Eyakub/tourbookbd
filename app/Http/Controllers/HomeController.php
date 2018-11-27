@@ -21,13 +21,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $topTours = Tour::paginate(6);
+        $topTour = Tour::with('review')->paginate(6);
+        $allTour = Tour::all();
         $topHotels = Hotel::paginate(6);
         $totalUser = Users::all()->count();
         $totalTour = Tour::all()->count();
 
         $topTourContent = view('Tours.top_tours')
-            ->with('topTour', $topTours);
+            ->with(compact('topTour', 'allTour', 'reviewCount'));
         $topHotelContent = view('Hotels.top_hotels')
             ->with('topHotel', $topHotels);
 
@@ -70,4 +71,5 @@ class HomeController extends Controller
         return view('layouts.touristPublicProfile')
             ->with(compact('guidePublic'));
     }
+
 }

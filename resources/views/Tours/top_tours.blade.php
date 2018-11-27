@@ -8,7 +8,7 @@
         @foreach($topTour as $top)
             <div class="col-md-4 col-sm-6 wow zoomIn" data-wow-delay="0.1s">
                 <div class="tour_container">
-                    <div class="ribbon_3 popular"><span>Popular</span></div>
+                    <div class="ribbon_3"><span>Top Rated</span></div>
                     <div class="img_container">
                         <a href="{{URL::to('/tours/single-tour/'.$top->id)}}">
                             <img src="{{asset('storage/small_cover/'.$top->tour_small_cover)}}" class="img-responsive"
@@ -25,13 +25,19 @@
                             <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i
                                     class="icon-smile voted"></i><i class="icon-smile voted"></i><i
                                     class="icon-smile"></i>
-                            <small>(75)</small>
+                            <small>({{count($top->review)}})</small>
                         </div>
                         <!-- end rating -->
                         <div class="wishlist">
-                            <a class="tooltip_flip tooltip-effect-1" href="javascript:void(0);">+<span
-                                        class="tooltip-content-flip"><span
-                                            class="tooltip-back">Add to wishlist</span></span></a>
+                        @if(Session::has('user_id'))
+                                <a class="tooltip_flip tooltip-effect-1" href="javascript:void(0);">+<span
+                                            class="tooltip-content-flip"><span
+                                                class="tooltip-back">Add to wishlist</span></span></a>
+                            @else
+                                <a class="tooltip_flip tooltip-effect-1" href="javascript:void(0);"><span
+                                            class="tooltip-content-flip"><span
+                                                class="tooltip-back">Add to wishlist</span></span></a>
+                            @endif
                         </div>
                         <!-- End wish list-->
                     </div>
@@ -44,7 +50,8 @@
     </div>
     <!-- End row -->
     <p class="text-center add_bottom_30">
-        <a href="{{URL::to('/tours')}}" class="btn_1 medium"><i class="icon-eye-7"></i>View all tours (144) </a>
+        <a href="{{URL::to('/tours')}}" class="btn_1 medium"><i class="icon-eye-7"></i>View all tours
+            ({{count($allTour)}}) </a>
     </p>
 
 @stop

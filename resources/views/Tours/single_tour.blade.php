@@ -192,7 +192,7 @@
                 <div class="row">
                     <div class="col-md-3">
                         <h3>Reviews </h3>
-                        @if(!empty(Session::get('id')))
+                        @if(!empty(Session::get('user_id')))
                             <a href="#" class="btn_1 add_bottom_30" data-toggle="modal" data-target="#myReview">Leave a
                                 review</a>
                         @else
@@ -354,12 +354,12 @@
                             </tr>
                             </tbody>
                         </table>
-                        @if(!empty(Session::get('id')))
+                        @if(!empty(Session::get('user_id')))
                             <a class="btn_full" href="{{URL::to('/tours/bookings/carts/')}}">Book now</a>
                             @else
                             <a class="btn_full" href="{{URL::to('/user-login')}}">Login to Book your Tour</a>
                         @endif
-                        @if(!empty(Session::get('id')))
+                        @if(!empty(Session::get('user_id')))
                             <form method="post" action="{{ route('tour.addtowishlist') }}" id="wishlist">
                                 {{csrf_field()}}
                                 <input type="hidden" name="tour_id" value="{{$tour->id}}">

@@ -1,22 +1,20 @@
 <!DOCTYPE html>
-<!--[if IE 8]><html class="ie ie8"> <![endif]-->
-<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8"> <![endif]-->
+<!--[if IE 9]>
+<html class="ie ie9"> <![endif]-->
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <meta name="description" content="TourBookBD -  a natural beauty of Bangladesh.">
-    <meta name="author" content="Eyakub">
-    <title>TourBookBD</title>
+    @include('layouts.metadata')
+    <title>Tour Booking Cart</title>
 
     <!-- Favicons-->
-    @include('layouts.baricon')
+@include('layouts.baricon')
 
-    <!-- Google web fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Gochi+Hand|Lato:300,400|Montserrat:400,400i,700,700i" rel="stylesheet">
+<!-- Google web fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Gochi+Hand|Lato:300,400|Montserrat:400,400i,700,700i"
+          rel="stylesheet">
 
     <!-- CSS -->
     <link href="{{asset('css/base.css')}}" rel="stylesheet">
@@ -35,7 +33,8 @@
 <body>
 
 <!--[if lte IE 8]>
-<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a>.</p>
+<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a>.</p>
 <![endif]-->
 
 <div id="preloader">
@@ -98,7 +97,7 @@
             <ul>
                 <li><a href="#">Home</a>
                 </li>
-                <li><a href="#">Category</a>
+                <li><a href="{{URL::to('/tours')}}">Tours</a>
                 </li>
                 <li>Page active</li>
             </ul>
@@ -109,95 +108,6 @@
     <div class="container margin_60">
         <div class="row">
             <div class="col-md-8">
-                <table class="table table-striped cart-list add_bottom_30">
-                    <thead>
-                    <tr>
-                        <th>
-                            Item
-                        </th>
-                        <th>
-                            Quantity
-                        </th>
-                        <th>
-                            Discount
-                        </th>
-                        <th>
-                            Total
-                        </th>
-                        <th>
-                            Actions
-                        </th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>
-                            <div class="thumb_cart">
-                                <img src="img/thumb_cart_1.jpg" alt="Image">
-                            </div>
-                            <span class="item_cart">Louvre Museum tickets</span>
-                        </td>
-                        <td>
-                            <div class="numbers-row">
-                                <input type="text" value="1" id="quantity_1" class="qty2 form-control" name="quantity_1">
-                            </div>
-                        </td>
-                        <td>
-                            0%
-                        </td>
-                        <td>
-                            <strong>€24,71</strong>
-                        </td>
-                        <td class="options">
-                            <a href="#"><i class=" icon-trash"></i></a><a href="#"><i class="icon-ccw-2"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="thumb_cart">
-                                <img src="img/thumb_cart_1.jpg" alt="Image">
-                            </div>
-                            <span class="item_cart">Eiffell tour</span>
-                        </td>
-                        <td>
-                            <div class="numbers-row">
-                                <input type="text" value="0" id="quantity_2" class="qty2 form-control" name="quantity_2">
-                            </div>
-                        </td>
-                        <td>
-                            0%
-                        </td>
-                        <td>
-                            <strong>€0,0</strong>
-                        </td>
-                        <td class="options">
-                            <a href="#"><i class=" icon-trash"></i></a><a href="#"><i class="icon-ccw-2"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="thumb_cart">
-                                <img src="img/thumb_cart_1.jpg" alt="Image">
-                            </div>
-                            <span class="item_cart">Senna river Tour</span>
-                        </td>
-                        <td>
-                            <div class="numbers-row">
-                                <input type="text" value="1" id="quantity_3" class="qty2 form-control" name="quantity_3">
-                            </div>
-                        </td>
-                        <td>
-                            0%
-                        </td>
-                        <td>
-                            <strong>€24,71</strong>
-                        </td>
-                        <td class="options">
-                            <a href="#"><i class=" icon-trash"></i></a><a href="#"><i class="icon-ccw-2"></i></a>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
                 <table class="table table-striped options_cart">
                     <thead>
                     <tr>
@@ -315,27 +225,10 @@
                             </label>
                         </td>
                     </tr>
-                    <tr>
-                        <td>
-                            <i class="icon_set_1_icon-40"></i>
-                        </td>
-                        <td>
-                            Bike rent <strong>+$26*</strong>
-                        </td>
-                        <td>
-                            <label class="switch-light switch-ios pull-right">
-                                <input type="checkbox" name="option_7" id="option_7" value="">
-                                <span>
-                    <span>No</span>
-										<span>Yes</span>
-										</span>
-                                <a></a>
-                            </label>
-                        </td>
-                    </tr>
                     </tbody>
                 </table>
-                <div class="add_bottom_15"><small>* Prices for person.</small>
+                <div class="add_bottom_15">
+                    <small>* Prices for person.</small>
                 </div>
             </div>
             <!-- End col-md-8 -->
@@ -411,7 +304,7 @@
 <div class="search-overlay-menu">
     <span class="search-overlay-close"><i class="icon_set_1_icon-77"></i></span>
     <form role="search" id="searchform" method="get">
-        <input value="" name="q" type="search" placeholder="Search..." />
+        <input value="" name="q" type="search" placeholder="Search..."/>
         <button type="submit"><i class="icon_set_1_icon-78"></i>
         </button>
     </form>
