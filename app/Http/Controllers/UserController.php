@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\{Blog, BlogImage, Comment, Country, Tour, TourCategory, TourWishlist, Users};
+use App\{Blog, BlogImage, Comment, Country, Tour, TourBooking, TourCategory, TourWishlist, Users};
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
@@ -141,6 +141,8 @@ class UserController extends Controller
             ->where('tour_wishlist.user_id', '=', $user_id)
             ->select('tour.*', 'tour_wishlist.id')
             ->get();
+
+        $booking = TourBooking::with('user')->where('booking_status', '=', 1)->get();
         //$tours = Tour::with('wishlist, tour')->where('user_id', '=', $user_id)->get();
         //dd($tours);
         /**
@@ -156,7 +158,7 @@ class UserController extends Controller
 
         if($user_id){
             return view('Users.userlayout')
-                ->with(compact('userAll','user', 'blogCat', 'blogs', 'username', 'blogImage', 'tours', 'country'));
+                ->with(compact('userAll','user', 'blogCat', 'blogs', 'username', 'blogImage', 'tours', 'country', 'booking'));
         }else{
             return redirect::to('user-login');
         }
@@ -307,6 +309,7 @@ class UserController extends Controller
         $remove->delete();
         return Redirect::to('/user-profile/'.$username);
     }
+
 
 
     public function imageslider()

@@ -12,4 +12,9 @@ class TourBooking extends Model
     {
         return $this->hasOne(Tour::class);
     }
+
+    public function user()
+    {
+        return $this->belongsTo(Users::class);
+    }
 }
