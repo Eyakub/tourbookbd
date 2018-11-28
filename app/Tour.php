@@ -24,4 +24,9 @@ class Tour extends Model
         return $this->belongsToMany(TourWishlist::class);
     }
 
+    public function booking()
+    {
+        return $this->hasMany(TourBooking::class);
+    }
+
 }

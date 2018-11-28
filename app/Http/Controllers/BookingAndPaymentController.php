@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Tour;
+use App\TourBooking;
+use Faker\Provider\DateTime;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
@@ -62,6 +64,7 @@ class BookingAndPaymentController extends Controller
     {
         $user_id = Session::get('user_id');
         $bkash_transaction_id = $request->input('bkash_transaction_id');
+        Session::put('bkash_transaction_id', $bkash_transaction_id);
 
         return redirect::to('/tours/bookings/carts/payments/')->with('submitbkash', 'Booking Pending');
     }
@@ -70,8 +73,34 @@ class BookingAndPaymentController extends Controller
     {
         $tour_id = Session::get('tour_id');
         $user_id = Session::get('user_id');
-        $tour_date = Session::get('tour_date');
+        $dateValue = strtotime(Session::get('tour_date'));
+
+        $mon = date('m', $dateValue);
+        $day = date('l', $dateValue);
+        $date = date('d', $dateValue);
+        $year = date('y', $dateValue);
+
+        $tour_date = $year.'-'.$mon.'-'.$date;
         $tour_time = Session::get('tour_time');
+
+
+        $booking_adult_no = Session::get('booking_adult_no');
+        $booking_children_no = Session::get('booking_children_no');
+        $showTotalAmountInput = Session::get('showTotalAmountInput');
+        $bkash_transaction_id = Session::get('bkash_transaction_id');
+
+        //save temporary data to booking table
+        $book = new TourBooking();
+        $book->booking_travel_date = $tour_date;
+        $book->booking_travel_time = $tour_time;
+        $book->booking_adult_no = $booking_adult_no;
+        $book->booking_children_no = $booking_children_no;
+        $book->booking_total_price = $showTotalAmountInput;
+        $book->user_id = $user_id;
+        $book->tour_id = $tour_id;
+        $book->bkash_transaction_id = $bkash_transaction_id;
+        //dd($book);
+        $book->save();
 
         $tourName = Tour::find($tour_id);
         $userName = User::find($user_id);
