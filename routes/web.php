@@ -103,9 +103,10 @@ Route::get('/tour-removewishlist/{id}', 'UserController@removewishlist');
  * Booking panel
  */
 Route::get('/tours/bookings/carts/', 'BookingAndPaymentController@carts');
+Route::post('tours/bookings/carts/', 'BookingAndPaymentController@cartsCost')->name('tour.tourcost');
 Route::get('/tours/bookings/carts/payments/', 'BookingAndPaymentController@payments');
-Route::get('/tours/bookings/carts/payments/confirmation', 'BookingAndPaymentController@confirmation');
-Route::get('/tours/bookings/carts/payments/confirmation/invoice', 'BookingAndPaymentController@invoice');
+Route::post('/tours/bookings/carts/payments/', 'BookingAndPaymentController@pendingPayments')->name('tour.payments');
+Route::get('/tours/bookings/carts/payments/pending/', 'BookingAndPaymentController@pending');
 
 
 /**

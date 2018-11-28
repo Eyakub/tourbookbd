@@ -12,12 +12,19 @@ $('#adultsNo').keyup(function () {
         var totalPrice = adultTotalPrice + childTotalPrice;
 
         $('#showAdultsNo').text(adultno);
+        $('#showAdultsNoInput').val(adultno);
+        $('#showAdultsTotalCost').val(adultTotalPrice);
         $('#showChildrensNo').text(childno);
+        $('#showChildrensNoInput').val(childno);
+        $('#showChildrensTotalCost').val(childTotalPrice);
         $('#showTotalAmount').text(totalPrice);
+        $('#showTotalAmountInput').val(totalPrice);
     }
     else{
         $('#showAdultsNo').text(0);
+        $('#showAdultsNoInput').val(0);
         $('#showChildrensNo').text(0);
+        $('#showChildrensNoInput').val(0);
     }
 
 
@@ -37,11 +44,18 @@ $('#childrensNo').keyup(function () {
         var totalPrice = adultTotalPrice + childTotalPrice;
 
         $('#showAdultsNo').text(adultno);
+        $('#showAdultsNoInput').val(adultno);
+        $('#showAdultsTotalCost').val(adultTotalPrice);
+        $('#showChildrensTotalCost').val(childTotalPrice);
         $('#showChildrensNo').text(childno);
+        $('#showChildrensNoInput').val(childno);
         $('#showTotalAmount').text(totalPrice);
+        $('#showTotalAmountInput').val(totalPrice);
     }
     else{
         $('#showAdultsNo').text(0);
+        $('#showAdultsNoInput').val(0);
         $('#showChildrensNo').text(0);
+        $('#showChildrensNoInput').val(0);
     }
 });

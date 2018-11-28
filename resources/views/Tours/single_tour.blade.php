@@ -75,8 +75,8 @@
                 <div class="col-md-8 col-sm-8">
                     <h1>{{$tour->tour_title}}</h1>
                     <span>{{ $tour->tour_address }}</span>
-                    <span class="rating"><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i
-                                class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><small>(75)</small></span>
+                    <span class="rating"><i class="icon-smile "></i><i class="icon-smile "></i><i
+                                class="icon-smile "></i><i class="icon-smile "></i><i class="icon-smile"></i><small>({{count($tour->review)}})</small></span>
                 </div>
                 <div class="col-md-4 col-sm-4">
                     <div id="price_single_main">
@@ -257,6 +257,7 @@
                                 <h4>{{$comment->user->first_name}}</h4>
                                 <p>
                                     {{$comment->tourreview_desc}}
+
                                 </p>
                                 {{--<div class="rating">
                                     <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i
@@ -280,85 +281,101 @@
                 <div class="theiaStickySidebar">
                     <div class="box_style_1 expose" id="booking_box">
                         <h3 class="inner">- Booking -</h3>
-                        <div class="row">
-                            <div class="col-md-6 col-sm-6">
-                                <div class="form-group">
-                                    <label><i class="icon-calendar-7"></i> Select a date</label>
-                                    <input id="tourDate" class="date-pick form-control" data-date-format="M d, D"
-                                           type="text">
+
+
+
+                        <form method="post" action="{{route('tour.tourcost')}}">
+                            {{csrf_field()}}
+                            <input type="hidden" value="{{$tour->id}}" name="tour_id">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <label><i class="icon-calendar-7"></i> Select a date</label>
+                                        <input id="tourDate" class="date-pick form-control" data-date-format="M d, D"
+                                               type="text" name="tour_date">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6 col-sm-6">
-                                <div class="form-group">
-                                    <label><i class=" icon-clock"></i> Time</label>
-                                    <input id="tourTime" class="time-pick form-control" value="12:00 AM" type="text">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6 col-sm-6">
-                                <div class="form-group">
-                                    <label>Adults</label>
-                                    <div class="numbers-row">
-                                        <input type="text" value="0" id="adultsNo" class="qty2 form-control"
-                                               name="booking_adult_no">
-                                        <input type="hidden" value="{{$tour->tour_adult_price}}" id="adultPrice">
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <label><i class=" icon-clock"></i> Time</label>
+                                        <input id="tourTime" class="time-pick form-control" name="tour_time" value="12:00 AM" type="text">
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-sm-6">
-                                <div class="form-group">
-                                    <label>Children</label>
-                                    <div class="numbers-row">
-                                        <input type="text" value="0" id="childrensNo" class="qty2 form-control"
-                                               name="booking_children_no">
-                                        <input type="hidden" value="{{$tour->tour_children_price}}" id="childrenPrice">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <label>Adults</label>
+                                        <div class="numbers-row">
+                                            <input type="text" value="0" id="adultsNo" class="qty2 form-control"
+                                                   name="booking_adult_no">
+                                            {{--<input type="hidden" id="adultsNoInput" name="adultsNoInput" value="">--}}
+                                            <input type="hidden" value="{{$tour->tour_adult_price}}" name="showAdultPriceInput" id="adultPrice">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <label>Children</label>
+                                        <div class="numbers-row">
+                                            <input type="text" value="0" id="childrensNo" class="qty2 form-control"
+                                                   name="booking_children_no">
+                                            {{--<input type="hidden" id="childrensNoInput" name="childrensNoInput" value="">--}}
+                                            <input type="hidden" value="{{$tour->tour_children_price}}" name="showChildrensPriceInput" id="childrenPrice">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <br>
-                        <table class="table table_summary">
-                            <tbody>
-                            <tr>
-                                <td>
-                                    Adults
-                                </td>
-                                <td class="text-right">
-                                    <span id="showAdultsNo"></span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Children
-                                </td>
-                                <td class="text-right">
-                                    <span id="showChildrensNo"></span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Total amount
-                                </td>
-                                <td class="text-right">
-                                    <span id="showTotalAmount"></span>
-                                </td>
-                            </tr>
-                            <tr class="total">
-                                <td>
-                                    Total cost
-                                </td>
-                                <td class="text-right">
-                                    <span id="showTotalCost"></span>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                        @if(!empty(Session::get('user_id')))
-                            <a class="btn_full" href="{{URL::to('/tours/bookings/carts/')}}">Book now</a>
+                            <br>
+                            <table class="table table_summary">
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        Adults
+                                    </td>
+                                    <td class="text-right">
+                                        <span id="showAdultsNo"></span>
+                                        <input type="hidden" id="showAdultsTotalCost" name="showAdultsTotalCost" value="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Children
+                                    </td>
+                                    <td class="text-right">
+                                        <span id="showChildrensNo"></span>
+                                        <input type="hidden" id="showChildrensTotalCost" name="showChildrensTotalCost" value="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Total amount
+                                    </td>
+                                    <td class="text-right">
+                                        <span id="showTotalAmount"></span>
+                                        <input type="hidden" id="showTotalAmountInput" name="showTotalAmountInput" value="">
+                                    </td>
+                                </tr>
+                                {{--<tr class="total">
+                                    <td>
+                                        Total cost
+                                    </td>
+                                    <td class="text-right">
+                                        <span id="showTotalCost"></span>
+                                    </td>
+                                </tr>--}}
+                                </tbody>
+                            </table>
+                            @if(!empty(Session::get('user_id')))
+                                <input type="submit" value="Book Now" class="btn_full">
                             @else
-                            <a class="btn_full" href="{{URL::to('/user-login')}}">Login to Book your Tour</a>
-                        @endif
+                                <a class="btn_full" href="{{URL::to('/user-login')}}">Login to Book your Tour</a>
+                            @endif
+                        </form>
+
+
+
+
                         @if(!empty(Session::get('user_id')))
                             <form method="post" action="{{ route('tour.addtowishlist') }}" id="wishlist">
                                 {{csrf_field()}}

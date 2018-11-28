@@ -73,7 +73,7 @@
                 <div class="progress">
                     <div class="progress-bar"></div>
                 </div>
-                <a href="payment_fixed_sidebar.html" class="bs-wizard-dot"></a>
+                <a href="#" class="bs-wizard-dot"></a>
             </div>
 
             <div class="col-xs-4 bs-wizard-step disabled">
@@ -81,7 +81,7 @@
                 <div class="progress">
                     <div class="progress-bar"></div>
                 </div>
-                <a href="confirmation.html" class="bs-wizard-dot"></a>
+                <a href="#" class="bs-wizard-dot"></a>
             </div>
 
         </div>
@@ -99,7 +99,7 @@
                 </li>
                 <li><a href="{{URL::to('/tours')}}">Tours</a>
                 </li>
-                <li>Page active</li>
+                <li>Cart</li>
             </ul>
         </div>
     </div>
@@ -112,7 +112,7 @@
                     <thead>
                     <tr>
                         <th colspan="3">
-                            Add options / Services
+                            Services and Info
                         </th>
                     </tr>
                     </thead>
@@ -122,113 +122,48 @@
                             <i class="icon_set_1_icon-16"></i>
                         </td>
                         <td style="width:60%">
-                            Dedicated Tour guide <strong>+$34</strong>
+                            Children Cost  <strong> Per {{$tourInfo->tour_children_price}}</strong>
                         </td>
                         <td style="width:35%">
                             <label class="switch-light switch-ios pull-right">
-                                <input type="checkbox" name="option_1" id="option_1" checked value="">
-                                <span>
-                    <span>No</span>
-										<span>Yes</span>
-										</span>
-                                <a></a>
+                                {{$showChildrensTotalCost}}
                             </label>
                         </td>
                     </tr>
+
                     <tr>
-                        <td>
-                            <i class="icon_set_1_icon-26"></i>
+                        <td style="width:10%">
+                            <i class="icon_set_1_icon-16"></i>
                         </td>
-                        <td>
-                            Pick up service <strong>+$34*</strong>
+                        <td style="width:60%">
+                            Adult Cost <strong> Per {{$tourInfo->tour_adult_price}}</strong>
                         </td>
-                        <td>
+                        <td style="width:35%">
                             <label class="switch-light switch-ios pull-right">
-                                <input type="checkbox" name="option_2" id="option_2" value="">
-                                <span>
-                    <span>No</span>
-										<span>Yes</span>
-										</span>
-                                <a></a>
+                                {{$showAdultsTotalCost}}
                             </label>
                         </td>
                     </tr>
-                    <tr>
-                        <td>
-                            <i class="icon_set_1_icon-71"></i>
-                        </td>
-                        <td>
-                            Insurance <strong>+$24*</strong>
-                        </td>
-                        <td>
-                            <label class="switch-light switch-ios pull-right">
-                                <input type="checkbox" name="option_3" id="option_3" value="" checked>
-                                <span>
-                    <span>No</span>
-										<span>Yes</span>
-										</span>
-                                <a></a>
-                            </label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <i class="icon_set_1_icon-15"></i>
-                        </td>
-                        <td>
-                            Welcome bottle <strong>+$24</strong>
-                        </td>
-                        <td>
-                            <label class="switch-light switch-ios pull-right">
-                                <input type="checkbox" name="option_4" id="option_4" value="">
-                                <span>
-                    <span>No</span>
-										<span>Yes</span>
-										</span>
-                                <a></a>
-                            </label>
-                        </td>
-                    </tr>
+
+
                     <tr>
                         <td>
                             <i class="icon_set_1_icon-59"></i>
                         </td>
                         <td>
-                            Coffe break <strong>+$12*</strong>
+                            Coffee break <strong></strong>
                         </td>
-                        <td>
+                        <td style="width:35%">
                             <label class="switch-light switch-ios pull-right">
-                                <input type="checkbox" name="option_5" id="option_5" value="">
-                                <span>
-                    <span>No</span>
-										<span>Yes</span>
-										</span>
-                                <a></a>
+                                Free
                             </label>
                         </td>
                     </tr>
-                    <tr>
-                        <td>
-                            <i class="icon_set_1_icon-58"></i>
-                        </td>
-                        <td>
-                            Dinner <strong>+$26*</strong>
-                        </td>
-                        <td>
-                            <label class="switch-light switch-ios pull-right">
-                                <input type="checkbox" name="option_6" id="option_6" value="">
-                                <span>
-                    <span>No</span>
-										<span>Yes</span>
-										</span>
-                                <a></a>
-                            </label>
-                        </td>
-                    </tr>
+
                     </tbody>
                 </table>
                 <div class="add_bottom_15">
-                    <small>* Prices for person.</small>
+                    <small>* Prices for Event.</small>
                 </div>
             </div>
             <!-- End col-md-8 -->
@@ -244,7 +179,7 @@
                                     Adults
                                 </td>
                                 <td class="text-right">
-                                    2
+                                    {{$booking_adult_no}}
                                 </td>
                             </tr>
                             <tr>
@@ -252,37 +187,22 @@
                                     Children
                                 </td>
                                 <td class="text-right">
-                                    0
+                                    {{$booking_children_no}}
                                 </td>
                             </tr>
-                            <tr>
-                                <td>
-                                    Dedicated tour guide
-                                </td>
-                                <td class="text-right">
-                                    $34
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Insurance
-                                </td>
-                                <td class="text-right">
-                                    $34
-                                </td>
-                            </tr>
+
                             <tr class="total">
                                 <td>
                                     Total cost
                                 </td>
                                 <td class="text-right">
-                                    $154
+                                    {{$showTotalAmountInput}}
                                 </td>
                             </tr>
                             </tbody>
                         </table>
                         <a class="btn_full" href="{{URL::to('/tours/bookings/carts/payments/')}}">Check out</a>
-                        <a class="btn_full_outline" href="#"><i class="icon-right"></i> Continue shopping</a>
+                        <a class="btn_full_outline" href="#"><i class="icon-right"></i> Continue Booking</a>
                     </div>
                 </div>
                 <!-- End sitcky -->
