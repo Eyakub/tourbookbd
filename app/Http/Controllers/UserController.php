@@ -142,7 +142,14 @@ class UserController extends Controller
             ->select('tour.*', 'tour_wishlist.id')
             ->get();
 
-        $booking = TourBooking::with('user')->where('booking_status', '=', 1)->get();
+        $booking = DB::table('bookings')
+            ->leftJoin('users', 'users.id', '=', 'bookings.user_id')
+            ->leftJoin('tour', 'tour.id', '=', 'bookings.tour_id')
+            ->where('bookings.user_id', '=', $user_id)
+            ->where('bookings.booking_status', '=', 0)
+            ->select('bookings.*', 'users.first_name', 'tour.tour_title')
+            ->get();
+        //dd($booking);
         //$tours = Tour::with('wishlist, tour')->where('user_id', '=', $user_id)->get();
         //dd($tours);
         /**

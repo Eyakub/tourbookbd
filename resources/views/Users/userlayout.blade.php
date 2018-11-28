@@ -525,7 +525,7 @@
                     <hr>
                     <br>
                     <div class="row">
-                        <div class="col-md-6 col-sm-6">
+                        {{--<div class="col-md-6 col-sm-6">
                             <h4>Notification settings</h4>
                             <table class="table table-striped options_cart">
                                 <tbody>
@@ -604,7 +604,7 @@
                                 </tbody>
                             </table>
                             <button type="submit" class="btn_1 green">Update notifications settings</button>
-                        </div>
+                        </div>--}}
                     </div>
                     <!-- End row -->
                 </section>
@@ -636,36 +636,49 @@
                     </div>
                     <!--/tools -->
 
-                    <div class="strip_booking">
-                        @foreach($booking as $book)
+                    @foreach($booking as $book)
+                        <div class="strip_booking">
                             <div class="row">
                                 <div class="col-md-2 col-sm-2">
                                     <div class="date">
-                                        <span class="month">Dec</span>
-                                        <span class="day"><strong>23</strong>Sat</span>
+                                        <span class="month">{{Carbon\Carbon::parse($book->booking_travel_date)->format('F')}}</span>
+                                        <span class="day">
+                                            <strong>{{Carbon\Carbon::parse($book->booking_travel_date)->format('d')}}</strong>
+                                            {{Carbon\Carbon::parse($book->booking_travel_date)->format('l')}}</span>
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-sm-5">
-                                    <h3 class="hotel_booking">Hotel Mariott Paris<span>2 Adults / 2 Nights</span></h3>
+                                    <h3 class="tours_booking">{{$book->tour_title}}
+                                        <span>{{$book->booking_adult_no}} Adults /
+                                            {{$book->booking_children_no}} Kids</span>
+                                    </h3>
                                 </div>
                                 <div class="col-md-2 col-sm-3">
                                     <ul class="info_booking">
-                                        <li><strong>Booking id</strong> 23442</li>
-                                        <li><strong>Booked on</strong> Sat. 23 Dec. 2015</li>
+                                        <li><strong>Booking id</strong> {{$book->id}}</li>
+                                        <li><strong>Booked
+                                                on</strong> {{Carbon\Carbon::parse($book->created_at)->format('m d y')}}
+                                        </li>
                                     </ul>
                                 </div>
                                 <div class="col-md-2 col-sm-2">
-                                    <div class="booking_buttons">
-                                        <a href="#0" class="btn_2">Edit</a>
-                                        <a href="#0" class="btn_3">Cancel</a>
-                                    </div>
+                                    @if($book->booking_status === '1')
+                                        <div class="booking_buttons">
+                                            <a href="#0" class="btn_2">Invoice</a>
+                                            <a href="#0" class="btn_3">Details</a>
+                                        </div>
+                                    @else
+                                        <div class="text-center" style="margin-top: 40px">
+                                            <span><strong>Pending</strong></span>
+                                        </div>
+                                    @endif
                                 </div>
                             </div>
-                    @endforeach
 
-                    <!-- End row -->
-                    </div>
-                    <!-- End strip booking -->
+                            <!-- End row -->
+                        </div>
+                @endforeach
+                <!-- End strip booking -->
 
                 </section>
                 <!-- End section 1 -->
