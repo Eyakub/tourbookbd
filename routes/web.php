@@ -62,8 +62,8 @@ Route::get('/tourist-guides', 'HomeController@touristGuide');
 Route::get('/tourist-guides/{name}', 'HomeController@guideProfilePublic');
 
 Route::get('/admin-panel/tour/booking-request', 'AdminController@checkPendingBooking');
-Route::get('/admin-panel/tour/booking-request-approve/{$id}', 'AdminController@approveBooking');
-Route::get('/admin-panel/tour/booking-request-reject/{$id}', 'AdminController@rejectBooking');
+Route::get('/admin-panel/tour/booking-request-approve/{id}', 'AdminController@approveBooking');
+Route::get('/admin-panel/tour/booking-request-reject/{id}', 'AdminController@rejectBooking');
 
 
 /**
@@ -111,7 +111,11 @@ Route::post('tours/bookings/carts/', 'BookingAndPaymentController@cartsCost')->n
 Route::get('/tours/bookings/carts/payments/', 'BookingAndPaymentController@payments');
 Route::post('/tours/bookings/carts/payments/', 'BookingAndPaymentController@pendingPayments')->name('tour.payments');
 Route::get('/tours/bookings/carts/payments/pending/', 'BookingAndPaymentController@pending');
-
+Route::get('/tours/bookings/booking-details-invoice/', 'BookingAndPaymentController@invoice');
+Route::post('/tours/bookings/booking-details-invoice/', 'BookingAndPaymentController@invoiceDetails')
+    ->name('tour.booking.invoice');
+Route::get('/generate-invoice-pdf', 'BookingAndPaymentController@generateInvoice');
+Route::post('/generate-invoice-pdf', 'BookingAndPaymentController@generateInvoicePDF')->name('download.invoice');
 
 /**
  * Blog Panel

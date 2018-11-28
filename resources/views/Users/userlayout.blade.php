@@ -656,16 +656,25 @@
                                 <div class="col-md-2 col-sm-3">
                                     <ul class="info_booking">
                                         <li><strong>Booking id</strong> {{$book->id}}</li>
-                                        <li><strong>Booked
-                                                on</strong> {{Carbon\Carbon::parse($book->created_at)->format('m d y')}}
+                                        <li><strong>Booked on</strong>
+                                            {{Carbon\Carbon::parse($book->created_at)->format('m d y')}}
                                         </li>
                                     </ul>
                                 </div>
                                 <div class="col-md-2 col-sm-2">
-                                    @if($book->booking_status === '1')
+                                    @if($book->booking_status === 1)
                                         <div class="booking_buttons">
-                                            <a href="#0" class="btn_2">Invoice</a>
-                                            <a href="#0" class="btn_3">Details</a>
+                                            <form action="{{route('tour.booking.invoice')}}" name="tour.booking.invoice" id="invoiceSubmit" method="post">
+                                                {{csrf_field()}}
+                                                {{--<a href="{{URL::to('/tours/bookings/booking-details-invoice/')}}"
+                                                   class="btn_2">Invoice</a>--}}
+                                                <a onclick="document.getElementById('invoiceSubmit').submit()"
+                                                   class="btn_2" target="_blank">Invoice</a>
+                                                <input type="hidden" name="invoice_id" value="{{$book->id}}">
+                                            </form>
+
+                                            <a href="{{URL::to('/tours/single-tour/'.$book->tour_id)}}"
+                                               target="_blank" class="btn_3">Details</a>
                                         </div>
                                     @else
                                         <div class="text-center" style="margin-top: 40px">
@@ -674,7 +683,6 @@
                                     @endif
                                 </div>
                             </div>
-
                             <!-- End row -->
                         </div>
                 @endforeach

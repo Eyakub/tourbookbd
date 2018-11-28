@@ -4,9 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Tour;
 use App\TourBooking;
+use App\Users;
+use Barryvdh\DomPDF\Facade as PDF;
+
 use Faker\Provider\DateTime;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 
@@ -109,8 +113,56 @@ class BookingAndPaymentController extends Controller
     }
 
 
-    public function invoice()
+    public function invoice(request $request)
     {
-        return view('Tours.Cart.invoice');
+        if(Session::has('user_id')){
+            $user_id = Session::get('user_id');
+            $user = Users::find($user_id);
+            $invoice_id = Session::get('invoice_id');
+            $invoice = TourBooking::find($invoice_id);
+            $tourtitle = DB::table('bookings')
+                ->leftJoin('tour', 'tour.id', '=', 'bookings.tour_id')
+                ->where('bookings.id', '=', $invoice_id)
+                ->select('tour.tour_title')
+                ->first();
+            //dd($tourtitle);
+            return view('Tours.Cart.bookinginvoice')
+                ->with(compact('user', 'invoice', 'tourtitle'));
+        }
+
+        return redirect::to('/');
+    }
+
+    public function invoiceDetails(request $request)
+    {
+        $invoice_id = $request->input('invoice_id');
+        Session::put('invoice_id', $invoice_id);
+        //dd($invoice_id);
+        return redirect::to('/tours/bookings/booking-details-invoice/');
+    }
+
+    public function generateInvoice()
+    {
+        if(Session::has('user_id')){
+            $user_id = Session::get('user_id');
+            $user = Users::find($user_id);
+            $invoice_id = Session::get('invoice_id');
+            $invoice = TourBooking::find($invoice_id);
+            $tourtitle = DB::table('bookings')
+                ->leftJoin('tour', 'tour.id', '=', 'bookings.tour_id')
+                ->where('bookings.id', '=', $invoice_id)
+                ->select('tour.tour_title')
+                ->first();
+            //dd($tourtitle);
+            //loading the view to download as PDF
+            $pdf = PDF::loadView('Tours.Cart.bookinginvoice', compact('user', 'invoice', 'tourtitle'));
+            return $pdf->download('invoicee.pdf');
+        }
+        return redirect::to('/');
+    }
+
+    public function generateInvoicePDF()
+    {
+        return redirect::to('/generate-invoice-pdf/');
     }
 }

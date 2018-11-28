@@ -446,7 +446,7 @@ class AdminController extends Controller
     {
         $appr = TourBooking::find($id);
         $appr->booking_status = 1;
-        dd($appr);
+        //dd($appr);
         $appr->save();
         return Redirect::to('/admin-panel/tour/booking-request');
     }
