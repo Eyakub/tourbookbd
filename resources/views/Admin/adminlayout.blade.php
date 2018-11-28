@@ -95,6 +95,7 @@
                        aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Tables</a>
                     <ul class="sub-menu children dropdown-menu">
                         <li><i class="fa fa-table"></i><a href="{{URL::to('/admin-panel/all-tour-data')}}">Data Table</a></li>
+                        <li><i class="fa fa-table"></i><a href="{{URL::to('/admin-panel/tour/booking-request')}}">Booking Request</a></li>
                     </ul>
                 </li>
                 <li class="menu-item-has-children dropdown">

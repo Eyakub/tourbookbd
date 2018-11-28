@@ -61,6 +61,10 @@ Route::get('/faq', 'HomeController@faq');
 Route::get('/tourist-guides', 'HomeController@touristGuide');
 Route::get('/tourist-guides/{name}', 'HomeController@guideProfilePublic');
 
+Route::get('/admin-panel/tour/booking-request', 'AdminController@checkPendingBooking');
+Route::get('/admin-panel/tour/booking-request-approve/{$id}', 'AdminController@approveBooking');
+Route::get('/admin-panel/tour/booking-request-reject/{$id}', 'AdminController@rejectBooking');
+
 
 /**
  * User Panel

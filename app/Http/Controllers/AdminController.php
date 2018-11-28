@@ -7,6 +7,7 @@ use App\District;
 use App\Guide;
 use App\SuperAdmin;
 use App\Tour;
+use App\TourBooking;
 use App\TourCategory;
 use App\Hotel;
 use App\Users;
@@ -426,6 +427,35 @@ class AdminController extends Controller
     {
         $this->auth_checkAdmin();
         return view('coming_soon');
+    }
+
+
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * BOOKING REQUEST CHECKING ACTION
+     */
+    public function checkPendingBooking()
+    {
+        $this->auth_checkAdmin();
+        $pending = TourBooking::all();
+        return view('Admin.bookingrequest')
+            ->with(compact('pending'));
+    }
+
+    public function approveBooking($id)
+    {
+        $appr = TourBooking::find($id);
+        $appr->booking_status = 1;
+        dd($appr);
+        $appr->save();
+        return Redirect::to('/admin-panel/tour/booking-request');
+    }
+
+    public function rejectBooking($id)
+    {
+        $rej = TourBooking::find($id);
+        $rej->delete();
+        return Redirect::to('/admin-panel/tour/booking-request');
     }
 
 }
