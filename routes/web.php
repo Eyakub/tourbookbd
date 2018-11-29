@@ -96,7 +96,10 @@ Route::get('/tours/close-to-sea', 'TourController@closeToSea');
 Route::get('/tours/waterfall', 'TourController@waterfall');
 Route::get('/tours/naturelife', 'TourController@natureWild');
 Route::get('/tours/hikingcamping', 'TourController@hikingCamping');
-Route::get('/tours/churces', 'TourController@churces');
+Route::get('/tours/city-sightseeing', 'TourController@citySightseeing');
+Route::get('/tours/museum', 'TourController@museum');
+Route::get('/tours/skyline', 'TourController@skyline');
+Route::get('/tours/historic-places', 'TourController@historicPlaces');
 
 Route::post('/tours.review', 'TourController@tourreview')->name('tour.review');
 Route::post('/tour/addtowishlist', 'TourController@addToWishlist')->name('tour.addtowishlist');

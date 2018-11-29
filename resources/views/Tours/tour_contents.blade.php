@@ -12,7 +12,7 @@
                             <img src="{{asset('storage/small_cover/'.$tour->tour_small_cover)}}"
                                  style="height: 290px; width: 800px" class="img-responsive" alt="Image">
                             <div class="short_info">
-                                <i class="icon_set_1_icon-44"></i>{{$tour->tour_category}}<span
+                                <i class="{{$tour->tour_category_icon}}"></i>{{$tour->tour_category_name}}<span
                                         class="price"><sup>BDT</sup> {{$tour->tour_adult_price}}</span>
                             </div>
                         </a>
@@ -23,7 +23,7 @@
                             <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i
                                     class="icon-smile voted"></i><i class="icon-smile voted"></i><i
                                     class="icon-smile"></i>
-                            <small>({{count($tour->review)}})</small>
+                            <small>({{$tour->review()->count()}})</small>
                         </div>
                         <!-- end rating -->
                         <div class="wishlist">

@@ -464,7 +464,7 @@
                                             <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i
                                                     class="icon-smile voted"></i><i class="icon-smile voted"></i><i
                                                     class="icon-smile"></i>
-                                            <small>(75)</small>
+                                            <small>(0)</small>
                                         </div>
                                         <!-- end rating -->
                                         <a href="{{URL::to('/tour-removewishlist/'.$tour->id)}}">

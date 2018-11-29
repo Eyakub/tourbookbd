@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,13 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+//list of blog that belongs to user
+Route::get('/blog-user/{id}', 'UserController@blogUserAPI');
+
+/**
+ * TOURS
+ */
+//get all tours list
+Route::get('/all-tours', 'TourController@allToursAPI');

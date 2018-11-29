@@ -151,7 +151,7 @@ class AdminController extends Controller
     {
         $this->auth_checkAdmin();
 
-        $datapass = Tour::find($id);
+        $datapass = Tour::with('category')->find($id);
         $categorys = TourCategory::all();
         $districts = District::all();
         $oneDis = $datapass->district_id;

@@ -109,21 +109,21 @@
                     <ul id="cat_nav">
                         <li><a href="{{URL::to('/tours')}}" id="active"><i class="icon_set_1_icon-51"></i>All tours <span>({{$count}})</span></a>
                         </li>
-                        <li><a href="{{URL::to('/coming_soon')}}"><i class="icon_set_1_icon-3"></i>City sightseeing <span>()</span></a>
+                        <li><a href="{{URL::to('/tours/city-sightseeing')}}"><i class="icon_set_1_icon-3"></i>City sightseeing <span>({{$citysightseeing}})</span></a>
                         </li>
-                        <li><a href="{{URL::to('/coming_soon')}}"><i class="icon_set_1_icon-4"></i>Museum <span>()</span></a>
+                        <li><a href="{{URL::to('/tours/museum')}}"><i class="icon_set_1_icon-4"></i>Museum <span>({{$museumCount}})</span></a>
                         </li>
-                        <li><a href="{{URL::to('/coming_soon')}}"><i class="icon_set_1_icon-44"></i>Historic Places <span>()</span></a>
+                        <li><a href="{{URL::to('/tours/historic-places')}}"><i class="icon_set_1_icon-44"></i>Historic Places <span>({{$historicCount}})</span></a>
                         </li>
                         <li><a href="{{URL::to('/tours/churces')}}"><i class="icon_set_1_icon-43"></i>Churces <span>({{$churcesCount}})</span></a>
                         </li>
-                        <li><a href="{{URL::to('/coming_soon')}}"><i class="icon_set_1_icon-28"></i>Skyline tours <span>()</span></a>
+                        <li><a href="{{URL::to('/tours/skyline')}}"><i class="icon_set_1_icon-28"></i>Skyline tours <span>({{$skyline}})</span></a>
                         </li>
                         <li><a href="{{URL::to('/tours/close-to-sea')}}"><i class=" icon-anchor-2"></i>Close To Sea <span>({{$closeToCount}})</span></a>
                         </li>
                         <li><a href="{{URL::to('/tours/waterfall')}}"><i class=" icon-waves"></i>Waterfall <span>({{$waterfallCount}})</span></a>
                         </li>
-                        <li><a href="{{URL::to('/tours/naturelife')}}"><i class="icon_set_2_icon-108"></i>Nature & Wildlife <span>({{$natureCount}})</span></a>
+                        <li><a href="{{URL::to('/tours/naturelife')}}"><i class="icon-tree"></i>Nature & Wildlife <span>({{$natureCount}})</span></a>
                         </li>
                         <li><a href="{{URL::to('/tours/hikingcamping')}}"><i class="icon-pitch"></i>Hiking & Camping <span>({{$hikingCount}})</span></a>
                         </li>

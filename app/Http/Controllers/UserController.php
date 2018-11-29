@@ -3,7 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\{Blog, BlogImage, Comment, Country, Tour, TourBooking, TourCategory, TourWishlist, Users};
+use App\{Blog,
+    BlogImage,
+    Comment,
+    Country,
+    Http\Resources\BlogResource,
+    Tour,
+    TourBooking,
+    TourCategory,
+    TourWishlist,
+    Users};
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
@@ -329,6 +338,13 @@ class UserController extends Controller
     public function comingSoon()
     {
         return view('coming_soon');
+    }
+
+
+    public function blogUserAPI($id)
+    {
+        $blogs = Blog::with(['images'])->where('user_id', '=', $id)->paginate(10);
+        return BlogResource::collection($blogs);
     }
 
 

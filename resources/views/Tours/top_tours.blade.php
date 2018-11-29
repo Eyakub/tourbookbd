@@ -14,7 +14,7 @@
                             <img src="{{asset('storage/small_cover/'.$top->tour_small_cover)}}" class="img-responsive"
                                  alt="image">
                             <div class="short_info">
-                                <i class="icon_set_1_icon-44"></i>{{$top->tour_category}}<span
+                                <i class="icon_set_1_icon-44"></i>{{$top->tour_category_name}}<span
                                         class="price"><sup>BDT</sup> {{$top->tour_adult_price}}</span>
                             </div>
                         </a>
@@ -25,7 +25,7 @@
                             <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i
                                     class="icon-smile voted"></i><i class="icon-smile voted"></i><i
                                     class="icon-smile"></i>
-                            <small>({{count($top->review)}})</small>
+                            <small>({{$top->review()->count()}})</small>
                         </div>
                         <!-- end rating -->
                         <div class="wishlist">

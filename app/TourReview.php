@@ -10,7 +10,7 @@ class TourReview extends Model
 
     public function tour()
     {
-        return $this->belongsTo('App\Tour');
+        return $this->belongsTo('App\Tour','tour_id');
     }
 
     public function user()

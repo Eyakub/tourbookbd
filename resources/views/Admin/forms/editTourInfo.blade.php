@@ -76,9 +76,9 @@
                             Category</label></div>
                     <div class="col-12 col-md-9">
                         <select name="tour_category" id="select" class="form-control">
-                            <option value="{{$datapass->tour_category}}">{{$datapass->tour_category}}</option>
+                            <option value="{{$datapass->tour_category}}">{{$datapass->category->tour_category_name}}</option>
                             @foreach($categorys as $category)
-                                <option value="{{$category->tour_category_name}}">{{$category->tour_category_name}}</option>
+                                <option value="{{$category->id}}">{{$category->tour_category_name}}</option>
                             @endforeach
                         </select>
                     </div>

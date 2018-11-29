@@ -10,6 +10,7 @@ use App\Users;
 use Illuminate\Http\Request;
 use App\Tour;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -21,7 +22,17 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $topTour = Tour::with('review')->paginate(6);
+        //$topTour = Tour::with(['review'])->paginate(6);
+//        $topTour = DB::table('tour')
+//            ->leftJoin('tour_review', 'tour.id', '=', 'tour_review.tour_id')
+//            ->leftJoin('tour_category', 'tour.tour_category', '=', 'tour_category.id')
+//            ->select('tour.*', 'tour_review.tourreview_desc',
+//                'tour_category.tour_category_name')
+//            ->paginate(6);
+        $topTour = Tour::leftJoin('tour_category', 'tour.tour_category', '=', 'tour_category.id')
+            ->select('tour.*', 'tour_category.tour_category_name')
+            ->paginate(6);
+        //dd($topTour);
         $allTour = Tour::all();
         $topHotels = Hotel::paginate(6);
         $totalUser = Users::all()->count();

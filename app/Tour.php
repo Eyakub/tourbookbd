@@ -16,7 +16,7 @@ class Tour extends Model
 
     public function review()
     {
-        return $this->hasMany(TourReview::class);
+        return $this->hasMany(TourReview::class, 'tour_id');
     }
 
     public function wishlist()
@@ -27,6 +27,11 @@ class Tour extends Model
     public function booking()
     {
         return $this->hasMany(TourBooking::class);
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(TourCategory::class, 'tour_category', 'id');
     }
 
 }

@@ -70,7 +70,7 @@
                             <select name="tour_category" id="select" class="form-control">
                                 <option>Please Select</option>
                                 @foreach($categorys as $category)
-                                    <option value="{{$category->tour_category_name}}">{{$category->tour_category_name}}</option>
+                                    <option value="{{$category->id}}">{{$category->tour_category_name}}</option>
                                 @endforeach
                             </select>
                         </div>
