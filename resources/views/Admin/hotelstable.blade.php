@@ -32,8 +32,10 @@
                                     <th>ID</th>
                                     <th>Title</th>
                                     <th>Address</th>
+                                    <th>District</th>
                                     <th>Category</th>
                                     <th>Description</th>
+                                    <th>Cost Per Night</th>
                                     <th>Actions</th>
                                 </tr>
                                 </thead>
@@ -42,16 +44,18 @@
                                     <td>{{$data->id}}</td>
                                     <td>{{$data->hotels_title}}</td>
                                     <td>{{$data->hotels_address}}</td>
-                                    <td>{{$data->hotels_category}}</td>
+                                    <td>{{$data->district_name}}</td>
+                                    <td>{{$data->hotel_category_name}}</td>
                                     <td>{{$data->hotels_description}}</td>
+                                    <td>{{$data->hotels_per_cost}}</td>
 
                                     <td>
                                         <a class="btn btn-info"
-                                           href="{{URL::to('/edit-hotel-information/'.$data->id)}}">
+                                           href="{{URL::to('/admin-panel/edit-hotel-information/'.$data->id)}}">
                                             <i class="halflings-icon white edit"></i>
                                         </a>
                                         <a class="btn btn-danger"
-                                           href="{{URL::to('/delete-user/'.$data->id)}}"
+                                           href="{{URL::to('/admin-panel/delete-hotel/'.$data->id)}}"
                                            onclick="return check_delete();">
                                             <i class="halflings-icon white trash"></i>
                                         </a>

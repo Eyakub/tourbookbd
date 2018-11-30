@@ -29,6 +29,15 @@
                     </div>
 
                     <div class="row form-group">
+                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Cost </label>
+                        </div>
+                        <div class="col-12 col-md-9"><input type="text" id="text-input" name="hotels_per_cost"
+                                                            placeholder="Enter the Per night cost"
+                                                            class="form-control">{{--<small class="form-text text-muted">This is a help text</small>--}}
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
                         <div class="col col-md-3"><label for="textarea-input"
                                                          class=" form-control-label">Description</label></div>
                         <div class="col-12 col-md-9"><textarea name="hotels_description" id="textarea-input" rows="9"
@@ -39,10 +48,11 @@
                         <div class="col col-md-3"><label for="select" class=" form-control-label">Select
                                 Category</label></div>
                         <div class="col-12 col-md-9">
-                            <select name="hotels_category" id="select" class="form-control">
-                                <option value="0">Please select</option>
-                                <option value="Hotels">Hotels</option>
-                                <option value="Resorts">Resorts</option>
+                            <select name="category_id" id="select" class="form-control">
+                                <option>Please select</option>
+                                @foreach($category as $cat)
+                                    <option value="{{$cat->id}}">{{$cat->hotel_category_name}}</option>
+                                @endforeach
 
                             </select>
                         </div>

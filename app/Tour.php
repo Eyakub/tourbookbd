@@ -9,9 +9,9 @@ class Tour extends Model
 {
     protected $table = 'tour';
 
-    public function disTour()
+    public function district()
     {
-        return $this->hasMany(District::class);
+        return $this->belongsTo(District::class);
     }
 
     public function review()

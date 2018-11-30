@@ -66,10 +66,10 @@
                                     <td>{{$data->id}}</td>
                                     <td>{{$data->tour_title}}</td>
                                     <td>{{$data->tour_address}}</td>
-                                    <td>{{$data->district_id}}</td>
+                                    <td>{{$data->district->district_name}}</td>
                                     <td>{{$data->tour_adult_price}}</td>
                                     <td>{{$data->tour_children_price}}</td>
-                                    <td>{{$data->tour_category}}</td>
+                                    <td>{{$data->category->tour_category_name}}</td>
                                     <td>{{$data->tour_description}}</td>
                                     <td>
                                         <span class="label label-success">Published</span>

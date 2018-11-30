@@ -12,4 +12,9 @@ class District extends Model
     {
         return $this->hasMany('App\Tour', 'id');
     }
+
+    public function hotel()
+    {
+        return $this->hasMany(Hotel::class);
+    }
 }
