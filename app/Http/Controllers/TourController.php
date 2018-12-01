@@ -169,8 +169,12 @@ class TourController extends Controller
      */
     public function tourreview(request $request)
     {
-        $user_id = Session::get('id');
+        $user_id = Session::get('user_id');
         $tour_id = $request->input('tour_id');
+
+        /*return response()->json([
+           'data' => $request->all(),
+        ]);*/
 
         $review = new TourReview();
         $review->tourreview_desc = $request->input('tourreview_desc');
@@ -180,8 +184,8 @@ class TourController extends Controller
         $review->tourreview_quality = $request->input('tourreview_quality');
         $review->tour_id = $tour_id;
         $review->user_id = $user_id;
+        //dd($review);
         $review->save();
-        dd($request->all());
         return redirect::to('/tours/single-tour/'.$tour_id);
     }
 

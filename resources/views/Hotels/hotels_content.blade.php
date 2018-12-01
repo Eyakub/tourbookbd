@@ -12,7 +12,7 @@
                             <img src="storage/small_cover/{{$hotel->hotels_small_cover}}" width="800" height="533" class="img-responsive" alt="Image">
                             <div class="score"><span>7.5</span>Good</div>
                             <div class="short_info hotel">
-                                From/Per night<span class="price"><sup>$</sup>00</span>
+                                From/Per night<span class="price"><sup>BDT </sup>{{$hotel->hotels_per_cost}}</span>
                             </div>
                         </a>
                     </div>

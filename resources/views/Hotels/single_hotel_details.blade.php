@@ -64,7 +64,7 @@
                 </div>
                 <div class="col-md-4 col-sm-4">
                     <div id="price_single_main" class="hotel">
-                        from/per night <span><sup>$</sup>95</span>
+                        from/per night <span><sup>BDT </sup>{{$hotel->hotels_per_cost}}</span>
                     </div>
                 </div>
             </div>
@@ -185,7 +185,7 @@
                     <div class="col-md-9">
                         <h4>Single Room</h4>
                         <p>
-                            Lorem ipsum dolor sit amet, at omnes deseruisse pri. Quo aeterno legimus insolens ad. Sit cu detraxit constituam, an mel iudico constituto efficiendi.
+                            Will be added
                         </p>
 
                         <div class="row">
@@ -198,9 +198,9 @@
                             </div>
                             <div class="col-md-6 col-sm-6">
                                 <ul class="list_ok">
-                                    <li>Lorem ipsum dolor sit amet</li>
-                                    <li>No scripta electram necessitatibus sit</li>
-                                    <li>Quidam percipitur instructior an eum</li>
+                                    <li>1</li>
+                                    <li>2</li>
+                                    <li>3</li>
                                 </ul>
                             </div>
                         </div>
@@ -230,7 +230,7 @@
 
                         <h4>Double Room</h4>
                         <p>
-                            Lorem ipsum dolor sit amet, at omnes deseruisse pri. Quo aeterno legimus insolens ad. Sit cu detraxit constituam, an mel iudico constituto efficiendi.
+                            details will be added later
                         </p>
 
                         <div class="row">
@@ -243,9 +243,9 @@
                             </div>
                             <div class="col-md-6 col-sm-6">
                                 <ul class="list_ok">
-                                    <li>Lorem ipsum dolor sit amet</li>
-                                    <li>No scripta electram necessitatibus sit</li>
-                                    <li>Quidam percipitur instructior an eum</li>
+                                    <li>1</li>
+                                    <li>2</li>
+                                    <li>3</li>
                                 </ul>
                             </div>
                         </div>
@@ -282,7 +282,7 @@
                         <a href="#" class="btn_1 add_bottom_30" data-toggle="modal" data-target="#myReview">Leave a review</a>
                     </div>
                     <div class="col-md-9">
-                        <div id="score_detail"><span>7.5</span>Good <small>(Based on 34 reviews)</small>
+                        <div id="score_detail"><span>7.5</span>Good <small>(Based on random reviews)</small>
                         </div>
                         <!-- End general_rating -->
                         <div class="row" id="rating_summary">
@@ -322,7 +322,7 @@
                             <small> - 10 March 2015 -</small>
                             <h4>Eyakub Sorkar</h4>
                             <p>
-                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus."
+                                "Great hotels."
                             </p>
                             <div class="rating">
                                 <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><i class="icon-smile"></i>

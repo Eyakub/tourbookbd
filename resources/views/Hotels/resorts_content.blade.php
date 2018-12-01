@@ -12,14 +12,14 @@
                             <img src="storage/small_cover/{{$resort->hotels_small_cover}}" width="800" height="533" class="img-responsive" alt="Image">
                             <div class="score"><span>7.5</span>Good</div>
                             <div class="short_info hotel">
-                                From/Per night<span class="price"><sup>$</sup>00</span>
+                                From/Per night<span class="price"><sup>BDT </sup>{{$resort->hotels_per_cost}}</span>
                             </div>
                         </a>
                     </div>
                     <div class="hotel_title">
                         <h3><strong>{{$resort->hotels_title}}</strong></h3>
                         <div class="rating">
-                            <i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star-empty"></i>
+                            <i class=" icon-star-empty{{--icon-star voted--}}"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i><i class="icon-star-empty "></i><i class="icon-star-empty"></i>
                         </div>
                         <!-- end rating -->
                         <div class="wishlist">

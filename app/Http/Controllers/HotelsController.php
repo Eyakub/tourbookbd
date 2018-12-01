@@ -11,7 +11,7 @@ class HotelsController extends Controller
 {
     public function allHotels()
     {
-        $hotels = Hotel::where('hotels_category', 'Hotels')
+        $hotels = Hotel::where('category_id', 1)
             ->paginate(6);
         $division = Division::all();
 
@@ -25,7 +25,7 @@ class HotelsController extends Controller
 
     public function allResorts()
     {
-        $resorts = Hotel::where('hotels_category', 'Resorts')
+        $resorts = Hotel::where('category_id', 2)
             ->paginate(6);
         $division = Division::all();
 

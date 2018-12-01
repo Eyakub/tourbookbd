@@ -115,7 +115,7 @@
                     <div class="form_title">
                         <h3><strong>1</strong>BKash</h3>
                         <p>
-                            Enter your BKash Transaction ID to confirm your payment.
+                            *01937424217 Confirm your payment.
                         </p>
                     </div>
                     <div class="step">

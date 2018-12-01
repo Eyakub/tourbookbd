@@ -26,7 +26,7 @@
           href="{{asset('img/apple-touch-icon-144x144-precomposed.png')}}">
 
     <!-- Google web fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Gochi+Hand|Lato:300,400|Montserrat:400,400i,700,700i"
+    <link href="{{URL::to('https://fonts.googleapis.com/css?family=Gochi+Hand|Lato:300,400|Montserrat:400,400i,700,700i')}}"
           rel="stylesheet">
 
     <!-- CSS -->
@@ -34,6 +34,10 @@
 
     <!-- CSS -->
     <link href="{{asset('css/date_time_picker.css')}}" rel="stylesheet">
+    <link href="{{asset('css/bootstrap.css.css')}}" rel="stylesheet">
+
+    {{--<link rel="stylesheet" href="{{URL::to('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')}}"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">--}}
 
     <script type="text/javascript" src="{{ URL::asset('js/html5shiv.min.js')}}"></script>
     <script type="text/javascript" src="{{ URL::asset('js/respond.min.js')}}"></script>
@@ -133,9 +137,8 @@
                         @elseif($tour->tour_category === 'Historic Places')
                             <li><i class="icon_set_1_icon-44"></i>Historic Places</li>
                         @endif
-                        <li><i class="icon_set_1_icon-83"></i>3 Hours</li>
-                        <li><i class="icon_set_1_icon-13"></i>Accessibiliy</li>
-                        <li><i class="icon_set_1_icon-82"></i>144 Likes</li>
+                        <li><i class="icon_set_1_icon-83"></i>3 Days</li>
+                        <li><i class="icon_set_1_icon-82"></i>0 Likes</li>
                         @if($tour->tour_pet_allowed === 1)
                             <li><i class="icon_set_1_icon-22"></i>Pet allowed</li>
                         @endif
@@ -251,7 +254,8 @@
                         <hr>
                         @foreach($tour->review as $comment)
                             <div class="review_strip_single">
-                                <img src="{{asset('storage/user_images/'.$comment->user->src_user)}}" height="78" width="78" alt="Image"
+                                <img src="{{asset('storage/user_images/'.$comment->user->src_user)}}" height="78"
+                                     width="78" alt="Image"
                                      class="img-circle">
                                 <small> - {{$comment->created_at->format('d M Y')}} -</small>
                                 <h4>{{$comment->user->first_name}}</h4>
@@ -283,7 +287,6 @@
                         <h3 class="inner">- Booking -</h3>
 
 
-
                         <form method="post" action="{{route('tour.tourcost')}}">
                             {{csrf_field()}}
                             <input type="hidden" value="{{$tour->id}}" name="tour_id">
@@ -298,7 +301,8 @@
                                 <div class="col-md-6 col-sm-6">
                                     <div class="form-group">
                                         <label><i class=" icon-clock"></i> Time</label>
-                                        <input id="tourTime" class="time-pick form-control" name="tour_time" value="12:00 AM" type="text">
+                                        <input id="tourTime" class="time-pick form-control" name="tour_time"
+                                               value="12:00 AM" type="text">
                                     </div>
                                 </div>
                             </div>
@@ -310,7 +314,8 @@
                                             <input type="text" value="0" id="adultsNo" class="qty2 form-control"
                                                    name="booking_adult_no">
                                             {{--<input type="hidden" id="adultsNoInput" name="adultsNoInput" value="">--}}
-                                            <input type="hidden" value="{{$tour->tour_adult_price}}" name="showAdultPriceInput" id="adultPrice">
+                                            <input type="hidden" value="{{$tour->tour_adult_price}}"
+                                                   name="showAdultPriceInput" id="adultPrice">
                                         </div>
                                     </div>
                                 </div>
@@ -321,7 +326,8 @@
                                             <input type="text" value="0" id="childrensNo" class="qty2 form-control"
                                                    name="booking_children_no">
                                             {{--<input type="hidden" id="childrensNoInput" name="childrensNoInput" value="">--}}
-                                            <input type="hidden" value="{{$tour->tour_children_price}}" name="showChildrensPriceInput" id="childrenPrice">
+                                            <input type="hidden" value="{{$tour->tour_children_price}}"
+                                                   name="showChildrensPriceInput" id="childrenPrice">
                                         </div>
                                     </div>
                                 </div>
@@ -335,7 +341,8 @@
                                     </td>
                                     <td class="text-right">
                                         <span id="showAdultsNo"></span>
-                                        <input type="hidden" id="showAdultsTotalCost" name="showAdultsTotalCost" value="">
+                                        <input type="hidden" id="showAdultsTotalCost" name="showAdultsTotalCost"
+                                               value="">
                                     </td>
                                 </tr>
                                 <tr>
@@ -344,7 +351,8 @@
                                     </td>
                                     <td class="text-right">
                                         <span id="showChildrensNo"></span>
-                                        <input type="hidden" id="showChildrensTotalCost" name="showChildrensTotalCost" value="">
+                                        <input type="hidden" id="showChildrensTotalCost" name="showChildrensTotalCost"
+                                               value="">
                                     </td>
                                 </tr>
                                 <tr>
@@ -353,7 +361,8 @@
                                     </td>
                                     <td class="text-right">
                                         <span id="showTotalAmount"></span>
-                                        <input type="hidden" id="showTotalAmountInput" name="showTotalAmountInput" value="">
+                                        <input type="hidden" id="showTotalAmountInput" name="showTotalAmountInput"
+                                               value="">
                                     </td>
                                 </tr>
                                 {{--<tr class="total">
@@ -374,16 +383,16 @@
                         </form>
 
 
-
-
                         @if(!empty(Session::get('user_id')))
                             <form method="post" action="{{ route('tour.addtowishlist') }}" id="wishlist">
                                 {{csrf_field()}}
                                 <input type="hidden" name="tour_id" value="{{$tour->id}}">
-                                <a class="btn_full_outline" onclick="document.getElementById('wishlist').submit();"><i class=" icon-heart"></i> Add to whislist</a>
+                                <a class="btn_full_outline" onclick="document.getElementById('wishlist').submit();"><i
+                                            class=" icon-heart"></i> Add to whislist</a>
                             </form>
-                            @else
-                            <a class="btn_full_outline" onclick="disable"><i class="icon-heart-broken"></i>Add to Wishlist </a>
+                        @else
+                            <a class="btn_full_outline" onclick="disable"><i class="icon-heart-broken"></i>Add to
+                                Wishlist </a>
                         @endif
                     </div>
                     <!--/box_style_1 -->
@@ -415,9 +424,10 @@
     </form>
 </div><!-- End Search Menu -->
 
+
 <!-- Modal Review -->
 <div class="modal fade" id="myReview" tabindex="-1" role="dialog" aria-labelledby="myReviewLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
@@ -425,18 +435,17 @@
                 <h4 class="modal-title" id="myReviewLabel">Write your review</h4>
             </div>
             <div class="modal-body">
-                <div id="message-review">
-                </div>
-                <form method="post" action="{{ route('tour.review') }}" name="review_tour" id="review_tour">
+
+                <form id="myForm" method="post" action="{{ route('tour.review') }}" name="review_tour" id="review_tour">
                     {{csrf_field()}}
-                    <input type="hidden" name="_token" value="{{csrf_token()}}">
+                    {{--<input type="hidden" name="_token" value="{{csrf_token()}}">--}}
                     <input name="tour_id" id="tour_name" type="hidden" value="{{$tour->id}}">
 
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Position</label>
-                                <select class="form-control" name="tourreview_position" id="position_review">
+                                <select class="form-control" name="tourreview_position">
                                     <option value=0>Please review</option>
                                     <option value=1>Low</option>
                                     <option value=2>Sufficient</option>
@@ -450,7 +459,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Tourist guide</label>
-                                <select class="form-control" name="tourreview_guide" id="guide_review">
+                                <select class="form-control" name="tourreview_guide">
                                     <option value=0>Please review</option>
                                     <option value=1>Low</option>
                                     <option value=2>Sufficient</option>
@@ -467,7 +476,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Price</label>
-                                <select class="form-control" name="tourreview_price" id="price_review">
+                                <select class="form-control" name="tourreview_price">
                                     <option value=0>Please review</option>
                                     <option value=1>Low</option>
                                     <option value=2>Sufficient</option>
@@ -481,7 +490,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Quality</label>
-                                <select class="form-control" name="tourreview_quality" id="quality_review">
+                                <select class="form-control" name="tourreview_quality">
                                     <option value=0>Please review</option>
                                     <option value=1>Low</option>
                                     <option value=2>Sufficient</option>
@@ -495,11 +504,12 @@
                     </div>
                     <!-- End row -->
                     <div class="form-group">
-                        <textarea name="tourreview_desc" id="review_text" class="form-control" style="height:100px"
+                        <textarea name="tourreview_desc" id="" class="form-control" style="height:100px"
                                   placeholder="Write your review"></textarea>
                     </div>
-                    <button type="submit" class="btn_1" id="submit-review">Submit</button>
+                    <input form="myForm" type="submit" value="Submit" class="btn_1">
                 </form>
+
             </div>
         </div>
     </div>
@@ -536,13 +546,18 @@
 
 <!--Review modal validation -->
 <script src="{{URL::asset('assets/validate.js')}}"></script>
+<script src="{{URL::asset('assets/bootstrap/js/umd/modal.js.js')}}"></script>
 
 <!-- Map -->
-<script src="http://maps.googleapis.com/maps/api/js"></script>
+<script src="{{URL::to('http://maps.googleapis.com/maps/api/js')}}"></script>
 
 
 <script src="{{URL::asset('js/map.js')}}"></script>
 <script src="{{URL::asset('js/infobox.js')}}"></script>
+
+{{--<script src="{{URL::to('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')}}"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>--}}
 
 <!-- Fixed sidebar -->
 <script src="{{URL::asset('js/theia-sticky-sidebar.js')}}"></script>
