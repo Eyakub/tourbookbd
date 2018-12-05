@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Blog;
 use App\District;
 use App\Guide;
+use App\GuideReview;
 use App\HotelCategory;
 use App\SuperAdmin;
 use App\Tour;
@@ -336,6 +337,22 @@ class AdminController extends Controller
         $guide->save();
 
         return Redirect::to('/admin-panel/edit-guide-information/'.$guide_id)->with('success', 'Successfully Updated the guide Information');
+    }
+
+    public function guideReview(request $request)
+    {
+        $user_id = Session::get('user_id');
+        $guide_id = $request->input('guide_id');
+
+        $guideReview = new GuideReview();
+        $guideReview->guide_id = $guide_id;
+        $guideReview->user_id = $user_id;
+        $guideReview->guidereview_desc = $request->input('guidereview_desc');
+        $guideReview->guidereview_rating = $request->input('guidereview_rating');
+        //dd($guideReview);
+        $guideReview->save();
+
+        return redirect::to(url()->previous());
     }
 
     public function deleteGuide($id)

@@ -50,7 +50,7 @@
     </div>
     <!-- End row -->
     <p class="text-center nopadding">
-        <a href="{{URL::to('/hotels')}}" class="btn_1 medium"><i class="icon-eye-7"></i>View all hotels (70) </a>
+        <a href="{{URL::to('/hotels')}}" class="btn_1 medium"><i class="icon-eye-7"></i>View all hotels ({{count($topHotel)}}) </a>
     </p>
 
 @stop

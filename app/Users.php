@@ -30,4 +30,9 @@ class Users extends Model
     {
         return $this->hasMany(TourWishlist::class);
     }
+
+    public function guidereview()
+    {
+        return $this->hasMany(GuideReview::class);
+    }
 }

@@ -91,25 +91,30 @@ class BookingAndPaymentController extends Controller
         $booking_adult_no = Session::get('booking_adult_no');
         $booking_children_no = Session::get('booking_children_no');
         $showTotalAmountInput = Session::get('showTotalAmountInput');
-        $bkash_transaction_id = Session::get('bkash_transaction_id');
+        if(Session::has('bkash_transaction_id')){
+            $bkash_transaction_id = Session::get('bkash_transaction_id');
 
-        //save temporary data to booking table
-        $book = new TourBooking();
-        $book->booking_travel_date = $tour_date;
-        $book->booking_travel_time = $tour_time;
-        $book->booking_adult_no = $booking_adult_no;
-        $book->booking_children_no = $booking_children_no;
-        $book->booking_total_price = $showTotalAmountInput;
-        $book->user_id = $user_id;
-        $book->tour_id = $tour_id;
-        $book->bkash_transaction_id = $bkash_transaction_id;
-        //dd($book);
-        $book->save();
+            //save temporary data to booking table
+            $book = new TourBooking();
+            $book->booking_travel_date = $tour_date;
+            $book->booking_travel_time = $tour_time;
+            $book->booking_adult_no = $booking_adult_no;
+            $book->booking_children_no = $booking_children_no;
+            $book->booking_total_price = $showTotalAmountInput;
+            $book->user_id = $user_id;
+            $book->tour_id = $tour_id;
+            $book->bkash_transaction_id = $bkash_transaction_id;
+            //dd($book);
+            $book->save();
 
-        $tourName = Tour::find($tour_id);
-        $userName = User::find($user_id);
-        return view('Tours.Cart.confirmation')
-            ->with(compact('tourName', 'userName', 'tour_date', 'tour_time'));
+            $tourName = Tour::find($tour_id);
+            $userName = User::find($user_id);
+            return view('Tours.Cart.confirmation')
+                ->with(compact('tourName', 'userName', 'tour_date', 'tour_time'));
+        }
+        else{
+            return redirect::to(url()->previous())->with('error', 'Bkash Transaction ID first');
+        }
     }
 
 

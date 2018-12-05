@@ -133,6 +133,14 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        @elseif(Session::has('error'))
+                                        <div class="row" style="padding-top: 8px">
+                                            <div class="col-md-12">
+                                                <div class="alert alert-danger">
+                                                    {{Session::get('error')}}
+                                                </div>
+                                            </div>
+                                        </div>
                                     @endif
                                 </div>
                             </div>

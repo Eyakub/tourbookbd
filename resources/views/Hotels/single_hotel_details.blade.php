@@ -79,7 +79,7 @@
             <ul>
                 <li><a href="#">Home</a>
                 </li>
-                <li><a href="#">{{$hotel->hotels_category}}</a>
+                <li><a href="#">{{$hotel->category->hotel_category_name}}</a>
                 </li>
                 <li>{{$hotel->hotels_title}}</li>
             </ul>
@@ -151,7 +151,7 @@
                         <p>
                             include latter details
                         </p>
-                        <div class="row">
+                        {{--<div class="row">
                             <div class="col-md-6 col-sm-6">
                                 <ul class="list_ok">
                                     <li>item 1</li>
@@ -169,7 +169,7 @@
                                     <li>item 1</li>
                                 </ul>
                             </div>
-                        </div>
+                        </div>--}}
                         <!-- End row  -->
                     </div>
                     <!-- End col-md-9  -->
@@ -178,7 +178,7 @@
 
                 <hr>
 
-                <div class="row">
+                {{--<div class="row">
                     <div class="col-md-3">
                         <h3>Rooms Types</h3>
                     </div>
@@ -272,7 +272,7 @@
                     </div>
                     <!-- End col-md-9  -->
                 </div>
-                <!-- End row  -->
+                <!-- End row  -->--}}
 
                 <hr>
 

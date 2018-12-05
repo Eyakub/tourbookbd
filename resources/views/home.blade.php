@@ -685,7 +685,7 @@
         <div class="main_title">
             <h2>Some <span>good</span> reasons</h2>
             <p>
-                Quisque at tortor a libero posuere laoreet vitae sed arcu. Curabitur consequat.
+                Look around, we are friendly and always at  your service.
             </p>
         </div>
 

@@ -60,6 +60,7 @@ Route::get('/about-us', 'HomeController@aboutus');
 Route::get('/faq', 'HomeController@faq');
 Route::get('/tourist-guides', 'HomeController@touristGuide');
 Route::get('/tourist-guides/{name}', 'HomeController@guideProfilePublic');
+Route::post('/guide.review', 'AdminController@guideReview')->name('guide.review');
 
 Route::get('/admin-panel/tour/booking-request', 'AdminController@checkPendingBooking');
 Route::get('/admin-panel/tour/booking-request-approve/{id}', 'AdminController@approveBooking');

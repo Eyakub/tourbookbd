@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Blog;
 use App\Guide;
+use App\GuideReview;
 use App\Hotel;
 use App\User;
 use App\Users;
@@ -50,13 +51,13 @@ class HomeController extends Controller
 
     public function user()
     {
-        $user = User::where('id', Auth::user()->id)->first();
+        $user = Users::where('id', Auth::user()->id)->first();
         $blog = $user->blogs();
     }
 
     public function aboutus()
     {
-        $totalUser = User::all()->count();
+        $totalUser = Users::all()->count();
         $totalTour = Tour::all()->count();
 
         return view('layouts.about')
@@ -78,9 +79,14 @@ class HomeController extends Controller
     public function guideProfilePublic($name)
     {
         $guidePublic = Guide::where('guide_username', '=', $name)->first();
-        //dd($guidePublic);
+        $guideReview = GuideReview::join('guides', 'guides.id', '=', 'guide_review.guide_id')
+            ->join('users', 'guide_review.user_id', '=', 'users.id')
+            ->where('guide_id', $guidePublic->id)
+            ->select('guide_review.*', 'users.first_name', 'users.src_user')
+            ->get();
+        /*dd($guideReview);*/
         return view('layouts.touristPublicProfile')
-            ->with(compact('guidePublic'));
+            ->with(compact('guidePublic', 'guideReview'));
     }
 
 }

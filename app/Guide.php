@@ -7,4 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Guide extends Model
 {
     protected $table = 'guides';
+
+    public function review()
+    {
+        return $this->hasMany(GuideReview::class);
+    }
 }
