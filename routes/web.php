@@ -83,6 +83,7 @@ Route::get('/user-profile/{username}/blog-details/{id}', 'UserController@blogDet
 Route::post('/blog.comment.own', 'UserController@saveComment')->name('blog.comment.own');
 Route::get('/delete-personal-blog/{id}', 'UserController@deletePersonalBlog');
 Route::post('update-user.info', 'UserController@updateUserProfile')->name('update-user.info');
+Route::post('event.create', 'UserController@createEvent')->name('event.create');
 
 
 

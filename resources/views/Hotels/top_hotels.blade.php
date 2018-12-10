@@ -16,7 +16,7 @@
                                  class="img-responsive" alt="image">
                             <div class="score"><span>7.5</span>Good</div>
                             <div class="short_info hotel">
-                                From/Per night<span class="price"><sup>BDT </sup>1500</span>
+                                From/Per night<span class="price"><sup>BDT </sup>{{$top->hotels_per_cost}}</span>
                             </div>
                         </a>
                     </div>

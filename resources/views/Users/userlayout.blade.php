@@ -664,7 +664,8 @@
                                 <div class="col-md-2 col-sm-2">
                                     @if($book->booking_status === 1)
                                         <div class="booking_buttons">
-                                            <form action="{{route('tour.booking.invoice')}}" name="tour.booking.invoice" id="invoiceSubmit" method="post">
+                                            <form action="{{route('tour.booking.invoice')}}" name="tour.booking.invoice"
+                                                  id="invoiceSubmit" method="post">
                                                 {{csrf_field()}}
                                                 {{--<a href="{{URL::to('/tours/bookings/booking-details-invoice/')}}"
                                                    class="btn_2">Invoice</a>--}}
@@ -693,7 +694,10 @@
 
                 <section id="events">
                     <div class="row" style="padding-bottom: 25px; padding-left: 30px; padding-right: 40px">
-                        <form method="post" action="">
+
+
+                        <form method="post" action="{{route('event.create')}}">
+                            {{csrf_field()}}
                             <div class="row">
                                 <div class="row">
                                     <div class="col-md-12">
@@ -727,7 +731,7 @@
                                     <div class="col-md-6 col-sm-6">
                                         <div class="form-group">
                                             <label>Date
-                                                <small>(dd/mm/yyyy)</small>
+                                                <small>(yyyy/mm/dd)</small>
                                             </label>
                                             <input class="form-control" name="event_date" value=""
                                                    id="email" type="text">
@@ -746,7 +750,7 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-6 col-sm-6">
+                                    {{--<div class="col-md-6 col-sm-6">
                                         <div class="form-group">
                                             <label>Tag People</label>
                                             <select multiple="multiple" id="selectUser" name="event_tag"
@@ -757,13 +761,25 @@
                                                 @endforeach
                                             </select>
                                         </div>
-                                    </div>
+                                    </div>--}}
                                     <div class="col-md-6 col-sm-6">
+                                        <div class="form-group">
+                                            <label>Tag People</label>
+                                            <select id="select" name="event_tag"
+                                                    class="form-control">
+                                                <option>Select</option>
+                                                @foreach($userAll as $all)
+                                                    <option value="{{$all->id}}">{{$all->username}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                    {{--<div class="col-md-6 col-sm-6">
                                         <div class="form-group">
                                             <label>Tagged People</label>
                                             <div id="divResult"></div>
                                         </div>
-                                    </div>
+                                    </div>--}}
                                 </div>
 
                                 <div class="row">
@@ -775,34 +791,40 @@
                                 </div>
                             </div>
                         </form>
+
+
                         <hr>
                         <hr>
 
                         <div class="strip_booking">
-                            <div class="row">
-                                <div class="col-md-2 col-sm-2">
-                                    <div class="date">
-                                        <span class="month">Dec</span>
-                                        <span class="day"><strong>30</strong>Fri</span>
+                            @foreach($events as $event)
+                                <div class="row">
+                                    <div class="col-md-2 col-sm-2">
+                                        <div class="date">
+                                            <span class="month">{{Carbon\Carbon::parse($event->event_date)->format('F')}}</span>
+                                            <span class="day">
+                                                <strong>{{Carbon\Carbon::parse($event->event_date)->format('d')}}
+                                                </strong>{{Carbon\Carbon::parse($event->event_date)->format('l')}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-5">
+                                        <h3 class="tours_booking">{{$event->event_title}}<span>2 People</span></h3>
+                                    </div>
+                                    <div class="col-md-2 col-sm-3">
+                                        <ul class="info_booking">
+                                            <li><strong>Event Time</strong> {{$event->event_time}}</li>
+                                            <li><strong>Tour Date</strong> {{$event->event_date}}</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-2 col-sm-2">
+                                        <div class="booking_buttons">
+                                            <a href="#0" class="btn_2">Details</a>
+                                            <a href="#0" class="btn_3">Delete</a>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6 col-sm-5">
-                                    <h3 class="tours_booking">Event One<span>10 People</span></h3>
-                                </div>
-                                <div class="col-md-2 col-sm-3">
-                                    <ul class="info_booking">
-                                        <li><strong>Tour Time</strong> 10:00AM</li>
-                                        <li><strong>Tour Date</strong> Sat. 20 Dec. 2015</li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-2 col-sm-2">
-                                    <div class="booking_buttons">
-                                        <a href="#0" class="btn_2">Details</a>
-                                        <a href="#0" class="btn_3">Delete</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End row -->
+                            @endforeach
+                        <!-- End row -->
                         </div>
 
                     </div>

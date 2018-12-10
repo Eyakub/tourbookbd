@@ -31,16 +31,18 @@ class HomeController extends Controller
 //                'tour_category.tour_category_name')
 //            ->paginate(6);
         $topTour = Tour::leftJoin('tour_category', 'tour.tour_category', '=', 'tour_category.id')
-            ->select('tour.*', 'tour_category.tour_category_name')
+            ->select('tour.*', 'tour_category.tour_category_name', 'tour_category.tour_category_icon')
             ->paginate(6);
         //dd($topTour);
         $allTour = Tour::all();
-        $topHotels = Hotel::paginate(6);
+        $topHotels = Hotel::leftjoin('hotel_category', 'hotels.category_id', '=', 'hotel_category.id')
+            ->select('hotels.*', 'hotel_category.hotel_category_name')
+            ->paginate(6);
         $totalUser = Users::all()->count();
         $totalTour = Tour::all()->count();
 
         $topTourContent = view('Tours.top_tours')
-            ->with(compact('topTour', 'allTour', 'reviewCount'));
+            ->with(compact('topTour', 'allTour'));
         $topHotelContent = view('Hotels.top_hotels')
             ->with('topHotel', $topHotels);
 

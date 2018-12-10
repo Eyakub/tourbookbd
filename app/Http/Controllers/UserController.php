@@ -7,6 +7,8 @@ use App\{Blog,
     BlogImage,
     Comment,
     Country,
+    Event,
+    EventTag,
     Http\Resources\BlogResource,
     Tour,
     TourBooking,
@@ -160,6 +162,12 @@ class UserController extends Controller
         //dd($booking);
         //$tours = Tour::with('wishlist, tour')->where('user_id', '=', $user_id)->get();
         //dd($tours);
+
+        $events = Event::leftjoin('event_tag', 'event.id', '=', 'event_tag.event_id')
+            ->where('event_tag.user_id', '=', $user_id)
+            ->select('event.*', 'event_tag.event_id')
+            ->get();
+        //dd($events);
         /**
          * $blog = Blog::find($id)
          * $img = $blog->images()->get(); //images()it's in the model function
@@ -173,7 +181,8 @@ class UserController extends Controller
 
         if($user_id){
             return view('Users.userlayout')
-                ->with(compact('userAll','user', 'blogCat', 'blogs', 'username', 'blogImage', 'tours', 'country', 'booking'));
+                ->with(compact('userAll','user', 'blogCat', 'blogs',
+                    'username', 'blogImage', 'tours', 'country', 'booking', 'events'));
         }else{
             return redirect::to('user-login');
         }
@@ -325,6 +334,39 @@ class UserController extends Controller
         return Redirect::to('/user-profile/'.$username);
     }
 
+    /**
+     * @EVENT
+     */
+    public function createEvent(request $request)
+    {
+        $event = new Event();
+        $event->event_title = $request->input('event_title');
+        $event->event_place = $request->input('event_place');
+        $event->event_time = $request->input('event_time');
+        $event->event_date = $request->input('event_date');
+        $event->event_details = $request->input('event_details');
+        //dd($event);
+        $event->save();
+
+        $tag = $request->input('event_tag');
+        $owner = Session::get('user_id');
+
+        $eventTag1 = new EventTag();
+        $eventTag1->event_id = $event->id;
+        $eventTag1->user_id = $tag;
+        $eventTag1->save();
+
+        $eventTag2 = new EventTag();
+        $eventTag2->event_id = $event->id;
+        $eventTag2->user_id = $owner;
+        $eventTag2->save();
+
+        return redirect::to(url()->previous());
+        /*return response()->json([
+           'data' => $event,
+            'tag' => $eventTag
+        ]);*/
+    }
 
 
     public function imageslider()

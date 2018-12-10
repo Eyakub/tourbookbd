@@ -4,20 +4,11 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <meta name="description" content="TourBookBD - Hotels">
-    <meta name="author" content="Eyakub">
-    <title>TourBookBD - A place of natural beauty</title>
+    @include('layouts.metadata')
+    <title>Hotels - TourBookBD</title>
 
     <!-- Favicons-->
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" type="image/x-icon" href="img/apple-touch-icon-57x57-precomposed.png">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="img/apple-touch-icon-72x72-precomposed.png">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="img/apple-touch-icon-114x114-precomposed.png">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="img/apple-touch-icon-144x144-precomposed.png">
+    @include('layouts.baricon')
 
     <!-- Google web fonts -->
     <link href="https://fonts.googleapis.com/css?family=Gochi+Hand|Lato:300,400|Montserrat:400,400i,700,700i" rel="stylesheet">
@@ -113,31 +104,31 @@
                                     <label>
                                         <input type="checkbox"><span class="rating">
 						<i class="icon_set_1_icon-81 voted"></i><i class="icon_set_1_icon-81 voted"></i><i class="icon_set_1_icon-81 voted"></i><i class="icon_set_1_icon-81 voted"></i><i class="icon_set_1_icon-81 voted"></i>
-						</span>(15)</label>
+						</span>(0)</label>
                                 </li>
                                 <li>
                                     <label>
                                         <input type="checkbox"><span class="rating">
 						<i class="icon_set_1_icon-81 voted"></i><i class="icon_set_1_icon-81 voted"></i><i class="icon_set_1_icon-81 voted"></i><i class="icon_set_1_icon-81 voted"></i><i class="icon_set_1_icon-81"></i>
-						</span>(45)</label>
+						</span>(0)</label>
                                 </li>
                                 <li>
                                     <label>
                                         <input type="checkbox"><span class="rating">
 						<i class="icon_set_1_icon-81 voted"></i><i class="icon_set_1_icon-81 voted"></i><i class="icon_set_1_icon-81 voted"></i><i class="icon_set_1_icon-81"></i><i class="icon_set_1_icon-81"></i>
-						</span>(35)</label>
+						</span>(0)</label>
                                 </li>
                                 <li>
                                     <label>
                                         <input type="checkbox"><span class="rating">
 						<i class="icon_set_1_icon-81 voted"></i><i class="icon_set_1_icon-81 voted"></i><i class="icon_set_1_icon-81"></i><i class="icon_set_1_icon-81"></i><i class="icon_set_1_icon-81"></i>
-						</span>(25)</label>
+						</span>(0)</label>
                                 </li>
                                 <li>
                                     <label>
                                         <input type="checkbox"><span class="rating">
 						<i class="icon_set_1_icon-81 voted"></i><i class="icon_set_1_icon-81"></i><i class="icon_set_1_icon-81"></i><i class="icon_set_1_icon-81"></i><i class="icon_set_1_icon-81"></i>
-						</span>(15)</label>
+						</span>(0)</label>
                                 </li>
                             </ul>
                         </div>
@@ -146,23 +137,23 @@
                             <ul>
                                 <li>
                                     <label>
-                                        <input type="checkbox">Superb: 9+ (77)</label>
+                                        <input type="checkbox">Superb: 9+ (0)</label>
                                 </li>
                                 <li>
                                     <label>
-                                        <input type="checkbox">Very good: 8+ (552)</label>
+                                        <input type="checkbox">Very good: 8+ (0)</label>
                                 </li>
                                 <li>
                                     <label>
-                                        <input type="checkbox">Good: 7+ (909)</label>
+                                        <input type="checkbox">Good: 7+ (0)</label>
                                 </li>
                                 <li>
                                     <label>
-                                        <input type="checkbox">Pleasant: 6+ (1196)</label>
+                                        <input type="checkbox">Pleasant: 6+ (0)</label>
                                 </li>
                                 <li>
                                     <label>
-                                        <input type="checkbox">No rating (198)</label>
+                                        <input type="checkbox">No rating (0)</label>
                                 </li>
                             </ul>
                         </div>
